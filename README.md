@@ -2,7 +2,6 @@
 
 **목표:** Mono-nanosheet GAA의 **Gmsh 3D geometry → DEVSIM 3D Poisson → 2D transverse eigenmodes → ballistic coupled mode-space NEGF → Poisson–NEGF SCF** 구현. 추후 DeepSCF-inspired AI에 비교 기준으로 사용하기 위한 prototype입니다.
 
-> 아직 서버에서 실제 Gmsh/DEVSIM 연동 실행이 검증된 버전은 아닙니다. 제공 환경에는 Gmsh/DEVSIM이 설치되어 있지 않아 별도 선행 수송 테스트만 수행했습니다. 이 버전으로 곧바로 논문 수치를 주장하지 마세요.
 
 ## 설치 및 실행 (Linux)
 
