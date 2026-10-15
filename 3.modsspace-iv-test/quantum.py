@@ -1,0 +1,187 @@
+"""Fixed-basis coupled mode-space ballistic NEGF for rectangular mono-Si nanosheet.
+
+Fixed transverse EMA basis (same masses/constants as STEP01), projected
+3D potential, full off-diagonal intermode electrostatics. Source/drain
+semi-infinite tight-binding lead self-energies. Independent of DEVSIM.
+
+No DD and no fitted effective mass. Valley multiplicity and spin explicit.
+"""
+from __future__ import annotations
+from dataclasses import dataclass
+import numpy as np
+from scipy.sparse import diags, eye, kron
+from scipy.sparse.linalg import eigsh
+
+Q=1.602176634e-19
+H_PLANCK=6.62607015e-34
+HB2_OVER_2M0=0.0380998212  # same STEP01 constant, eV nm^2
+KB_EV=8.617333262145e-5
+
+
+def fermi(e, mu, kt):
+    return 1/(1+np.exp(np.clip((e-mu)/kt,-150,150)))
+
+
+def transverse_sparse(cfg, valley):
+    ny,nz=cfg.ny,cfg.nz
+    dy=cfg.width_nm/(ny+1); dz=cfg.thickness_nm/(nz+1)
+    ty=HB2_OVER_2M0/(valley.my*dy*dy)
+    tz=HB2_OVER_2M0/(valley.mz*dz*dz)
+    ly=diags([-np.ones(ny-1),2*np.ones(ny),-np.ones(ny-1)],[-1,0,1],format='csr')*ty
+    lz=diags([-np.ones(nz-1),2*np.ones(nz),-np.ones(nz-1)],[-1,0,1],format='csr')*tz
+    return kron(ly,eye(nz,format='csr'),format='csr')+kron(eye(ny,format='csr'),lz,format='csr')
+
+
+@dataclass
+class Basis:
+    valley: object
+    levels: np.ndarray
+    U: np.ndarray
+    hopping_ev: float
+
+
+def make_bases(cfg):
+    result=[]
+    for v in cfg.valleys:
+        mat=transverse_sparse(cfg,v)
+        if cfg.modes >= mat.shape[0]-1:
+            raise ValueError('Need fewer retained modes than transverse lattice sites-1')
+        levels,U=eigsh(mat,k=cfg.modes,which='SA',tol=1e-10,maxiter=20000)
+        inds=np.argsort(levels)
+        levels,U=levels[inds],U[:,inds]
+        # Set deterministic signs for reproducibility across jobs.
+        for j in range(U.shape[1]):
+            q=np.argmax(np.abs(U[:,j]))
+            if U[q,j]<0: U[:,j]*=-1
+        dx=cfg.length_nm/(cfg.nx-1)
+        hopping=HB2_OVER_2M0/(v.mx*dx*dx)
+        result.append(Basis(v,levels,U,hopping))
+    return result
+
+
+def get_onsite(phi,b,ec0):
+    nx,n_sites=phi.shape[0],phi.shape[1]*phi.shape[2]
+    flattened=phi.reshape(nx,n_sites)
+    U=b.U
+    shift=np.einsum('pm,xp,pn->xmn',U,flattened,U,optimize=True)
+    d=b.levels+ec0+2*b.hopping_ev
+    hs=-shift.astype(complex)
+    hs[:,np.arange(len(d)),np.arange(len(d))] += d
+    # lead potentials: source/drain slice; use corresponding diagonal mode shifts
+    e0=np.real(np.diag(hs[0]))-2*b.hopping_ev
+    eN=np.real(np.diag(hs[-1]))-2*b.hopping_ev
+    return hs,e0,eN
+
+
+def lead_self_energy(E, e_sub, t, eta):
+    """Retarded semi-infinite homogeneous 1D lead, vectorized [energy, mode]."""
+    z=E[:,None]+1j*eta
+    a=z-(e_sub[None,:]+2*t)
+    root=np.sqrt(a*a-4*t*t)
+    s1,s2=(a-root)*.5,(a+root)*.5
+    s=np.where(np.abs(s1)<=np.abs(s2),s1,s2)
+    if np.any(s.imag>1e-8):
+        raise ArithmeticError('Nonretarded contact self-energy')
+    return s
+
+
+def spectral_batched(onsite,t,es,ed,E,eta,with_density=True):
+    """Batched-energy RGF transmission and injected diagonal density matrices.
+
+    Returns (T[E], AL[E,x,m,n], AR[E,x,m,n]). Either density may be None.
+    Matrix operations are batched across energies to avoid per-energy Python loops.
+    """
+    ne=len(E); nx,nm=onsite.shape[:2]
+    ident=np.eye(nm,dtype=complex)
+    z=E[:,None,None]+1j*eta
+    sl=lead_self_energy(E,es,t,eta); sr=lead_self_energy(E,ed,t,eta)
+    glamma=np.maximum(0.0,-2*np.imag(sl)); gramma=np.maximum(0.0,-2*np.imag(sr))
+    sleft=ident[None,:,:]*sl[:,:,None]
+    sright=ident[None,:,:]*sr[:,:,None]
+    # H_{i,i+1}=-t I; coupling self-energy = t² G.
+    c=t*t
+    right_conn=np.empty((ne,nx,nm,nm),complex)
+    right_conn[:,-1]=np.linalg.inv(z*ident-onsite[-1][None,:,:]-sright)
+    for i in range(nx-2,-1,-1):
+        right_conn[:,i]=np.linalg.inv(z*ident-onsite[i][None,:,:]-c*right_conn[:,i+1])
+    G00=np.linalg.inv(z*ident-onsite[0][None,:,:]-sleft-c*right_conn[:,1])
+    G_i0=np.empty_like(right_conn)
+    G_i0[:,0]=G00
+    for i in range(1,nx):
+        G_i0[:,i]=(-t)*np.matmul(right_conn[:,i],G_i0[:,i-1])
+    # Right-to-left injection requires a left-connected recursion.
+    left_conn=np.empty_like(right_conn)
+    left_conn[:,0]=np.linalg.inv(z*ident-onsite[0][None,:,:]-sleft)
+    for i in range(1,nx):
+        left_conn[:,i]=np.linalg.inv(z*ident-onsite[i][None,:,:]-c*left_conn[:,i-1])
+    G_iN=np.empty_like(right_conn)
+    G_iN[:,-1]=np.linalg.inv(z*ident-onsite[-1][None,:,:]-sright-c*left_conn[:,-2])
+    for i in range(nx-2,-1,-1):
+        G_iN[:,i]=(-t)*np.matmul(left_conn[:,i],G_iN[:,i+1])
+    G0N=G_iN[:,0]
+    transmission=np.maximum(0.0,np.einsum('eij,ej,ei->e',np.abs(G0N)**2,gramma,glamma))
+    if not with_density: return transmission,None,None
+    AL=np.matmul(G_i0*glamma[:,None,None,:],G_i0.conj().swapaxes(-1,-2))
+    AR=np.matmul(G_iN*gramma[:,None,None,:],G_iN.conj().swapaxes(-1,-2))
+    return transmission,AL,AR
+
+
+def energy_grid(cfg, vd, basis, es, ed, de):
+    """Energy range for *charge*: UNION of occupied lead continua.
+
+    This is essential for high Vds: drain-only injected states below source
+    band are charged even though they do not transmit any current. Using the
+    intersection of the bands gives a severely wrong Poisson charge at 6 V.
+    """
+    t=basis.hopping_ev
+    lower=min(float(np.min(es)),float(np.min(ed)))
+    upper=max(float(np.max(es))+4*t,float(np.max(ed))+4*t)
+    upper=min(upper,max(cfg.efermi_source_ev,cfg.efermi_source_ev-vd)
+              +12*KB_EV*cfg.temperature_k)
+    if upper<=lower: return np.array([]),np.array([])
+    count=max(2,int(np.ceil((upper-lower)/de))+1)
+    energy=np.linspace(lower,upper,count)
+    w=np.full(len(energy),(upper-lower)/(count-1))
+    w[[0,-1]]*=.5
+    return energy,w
+
+
+def solve_quantum(cfg,phi,bases,vd,energy_step_ev=0.03,density=True):
+    if phi.shape != (cfg.nx,cfg.ny,cfg.nz): raise ValueError('Potential grid shape mismatch')
+    kt=KB_EV*cfg.temperature_k
+    per_valley={}; total_current=0.0
+    total_density=np.zeros_like(phi,float)
+    transmissions={}; energies_dict={}
+    dy=cfg.width_nm/(cfg.ny+1); dz=cfg.thickness_nm/(cfg.nz+1)
+    dx=cfg.length_nm/(cfg.nx-1)
+    volume_nm3=dx*dy*dz
+    for b in bases:
+        H,es,ed=get_onsite(phi,b,cfg.ec0_ev)
+        E,weights=energy_grid(cfg,vd,b,es,ed,energy_step_ev)
+        if len(E)==0:
+            per_valley[b.valley.name]=0.0
+            transmissions[b.valley.name]=np.zeros(0)
+            energies_dict[b.valley.name]=E
+            continue
+        T,AL,AR=spectral_batched(H,b.hopping_ev,es,ed,E,cfg.eta_ev,density)
+        fl=fermi(E,cfg.efermi_source_ev,kt)
+        fr=fermi(E,cfg.efermi_source_ev-vd,kt)
+        dI=2*b.valley.multiplicity*Q*Q/H_PLANCK*np.sum(weights*T*(fl-fr))
+        total_current+=dI
+        per_valley[b.valley.name]=float(dI)
+        transmissions[b.valley.name]=T
+        energies_dict[b.valley.name]=E
+        if density:
+            coeff=weights/(2*np.pi)
+            RHO=np.einsum('e,exmn->xmn',coeff*fl,AL,optimize=True)
+            RHO+=np.einsum('e,exmn->xmn',coeff*fr,AR,optimize=True)
+            n=np.einsum('am,xmn,an->xa',b.U,RHO,b.U,optimize=True).real
+            total_density+=2*b.valley.multiplicity*n.reshape(phi.shape)/volume_nm3*1e21
+    if density and (not np.all(np.isfinite(total_density)) or np.min(total_density)<-1e7):
+        raise ArithmeticError('Invalid NEGF electron density')
+    return float(total_current),np.maximum(total_density,0),per_valley,energies_dict,transmissions
+
+
+def min_bandwidth_ev(cfg):
+    dx=cfg.length_nm/(cfg.nx-1)
+    return min(4*HB2_OVER_2M0/(v.mx*dx*dx) for v in cfg.valleys)

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<VTKFile type="vtkMultiBlockDataSet" version="0.1" byte_order="LittleEndian" compressor="vtkZLibDataCompressor">
+  <vtkMultiBlockDataSet>
+    <DataSet group="0" dataset="0" file="build/result/poisson_only.vtk_0.vtu"/>
+    <DataSet group="1" dataset="0" file="build/result/poisson_only.vtk_1.vtu"/>
+  </vtkMultiBlockDataSet>
+</VTKFile>

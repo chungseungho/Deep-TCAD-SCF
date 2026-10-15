@@ -1,0 +1,15 @@
+{
+  "linear_phi_error_V": 4.440892098500626e-16,
+  "grid_particles": 0.00023331249999999999,
+  "tet_particles": 0.00023331249999999934,
+  "relative_charge_mismatch": 2.7431020626841682e-15,
+  "tetra_count": 6,
+  "fd_grid_points": 6800,
+  "silicon_node_count": 8,
+  "tet_mesh_volume_nm3": 1.0,
+  "interior_fd_coverage_nm3": 0.9999999999999996,
+  "caveat": "Geometric P.T mass lumping; not proven equal to DEVSIM internal dual-volume integration.",
+  "retarded_selfenergy_dense_T_max_error": 4.6629367034256575e-15,
+  "dense_injectivity_spectral_max_error": 2.2204810004974265e-14,
+  "synthetic_tests_pass": true
+}

@@ -1,0 +1,55 @@
+{
+  "step": "02 Transverse Schrödinger / mode-space basis",
+  "input_source": "FLAT analytical reference (NOT a device potential)",
+  "potential_is_self_consistent": false,
+  "no_ema_parameters_changed": true,
+  "note": "STEP02 tests basis properties only. NEGF currents and SCF are STEP03/04.",
+  "grid_analytic_error_max_ev": 6.8833827526759706e-15,
+  "onsite_overlap_max_error": 1.6512966533512484e-15,
+  "finest_grid_continuum_relative_error_max": 0.0005084785246364955,
+  "checks": {
+    "Delta_z": {
+      "E1_source_ev": 0.029616870012539216,
+      "E1_channel_ev": 0.029616870012539216,
+      "onsite_orthogonality_max": 6.481689951749062e-16,
+      "onsite_hermiticity_error": 0.0,
+      "modes": 4,
+      "hop_shape": [
+        48,
+        4,
+        4
+      ]
+    },
+    "Delta_x": {
+      "E1_source_ev": 0.09094015739472676,
+      "E1_channel_ev": 0.09094015739472676,
+      "onsite_orthogonality_max": 6.984438281517032e-16,
+      "onsite_hermiticity_error": 0.0,
+      "modes": 4,
+      "hop_shape": [
+        48,
+        4,
+        4
+      ]
+    },
+    "Delta_y": {
+      "E1_source_ev": 0.08018642046624669,
+      "E1_channel_ev": 0.08018642046624669,
+      "onsite_orthogonality_max": 1.6512966533512484e-15,
+      "onsite_hermiticity_error": 0.0,
+      "modes": 4,
+      "hop_shape": [
+        48,
+        4,
+        4
+      ]
+    }
+  },
+  "acceptance": {
+    "exact_2d_fd_eigenvalues": true,
+    "orthonormal_modes": true,
+    "continuum_ground_under_1_percent": true,
+    "finite_values": true
+  },
+  "step02_pass": true
+}

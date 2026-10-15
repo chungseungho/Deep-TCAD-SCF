@@ -50,24 +50,21 @@ class DevsimPoisson:
             d.edge_model(device=self.device, region=reg, name='DField:Potential@n1',
                          equation='-Permittivity*EdgeInverseLength')
             if reg == self.si:
-                # Input is set externally, NOT an additional unknown to solve.
+                # Static, non-SCF donor profile, populated explicitly on each Si node.
+                # IMPORTANT: register NetDoping BEFORE SpaceCharge and populate its
+                # values before the first solve. Some DEVSIM configurations cannot
+                # resolve a deferred expression dependency when the model is defined
+                # after the model that references it.
+                d.set_parameter(device=self.device, region=reg,
+                                name='ElectronCharge', value=Q)
+                d.node_solution(device=self.device, region=reg, name='NetDoping')
+                # NEGF density provided externally; it is NOT a Poisson unknown.
                 d.node_solution(device=self.device, region=reg, name='InjectedElectrons')
+                # DField = -epsilon grad(phi), so node source is -rho.
                 d.node_model(device=self.device, region=reg, name='SpaceCharge',
                              equation='-ElectronCharge*(NetDoping-InjectedElectrons)')
                 d.node_model(device=self.device, region=reg,
                              name='SpaceCharge:Potential', equation='0')
-                d.set_parameter(device=self.device, region=reg, name='ElectronCharge', value=Q)
-                d.set_parameter(device=self.device, region=reg, name='NdSourceDrain',
-                                value=cfg.donor_sd_cm3)
-                d.set_parameter(device=self.device, region=reg, name='NdChannel',
-                                value=cfg.donor_channel_cm3)
-                d.set_parameter(device=self.device, region=reg, name='LSource',
-                                value=cfg.ls_nm*1e-7)
-                d.set_parameter(device=self.device, region=reg, name='LChannelEnd',
-                                value=(cfg.ls_nm + cfg.lg_nm)*1e-7)
-                d.node_model(device=self.device, region=reg, name='NetDoping',
-                             equation='ifelse(x < LSource, NdSourceDrain, '
-                                      'ifelse(x > LChannelEnd, NdSourceDrain, NdChannel))')
                 d.equation(device=self.device, region=reg, name='PotentialEquation',
                            variable_name='Potential', edge_model='DField',
                            node_model='SpaceCharge', variable_update='default')
@@ -93,7 +90,32 @@ class DevsimPoisson:
                                node_model=f'{contact}_bc', edge_charge_model='DField')
         self.si_nodes_nm = self.get_coords(self.si)
         self.ox_nodes_nm = self.get_coords(self.ox)
+        # Build the fixed donor concentration directly from real mesh coordinates.
+        # Unlike a deferred ifelse(x,...) expression this always supplies valid
+        # NetDoping values to the SpaceCharge model before the first DC solve.
+        xs = self.si_nodes_nm[:, 0]
+        mask_sd = (xs < cfg.ls_nm) | (xs > cfg.ls_nm + cfg.lg_nm)
+        donors = np.where(mask_sd, cfg.donor_sd_cm3,
+                          cfg.donor_channel_cm3).astype(float)
+        d.set_node_values(device=self.device, region=self.si,
+                          name='NetDoping', values=donors.tolist())
+        check = np.asarray(d.get_node_model_values(device=self.device,
+                            region=self.si, name='NetDoping'), dtype=float)
+        if check.shape != donors.shape or not np.all(np.isfinite(check)):
+            raise RuntimeError('DEVSIM NetDoping model is not populated correctly')
+        if not np.allclose(check, donors, rtol=1e-12, atol=0):
+            raise RuntimeError('DEVSIM NetDoping differs from requested donor profile')
+        print(f'NetDoping initialized: {len(check)} nodes, '
+              f'min={check.min():.4e}, max={check.max():.4e} cm^-3')
         self.set_charge(np.zeros(len(self.si_nodes_nm)))
+        try:
+            rho = np.asarray(d.get_node_model_values(device=self.device,
+                        region=self.si, name='SpaceCharge'), dtype=float)
+            if rho.shape != donors.shape or not np.all(np.isfinite(rho)):
+                raise ValueError('invalid size or nonfinite values')
+        except Exception as exc:
+            raise RuntimeError('SpaceCharge could not evaluate before Poisson solve') from exc
+        print('SpaceCharge initialized successfully')
         self._si_interp = None
 
     def get_coords(self, region):
