@@ -2,7 +2,7 @@
 
 > All plots are calculated from actual DEVSIM coupled SCF runs. This is an uncalibrated ballistic EMA prototype, NOT measurement-grade silicon TCAD.
 
-- Id–Vgs converged: 4/4
+- Id–Vgs converged: 4/5
 - Id–Vds converged: 0/0
 - Transverse: 31 × 25, longitudinal: 345 nodes, modes/valley: 6
 - Minimum discrete lead bandwidth: 8.545 eV
