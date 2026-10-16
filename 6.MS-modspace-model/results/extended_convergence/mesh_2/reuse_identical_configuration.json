@@ -1,0 +1,6 @@
+{
+  "original_run": "results/parallel_mesh/mesh_2",
+  "source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+  "configuration_fingerprint": "0f5f6b6a1fee12385e5cd52c2116f05e598605d4465f053ee58f21cb4dcb4a5c",
+  "reason": "Identical coupled SCF executed in a disjoint folder to run independent axes concurrently; copied without changing any physical result"
+}

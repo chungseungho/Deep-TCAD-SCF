@@ -1,0 +1,2506 @@
+Searching DEVSIM_MATH_LIBS="libopenblas.so.0"
+Loading "libopenblas.so.0": ALL BLAS/LAPACK LOADED
+loading UMFPACK 5.1 as direct solver
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_917caaaf has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+number of equations 2296
+Iteration: 0
+  Device: "gaa_917caaaf"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_917caaaf"	RelError: 8.84900e-13	AbsError: 2.72797e-16
+    Region: "electrostatic"	RelError: 8.84900e-13	AbsError: 2.72797e-16
+      Equation: "PotentialEquation"	RelError: 8.84900e-13	AbsError: 2.72797e-16
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_a96562df has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+number of equations 2296
+Iteration: 0
+  Device: "gaa_a96562df"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_a96562df"	RelError: 8.84900e-13	AbsError: 2.72797e-16
+    Region: "electrostatic"	RelError: 8.84900e-13	AbsError: 2.72797e-16
+      Equation: "PotentialEquation"	RelError: 8.84900e-13	AbsError: 2.72797e-16
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_6d3dbd8f has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+number of equations 2296
+Iteration: 0
+  Device: "gaa_6d3dbd8f"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_6d3dbd8f"	RelError: 4.54762e-13	AbsError: 2.54809e-16
+    Region: "electrostatic"	RelError: 4.54762e-13	AbsError: 2.54809e-16
+      Equation: "PotentialEquation"	RelError: 4.54762e-13	AbsError: 2.54809e-16
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_0a29844f has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+number of equations 2296
+Iteration: 0
+  Device: "gaa_0a29844f"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_0a29844f"	RelError: 8.84900e-13	AbsError: 2.72797e-16
+    Region: "electrostatic"	RelError: 8.84900e-13	AbsError: 2.72797e-16
+      Equation: "PotentialEquation"	RelError: 8.84900e-13	AbsError: 2.72797e-16
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_7648eeca has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+number of equations 2296
+Iteration: 0
+  Device: "gaa_7648eeca"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_7648eeca"	RelError: 1.66878e-12	AbsError: 2.79094e-16
+    Region: "electrostatic"	RelError: 1.66878e-12	AbsError: 2.79094e-16
+      Equation: "PotentialEquation"	RelError: 1.66878e-12	AbsError: 2.79094e-16
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_a2d61168 has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+number of equations 2296
+Iteration: 0
+  Device: "gaa_a2d61168"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_a2d61168"	RelError: 2.59927e-12	AbsError: 2.29999e-16
+    Region: "electrostatic"	RelError: 2.59927e-12	AbsError: 2.29999e-16
+      Equation: "PotentialEquation"	RelError: 2.59927e-12	AbsError: 2.29999e-16
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_f210f635 has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+number of equations 2296
+Iteration: 0
+  Device: "gaa_f210f635"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_f210f635"	RelError: 6.28904e-14	AbsError: 1.91932e-16
+    Region: "electrostatic"	RelError: 6.28904e-14	AbsError: 1.91932e-16
+      Equation: "PotentialEquation"	RelError: 6.28904e-14	AbsError: 1.91932e-16
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_9fd3188a has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9fd3188a"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_9fd3188a"	RelError: 8.84900e-13	AbsError: 2.72797e-16
+    Region: "electrostatic"	RelError: 8.84900e-13	AbsError: 2.72797e-16
+      Equation: "PotentialEquation"	RelError: 8.84900e-13	AbsError: 2.72797e-16
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_89706d89 has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+number of equations 2296
+Iteration: 0
+  Device: "gaa_89706d89"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_89706d89"	RelError: 1.91520e-13	AbsError: 2.40348e-16
+    Region: "electrostatic"	RelError: 1.91520e-13	AbsError: 2.40348e-16
+      Equation: "PotentialEquation"	RelError: 1.91520e-13	AbsError: 2.40348e-16
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_b0e55227 has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+number of equations 2296
+Iteration: 0
+  Device: "gaa_b0e55227"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_b0e55227"	RelError: 2.05051e-13	AbsError: 2.22638e-16
+    Region: "electrostatic"	RelError: 2.05051e-13	AbsError: 2.22638e-16
+      Equation: "PotentialEquation"	RelError: 2.05051e-13	AbsError: 2.22638e-16
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_1edc5145 has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+number of equations 2296
+Iteration: 0
+  Device: "gaa_1edc5145"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_1edc5145"	RelError: 8.84900e-13	AbsError: 2.72797e-16
+    Region: "electrostatic"	RelError: 8.84900e-13	AbsError: 2.72797e-16
+      Equation: "PotentialEquation"	RelError: 8.84900e-13	AbsError: 2.72797e-16
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_18aef21b has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+number of equations 2296
+Iteration: 0
+  Device: "gaa_18aef21b"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_18aef21b"	RelError: 8.85260e-14	AbsError: 2.09071e-16
+    Region: "electrostatic"	RelError: 8.85260e-14	AbsError: 2.09071e-16
+      Equation: "PotentialEquation"	RelError: 8.85260e-14	AbsError: 2.09071e-16
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_de54699b has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+number of equations 2296
+Iteration: 0
+  Device: "gaa_de54699b"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_de54699b"	RelError: 3.96046e-14	AbsError: 2.64059e-16
+    Region: "electrostatic"	RelError: 3.96046e-14	AbsError: 2.64059e-16
+      Equation: "PotentialEquation"	RelError: 3.96046e-14	AbsError: 2.64059e-16
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_d3c095bc has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+number of equations 2296
+Iteration: 0
+  Device: "gaa_d3c095bc"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_d3c095bc"	RelError: 8.84900e-13	AbsError: 2.72797e-16
+    Region: "electrostatic"	RelError: 8.84900e-13	AbsError: 2.72797e-16
+      Equation: "PotentialEquation"	RelError: 8.84900e-13	AbsError: 2.72797e-16
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_8bb277fd has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+number of equations 2296
+Iteration: 0
+  Device: "gaa_8bb277fd"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_8bb277fd"	RelError: 8.84900e-13	AbsError: 2.72797e-16
+    Region: "electrostatic"	RelError: 8.84900e-13	AbsError: 2.72797e-16
+      Equation: "PotentialEquation"	RelError: 8.84900e-13	AbsError: 2.72797e-16
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_602c31d1 has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+number of equations 2296
+Iteration: 0
+  Device: "gaa_602c31d1"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_602c31d1"	RelError: 2.93881e-14	AbsError: 1.94623e-16
+    Region: "electrostatic"	RelError: 2.93881e-14	AbsError: 1.94623e-16
+      Equation: "PotentialEquation"	RelError: 2.93881e-14	AbsError: 1.94623e-16
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_8d36e61f has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+number of equations 2296
+Iteration: 0
+  Device: "gaa_8d36e61f"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_8d36e61f"	RelError: 2.97404e-14	AbsError: 2.32169e-16
+    Region: "electrostatic"	RelError: 2.97404e-14	AbsError: 2.32169e-16
+      Equation: "PotentialEquation"	RelError: 2.97404e-14	AbsError: 2.32169e-16
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_a4cac72b has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+number of equations 2296
+Iteration: 0
+  Device: "gaa_a4cac72b"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_a4cac72b"	RelError: 6.28904e-14	AbsError: 1.91932e-16
+    Region: "electrostatic"	RelError: 6.28904e-14	AbsError: 1.91932e-16
+      Equation: "PotentialEquation"	RelError: 6.28904e-14	AbsError: 1.91932e-16
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_c1980ebf has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+number of equations 2296
+Iteration: 0
+  Device: "gaa_c1980ebf"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_c1980ebf"	RelError: 8.84900e-13	AbsError: 2.72797e-16
+    Region: "electrostatic"	RelError: 8.84900e-13	AbsError: 2.72797e-16
+      Equation: "PotentialEquation"	RelError: 8.84900e-13	AbsError: 2.72797e-16
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10823 Tetrahedra.
+Physical group name Electrostatic has 22999 Triangles.
+Physical group name Electrostatic has 14699 Lines.
+Physical group name Electrostatic has 2524 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1068 Triangles.
+Physical group name Gate has 1642 Lines.
+Physical group name Gate has 574 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 294 Triangles.
+Physical group name OxSpacer has 509 Lines.
+Physical group name OxSpacer has 215 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 956 Triangles.
+Physical group name SiExterior has 1496 Lines.
+Physical group name SiExterior has 540 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 784 Triangles.
+Physical group name SiOx has 1204 Lines.
+Physical group name SiOx has 420 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 688 Triangles.
+Physical group name SiSpacer has 1100 Lines.
+Physical group name SiSpacer has 412 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_92423769 has 2524 coordinates with max index 2524
+Region electrostatic has 2524 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 574 nodes
+Contact source in region electrostatic with 47 nodes
+number of equations 2524
+Iteration: 0
+  Device: "gaa_92423769"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_92423769"	RelError: 1.18991e-14	AbsError: 3.26193e-16
+    Region: "electrostatic"	RelError: 1.18991e-14	AbsError: 3.26193e-16
+      Equation: "PotentialEquation"	RelError: 1.18991e-14	AbsError: 3.26193e-16
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 11663 Tetrahedra.
+Physical group name Electrostatic has 24862 Triangles.
+Physical group name Electrostatic has 15949 Lines.
+Physical group name Electrostatic has 2751 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1068 Triangles.
+Physical group name Gate has 1642 Lines.
+Physical group name Gate has 574 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 294 Triangles.
+Physical group name OxSpacer has 509 Lines.
+Physical group name OxSpacer has 215 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 1322 Triangles.
+Physical group name SiExterior has 2045 Lines.
+Physical group name SiExterior has 723 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 784 Triangles.
+Physical group name SiOx has 1204 Lines.
+Physical group name SiOx has 420 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_9d33d08b has 2751 coordinates with max index 2751
+Region electrostatic has 2751 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 574 nodes
+Contact source in region electrostatic with 47 nodes
+number of equations 2751
+Iteration: 0
+  Device: "gaa_9d33d08b"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_9d33d08b"	RelError: 4.13320e-14	AbsError: 2.01102e-16
+    Region: "electrostatic"	RelError: 4.13320e-14	AbsError: 2.01102e-16
+      Equation: "PotentialEquation"	RelError: 4.13320e-14	AbsError: 2.01102e-16
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_1bc4229c has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+number of equations 2296
+Iteration: 0
+  Device: "gaa_1bc4229c"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_1bc4229c"	RelError: 8.84900e-13	AbsError: 2.72797e-16
+    Region: "electrostatic"	RelError: 8.84900e-13	AbsError: 2.72797e-16
+      Equation: "PotentialEquation"	RelError: 8.84900e-13	AbsError: 2.72797e-16
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 120 Triangles.
+Physical group name Drain has 194 Lines.
+Physical group name Drain has 75 Points.
+Physical group name Electrostatic has 24581 Tetrahedra.
+Physical group name Electrostatic has 51357 Triangles.
+Physical group name Electrostatic has 31975 Lines.
+Physical group name Electrostatic has 5200 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 2184 Triangles.
+Physical group name Gate has 3332 Lines.
+Physical group name Gate has 1148 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 592 Triangles.
+Physical group name OxSpacer has 984 Lines.
+Physical group name OxSpacer has 392 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 1008 Triangles.
+Physical group name SiExterior has 1596 Lines.
+Physical group name SiExterior has 588 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 1548 Triangles.
+Physical group name SiOx has 2362 Lines.
+Physical group name SiOx has 814 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 1296 Triangles.
+Physical group name SiSpacer has 2040 Lines.
+Physical group name SiSpacer has 744 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 120 Triangles.
+Physical group name Source has 194 Lines.
+Physical group name Source has 75 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 958 Triangles.
+Physical group name SpacerExterior has 1549 Lines.
+Physical group name SpacerExterior has 591 Points.
+Device gaa_8db87de9 has 5200 coordinates with max index 5200
+Region electrostatic has 5200 nodes.
+Contact drain in region electrostatic with 75 nodes
+Contact gate in region electrostatic with 1148 nodes
+Contact source in region electrostatic with 75 nodes
+number of equations 5200
+Iteration: 0
+  Device: "gaa_8db87de9"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_8db87de9"	RelError: 4.95516e-14	AbsError: 2.25942e-16
+    Region: "electrostatic"	RelError: 4.95516e-14	AbsError: 2.25942e-16
+      Equation: "PotentialEquation"	RelError: 4.95516e-14	AbsError: 2.25942e-16
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 238 Triangles.
+Physical group name Drain has 378 Lines.
+Physical group name Drain has 141 Points.
+Physical group name Electrostatic has 73443 Tetrahedra.
+Physical group name Electrostatic has 151563 Triangles.
+Physical group name Electrostatic has 92421 Lines.
+Physical group name Electrostatic has 14302 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 4832 Triangles.
+Physical group name Gate has 7332 Lines.
+Physical group name Gate has 2500 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 1148 Triangles.
+Physical group name OxSpacer has 1864 Lines.
+Physical group name OxSpacer has 716 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 2042 Triangles.
+Physical group name SiExterior has 3189 Lines.
+Physical group name SiExterior has 1147 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 3310 Triangles.
+Physical group name SiOx has 5023 Lines.
+Physical group name SiOx has 1713 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 2534 Triangles.
+Physical group name SiSpacer has 3943 Lines.
+Physical group name SiSpacer has 1409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 238 Triangles.
+Physical group name Source has 378 Lines.
+Physical group name Source has 141 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 2004 Triangles.
+Physical group name SpacerExterior has 3174 Lines.
+Physical group name SpacerExterior has 1170 Points.
+Device gaa_031375e2 has 14302 coordinates with max index 14302
+Region electrostatic has 14302 nodes.
+Contact drain in region electrostatic with 141 nodes
+Contact gate in region electrostatic with 2500 nodes
+Contact source in region electrostatic with 141 nodes
+number of equations 14302
+Iteration: 0
+  Device: "gaa_031375e2"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_031375e2"	RelError: 6.02392e-13	AbsError: 2.67246e-16
+    Region: "electrostatic"	RelError: 6.02392e-13	AbsError: 2.67246e-16
+      Equation: "PotentialEquation"	RelError: 6.02392e-13	AbsError: 2.67246e-16
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_9b472b9b has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9b472b9b"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_9b472b9b"	RelError: 8.84900e-13	AbsError: 2.72797e-16
+    Region: "electrostatic"	RelError: 8.84900e-13	AbsError: 2.72797e-16
+      Equation: "PotentialEquation"	RelError: 8.84900e-13	AbsError: 2.72797e-16
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_8b5b6b6c has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+number of equations 2296
+Iteration: 0
+  Device: "gaa_8b5b6b6c"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_8b5b6b6c"	RelError: 3.62365e-14	AbsError: 2.35943e-16
+    Region: "electrostatic"	RelError: 3.62365e-14	AbsError: 2.35943e-16
+      Equation: "PotentialEquation"	RelError: 3.62365e-14	AbsError: 2.35943e-16
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_c3b93f51 has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+number of equations 2296
+Iteration: 0
+  Device: "gaa_c3b93f51"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_c3b93f51"	RelError: 2.97404e-14	AbsError: 2.32169e-16
+    Region: "electrostatic"	RelError: 2.97404e-14	AbsError: 2.32169e-16
+      Equation: "PotentialEquation"	RelError: 2.97404e-14	AbsError: 2.32169e-16
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_d30ef35d has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+number of equations 2296
+Iteration: 0
+  Device: "gaa_d30ef35d"	RelError: 1.00000e+00	AbsError: 7.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 7.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 7.00000e-01
+Iteration: 1
+  Device: "gaa_d30ef35d"	RelError: 1.19177e-13	AbsError: 3.84883e-16
+    Region: "electrostatic"	RelError: 1.19177e-13	AbsError: 3.84883e-16
+      Equation: "PotentialEquation"	RelError: 1.19177e-13	AbsError: 3.84883e-16
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_d19d78b2 has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+number of equations 2296
+Iteration: 0
+  Device: "gaa_d19d78b2"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_d19d78b2"	RelError: 1.27958e-12	AbsError: 1.46548e-16
+    Region: "electrostatic"	RelError: 1.27958e-12	AbsError: 1.46548e-16
+      Equation: "PotentialEquation"	RelError: 1.27958e-12	AbsError: 1.46548e-16
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_fa1ab9f0 has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+number of equations 2296
+Iteration: 0
+  Device: "gaa_fa1ab9f0"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_fa1ab9f0"	RelError: 7.62425e-14	AbsError: 2.23080e-16
+    Region: "electrostatic"	RelError: 7.62425e-14	AbsError: 2.23080e-16
+      Equation: "PotentialEquation"	RelError: 7.62425e-14	AbsError: 2.23080e-16
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_2bcea1d7 has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+number of equations 2296
+Iteration: 0
+  Device: "gaa_2bcea1d7"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_2bcea1d7"	RelError: 4.73293e-14	AbsError: 2.35867e-16
+    Region: "electrostatic"	RelError: 4.73293e-14	AbsError: 2.35867e-16
+      Equation: "PotentialEquation"	RelError: 4.73293e-14	AbsError: 2.35867e-16
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_a0b6cbd0 has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+number of equations 2296
+Iteration: 0
+  Device: "gaa_a0b6cbd0"	RelError: 1.00000e+00	AbsError: 1.31373e+00
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 1.31373e+00
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 1.31373e+00
+Iteration: 1
+  Device: "gaa_a0b6cbd0"	RelError: 1.64063e-13	AbsError: 2.05909e-15
+    Region: "electrostatic"	RelError: 1.64063e-13	AbsError: 2.05909e-15
+      Equation: "PotentialEquation"	RelError: 1.64063e-13	AbsError: 2.05909e-15
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_5f4117f2 has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+number of equations 2296
+Iteration: 0
+  Device: "gaa_5f4117f2"	RelError: 1.00000e+00	AbsError: 7.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 7.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 7.00000e-01
+Iteration: 1
+  Device: "gaa_5f4117f2"	RelError: 1.74360e-13	AbsError: 2.74559e-16
+    Region: "electrostatic"	RelError: 1.74360e-13	AbsError: 2.74559e-16
+      Equation: "PotentialEquation"	RelError: 1.74360e-13	AbsError: 2.74559e-16
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_69869f38 has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+number of equations 2296
+Iteration: 0
+  Device: "gaa_69869f38"	RelError: 1.00000e+00	AbsError: 1.31373e+00
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 1.31373e+00
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 1.31373e+00
+Iteration: 1
+  Device: "gaa_69869f38"	RelError: 1.64063e-13	AbsError: 2.05909e-15
+    Region: "electrostatic"	RelError: 1.64063e-13	AbsError: 2.05909e-15
+      Equation: "PotentialEquation"	RelError: 1.64063e-13	AbsError: 2.05909e-15
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_7db42b05 has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+number of equations 2296
+Iteration: 0
+  Device: "gaa_7db42b05"	RelError: 1.00000e+00	AbsError: 7.02475e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 7.02475e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 7.02475e-01
+Iteration: 1
+  Device: "gaa_7db42b05"	RelError: 1.82859e-13	AbsError: 9.28163e-16
+    Region: "electrostatic"	RelError: 1.82859e-13	AbsError: 9.28163e-16
+      Equation: "PotentialEquation"	RelError: 1.82859e-13	AbsError: 9.28163e-16
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_ed20f30a has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+number of equations 2296
+Iteration: 0
+  Device: "gaa_ed20f30a"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_ed20f30a"	RelError: 8.84900e-13	AbsError: 2.72797e-16
+    Region: "electrostatic"	RelError: 8.84900e-13	AbsError: 2.72797e-16
+      Equation: "PotentialEquation"	RelError: 8.84900e-13	AbsError: 2.72797e-16
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 120 Triangles.
+Physical group name Drain has 194 Lines.
+Physical group name Drain has 75 Points.
+Physical group name Electrostatic has 24581 Tetrahedra.
+Physical group name Electrostatic has 51357 Triangles.
+Physical group name Electrostatic has 31975 Lines.
+Physical group name Electrostatic has 5200 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 2184 Triangles.
+Physical group name Gate has 3332 Lines.
+Physical group name Gate has 1148 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 592 Triangles.
+Physical group name OxSpacer has 984 Lines.
+Physical group name OxSpacer has 392 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 1008 Triangles.
+Physical group name SiExterior has 1596 Lines.
+Physical group name SiExterior has 588 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 1548 Triangles.
+Physical group name SiOx has 2362 Lines.
+Physical group name SiOx has 814 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 1296 Triangles.
+Physical group name SiSpacer has 2040 Lines.
+Physical group name SiSpacer has 744 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 120 Triangles.
+Physical group name Source has 194 Lines.
+Physical group name Source has 75 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 958 Triangles.
+Physical group name SpacerExterior has 1549 Lines.
+Physical group name SpacerExterior has 591 Points.
+Device gaa_63956b91 has 5200 coordinates with max index 5200
+Region electrostatic has 5200 nodes.
+Contact drain in region electrostatic with 75 nodes
+Contact gate in region electrostatic with 1148 nodes
+Contact source in region electrostatic with 75 nodes
+number of equations 5200
+Iteration: 0
+  Device: "gaa_63956b91"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_63956b91"	RelError: 4.95516e-14	AbsError: 2.25942e-16
+    Region: "electrostatic"	RelError: 4.95516e-14	AbsError: 2.25942e-16
+      Equation: "PotentialEquation"	RelError: 4.95516e-14	AbsError: 2.25942e-16
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 238 Triangles.
+Physical group name Drain has 378 Lines.
+Physical group name Drain has 141 Points.
+Physical group name Electrostatic has 73443 Tetrahedra.
+Physical group name Electrostatic has 151563 Triangles.
+Physical group name Electrostatic has 92421 Lines.
+Physical group name Electrostatic has 14302 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 4832 Triangles.
+Physical group name Gate has 7332 Lines.
+Physical group name Gate has 2500 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 1148 Triangles.
+Physical group name OxSpacer has 1864 Lines.
+Physical group name OxSpacer has 716 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 2042 Triangles.
+Physical group name SiExterior has 3189 Lines.
+Physical group name SiExterior has 1147 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 3310 Triangles.
+Physical group name SiOx has 5023 Lines.
+Physical group name SiOx has 1713 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 2534 Triangles.
+Physical group name SiSpacer has 3943 Lines.
+Physical group name SiSpacer has 1409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 238 Triangles.
+Physical group name Source has 378 Lines.
+Physical group name Source has 141 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 2004 Triangles.
+Physical group name SpacerExterior has 3174 Lines.
+Physical group name SpacerExterior has 1170 Points.
+Device gaa_398b1945 has 14302 coordinates with max index 14302
+Region electrostatic has 14302 nodes.
+Contact drain in region electrostatic with 141 nodes
+Contact gate in region electrostatic with 2500 nodes
+Contact source in region electrostatic with 141 nodes
+number of equations 14302
+Iteration: 0
+  Device: "gaa_398b1945"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_398b1945"	RelError: 6.02392e-13	AbsError: 2.67246e-16
+    Region: "electrostatic"	RelError: 6.02392e-13	AbsError: 2.67246e-16
+      Equation: "PotentialEquation"	RelError: 6.02392e-13	AbsError: 2.67246e-16
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_82ded0b6 has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+number of equations 2296
+Iteration: 0
+  Device: "gaa_82ded0b6"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_82ded0b6"	RelError: 6.71994e-13	AbsError: 2.38742e-16
+    Region: "electrostatic"	RelError: 6.71994e-13	AbsError: 2.38742e-16
+      Equation: "PotentialEquation"	RelError: 6.71994e-13	AbsError: 2.38742e-16
+{
+  "runs": [
+    {
+      "run": "additional_convergence/scf_0",
+      "state": "vg0.800000_vd0.100000.npz",
+      "vg_v": 0.8,
+      "vd_v": 0.1,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "777c684b3fa64392bde9486547fe38423495a86b22ae3d71e2742fe273423dba",
+      "maximum_saved_node_phi_error_v": 2.7755575615628914e-17,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "additional_convergence/scf_1",
+      "state": "vg0.800000_vd0.100000.npz",
+      "vg_v": 0.8,
+      "vd_v": 0.1,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "a5edd0e2ed3933fd1a0c0d20362f22c6311d14ca89689400be18175f50b5e240",
+      "maximum_saved_node_phi_error_v": 2.7755575615628914e-17,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "additional_convergence/scf_2",
+      "state": "vg0.800000_vd0.100000.npz",
+      "vg_v": 0.8,
+      "vd_v": 0.1,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "be13235a3b33d54c54e71bd788a6b0982b5fdb9243c194fb132a048d24bc922d",
+      "maximum_saved_node_phi_error_v": 2.7755575615628914e-17,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "additional_convergence/transverse_0",
+      "state": "vg0.800000_vd0.100000.npz",
+      "vg_v": 0.8,
+      "vd_v": 0.1,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "777c684b3fa64392bde9486547fe38423495a86b22ae3d71e2742fe273423dba",
+      "maximum_saved_node_phi_error_v": 2.7755575615628914e-17,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "additional_convergence/transverse_1",
+      "state": "vg0.800000_vd0.100000.npz",
+      "vg_v": 0.8,
+      "vd_v": 0.1,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "20b21ead8c6653c6f38ba9b937d5c5f2553be8b0164552cf9bd9fa62a4223e91",
+      "maximum_saved_node_phi_error_v": 4.163336342344337e-17,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "additional_convergence/transverse_2",
+      "state": "vg0.800000_vd0.100000.npz",
+      "vg_v": 0.8,
+      "vd_v": 0.1,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "48b7643398b162382e1662fa13feb4453bb9923fe283c0aeac966462e5e66ca1",
+      "maximum_saved_node_phi_error_v": 2.7755575615628914e-17,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "basis_local_high_seeded",
+      "state": "vg0.800000_vd0.100000.npz",
+      "vg_v": 0.8,
+      "vd_v": 0.1,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "df1dcf7ee24f1b1fffdfb9ca08476e177f23d10af58dbdf5e5258f9a835bb1fc",
+      "maximum_saved_node_phi_error_v": 2.7755575615628914e-17,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "convergence/dx_0",
+      "state": "vg0.800000_vd0.100000.npz",
+      "vg_v": 0.8,
+      "vd_v": 0.1,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "777c684b3fa64392bde9486547fe38423495a86b22ae3d71e2742fe273423dba",
+      "maximum_saved_node_phi_error_v": 2.7755575615628914e-17,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "convergence/dx_1",
+      "state": "vg0.800000_vd0.100000.npz",
+      "vg_v": 0.8,
+      "vd_v": 0.1,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "2777fb4eecdd06d5debf56083eadf923b5fdfd98e4c4b3af1772aa1d237eba92",
+      "maximum_saved_node_phi_error_v": 2.7755575615628914e-17,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "convergence/gamma_0",
+      "state": "vg0.800000_vd0.100000.npz",
+      "vg_v": 0.8,
+      "vd_v": 0.1,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "4c4bbbfda820fdafab470fa74bf3ce3830752aabb502319545f9707f24481ea8",
+      "maximum_saved_node_phi_error_v": 3.122502256758253e-17,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "convergence/gamma_1",
+      "state": "vg0.800000_vd0.100000.npz",
+      "vg_v": 0.8,
+      "vd_v": 0.1,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "777c684b3fa64392bde9486547fe38423495a86b22ae3d71e2742fe273423dba",
+      "maximum_saved_node_phi_error_v": 2.7755575615628914e-17,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "convergence/gamma_2",
+      "state": "vg0.800000_vd0.100000.npz",
+      "vg_v": 0.8,
+      "vd_v": 0.1,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "6b58025c73c1636efd34bf5c4394058d2079f7a333c74e6570e9fe54f70984eb",
+      "maximum_saved_node_phi_error_v": 2.7755575615628914e-17,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "convergence/gamma_3",
+      "state": "vg0.800000_vd0.100000.npz",
+      "vg_v": 0.8,
+      "vd_v": 0.1,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "380e505abdaa1f8c678eff26b51cfb12d1e64848b09289ce0043f2963f4c8b77",
+      "maximum_saved_node_phi_error_v": 2.7755575615628914e-17,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "device_lowbias",
+      "state": "vg0.800000_vd0.100000.npz",
+      "vg_v": 0.8,
+      "vd_v": 0.1,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "777c684b3fa64392bde9486547fe38423495a86b22ae3d71e2742fe273423dba",
+      "maximum_saved_node_phi_error_v": 2.7755575615628914e-17,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "extended_convergence/basis_0",
+      "state": "vg0.800000_vd0.100000.npz",
+      "vg_v": 0.8,
+      "vd_v": 0.1,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "777c684b3fa64392bde9486547fe38423495a86b22ae3d71e2742fe273423dba",
+      "maximum_saved_node_phi_error_v": 2.7755575615628914e-17,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "extended_convergence/basis_1",
+      "state": "vg0.800000_vd0.100000.npz",
+      "vg_v": 0.8,
+      "vd_v": 0.1,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "c01202ad4965443df522c5cbec8792191bcf55040b8c6848dc3b774907512b18",
+      "maximum_saved_node_phi_error_v": 2.7755575615628914e-17,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "extended_convergence/basis_2",
+      "state": "vg0.800000_vd0.100000.npz",
+      "vg_v": 0.8,
+      "vd_v": 0.1,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "0ccf9f5695c780476fc9fa5f83e1ad411f114ef3447fb70fae37054ac0a88c25",
+      "maximum_saved_node_phi_error_v": 2.7755575615628914e-17,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "extended_convergence/basis_3",
+      "state": "vg0.800000_vd0.100000.npz",
+      "vg_v": 0.8,
+      "vd_v": 0.1,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "df1dcf7ee24f1b1fffdfb9ca08476e177f23d10af58dbdf5e5258f9a835bb1fc",
+      "maximum_saved_node_phi_error_v": 2.7755575615628914e-17,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "extended_convergence/length_0",
+      "state": "vg0.800000_vd0.100000.npz",
+      "vg_v": 0.8,
+      "vd_v": 0.1,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "777c684b3fa64392bde9486547fe38423495a86b22ae3d71e2742fe273423dba",
+      "maximum_saved_node_phi_error_v": 2.7755575615628914e-17,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "extended_convergence/length_1",
+      "state": "vg0.800000_vd0.100000.npz",
+      "vg_v": 0.8,
+      "vd_v": 0.1,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "1d4e547ee410770c109ec5d9b642d887ed6de6ce7bdde483c0b55721ea0b7592",
+      "maximum_saved_node_phi_error_v": 2.7755575615628914e-17,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "extended_convergence/length_2",
+      "state": "vg0.800000_vd0.100000.npz",
+      "vg_v": 0.8,
+      "vd_v": 0.1,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "9ff42fd28a52ba828050a1c4865c71a001399349e2d2b6f7c1a42df0c8290c93",
+      "maximum_saved_node_phi_error_v": 5.551115123125783e-17,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "extended_convergence/mesh_0",
+      "state": "vg0.800000_vd0.100000.npz",
+      "vg_v": 0.8,
+      "vd_v": 0.1,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "777c684b3fa64392bde9486547fe38423495a86b22ae3d71e2742fe273423dba",
+      "maximum_saved_node_phi_error_v": 2.7755575615628914e-17,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "extended_convergence/mesh_1",
+      "state": "vg0.800000_vd0.100000.npz",
+      "vg_v": 0.8,
+      "vd_v": 0.1,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "7de3c283889adf4a323602fc929245e000819d8f782fa313da9d52466ae7854a",
+      "maximum_saved_node_phi_error_v": 2.7755575615628914e-17,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "extended_convergence/mesh_2",
+      "state": "vg0.800000_vd0.100000.npz",
+      "vg_v": 0.8,
+      "vd_v": 0.1,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "0f5f6b6a1fee12385e5cd52c2116f05e598605d4465f053ee58f21cb4dcb4a5c",
+      "maximum_saved_node_phi_error_v": 2.7755575615628914e-17,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "extended_convergence/modes_0",
+      "state": "vg0.800000_vd0.100000.npz",
+      "vg_v": 0.8,
+      "vd_v": 0.1,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "777c684b3fa64392bde9486547fe38423495a86b22ae3d71e2742fe273423dba",
+      "maximum_saved_node_phi_error_v": 2.7755575615628914e-17,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "extended_convergence/modes_1",
+      "state": "vg0.800000_vd0.100000.npz",
+      "vg_v": 0.8,
+      "vd_v": 0.1,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "db7ac4a2a88900dfd53446bc317bf43d4f6ed16f8c9940f20dcefd3524b48380",
+      "maximum_saved_node_phi_error_v": 2.7755575615628914e-17,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "extended_convergence/modes_2",
+      "state": "vg0.800000_vd0.100000.npz",
+      "vg_v": 0.8,
+      "vd_v": 0.1,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "0ccf9f5695c780476fc9fa5f83e1ad411f114ef3447fb70fae37054ac0a88c25",
+      "maximum_saved_node_phi_error_v": 2.7755575615628914e-17,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "iv",
+      "state": "vg1.200000_vd0.100000.npz",
+      "vg_v": 1.2,
+      "vd_v": 0.1,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "89b396955d1509a9bbc6831598c026278eb617dacb659e11be72add90543c8ef",
+      "maximum_saved_node_phi_error_v": 8.326672684688674e-17,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "negf_equilibrium",
+      "state": "vg0.800000_vd0.000000.npz",
+      "vg_v": 0.8,
+      "vd_v": 0.0,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "978339689847c7642518b65f67ef0da87ce35b50a84de005293d4c45f227c8a9",
+      "maximum_saved_node_phi_error_v": 4.163336342344337e-17,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "nested_spectral_dx0p25",
+      "state": "vg0.800000_vd0.100000.npz",
+      "vg_v": 0.8,
+      "vd_v": 0.1,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "52d0cf481a93962b8156846c76602e65099b3a96f9b8164a20852dc3eb643b5a",
+      "maximum_saved_node_phi_error_v": 5.551115123125783e-17,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "nested_spectral_dx0p5",
+      "state": "vg0.800000_vd0.100000.npz",
+      "vg_v": 0.8,
+      "vd_v": 0.1,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "763ff10770396143d28cfd4421c48266f202ba03504db19b7a4ccc6479826fc5",
+      "maximum_saved_node_phi_error_v": 5.551115123125783e-17,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "output",
+      "state": "vg1.200000_vd1.200000.npz",
+      "vg_v": 1.2,
+      "vd_v": 1.2,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "89b396955d1509a9bbc6831598c026278eb617dacb659e11be72add90543c8ef",
+      "maximum_saved_node_phi_error_v": 2.220446049250313e-16,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "output_gate1p2",
+      "state": "vg1.200000_vd0.000000.npz",
+      "vg_v": 1.2,
+      "vd_v": 0.0,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "89b396955d1509a9bbc6831598c026278eb617dacb659e11be72add90543c8ef",
+      "maximum_saved_node_phi_error_v": 5.551115123125783e-17,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "output_gate1p2_high",
+      "state": "vg1.200000_vd1.200000.npz",
+      "vg_v": 1.2,
+      "vd_v": 1.2,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "89b396955d1509a9bbc6831598c026278eb617dacb659e11be72add90543c8ef",
+      "maximum_saved_node_phi_error_v": 2.220446049250313e-16,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "output_gate1p2_low",
+      "state": "vg1.200000_vd0.550000.npz",
+      "vg_v": 1.2,
+      "vd_v": 0.55,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "89b396955d1509a9bbc6831598c026278eb617dacb659e11be72add90543c8ef",
+      "maximum_saved_node_phi_error_v": 1.1102230246251565e-16,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "parallel_mesh/mesh_0",
+      "state": "vg0.800000_vd0.100000.npz",
+      "vg_v": 0.8,
+      "vd_v": 0.1,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "777c684b3fa64392bde9486547fe38423495a86b22ae3d71e2742fe273423dba",
+      "maximum_saved_node_phi_error_v": 2.7755575615628914e-17,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "parallel_mesh/mesh_1",
+      "state": "vg0.800000_vd0.100000.npz",
+      "vg_v": 0.8,
+      "vd_v": 0.1,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "7de3c283889adf4a323602fc929245e000819d8f782fa313da9d52466ae7854a",
+      "maximum_saved_node_phi_error_v": 2.7755575615628914e-17,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "parallel_mesh/mesh_2",
+      "state": "vg0.800000_vd0.100000.npz",
+      "vg_v": 0.8,
+      "vd_v": 0.1,
+      "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "configuration_fingerprint": "0f5f6b6a1fee12385e5cd52c2116f05e598605d4465f053ee58f21cb4dcb4a5c",
+      "maximum_saved_node_phi_error_v": 2.7755575615628914e-17,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    },
+    {
+      "run": "resume_export_regression",
+      "state": "vg0.800000_vd0.100000.npz",
+      "vg_v": 0.8,
+      "vd_v": 0.1,
+      "saved_state_source_sha256": "aee7ae01b5ee58d8da5e753017ed71680e2b46de3ab18d2877cfe7eb3d11ced0",
+      "configuration_fingerprint": "777c684b3fa64392bde9486547fe38423495a86b22ae3d71e2742fe273423dba",
+      "maximum_saved_node_phi_error_v": 2.7755575615628914e-17,
+      "native_devsim_coordinates": "cm",
+      "quantum_vtu_coordinates": "nm",
+      "potential_unit": "V",
+      "carrier_density_unit": "cm^-3",
+      "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+    }
+  ],
+  "count": 39,
+  "maximum_saved_phi_reproduction_error_v": 2.220446049250313e-16,
+  "scope": "Only the linear Poisson field is restored from the exact saved input charge; NPZ/CSV quantum results are unchanged. Native cm, quantum VTU nm."
+}

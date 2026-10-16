@@ -1,0 +1,8 @@
+{
+  "OMP_NUM_THREADS": 4,
+  "OPENBLAS_NUM_THREADS": 4,
+  "MKL_NUM_THREADS": 4,
+  "scope": "One large local-basis retry after other solvers finished; CPU quota 8 cores. Earlier sweep/campaign runs used one BLAS thread.",
+  "continuation_seed": "results/extended_convergence/modes_2/states/vg0.800000_vd0.100000.npz",
+  "physical_and_scf_configuration": "Exactly results/extended_convergence/basis_3.json; only initial guess and CPU threading differ from the interrupted attempt."
+}

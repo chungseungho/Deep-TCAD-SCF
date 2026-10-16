@@ -1,0 +1,56 @@
+{
+  "tetra_volumes_nm3": {
+    "Silicon": 23400.0,
+    "GateOxide": 2016.0000000000002,
+    "Spacer": 504.0
+  },
+  "cad_expected_nm3": {
+    "Silicon": 23400.0,
+    "GateOxide": 2016.0,
+    "Spacer": 504.0
+  },
+  "maximum_volume_relative_error": 2.220446049250313e-16,
+  "interface_conformity": {
+    "Source": true,
+    "Drain": true,
+    "Gate": true,
+    "SiOx": true,
+    "SiSpacer": true,
+    "OxSpacer": true
+  },
+  "surface_areas_nm2": {
+    "Source": 300.0,
+    "Drain": 300.0,
+    "Gate": 1200.0,
+    "SiOx": 816.0,
+    "SiSpacer": 372.0,
+    "OxSpacer": 168.0
+  },
+  "four_sided_outward_gate_normals": [
+    [
+      1,
+      -1
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      2,
+      -1
+    ],
+    [
+      2,
+      1
+    ]
+  ],
+  "silicon_spatial_partitions_nm3": {
+    "source": 10800.0,
+    "channel_and_extensions": 1800.0,
+    "drain": 10800.000000000002
+  },
+  "nonmanifold_tetra_faces": 0,
+  "gate_area_relative_error": 0.0,
+  "gap_check": "conformal shared faces and CAD Boolean volume partition; no exhaustive floating-point pairwise overlap test",
+  "pass": true
+}

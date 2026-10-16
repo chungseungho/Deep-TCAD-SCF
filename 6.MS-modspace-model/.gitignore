@@ -1,0 +1,14 @@
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
+output/
+step06-*.out
+step06-*.err
+# Large generated fields remain in the delivery ZIP, outside source commits.
+results/**/*.npz
+results/**/*.vtu
+results/**/*.vtm
+results/**/*.visit
+results/**/*.msh
+results/**/*.brep

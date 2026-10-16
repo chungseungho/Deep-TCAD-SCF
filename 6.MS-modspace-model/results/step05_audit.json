@@ -1,0 +1,65 @@
+{
+  "source_step05": "5.MS-modspace-GAA",
+  "baseline_id_a": 1.6332459617805795e-06,
+  "relative_current_sensitivity": {
+    "baseline": 0.0,
+    "basis_local": -0.24349945496458691,
+    "gamma_20mev": 0.03663067662431585,
+    "gamma_5mev": -0.21836635114973668,
+    "longitudinal_fine": -0.36814632191763086,
+    "mesh_medium": 0.015289141467554446,
+    "mixing_unscreened": 0.00023733833220940248,
+    "modes_high": 0.2986938623852784,
+    "modes_low": 0.022455531817467955,
+    "source_drain_24nm": 0.24826959672040583,
+    "transverse_fine": -0.04142402459674355
+  },
+  "idvgs_scf": [
+    25,
+    25
+  ],
+  "idvds_scf": [
+    71,
+    75
+  ],
+  "failed_idvds_biases": [
+    [
+      0.8,
+      0.55
+    ],
+    [
+      0.8,
+      1.2
+    ],
+    [
+      1.2,
+      0.3
+    ],
+    [
+      1.2,
+      0.4
+    ]
+  ],
+  "classified_code_issues": [
+    "Original STEP05 triple-material overlapping interface equations fail continuity at shared nodes (independent saved-state rerun)",
+    "non-adjoint potential/density map; work defect",
+    "coarse FD band exceeds applied-bias validity",
+    "saved final fixed-point residual needed re-evaluation"
+  ],
+  "classified_model_limits": [
+    "wide-band finite contact width and length are model parameters",
+    "truncated transverse basis convergence absent",
+    "isolated neutral calibration does not imply connected neutral contacts",
+    "closed stationary spatial occupation does not define a DC steady state",
+    "abrupt section changes require joint dx/transverse trace-space convergence, not dx refinement at fixed low rank"
+  ],
+  "step06_remedies": [
+    "one shared P1 potential space with material-weighted stiffness and exact Si source fraction",
+    "exact tetra/cell intersection exchange integration",
+    "energy-window dispersion diagnostics per valley",
+    "independent semi-infinite reference with explicit GF cost",
+    "adaptive bias integration with failure on unresolved error",
+    "unchanged physical tolerances and separately labelled finite-bath outputs"
+  ],
+  "remaining_validation": "No fitting, gamma plateau or AI-teacher readiness inferred from numerical identities"
+}

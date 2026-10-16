@@ -1,0 +1,23 @@
+{
+  "silicon_oxide": {
+    "shared_nodes": 419,
+    "maximum_potential_jump_v": 0.0263086662734469,
+    "rms_jump_v": 0.005165633735967045
+  },
+  "silicon_spacer": {
+    "shared_nodes": 409,
+    "maximum_potential_jump_v": 0.013535156689322168,
+    "rms_jump_v": 0.0029173890153955284
+  },
+  "oxide_spacer": {
+    "shared_nodes": 216,
+    "maximum_potential_jump_v": 0.12462727597810483,
+    "rms_jump_v": 0.05742355003396665
+  },
+  "saved_bias": {
+    "vg_v": 0.4,
+    "vd_v": 0.1
+  },
+  "source": "preserved STEP05 original Poisson and saved SCF density",
+  "fix": "STEP06 uses one shared potential DOF for all touching materials"
+}

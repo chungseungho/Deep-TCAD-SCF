@@ -1,0 +1,8 @@
+{
+  "pass": true,
+  "npz_and_csv_unchanged_by_resume": true,
+  "comparison_stage": "Immediately before/after skipped SCF, before final metadata packaging",
+  "saved_phi_error_v": 2.7755575615628914e-17,
+  "native_coordinates": "cm",
+  "quantum_coordinates": "nm"
+}

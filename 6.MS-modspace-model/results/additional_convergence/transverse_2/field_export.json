@@ -1,0 +1,13 @@
+{
+  "state": "vg0.800000_vd0.100000.npz",
+  "vg_v": 0.8,
+  "vd_v": 0.1,
+  "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+  "configuration_fingerprint": "48b7643398b162382e1662fa13feb4453bb9923fe283c0aeac966462e5e66ca1",
+  "maximum_saved_node_phi_error_v": 2.7755575615628914e-17,
+  "native_devsim_coordinates": "cm",
+  "quantum_vtu_coordinates": "nm",
+  "potential_unit": "V",
+  "carrier_density_unit": "cm^-3",
+  "method": "Linear Poisson restoration from accepted saved input charge; quantum data unchanged"
+}

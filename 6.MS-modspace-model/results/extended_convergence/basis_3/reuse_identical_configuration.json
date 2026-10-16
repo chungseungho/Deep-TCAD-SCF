@@ -1,0 +1,7 @@
+{
+  "original_run": "results/basis_local_high_seeded",
+  "source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+  "configuration_fingerprint": "df1dcf7ee24f1b1fffdfb9ca08476e177f23d10af58dbdf5e5258f9a835bb1fc",
+  "initial_attempt": "results/extended_convergence/basis_3_initial_attempt",
+  "reason": "Same local high-rank model, fully-SCF retry from an accepted fixed-basis density. Copied into the common table; no second independent solve claimed."
+}

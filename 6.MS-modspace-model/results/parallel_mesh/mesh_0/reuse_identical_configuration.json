@@ -1,0 +1,6 @@
+{
+  "original_run": "device_lowbias",
+  "source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+  "configuration_fingerprint": "777c684b3fa64392bde9486547fe38423495a86b22ae3d71e2742fe273423dba",
+  "reason": "Shared identical baseline, no second independent solve claimed"
+}

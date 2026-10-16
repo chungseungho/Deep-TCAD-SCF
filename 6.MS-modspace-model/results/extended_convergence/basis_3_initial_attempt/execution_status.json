@@ -1,0 +1,22 @@
+{
+  "execution_status": "INTERRUPTED_NO_ACCEPTED_FINAL_STATE",
+  "last_saved_iteration": {
+    "key": "vg0.800000_vd0.100000",
+    "iteration": "24",
+    "vg_v": "0.8",
+    "vd_v": "0.1",
+    "id_a": "2.1573203354807834e-06",
+    "phi_residual_v": "0.03238831162108369",
+    "charge_residual": "0.036569551616269784",
+    "current_change": "0.03079425275124202",
+    "electron_number": "88.08600062599271",
+    "sd_neutrality_relative_error": "-0.07964454421678424",
+    "occupation_change": "0.01549064507218334",
+    "eigenvalue_change_ev": "0.0029639031683138216",
+    "mixing": "screened_anderson",
+    "gain": "0.15",
+    "elapsed_s": "654.9774117839997"
+  },
+  "reason": "Restart the same local-mode equations from the accepted high-rank fixed-basis density in a fresh folder. No physical parameter, tolerance or current is changed.",
+  "retry_directory": "results/basis_local_high_seeded"
+}

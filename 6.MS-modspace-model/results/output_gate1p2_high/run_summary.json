@@ -1,0 +1,8 @@
+{
+  "requested_points": 13,
+  "finished_points": 13,
+  "converged_points": 13,
+  "failures_this_run": 0,
+  "quantitative_device_validation": false,
+  "reason": "mesh/modes/reservoir-length/gamma convergence must be assessed independently"
+}

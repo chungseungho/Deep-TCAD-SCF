@@ -1,0 +1,7 @@
+{
+  "mu_source_ev": 0.004706163940420757,
+  "donor_electrons_source": 36.0,
+  "isolated_source_electrons": 35.999999999999304,
+  "neutrality_relative_error": 1.9342552251247172e-14,
+  "calibration": "isolated finite source, all retained valleys and configured bath filling; coupled contact neutrality checked separately"
+}

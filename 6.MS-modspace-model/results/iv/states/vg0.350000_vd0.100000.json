@@ -1,0 +1,115 @@
+{
+  "key": "vg0.350000_vd0.100000",
+  "vg_v": 0.35,
+  "vd_v": 0.1,
+  "id_a": 1.1039721972181847e-09,
+  "status": "SCF_CONVERGED_PROTOTYPE",
+  "iterations": 11,
+  "phi_residual_v": 9.234257413118924e-05,
+  "charge_residual": 0.00026125080278320973,
+  "sd_neutrality_relative_error": -0.16756081176068438,
+  "continuum_hierarchy_pass": false,
+  "current_conservation_relative": 2.5935275362825718e-11,
+  "quantitative_validation_pass": false,
+  "backend": "spectral",
+  "runtime_s": 42.43335460199978,
+  "minimum_longitudinal_bandwidth_ev": 2.661996241048035,
+  "bias_inside_minimum_bandwidth": true,
+  "gf_inside_scf": false,
+  "mapping_method": "integrated",
+  "populated_window_inside_all_bands": true,
+  "dispersion_2percent_pass": false,
+  "gauss_relative_error": 3.3463874676875515e-17,
+  "valleys": [
+    {
+      "pauli_min": -2.807144735853922e-15,
+      "pauli_max": 0.4557271891669966,
+      "minimum_effective_width_ev": 6.921699316813162e-09,
+      "eigenvector_condition": 2.2397213052644904,
+      "eigen_residual": 1.0772072450933366e-14,
+      "undetermined_dark_states": 0,
+      "density_algorithm": "analytic finite-bath Fermi correlation; no energy-resolved GF in SCF",
+      "valley": "Delta_z",
+      "dimension": 624,
+      "spacing_l_ev": 0.0137322714,
+      "spacing_r_ev": 0.014293679699999999,
+      "gamma_ev": 0.01,
+      "gamma_over_kbt": 0.38681727071834404,
+      "spacing_over_gamma": 1.42936797,
+      "continuum_hierarchy_pass": false
+    },
+    {
+      "pauli_min": -2.6223296129183115e-15,
+      "pauli_max": 0.36856518035702635,
+      "minimum_effective_width_ev": 6.572303588448087e-14,
+      "eigenvector_condition": 6.24214168614428,
+      "eigen_residual": 1.0143021126156435e-14,
+      "undetermined_dark_states": 0,
+      "density_algorithm": "analytic finite-bath Fermi correlation; no energy-resolved GF in SCF",
+      "valley": "Delta_x",
+      "dimension": 624,
+      "spacing_l_ev": 0.009523193599999993,
+      "spacing_r_ev": 0.0104455952,
+      "gamma_ev": 0.01,
+      "gamma_over_kbt": 0.38681727071834404,
+      "spacing_over_gamma": 1.04455952,
+      "continuum_hierarchy_pass": false
+    },
+    {
+      "pauli_min": -3.6634587320384205e-15,
+      "pauli_max": 0.459473329176044,
+      "minimum_effective_width_ev": 1.2875584839020294e-08,
+      "eigenvector_condition": 4.8482525400330445,
+      "eigen_residual": 1.0319535010124854e-14,
+      "undetermined_dark_states": 0,
+      "density_algorithm": "analytic finite-bath Fermi correlation; no energy-resolved GF in SCF",
+      "valley": "Delta_y",
+      "dimension": 624,
+      "spacing_l_ev": 0.0277366694,
+      "spacing_r_ev": 0.027645232199999994,
+      "gamma_ev": 0.01,
+      "gamma_over_kbt": 0.38681727071834404,
+      "spacing_over_gamma": 2.77366694,
+      "continuum_hierarchy_pass": false
+    }
+  ],
+  "source_a": 1.1039721972012387e-09,
+  "drain_a": -1.103972197221759e-09,
+  "current_conservation_abs_a": 2.863182292775736e-20,
+  "gauss": {
+    "contact_displacement_charge_c": {
+      "source": -2.2253797090809885e-19,
+      "drain": -2.2631773953521563e-19,
+      "gate": -8.899696353392864e-19
+    },
+    "interior_free_charge_c": 1.3388253457826019e-18,
+    "integrated_boundary_reaction_c": -1.338825345782602e-18,
+    "gauss_relative_error": 3.3463874676875515e-17,
+    "maximum_interior_equation_residual_c": 1.2046172233639097e-34,
+    "contact_sum_relative_error": 1.6731937338437758e-16,
+    "contact_node_charge_treatment": "Dirichlet rows replaced; only interior volume sources enter balance"
+  },
+  "dispersion": [
+    {
+      "valley": "Delta_z",
+      "kinetic_window_ev": 0.3204472031313159,
+      "band_fraction": 0.024969346425596717,
+      "maximum_velocity_error_estimate": 0.012563595174654663
+    },
+    {
+      "valley": "Delta_x",
+      "kinetic_window_ev": 0.30818279560880074,
+      "band_fraction": 0.11577131134019496,
+      "maximum_velocity_error_estimate": 0.059665650600912556
+    },
+    {
+      "valley": "Delta_y",
+      "kinetic_window_ev": 0.31963584961147673,
+      "band_fraction": 0.02490612550523128,
+      "maximum_velocity_error_estimate": 0.012531583039351757
+    }
+  ],
+  "mapping_work_relative_defect": 2.01241738126183e-16,
+  "source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+  "configuration_fingerprint": "89b396955d1509a9bbc6831598c026278eb617dacb659e11be72add90543c8ef"
+}

@@ -1,0 +1,51 @@
+{
+  "status": "COMPLETED_FROZEN_CURRENT_ONLY",
+  "frozen_potential_only": true,
+  "semiinfinite_quantum_poisson_scf": false,
+  "density_comparison_performed": false,
+  "quantitative_validation_pass": false,
+  "saved_state": "results/device_lowbias/states/vg0.800000_vd0.100000.npz",
+  "saved_state_source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+  "comparison_source_sha256": "005babecb7f59d7bf38244f6043f707993e4a93d902885e6c496888d187d7fa3",
+  "finite_bath_mu_ev": 0.004336619821812731,
+  "infinite_neutral_lead_mu_ev": 0.0029844974995745675,
+  "lead_calibration": {
+    "mu_source_ev": 0.0029844974995745675,
+    "donor_electrons_per_nm": 2.9999999999999996,
+    "lead_electrons_per_nm": 3.0,
+    "neutrality_relative_error": 2.220446049250313e-16,
+    "calibration": "infinite nanowire FD dispersion integral at prescribed donor line density; no current fit",
+    "k_quadrature_nodes": 256,
+    "connected_contact_neutrality": "separate finite-device diagnostic"
+  },
+  "finite_bath_bond_current_a": 1.320939535555248e-06,
+  "checks": [
+    {
+      "initial_panel_ev": 0.02,
+      "same_mu_current_a": 1.2295376388593704e-06,
+      "neutral_lead_mu_current_a": 1.1728213198916624e-06,
+      "gf_nodes": 26808,
+      "adaptive_panels": 605,
+      "maximum_normalized_error_estimate": 0.07414445519192181
+    },
+    {
+      "initial_panel_ev": 0.01,
+      "same_mu_current_a": 1.229537631808603e-06,
+      "neutral_lead_mu_current_a": 1.1728213131780715e-06,
+      "gf_nodes": 26976,
+      "adaptive_panels": 637,
+      "maximum_normalized_error_estimate": 0.8755681812462314
+    },
+    {
+      "initial_panel_ev": 0.005,
+      "same_mu_current_a": 1.2295376385268805e-06,
+      "neutral_lead_mu_current_a": 1.172821319574158e-06,
+      "gf_nodes": 28512,
+      "adaptive_panels": 726,
+      "maximum_normalized_error_estimate": 0.07205434865633566
+    }
+  ],
+  "runtime_s": 36.939981917000296,
+  "model_difference": "Same saved potential, masses, grid, retained transverse space and interior FD projection. Semi-infinite continuation replaces only terminal x hard walls and finite distributed baths. The second chemical potential comparison is separately calibrated, never a fitted current.",
+  "limitation": "Current quadrature on a frozen finite-bath SCF field does not establish semi-infinite density, charge neutrality or coupled SCF convergence; a quadrature estimator can miss exceptionally narrow peaks."
+}

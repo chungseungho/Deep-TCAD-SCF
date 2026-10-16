@@ -1,0 +1,19 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "machine": "x86_64",
+  "cpu_count_reported": 9,
+  "blas_threads": 1,
+  "native_dependencies_used": "Gmsh libXft + DEVSIM OpenBLAS/UMFPACK; private workspace libraries; no school environment modified",
+  "package_versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8"
+  },
+  "physics_runtime": "step06-venv, gmsh 4.15.2, devsim 2.11.0, pytest 9.1.1",
+  "execution_scope": "ChatGPT Work CPU; no remote SLURM submission; no GPU/AI training",
+  "memory_observation": "provisional dx=.25 modes=2/4 IV Python RSS about 430-500 MiB observed during run; dense fine cases need more",
+  "cgroup_memory_limit_bytes": "8589934592",
+  "cgroup_cpu_quota": "800000 100000",
+  "high_rank_retry_threads": "4, only for basis_local_high_seeded; see its execution_environment.json"
+}

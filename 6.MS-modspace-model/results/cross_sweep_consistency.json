@@ -1,0 +1,29 @@
+{
+  "checks": [
+    {
+      "key": "vg0.400000_vd0.100000",
+      "idvgs_current_a": 1.5004465190532818e-08,
+      "idvds_current_a": 1.5003715127983262e-08,
+      "current_relative_difference": 4.999178824438566e-05,
+      "maximum_node_phi_difference_v": 2.827495542301328e-05,
+      "quantum_density_relative_l2_difference": 6.622593767452674e-05
+    },
+    {
+      "key": "vg0.800000_vd0.100000",
+      "idvgs_current_a": 5.145091253313361e-07,
+      "idvds_current_a": 5.144603234721413e-07,
+      "current_relative_difference": 9.486029722438616e-05,
+      "maximum_node_phi_difference_v": 6.455873411234658e-05,
+      "quantum_density_relative_l2_difference": 0.0002131796377937897
+    },
+    {
+      "key": "vg1.200000_vd0.100000",
+      "idvgs_current_a": 8.802518056979263e-07,
+      "idvds_current_a": 8.802133124299418e-07,
+      "current_relative_difference": 4.373174938487878e-05,
+      "maximum_node_phi_difference_v": 1.9846868603401457e-05,
+      "quantum_density_relative_l2_difference": 6.132556178832373e-05
+    }
+  ],
+  "note": "Same model/config and biases, independent continuation histories. Agreement does not prove uniqueness of a nonlinear SCF fixed point."
+}

@@ -1,0 +1,78 @@
+Searching DEVSIM_MATH_LIBS="libopenblas.so.0"
+Loading "libopenblas.so.0": ALL BLAS/LAPACK LOADED
+loading UMFPACK 5.1 as direct solver
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name GateOxide has 3021 Tetrahedra.
+Physical group name GateOxide has 7111 Triangles.
+Physical group name GateOxide has 5159 Lines.
+Physical group name GateOxide has 1069 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Silicon has 5020 Tetrahedra.
+Physical group name Silicon has 11160 Triangles.
+Physical group name Silicon has 7577 Lines.
+Physical group name Silicon has 1438 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name Spacer has 1980 Tetrahedra.
+Physical group name Spacer has 4720 Triangles.
+Physical group name Spacer has 3517 Lines.
+Physical group name Spacer has 777 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_8be0ac59 has 2296 coordinates with max index 2296
+Region oxide has 1069 nodes.
+Region silicon has 1438 nodes.
+Region spacer has 777 nodes.
+Contact drain in region silicon with 47 nodes
+Contact gate in region oxide with 570 nodes
+Contact source in region silicon with 47 nodes
+Warning, contact "gate" shares a node with interface "OxSpacer" (repeated 79 times)
+Adding interface OxSpacer with 216, 216 nodes
+Warning, interface "OxSpacer" shares a node with interface "SiOx" (repeated 55 times)
+Adding interface SiOx with 419, 419 nodes
+Warning, interface "SiOx" shares a node with interface "SiSpacer" (repeated 55 times)
+Adding interface SiSpacer with 409, 409 nodes
+number of equations 3284
+Iteration: 0
+  Device: "gaa_8be0ac59"	RelError: 3.00000e+00	AbsError: 2.17368e-01
+    Region: "oxide"	RelError: 1.00000e+00	AbsError: 1.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 1.00000e-01
+    Region: "silicon"	RelError: 1.00000e+00	AbsError: 2.17368e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 2.17368e-01
+    Region: "spacer"	RelError: 1.00000e+00	AbsError: 1.61355e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 1.61355e-01
+Iteration: 1
+  Device: "gaa_8be0ac59"	RelError: 1.92288e-12	AbsError: 2.65490e-16
+    Region: "oxide"	RelError: 3.07733e-14	AbsError: 5.80275e-17
+      Equation: "PotentialEquation"	RelError: 3.07733e-14	AbsError: 5.80275e-17
+    Region: "silicon"	RelError: 1.83369e-12	AbsError: 2.65490e-16
+      Equation: "PotentialEquation"	RelError: 1.83369e-12	AbsError: 2.65490e-16
+    Region: "spacer"	RelError: 5.84103e-14	AbsError: 2.65490e-16
+      Equation: "PotentialEquation"	RelError: 5.84103e-14	AbsError: 2.65490e-16
+AUDIT_JSON={"silicon_oxide": {"shared_nodes": 419, "maximum_potential_jump_v": 0.0263086662734469, "rms_jump_v": 0.005165633735967045}, "silicon_spacer": {"shared_nodes": 409, "maximum_potential_jump_v": 0.013535156689322168, "rms_jump_v": 0.0029173890153955284}, "oxide_spacer": {"shared_nodes": 216, "maximum_potential_jump_v": 0.12462727597810483, "rms_jump_v": 0.05742355003396665}}

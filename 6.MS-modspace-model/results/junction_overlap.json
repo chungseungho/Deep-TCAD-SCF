@@ -1,0 +1,310 @@
+{
+  "results": [
+    {
+      "valley": "Delta_z",
+      "channel_modes": 2,
+      "sd_modes": 4,
+      "overlap_singular_values": [
+        0.8423226668864432,
+        0.536578776578076
+      ],
+      "maximum_missing_norm_squared": 0.7120832165259752,
+      "unresolved_interface_scale_ev": {
+        "0.5": 0.5711630153507482,
+        "0.25": 2.284652061402993,
+        "0.125": 9.138608245611971
+      },
+      "span_enrichment_rank": 6,
+      "span_enrichment_missing_norm_squared": 4.004069121341544e-15
+    },
+    {
+      "valley": "Delta_x",
+      "channel_modes": 2,
+      "sd_modes": 4,
+      "overlap_singular_values": [
+        0.7255657170157853,
+        0.5365787765780732
+      ],
+      "maximum_missing_norm_squared": 0.7120832165259783,
+      "unresolved_interface_scale_ev": {
+        "0.5": 0.11847267785659676,
+        "0.25": 0.47389071142638706,
+        "0.125": 1.8955628457055482
+      },
+      "span_enrichment_rank": 6,
+      "span_enrichment_missing_norm_squared": 2.9624767478731266e-15
+    },
+    {
+      "valley": "Delta_y",
+      "channel_modes": 2,
+      "sd_modes": 4,
+      "overlap_singular_values": [
+        0.7255657170159368,
+        0.7174738032392505
+      ],
+      "maximum_missing_norm_squared": 0.48523134166540527,
+      "unresolved_interface_scale_ev": {
+        "0.5": 0.38920478648606427,
+        "0.25": 1.556819145944257,
+        "0.125": 6.227276583777028
+      },
+      "span_enrichment_rank": 6,
+      "span_enrichment_missing_norm_squared": 3.9008016547243226e-15
+    },
+    {
+      "valley": "Delta_z",
+      "channel_modes": 3,
+      "sd_modes": 6,
+      "overlap_singular_values": [
+        0.8423226668864466,
+        0.6419603063237812,
+        0.5365787765780838
+      ],
+      "maximum_missing_norm_squared": 0.7120832165259662,
+      "unresolved_interface_scale_ev": {
+        "0.5": 0.571163015350741,
+        "0.25": 2.284652061402964,
+        "0.125": 9.138608245611856
+      },
+      "span_enrichment_rank": 9,
+      "span_enrichment_missing_norm_squared": 2.2215911761057302e-15
+    },
+    {
+      "valley": "Delta_x",
+      "channel_modes": 3,
+      "sd_modes": 6,
+      "overlap_singular_values": [
+        0.7257602882500438,
+        0.5365787765780725,
+        0.39069291191069083
+      ],
+      "maximum_missing_norm_squared": 0.8473590485827452,
+      "unresolved_interface_scale_ev": {
+        "0.5": 0.1409791626340817,
+        "0.25": 0.5639166505363268,
+        "0.125": 2.255666602145307
+      },
+      "span_enrichment_rank": 9,
+      "span_enrichment_missing_norm_squared": 4.801533309246477e-16
+    },
+    {
+      "valley": "Delta_y",
+      "channel_modes": 3,
+      "sd_modes": 6,
+      "overlap_singular_values": [
+        0.7268110844915917,
+        0.7174738032392284,
+        0.6841681945904002
+      ],
+      "maximum_missing_norm_squared": 0.5319138815109121,
+      "unresolved_interface_scale_ev": {
+        "0.5": 0.4266489216708156,
+        "0.25": 1.7065956866832623,
+        "0.125": 6.826382746733049
+      },
+      "span_enrichment_rank": 9,
+      "span_enrichment_missing_norm_squared": 2.191960321530621e-15
+    },
+    {
+      "valley": "Delta_z",
+      "channel_modes": 5,
+      "sd_modes": 10,
+      "overlap_singular_values": [
+        0.9533111939432959,
+        0.6852620449855985,
+        0.6419603063237466,
+        0.5222595207338486,
+        0.3899466011484648
+      ],
+      "maximum_missing_norm_squared": 0.8479416482527602,
+      "unresolved_interface_scale_ev": {
+        "0.5": 0.6801352670834412,
+        "0.25": 2.7205410683337647,
+        "0.125": 10.882164273335059
+      },
+      "span_enrichment_rank": 15,
+      "span_enrichment_missing_norm_squared": 3.399564261256256e-15
+    },
+    {
+      "valley": "Delta_x",
+      "channel_modes": 5,
+      "sd_modes": 10,
+      "overlap_singular_values": [
+        0.8973254647589539,
+        0.8423662402965137,
+        0.4035542521079451,
+        0.3797594349175759,
+        0.27919509863450104
+      ],
+      "maximum_missing_norm_squared": 0.9220500968984714,
+      "unresolved_interface_scale_ev": {
+        "0.5": 0.15340586825010671,
+        "0.25": 0.6136234730004269,
+        "0.125": 2.4544938920017074
+      },
+      "span_enrichment_rank": 15,
+      "span_enrichment_missing_norm_squared": 2.7439685472415263e-15
+    },
+    {
+      "valley": "Delta_y",
+      "channel_modes": 5,
+      "sd_modes": 10,
+      "overlap_singular_values": [
+        0.7268261627714555,
+        0.726722290793042,
+        0.6932944692652376,
+        0.6126859087923326,
+        0.15418123134377756
+      ],
+      "maximum_missing_norm_squared": 0.9762281479013165,
+      "unresolved_interface_scale_ev": {
+        "0.5": 0.7830340607462594,
+        "0.25": 3.1321362429850375,
+        "0.125": 12.52854497194015
+      },
+      "span_enrichment_rank": 15,
+      "span_enrichment_missing_norm_squared": 5.0061929734533645e-15
+    },
+    {
+      "valley": "Delta_z",
+      "channel_modes": 7,
+      "sd_modes": 14,
+      "overlap_singular_values": [
+        0.9827814640514357,
+        0.8435901588340202,
+        0.7331903292913186,
+        0.5222595207333969,
+        0.5108546474917154,
+        0.3824110764198371,
+        0.3112686240423442
+      ],
+      "maximum_missing_norm_squared": 0.9031118436867857,
+      "unresolved_interface_scale_ev": {
+        "0.5": 0.7243873635382924,
+        "0.25": 2.8975494541531694,
+        "0.125": 11.590197816612678
+      },
+      "span_enrichment_rank": 21,
+      "span_enrichment_missing_norm_squared": 4.5889158182146914e-15
+    },
+    {
+      "valley": "Delta_x",
+      "channel_modes": 7,
+      "sd_modes": 14,
+      "overlap_singular_values": [
+        0.9271973054589826,
+        0.8423662402965154,
+        0.7701487889843357,
+        0.6611794465381028,
+        0.37552414577535725,
+        0.2791950986345,
+        0.17745137689929857
+      ],
+      "maximum_missing_norm_squared": 0.9685110088365432,
+      "unresolved_interface_scale_ev": {
+        "0.5": 0.1611357915585324,
+        "0.25": 0.6445431662341295,
+        "0.125": 2.578172664936518
+      },
+      "span_enrichment_rank": 21,
+      "span_enrichment_missing_norm_squared": 5.988469121258932e-15
+    },
+    {
+      "valley": "Delta_y",
+      "channel_modes": 7,
+      "sd_modes": 14,
+      "overlap_singular_values": [
+        0.7268327546724587,
+        0.7268321488123983,
+        0.7262188103549745,
+        0.723575374981784,
+        0.5500145412452135,
+        0.38446194577929627,
+        0.046801979020661626
+      ],
+      "maximum_missing_norm_squared": 0.9978095747597499,
+      "unresolved_interface_scale_ev": {
+        "0.5": 0.8003445555788317,
+        "0.25": 3.2013782223153266,
+        "0.125": 12.805512889261307
+      },
+      "span_enrichment_rank": 21,
+      "span_enrichment_missing_norm_squared": 4.9987023606550505e-15
+    },
+    {
+      "valley": "Delta_z",
+      "channel_modes": 9,
+      "sd_modes": 18,
+      "overlap_singular_values": [
+        0.9860267788283331,
+        0.9183127878939328,
+        0.8836804775363614,
+        0.6741085178370775,
+        0.6688639823138313,
+        0.4966240150715849,
+        0.3981497444341286,
+        0.32750917574996047,
+        0.17899781959870936
+      ],
+      "maximum_missing_norm_squared": 0.967959780578908,
+      "unresolved_interface_scale_ev": {
+        "0.5": 0.776401990923108,
+        "0.25": 3.105607963692432,
+        "0.125": 12.422431854769728
+      },
+      "span_enrichment_rank": 27,
+      "span_enrichment_missing_norm_squared": 3.809714389378919e-15
+    },
+    {
+      "valley": "Delta_x",
+      "channel_modes": 9,
+      "sd_modes": 18,
+      "overlap_singular_values": [
+        0.9271973054589797,
+        0.9210374778409558,
+        0.7701487889844019,
+        0.7064539247879099,
+        0.6514650900486509,
+        0.5940930531678013,
+        0.48098738125175733,
+        0.17745137689934412,
+        0.15595179429556
+      ],
+      "maximum_missing_norm_squared": 0.9756790378559954,
+      "unresolved_interface_scale_ev": {
+        "0.5": 0.16232837070262646,
+        "0.25": 0.6493134828105058,
+        "0.125": 2.5972539312420233
+      },
+      "span_enrichment_rank": 27,
+      "span_enrichment_missing_norm_squared": 4.526315825122157e-15
+    },
+    {
+      "valley": "Delta_y",
+      "channel_modes": 9,
+      "sd_modes": 18,
+      "overlap_singular_values": [
+        0.9079723621707602,
+        0.8592976130637725,
+        0.726831256191768,
+        0.7250952654326666,
+        0.7173920758142974,
+        0.45204196124636575,
+        0.32652373141741725,
+        0.025429506721165396,
+        0.012250667908050123
+      ],
+      "maximum_missing_norm_squared": 0.9998499211358065,
+      "unresolved_interface_scale_ev": {
+        "0.5": 0.8019811204654386,
+        "0.25": 3.2079244818617543,
+        "0.125": 12.831697927447017
+      },
+      "span_enrichment_rank": 27,
+      "span_enrichment_missing_norm_squared": 3.864091365247513e-15
+    }
+  ],
+  "scope": "zero-potential subspace diagnostic, not SCF or an implemented production enrichment",
+  "implication": "Couple longitudinal and transverse/mode refinement; severe truncated overlap can create an artificial abrupt-junction barrier",
+  "next_implementation": "A junction-compatible enriched wide basis can contain the zero-extended narrow subspace; validate full projected kinetic/potential and contacts before using it"
+}

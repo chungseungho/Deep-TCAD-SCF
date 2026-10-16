@@ -1,0 +1,10 @@
+{
+  "backend": "negf",
+  "slices": 108,
+  "maximum_valley_dimension": 468,
+  "one_dense_complex_matrix_mib": 3.342041015625,
+  "estimated_quantum_peak_mib": 77.460205078125,
+  "dense_runtime_scaling": "RGF O(Nx*Nm^3*NE); no dense diagonalization in SCF",
+  "runtime_estimate": "measure one point on target CPU; allow 100-160 electronic evaluations; walltime depends on energy/mode refinement",
+  "hpc_submission": "not performed; specify partition/resources according to local rules"
+}

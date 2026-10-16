@@ -1,0 +1,6 @@
+{
+  "original_run": "extended_convergence/modes_2",
+  "source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+  "configuration_fingerprint": "0ccf9f5695c780476fc9fa5f83e1ad411f114ef3447fb70fae37054ac0a88c25",
+  "reason": "Exactly identical physics/numerics; one accepted result is reused as the shared convergence baseline. No independent second solve is claimed."
+}

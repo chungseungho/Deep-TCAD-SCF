@@ -1,0 +1,7 @@
+{
+  "base_commit": "ce44886e61864ba35fbd68f7ef734a3ef82a7d93",
+  "status": "?? 6.MS-modspace-model/",
+  "remote_push_performed": false,
+  "remote_slurm_submission_performed": false,
+  "prior_stage_byte_preservation_check": "results/package_audit.json against results/step01_05_sha256.json"
+}

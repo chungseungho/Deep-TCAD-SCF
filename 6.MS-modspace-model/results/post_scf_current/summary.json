@@ -1,0 +1,36 @@
+{
+  "same_hamiltonian_same_finite_bath": true,
+  "gf_only_after_scf": true,
+  "checks": [
+    {
+      "initial_panel_ev": 0.02,
+      "current_a": 1.3209395190255546e-06,
+      "bond_current_a": 1.320939535555248e-06,
+      "relative_mismatch": 1.2513588197817588e-08,
+      "gf_nodes": 55032,
+      "adaptive_panels": 1175,
+      "maximum_normalized_error_estimate": 0.680971031708745
+    },
+    {
+      "initial_panel_ev": 0.01,
+      "current_a": 1.3209395190256742e-06,
+      "bond_current_a": 1.320939535555248e-06,
+      "relative_mismatch": 1.2513497623343451e-08,
+      "gf_nodes": 55104,
+      "adaptive_panels": 1205,
+      "maximum_normalized_error_estimate": 0.6805288166970607
+    },
+    {
+      "initial_panel_ev": 0.005,
+      "current_a": 1.3209395190128571e-06,
+      "bond_current_a": 1.320939535555248e-06,
+      "relative_mismatch": 1.2523200634309981e-08,
+      "gf_nodes": 55464,
+      "adaptive_panels": 1269,
+      "maximum_normalized_error_estimate": 0.6790580979458083
+    }
+  ],
+  "runtime_s": 61.80315203000009,
+  "pass": true,
+  "spectrum_note": "600-point plot samples; independent current uses adaptive quadrature, not this sampled curve"
+}

@@ -1,0 +1,10 @@
+{
+  "backend": "spectral",
+  "slices": 108,
+  "maximum_valley_dimension": 936,
+  "one_dense_complex_matrix_mib": 13.3681640625,
+  "estimated_quantum_peak_mib": 427.78125,
+  "dense_runtime_scaling": "O(N^3) per valley per evaluation",
+  "runtime_estimate": "measure one point on target CPU; allow 100-160 electronic evaluations; walltime depends on energy/mode refinement",
+  "hpc_submission": "not performed; specify partition/resources according to local rules"
+}

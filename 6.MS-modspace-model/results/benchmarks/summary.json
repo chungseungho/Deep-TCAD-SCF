@@ -1,0 +1,12 @@
+{
+  "finite_spectral_vs_direct_gf_max_abs": 3.330670847610789e-16,
+  "direct_gf_quadrature_error_estimate": 1.987647506965814e-11,
+  "bond_current_a": 1.0640371390901542e-06,
+  "direct_transmission_current_a": 1.064037139090154e-06,
+  "bond_vs_landauer_relative": 2.220446049250313e-16,
+  "finite_density_matrix_pauli_min": 0.017398001734005176,
+  "finite_density_matrix_pauli_max": 0.9419389079814474,
+  "best_chain_finite_vs_semiinfinite_error": 0.0015631623260163874,
+  "runtime_s": 0.22629360300015833,
+  "scope": "reduced systems only; no actual GAA contact plateau certified"
+}

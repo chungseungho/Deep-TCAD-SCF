@@ -1,0 +1,198 @@
+{
+  "pass": true,
+  "issues": [],
+  "source_sha256": "aee7ae01b5ee58d8da5e753017ed71680e2b46de3ab18d2877cfe7eb3d11ced0",
+  "verified_source_archives": [
+    {
+      "source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+      "archive": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1.zip",
+      "verified": true
+    }
+  ],
+  "saved_states_checked": 159,
+  "accepted_states_checked": 159,
+  "maximum_origin_additivity_peak_error": 5.577472354402155e-14,
+  "maximum_origin_additivity_l2_error": 1.0101975026103597e-14,
+  "old_files_checked": 1453,
+  "old_files_changed": [],
+  "old_files_check_status": "checked against the preserved pre-work inventory",
+  "runs": [
+    {
+      "directory": "additional_convergence/scf_0",
+      "completed_rows": 1
+    },
+    {
+      "directory": "additional_convergence/scf_1",
+      "completed_rows": 1
+    },
+    {
+      "directory": "additional_convergence/scf_2",
+      "completed_rows": 1
+    },
+    {
+      "directory": "additional_convergence/transverse_0",
+      "completed_rows": 1
+    },
+    {
+      "directory": "additional_convergence/transverse_1",
+      "completed_rows": 1
+    },
+    {
+      "directory": "additional_convergence/transverse_2",
+      "completed_rows": 1
+    },
+    {
+      "directory": "basis_local_high_seeded",
+      "completed_rows": 1
+    },
+    {
+      "directory": "convergence/dx_0",
+      "completed_rows": 1
+    },
+    {
+      "directory": "convergence/dx_1",
+      "completed_rows": 1
+    },
+    {
+      "directory": "convergence/dx_2",
+      "completed_rows": 0
+    },
+    {
+      "directory": "convergence/gamma_0",
+      "completed_rows": 1
+    },
+    {
+      "directory": "convergence/gamma_1",
+      "completed_rows": 1
+    },
+    {
+      "directory": "convergence/gamma_2",
+      "completed_rows": 1
+    },
+    {
+      "directory": "convergence/gamma_3",
+      "completed_rows": 1
+    },
+    {
+      "directory": "device_lowbias",
+      "completed_rows": 1
+    },
+    {
+      "directory": "extended_convergence/basis_0",
+      "completed_rows": 1
+    },
+    {
+      "directory": "extended_convergence/basis_1",
+      "completed_rows": 1
+    },
+    {
+      "directory": "extended_convergence/basis_2",
+      "completed_rows": 1
+    },
+    {
+      "directory": "extended_convergence/basis_3",
+      "completed_rows": 1
+    },
+    {
+      "directory": "extended_convergence/basis_3_initial_attempt",
+      "completed_rows": 0
+    },
+    {
+      "directory": "extended_convergence/length_0",
+      "completed_rows": 1
+    },
+    {
+      "directory": "extended_convergence/length_1",
+      "completed_rows": 1
+    },
+    {
+      "directory": "extended_convergence/length_2",
+      "completed_rows": 1
+    },
+    {
+      "directory": "extended_convergence/mesh_0",
+      "completed_rows": 1
+    },
+    {
+      "directory": "extended_convergence/mesh_1",
+      "completed_rows": 1
+    },
+    {
+      "directory": "extended_convergence/mesh_2",
+      "completed_rows": 1
+    },
+    {
+      "directory": "extended_convergence/modes_0",
+      "completed_rows": 1
+    },
+    {
+      "directory": "extended_convergence/modes_1",
+      "completed_rows": 1
+    },
+    {
+      "directory": "extended_convergence/modes_2",
+      "completed_rows": 1
+    },
+    {
+      "directory": "iv",
+      "completed_rows": 25
+    },
+    {
+      "directory": "negf_equilibrium",
+      "completed_rows": 1
+    },
+    {
+      "directory": "negf_lowbias",
+      "completed_rows": 1
+    },
+    {
+      "directory": "nested_negf",
+      "completed_rows": 1
+    },
+    {
+      "directory": "nested_negf_refined",
+      "completed_rows": 0
+    },
+    {
+      "directory": "nested_spectral_dx0p25",
+      "completed_rows": 1
+    },
+    {
+      "directory": "nested_spectral_dx0p5",
+      "completed_rows": 1
+    },
+    {
+      "directory": "output",
+      "completed_rows": 75
+    },
+    {
+      "directory": "output_gate1p2",
+      "completed_rows": 1
+    },
+    {
+      "directory": "output_gate1p2_high",
+      "completed_rows": 13
+    },
+    {
+      "directory": "output_gate1p2_low",
+      "completed_rows": 11
+    },
+    {
+      "directory": "parallel_mesh/mesh_0",
+      "completed_rows": 1
+    },
+    {
+      "directory": "parallel_mesh/mesh_1",
+      "completed_rows": 1
+    },
+    {
+      "directory": "parallel_mesh/mesh_2",
+      "completed_rows": 1
+    },
+    {
+      "directory": "resume_export_regression",
+      "completed_rows": 1
+    }
+  ],
+  "scope": "File/state/provenance integrity and recorded numerical acceptance; not contact or continuum validation"
+}

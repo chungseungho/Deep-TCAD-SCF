@@ -1,0 +1,24 @@
+{
+  "reason": "Only change the numerical continuation seed for Vds=.05 to the converged Vds=.1 state after interrupting a stalled Newton attempt. Same physics, source and SCF tolerances; prior history/checkpoint retained.",
+  "last_saved_attempt": {
+    "key": "vg1.200000_vd0.050000",
+    "iteration": "46",
+    "vg_v": "1.2",
+    "vd_v": "0.05",
+    "id_a": "4.7157464247885614e-07",
+    "phi_residual_v": "0.0021622625924858363",
+    "charge_residual": "0.010477483809606121",
+    "current_change": "0.015349360498935111",
+    "electron_number": "120.27736495330123",
+    "sd_neutrality_relative_error": "-0.15453223733021554",
+    "occupation_change": "0.005205879121557677",
+    "eigenvalue_change_ev": "0.000642955604850181",
+    "mixing": "newton_krylov",
+    "gain": "1.0",
+    "elapsed_s": "359.4560675289995"
+  },
+  "initial_state": "results/iv/states/vg1.200000_vd0.100000.npz",
+  "resumed_vds_range": "0.05:0.55:0.05",
+  "retry_note": "Resume prioritizes an existing checkpoint over --initial-state. That continuation also stalled. The accepted equilibrium point is retained; the .05-to-.55 retry is now a fresh independent folder with no checkpoint, using the accepted .1 state.",
+  "fresh_retry_directory": "results/output_gate1p2_low"
+}

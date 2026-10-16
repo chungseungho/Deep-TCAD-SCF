@@ -1,0 +1,26 @@
+{
+  "execution_status": "INTERRUPTED_NO_ACCEPTED_FINAL_STATE",
+  "last_saved_scf_iteration": {
+    "key": "vg0.800000_vd0.100000",
+    "iteration": "18",
+    "vg_v": "0.8",
+    "vd_v": "0.1",
+    "id_a": "2.1587729028130553e-07",
+    "phi_residual_v": "0.30816272923994015",
+    "charge_residual": "0.32802937816113586",
+    "current_change": "0.16189092982877096",
+    "electron_number": "111.03396914462974",
+    "sd_neutrality_relative_error": "-0.019083065303646684",
+    "occupation_change": "0.04906118893507544",
+    "eigenvalue_change_ev": "0.010789324087685404",
+    "mixing": "screened_linear",
+    "gain": "0.15",
+    "elapsed_s": "1128.6888697630002"
+  },
+  "quantitative_validation_pass": false,
+  "source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+  "configuration_fingerprint": "a1bc47f2bee00b22a655165c576478335afc1b8ffa0dff60d98bb6b806f382ed",
+  "reason": "Previous execution session ended during an expensive unconverged calculation. A checkpoint is retained; it is not an accepted physical result. No final current is substituted.",
+  "reproduction_command": "python run.py --phase point --vg .8 --vd .1 --config results/convergence/dx_2.json --out results/convergence/dx_2 --resume",
+  "observed_cost": "last saved history: 1128.7 seconds for 18 electronic/SCF iterations; dense refinement much more expensive than the baseline"
+}

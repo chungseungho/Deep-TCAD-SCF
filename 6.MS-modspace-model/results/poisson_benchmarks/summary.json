@@ -1,0 +1,140 @@
+{
+  "results": [
+    {
+      "mesh_h_nm": 0.7,
+      "eps_a": 11.7,
+      "eps_b": 3.9,
+      "uniform_charge_cm3": 0.0,
+      "nodes": 92,
+      "maximum_potential_error_v": 5.551115123125783e-16,
+      "weighted_l2_error_v": 1.4613454818883952e-16,
+      "gauss_relative_error": 1.0167026706873071e-16,
+      "contact_charge_c": {
+        "left": -1.0359399740975998e-19,
+        "right": 1.0359399740975997e-19
+      },
+      "silicon_oxide_displacement_continuity": "analytical piecewise-linear exact field; shared interface DOF"
+    },
+    {
+      "mesh_h_nm": 0.7,
+      "eps_a": 11.7,
+      "eps_b": 11.7,
+      "uniform_charge_cm3": 0.0,
+      "nodes": 92,
+      "maximum_potential_error_v": 4.440892098500626e-16,
+      "weighted_l2_error_v": 1.7398312757590052e-16,
+      "gauss_relative_error": 5.083513353436536e-17,
+      "contact_charge_c": {
+        "left": -2.071879948195199e-19,
+        "right": 2.0718799481951994e-19
+      },
+      "silicon_oxide_displacement_continuity": "analytical piecewise-linear exact field; shared interface DOF"
+    },
+    {
+      "mesh_h_nm": 0.7,
+      "eps_a": 11.7,
+      "eps_b": 11.7,
+      "uniform_charge_cm3": 1e+18,
+      "nodes": 92,
+      "maximum_potential_error_v": 7.060892192553483e-05,
+      "weighted_l2_error_v": 3.7419962393821335e-05,
+      "gauss_relative_error": 7.336858657634673e-17,
+      "contact_charge_c": {
+        "left": -4.1279651013027986e-22,
+        "right": -4.087515386889066e-22
+      },
+      "silicon_oxide_displacement_continuity": "analytical piecewise-linear exact field; shared interface DOF"
+    },
+    {
+      "mesh_h_nm": 0.45,
+      "eps_a": 11.7,
+      "eps_b": 3.9,
+      "uniform_charge_cm3": 0.0,
+      "nodes": 265,
+      "maximum_potential_error_v": 5.551115123125783e-16,
+      "weighted_l2_error_v": 1.3246006771172723e-16,
+      "gauss_relative_error": 1.2708783383591344e-17,
+      "contact_charge_c": {
+        "left": -1.0359399740975991e-19,
+        "right": 1.0359399740975993e-19
+      },
+      "silicon_oxide_displacement_continuity": "analytical piecewise-linear exact field; shared interface DOF"
+    },
+    {
+      "mesh_h_nm": 0.45,
+      "eps_a": 11.7,
+      "eps_b": 11.7,
+      "uniform_charge_cm3": 0.0,
+      "nodes": 265,
+      "maximum_potential_error_v": 4.440892098500626e-16,
+      "weighted_l2_error_v": 1.1801527958140425e-16,
+      "gauss_relative_error": 1.3253445528602397e-16,
+      "contact_charge_c": {
+        "left": -2.0718799481951981e-19,
+        "right": 2.0718799481951989e-19
+      },
+      "silicon_oxide_displacement_continuity": "analytical piecewise-linear exact field; shared interface DOF"
+    },
+    {
+      "mesh_h_nm": 0.45,
+      "eps_a": 11.7,
+      "eps_b": 11.7,
+      "uniform_charge_cm3": 1e+18,
+      "nodes": 265,
+      "maximum_potential_error_v": 3.1457588347760736e-05,
+      "weighted_l2_error_v": 8.959575146940124e-06,
+      "gauss_relative_error": 1.467371731526935e-16,
+      "contact_charge_c": {
+        "left": -5.135678221080368e-22,
+        "right": -5.106232640473651e-22
+      },
+      "silicon_oxide_displacement_continuity": "analytical piecewise-linear exact field; shared interface DOF"
+    },
+    {
+      "mesh_h_nm": 0.3,
+      "eps_a": 11.7,
+      "eps_b": 3.9,
+      "uniform_charge_cm3": 0.0,
+      "nodes": 538,
+      "maximum_potential_error_v": 4.996003610813204e-16,
+      "weighted_l2_error_v": 1.186712874245171e-16,
+      "gauss_relative_error": 0.0,
+      "contact_charge_c": {
+        "left": -1.0359399740976e-19,
+        "right": 1.0359399740976002e-19
+      },
+      "silicon_oxide_displacement_continuity": "analytical piecewise-linear exact field; shared interface DOF"
+    },
+    {
+      "mesh_h_nm": 0.3,
+      "eps_a": 11.7,
+      "eps_b": 11.7,
+      "uniform_charge_cm3": 0.0,
+      "nodes": 538,
+      "maximum_potential_error_v": 4.440892098500626e-16,
+      "weighted_l2_error_v": 1.2729712369858268e-16,
+      "gauss_relative_error": 5.809729546784612e-17,
+      "contact_charge_c": {
+        "left": -2.0718799481952e-19,
+        "right": 2.0718799481952e-19
+      },
+      "silicon_oxide_displacement_continuity": "analytical piecewise-linear exact field; shared interface DOF"
+    },
+    {
+      "mesh_h_nm": 0.3,
+      "eps_a": 11.7,
+      "eps_b": 11.7,
+      "uniform_charge_cm3": 1e+18,
+      "nodes": 538,
+      "maximum_potential_error_v": 2.0800205317145302e-05,
+      "weighted_l2_error_v": 6.610664730037831e-06,
+      "gauss_relative_error": 1.4673717315269344e-16,
+      "contact_charge_c": {
+        "left": -5.423505996564587e-22,
+        "right": -5.4482943880959e-22
+      },
+      "silicon_oxide_displacement_continuity": "analytical piecewise-linear exact field; shared interface DOF"
+    }
+  ],
+  "scope": "actual shared-DOF DEVSIM analytical capacitors and uniform charged-slab refinement"
+}

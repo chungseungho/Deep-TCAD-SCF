@@ -1,0 +1,175 @@
+[
+  {
+    "case": "modes_0",
+    "resources": {
+      "backend": "spectral",
+      "slices": 108,
+      "maximum_valley_dimension": 468,
+      "one_dense_complex_matrix_mib": 3.342041015625,
+      "estimated_quantum_peak_mib": 106.9453125,
+      "dense_runtime_scaling": "O(N^3) per valley per evaluation",
+      "runtime_estimate": "measure one point on target CPU; allow 100-160 electronic evaluations; walltime depends on energy/mode refinement",
+      "hpc_submission": "not performed; specify partition/resources according to local rules"
+    }
+  },
+  {
+    "case": "modes_1",
+    "resources": {
+      "backend": "spectral",
+      "slices": 108,
+      "maximum_valley_dimension": 936,
+      "one_dense_complex_matrix_mib": 13.3681640625,
+      "estimated_quantum_peak_mib": 427.78125,
+      "dense_runtime_scaling": "O(N^3) per valley per evaluation",
+      "runtime_estimate": "measure one point on target CPU; allow 100-160 electronic evaluations; walltime depends on energy/mode refinement",
+      "hpc_submission": "not performed; specify partition/resources according to local rules"
+    }
+  },
+  {
+    "case": "modes_2",
+    "resources": {
+      "backend": "spectral",
+      "slices": 108,
+      "maximum_valley_dimension": 1404,
+      "one_dense_complex_matrix_mib": 30.078369140625,
+      "estimated_quantum_peak_mib": 962.5078125,
+      "dense_runtime_scaling": "O(N^3) per valley per evaluation",
+      "runtime_estimate": "measure one point on target CPU; allow 100-160 electronic evaluations; walltime depends on energy/mode refinement",
+      "hpc_submission": "not performed; specify partition/resources according to local rules"
+    }
+  },
+  {
+    "case": "length_0",
+    "resources": {
+      "backend": "spectral",
+      "slices": 108,
+      "maximum_valley_dimension": 468,
+      "one_dense_complex_matrix_mib": 3.342041015625,
+      "estimated_quantum_peak_mib": 106.9453125,
+      "dense_runtime_scaling": "O(N^3) per valley per evaluation",
+      "runtime_estimate": "measure one point on target CPU; allow 100-160 electronic evaluations; walltime depends on energy/mode refinement",
+      "hpc_submission": "not performed; specify partition/resources according to local rules"
+    }
+  },
+  {
+    "case": "length_1",
+    "resources": {
+      "backend": "spectral",
+      "slices": 156,
+      "maximum_valley_dimension": 756,
+      "one_dense_complex_matrix_mib": 8.720947265625,
+      "estimated_quantum_peak_mib": 279.0703125,
+      "dense_runtime_scaling": "O(N^3) per valley per evaluation",
+      "runtime_estimate": "measure one point on target CPU; allow 100-160 electronic evaluations; walltime depends on energy/mode refinement",
+      "hpc_submission": "not performed; specify partition/resources according to local rules"
+    }
+  },
+  {
+    "case": "length_2",
+    "resources": {
+      "backend": "spectral",
+      "slices": 204,
+      "maximum_valley_dimension": 1044,
+      "one_dense_complex_matrix_mib": 16.631103515625,
+      "estimated_quantum_peak_mib": 532.1953125,
+      "dense_runtime_scaling": "O(N^3) per valley per evaluation",
+      "runtime_estimate": "measure one point on target CPU; allow 100-160 electronic evaluations; walltime depends on energy/mode refinement",
+      "hpc_submission": "not performed; specify partition/resources according to local rules"
+    }
+  },
+  {
+    "case": "basis_0",
+    "resources": {
+      "backend": "spectral",
+      "slices": 108,
+      "maximum_valley_dimension": 468,
+      "one_dense_complex_matrix_mib": 3.342041015625,
+      "estimated_quantum_peak_mib": 106.9453125,
+      "dense_runtime_scaling": "O(N^3) per valley per evaluation",
+      "runtime_estimate": "measure one point on target CPU; allow 100-160 electronic evaluations; walltime depends on energy/mode refinement",
+      "hpc_submission": "not performed; specify partition/resources according to local rules"
+    }
+  },
+  {
+    "case": "basis_1",
+    "resources": {
+      "backend": "spectral",
+      "slices": 108,
+      "maximum_valley_dimension": 468,
+      "one_dense_complex_matrix_mib": 3.342041015625,
+      "estimated_quantum_peak_mib": 106.9453125,
+      "dense_runtime_scaling": "O(N^3) per valley per evaluation",
+      "runtime_estimate": "measure one point on target CPU; allow 100-160 electronic evaluations; walltime depends on energy/mode refinement",
+      "hpc_submission": "not performed; specify partition/resources according to local rules"
+    }
+  },
+  {
+    "case": "basis_2",
+    "resources": {
+      "backend": "spectral",
+      "slices": 108,
+      "maximum_valley_dimension": 1404,
+      "one_dense_complex_matrix_mib": 30.078369140625,
+      "estimated_quantum_peak_mib": 962.5078125,
+      "dense_runtime_scaling": "O(N^3) per valley per evaluation",
+      "runtime_estimate": "measure one point on target CPU; allow 100-160 electronic evaluations; walltime depends on energy/mode refinement",
+      "hpc_submission": "not performed; specify partition/resources according to local rules"
+    }
+  },
+  {
+    "case": "basis_3",
+    "resources": {
+      "backend": "spectral",
+      "slices": 108,
+      "maximum_valley_dimension": 1404,
+      "one_dense_complex_matrix_mib": 30.078369140625,
+      "estimated_quantum_peak_mib": 962.5078125,
+      "dense_runtime_scaling": "O(N^3) per valley per evaluation",
+      "runtime_estimate": "measure one point on target CPU; allow 100-160 electronic evaluations; walltime depends on energy/mode refinement",
+      "hpc_submission": "not performed; specify partition/resources according to local rules"
+    }
+  },
+  {
+    "case": "mesh_0",
+    "resources": {
+      "backend": "spectral",
+      "slices": 108,
+      "maximum_valley_dimension": 468,
+      "one_dense_complex_matrix_mib": 3.342041015625,
+      "estimated_quantum_peak_mib": 106.9453125,
+      "dense_runtime_scaling": "O(N^3) per valley per evaluation",
+      "runtime_estimate": "measure one point on target CPU; allow 100-160 electronic evaluations; walltime depends on energy/mode refinement",
+      "hpc_submission": "not performed; specify partition/resources according to local rules"
+    }
+  },
+  {
+    "case": "mesh_1",
+    "resources": {
+      "backend": "spectral",
+      "slices": 108,
+      "maximum_valley_dimension": 468,
+      "one_dense_complex_matrix_mib": 3.342041015625,
+      "estimated_quantum_peak_mib": 106.9453125,
+      "dense_runtime_scaling": "O(N^3) per valley per evaluation",
+      "runtime_estimate": "measure one point on target CPU; allow 100-160 electronic evaluations; walltime depends on energy/mode refinement",
+      "hpc_submission": "not performed; specify partition/resources according to local rules"
+    }
+  },
+  {
+    "case": "mesh_2",
+    "resources": {
+      "backend": "spectral",
+      "slices": 108,
+      "maximum_valley_dimension": 468,
+      "one_dense_complex_matrix_mib": 3.342041015625,
+      "estimated_quantum_peak_mib": 106.9453125,
+      "dense_runtime_scaling": "O(N^3) per valley per evaluation",
+      "runtime_estimate": "measure one point on target CPU; allow 100-160 electronic evaluations; walltime depends on energy/mode refinement",
+      "hpc_submission": "not performed; specify partition/resources according to local rules"
+    }
+  }
+]
+modes_0 exit 0
+modes_1 exit 0
+modes_2 exit 0
+length_0 exit 0

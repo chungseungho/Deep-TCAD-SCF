@@ -1,0 +1,94 @@
+Resources: {"backend": "negf", "slices": 108, "maximum_valley_dimension": 468, "one_dense_complex_matrix_mib": 3.342041015625, "estimated_quantum_peak_mib": 77.460205078125, "dense_runtime_scaling": "RGF O(Nx*Nm^3*NE); no dense diagonalization in SCF", "runtime_estimate": "measure one point on target CPU; allow 100-160 electronic evaluations; walltime depends on energy/mode refinement", "hpc_submission": "not performed; specify partition/resources according to local rules"}
+Searching DEVSIM_MATH_LIBS="libopenblas.so.0"
+Loading "libopenblas.so.0": ALL BLAS/LAPACK LOADED
+loading UMFPACK 5.1 as direct solver
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_f17e8b7b has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+Cell/tetra integration 5000/5020 tetra, 29.1s
+Mapping: {"regions": ["electrostatic"], "physical_materials": ["Silicon", "GateOxide", "Spacer"], "material_interface_treatment": "one shared conformal P1 potential DOF; element permittivity assembled before shared edge flux", "interfaces": [], "contacts": ["drain", "gate", "source"], "silicon_node_count": 1438, "nodevolume_min_nm3": 0.07994501564315441, "nodevolume_sum_nm3": 9000.0, "discretization": {"silicon": {"physical_volume_nm3": 9000.000000000002, "relative_permittivity": 11.7}, "oxide": {"physical_volume_nm3": 2015.9999999999984, "relative_permittivity": 3.9}, "spacer": {"physical_volume_nm3": 503.99999999999966, "relative_permittivity": 7.5}}, "silicon_oxide_potential_jump_v": 0.0, "triple_junction_potential_jump_v": 0.0, "method": "integrated", "balancing_error": 2.3989699116100383e-12, "node_marginal_error": 1.694422380182914e-12, "cell_marginal_error": 2.3989699116100383e-12, "intersections": 112767, "integration_runtime_s": 29.349546903999908, "limitation": "exact P1 potential cell average / piecewise-constant quantum charge exchange; not a nonequilibrium variational theorem", "linear_potential_error_v": 6.619593762025033e-12, "constant_density_relative_error": 1.6942003355779889e-12, "charge_relative_error": 2.561241295842318e-13, "minimum_mapped_density_cm3": 1.4139881987044664e+18, "nodevolume_nm3": 9000.0, "quantum_volume_nm3": 9000.0, "electrostatic_work_relative_defect": 1.782362343488685e-16, "charge_measure": "DEVSIM configured node_volume_model=PhysicalControlVolume", "potential_measure": "original silicon tetrahedra", "work_adjoint_pass": true, "constant_density_exact": true}
+Contact neutrality: {'mu_source_ev': 0.0029844974995742943, 'donor_electrons_per_nm': 2.9999999999999996, 'lead_electrons_per_nm': 2.999999999999999, 'neutrality_relative_error': 1.1102230246251565e-16, 'calibration': 'infinite nanowire FD dispersion integral at prescribed donor line density; no current fit', 'k_quadrature_nodes': 256, 'connected_contact_neutrality': 'separate finite-device diagnostic'}
+number of equations 2296
+Iteration: 0
+  Device: "gaa_f17e8b7b"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_f17e8b7b"	RelError: 1.53542e-15	AbsError: 3.04947e-16
+    Region: "electrostatic"	RelError: 1.53542e-15	AbsError: 3.04947e-16
+      Equation: "PotentialEquation"	RelError: 1.53542e-15	AbsError: 3.04947e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_f17e8b7b"	RelError: 7.24563e+03	AbsError: 3.11458e-01
+    Region: "electrostatic"	RelError: 7.24563e+03	AbsError: 3.11458e-01
+      Equation: "PotentialEquation"	RelError: 7.24563e+03	AbsError: 3.11458e-01
+Iteration: 1
+  Device: "gaa_f17e8b7b"	RelError: 5.64227e-12	AbsError: 2.41917e-16
+    Region: "electrostatic"	RelError: 5.64227e-12	AbsError: 2.41917e-16
+      Equation: "PotentialEquation"	RelError: 5.64227e-12	AbsError: 2.41917e-16
+Traceback (most recent call last):
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/6.MS-modspace-model/run.py", line 159, in main
+    result,next_density,final=run_scf(c,p,mapping,builders,grid,mu,vg,vd,out,key,initial,resume_point)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/6.MS-modspace-model/solver.py", line 179, in run_scf
+    q=electronic(c,builders,grid,phi,mu,vd)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/6.MS-modspace-model/solver.py", line 22, in electronic
+    if c.backend=='negf': return electronic_negf(c,builders,grid,phi,mu,vd,detail)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/6.MS-modspace-model/solver.py", line 81, in electronic_negf
+    blocks,flux,diag,components=solve_negf(sys,c,mu,mu-vd,vd,detail)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/6.MS-modspace-model/transport/negf_reference.py", line 136, in solve_negf
+    integral,integration=integrate_vector(integrand,breaks,c.energy_order,c.energy_rtol,absolute,c.energy_max_nodes)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/6.MS-modspace-model/transport/quadrature.py", line 38, in integrate_vector
+    raise RuntimeError(f'Unresolved energy integral after 16 subdivisions: component={worst}, error estimate={global_error[worst]:g}, target={target[worst]:g}')
+RuntimeError: Unresolved energy integral after 16 subdivisions: component=405, error estimate=0.0012946, target=2.61632e-07
+
+{
+  "requested_points": 1,
+  "finished_points": 1,
+  "converged_points": 0,
+  "failures_this_run": 1,
+  "quantitative_device_validation": false,
+  "reason": "mesh/modes/reservoir-length/gamma convergence must be assessed independently"
+}

@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/6.MS-modspace-model/validation/junction_compatible.py", line 82, in main
+    result,_,final=run_scf(c,p,mapping,builders,grid,mu,args.vg,args.vd,out,key,initial)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/6.MS-modspace-model/solver.py", line 179, in run_scf
+    q=electronic(c,builders,grid,phi,mu,vd)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/6.MS-modspace-model/solver.py", line 22, in electronic
+    if c.backend=='negf': return electronic_negf(c,builders,grid,phi,mu,vd,detail)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/6.MS-modspace-model/solver.py", line 81, in electronic_negf
+    blocks,flux,diag,components=solve_negf(sys,c,mu,mu-vd,vd,detail)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/6.MS-modspace-model/transport/negf_reference.py", line 136, in solve_negf
+    integral,integration=integrate_vector(integrand,breaks,c.energy_order,c.energy_rtol,absolute,c.energy_max_nodes)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/6.MS-modspace-model/transport/quadrature.py", line 38, in integrate_vector
+    raise RuntimeError(f'Unresolved energy integral after 16 subdivisions: component={worst}, error estimate={global_error[worst]:g}, target={target[worst]:g}')
+RuntimeError: Unresolved energy integral after 16 subdivisions: component=691, error estimate=6.04256e-06, target=1.00404e-06

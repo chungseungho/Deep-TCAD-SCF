@@ -1,0 +1,16 @@
+{
+  "status": "prototype_metrics_only",
+  "vth_constant_current_v": 0.37155373670430414,
+  "threshold_definition_a_per_um": 1e-07,
+  "threshold_current_a": 3.4000000000000003e-09,
+  "normalizing_perimeter_um": 0.034,
+  "ss_min_mv_dec": 48.99903825953646,
+  "ss_definition": "smallest adjacent-sample swing below threshold and above 1e-16 A",
+  "gm_max_a_per_v": 2.134069144375207e-06,
+  "ion_a": 8.802518056979263e-07,
+  "ioff_a": 3.10934554139889e-15,
+  "ion_ioff": 283098740.2261835,
+  "vg_on_v": 1.2,
+  "vg_off_v": 0.0,
+  "limitation": "uncalibrated EMA; mesh/modes/contact convergence required"
+}

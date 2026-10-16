@@ -1,0 +1,157 @@
+Resources: {"backend": "spectral", "slices": 108, "maximum_valley_dimension": 468, "one_dense_complex_matrix_mib": 3.342041015625, "estimated_quantum_peak_mib": 106.9453125, "dense_runtime_scaling": "O(N^3) per valley per evaluation", "runtime_estimate": "measure one point on target CPU; allow 100-160 electronic evaluations; walltime depends on energy/mode refinement", "hpc_submission": "not performed; specify partition/resources according to local rules"}
+Searching DEVSIM_MATH_LIBS="libopenblas.so.0"
+Loading "libopenblas.so.0": ALL BLAS/LAPACK LOADED
+loading UMFPACK 5.1 as direct solver
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 238 Triangles.
+Physical group name Drain has 378 Lines.
+Physical group name Drain has 141 Points.
+Physical group name Electrostatic has 73443 Tetrahedra.
+Physical group name Electrostatic has 151563 Triangles.
+Physical group name Electrostatic has 92421 Lines.
+Physical group name Electrostatic has 14302 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 4832 Triangles.
+Physical group name Gate has 7332 Lines.
+Physical group name Gate has 2500 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 1148 Triangles.
+Physical group name OxSpacer has 1864 Lines.
+Physical group name OxSpacer has 716 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 2042 Triangles.
+Physical group name SiExterior has 3189 Lines.
+Physical group name SiExterior has 1147 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 3310 Triangles.
+Physical group name SiOx has 5023 Lines.
+Physical group name SiOx has 1713 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 2534 Triangles.
+Physical group name SiSpacer has 3943 Lines.
+Physical group name SiSpacer has 1409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 238 Triangles.
+Physical group name Source has 378 Lines.
+Physical group name Source has 141 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 2004 Triangles.
+Physical group name SpacerExterior has 3174 Lines.
+Physical group name SpacerExterior has 1170 Points.
+Device gaa_07415e6a has 14302 coordinates with max index 14302
+Region electrostatic has 14302 nodes.
+Contact drain in region electrostatic with 141 nodes
+Contact gate in region electrostatic with 2500 nodes
+Contact source in region electrostatic with 141 nodes
+Cell/tetra integration 5000/39188 tetra, 15.8s
+Cell/tetra integration 10000/39188 tetra, 25.7s
+Cell/tetra integration 15000/39188 tetra, 34.0s
+Cell/tetra integration 20000/39188 tetra, 41.5s
+Cell/tetra integration 25000/39188 tetra, 48.5s
+Cell/tetra integration 30000/39188 tetra, 54.0s
+Cell/tetra integration 35000/39188 tetra, 68.6s
+Mapping: {"regions": ["electrostatic"], "physical_materials": ["Silicon", "GateOxide", "Spacer"], "material_interface_treatment": "one shared conformal P1 potential DOF; element permittivity assembled before shared edge flux", "interfaces": [], "contacts": ["drain", "gate", "source"], "silicon_node_count": 8493, "nodevolume_min_nm3": 0.016569362474476136, "nodevolume_sum_nm3": 9000.0, "discretization": {"silicon": {"physical_volume_nm3": 9000.000000000002, "relative_permittivity": 11.7}, "oxide": {"physical_volume_nm3": 2016.0, "relative_permittivity": 3.9}, "spacer": {"physical_volume_nm3": 503.9999999999998, "relative_permittivity": 7.5}}, "silicon_oxide_potential_jump_v": 0.0, "triple_junction_potential_jump_v": 0.0, "method": "integrated", "balancing_error": 1.0935696792557792e-11, "node_marginal_error": 1.0935696792557792e-11, "cell_marginal_error": 4.569011835542369e-12, "intersections": 299512, "integration_runtime_s": 78.24972452600014, "limitation": "exact P1 potential cell average / piecewise-constant quantum charge exchange; not a nonequilibrium variational theorem", "linear_potential_error_v": 1.1263878718636988e-11, "constant_density_relative_error": 1.0935918837162717e-11, "charge_relative_error": 5.246232171132361e-13, "minimum_mapped_density_cm3": 3.796883080200162e+17, "nodevolume_nm3": 9000.0, "quantum_volume_nm3": 9000.0, "electrostatic_work_relative_defect": 3.564724686976408e-16, "charge_measure": "DEVSIM configured node_volume_model=PhysicalControlVolume", "potential_measure": "original silicon tetrahedra", "work_adjoint_pass": true, "constant_density_exact": true}
+Contact neutrality: {'mu_source_ev': 0.004336619821812731, 'donor_electrons_source': 36.0, 'isolated_source_electrons': 35.999999999999446, 'neutrality_relative_error': 1.5395092608135503e-14, 'calibration': 'isolated finite source, all retained valleys and configured bath filling; coupled contact neutrality checked separately'}
+number of equations 14302
+Iteration: 0
+  Device: "gaa_07415e6a"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_07415e6a"	RelError: 2.25597e-15	AbsError: 4.60980e-16
+    Region: "electrostatic"	RelError: 2.25597e-15	AbsError: 4.60980e-16
+      Equation: "PotentialEquation"	RelError: 2.25597e-15	AbsError: 4.60980e-16
+number of equations 14302
+Iteration: 0
+  Device: "gaa_07415e6a"	RelError: 3.87489e-16	AbsError: 3.05230e-17
+    Region: "electrostatic"	RelError: 3.87489e-16	AbsError: 3.05230e-17
+      Equation: "PotentialEquation"	RelError: 3.87489e-16	AbsError: 3.05230e-17
+number of equations 14302
+Iteration: 0
+  Device: "gaa_07415e6a"	RelError: 4.15310e+03	AbsError: 4.73374e+00
+    Region: "electrostatic"	RelError: 4.15310e+03	AbsError: 4.73374e+00
+      Equation: "PotentialEquation"	RelError: 4.15310e+03	AbsError: 4.73374e+00
+Iteration: 1
+  Device: "gaa_07415e6a"	RelError: 1.04560e-13	AbsError: 7.33783e-15
+    Region: "electrostatic"	RelError: 1.04560e-13	AbsError: 7.33783e-15
+      Equation: "PotentialEquation"	RelError: 1.04560e-13	AbsError: 7.33783e-15
+number of equations 14302
+Iteration: 0
+  Device: "gaa_07415e6a"	RelError: 1.31035e+02	AbsError: 4.70788e+00
+    Region: "electrostatic"	RelError: 1.31035e+02	AbsError: 4.70788e+00
+      Equation: "PotentialEquation"	RelError: 1.31035e+02	AbsError: 4.70788e+00
+Iteration: 1
+  Device: "gaa_07415e6a"	RelError: 6.20687e-14	AbsError: 3.62866e-15
+    Region: "electrostatic"	RelError: 6.20687e-14	AbsError: 3.62866e-15
+      Equation: "PotentialEquation"	RelError: 6.20687e-14	AbsError: 3.62866e-15
+[vg0.800000_vd0.100000] 001 I=1.4400e-05 phiR=4.734e+00 nR=9.762e-01 screened_linear
+number of equations 14302
+Iteration: 0
+  Device: "gaa_07415e6a"	RelError: 1.11273e+00	AbsError: 3.04613e-02
+    Region: "electrostatic"	RelError: 1.11273e+00	AbsError: 3.04613e-02
+      Equation: "PotentialEquation"	RelError: 1.11273e+00	AbsError: 3.04613e-02
+Iteration: 1
+  Device: "gaa_07415e6a"	RelError: 5.75764e-16	AbsError: 5.60678e-17
+    Region: "electrostatic"	RelError: 5.75764e-16	AbsError: 5.60678e-17
+      Equation: "PotentialEquation"	RelError: 5.75764e-16	AbsError: 5.60678e-17
+number of equations 14302
+Iteration: 0
+  Device: "gaa_07415e6a"	RelError: 1.69262e+03	AbsError: 4.60645e+00
+    Region: "electrostatic"	RelError: 1.69262e+03	AbsError: 4.60645e+00
+      Equation: "PotentialEquation"	RelError: 1.69262e+03	AbsError: 4.60645e+00
+Iteration: 1
+  Device: "gaa_07415e6a"	RelError: 3.64054e-13	AbsError: 7.06594e-15
+    Region: "electrostatic"	RelError: 3.64054e-13	AbsError: 7.06594e-15
+      Equation: "PotentialEquation"	RelError: 3.64054e-13	AbsError: 7.06594e-15
+number of equations 14302
+Iteration: 0
+  Device: "gaa_07415e6a"	RelError: 1.63100e+02	AbsError: 4.58060e+00
+    Region: "electrostatic"	RelError: 1.63100e+02	AbsError: 4.58060e+00
+      Equation: "PotentialEquation"	RelError: 1.63100e+02	AbsError: 4.58060e+00
+Iteration: 1
+  Device: "gaa_07415e6a"	RelError: 4.49606e-14	AbsError: 3.10369e-15
+    Region: "electrostatic"	RelError: 4.49606e-14	AbsError: 3.10369e-15
+      Equation: "PotentialEquation"	RelError: 4.49606e-14	AbsError: 3.10369e-15
+[vg0.800000_vd0.100000] 002 I=1.3964e-05 phiR=4.606e+00 nR=9.748e-01 screened_linear
+number of equations 14302
+Iteration: 0
+  Device: "gaa_07415e6a"	RelError: 8.27140e-01	AbsError: 2.67543e-02
+    Region: "electrostatic"	RelError: 8.27140e-01	AbsError: 2.67543e-02
+      Equation: "PotentialEquation"	RelError: 8.27140e-01	AbsError: 2.67543e-02
+Iteration: 1
+  Device: "gaa_07415e6a"	RelError: 6.74108e-16	AbsError: 4.72147e-17
+    Region: "electrostatic"	RelError: 6.74108e-16	AbsError: 4.72147e-17
+      Equation: "PotentialEquation"	RelError: 6.74108e-16	AbsError: 4.72147e-17
+number of equations 14302
+Iteration: 0
+  Device: "gaa_07415e6a"	RelError: 1.05037e+02	AbsError: 4.48055e+00
+    Region: "electrostatic"	RelError: 1.05037e+02	AbsError: 4.48055e+00
+      Equation: "PotentialEquation"	RelError: 1.05037e+02	AbsError: 4.48055e+00
+Iteration: 1
+  Device: "gaa_07415e6a"	RelError: 7.34406e-14	AbsError: 6.42905e-15
+    Region: "electrostatic"	RelError: 7.34406e-14	AbsError: 6.42905e-15
+      Equation: "PotentialEquation"	RelError: 7.34406e-14	AbsError: 6.42905e-15
+number of equations 14302
+Iteration: 0
+  Device: "gaa_07415e6a"	RelError: 2.18035e+02	AbsError: 4.45470e+00
+    Region: "electrostatic"	RelError: 2.18035e+02	AbsError: 4.45470e+00
+      Equation: "PotentialEquation"	RelError: 2.18035e+02	AbsError: 4.45470e+00
+Iteration: 1
+  Device: "gaa_07415e6a"	RelError: 4.42239e-14	AbsError: 2.73967e-15
+    Region: "electrostatic"	RelError: 4.42239e-14	AbsError: 2.73967e-15
+      Equation: "PotentialEquation"	RelError: 4.42239e-14	AbsError: 2.73967e-15
+[vg0.800000_vd0.100000] 003 I=1.3474e-05 phiR=4.481e+00 nR=9.733e-01 screened_anderson
+number of equations 14302
+Iteration: 0
+  Device: "gaa_07415e6a"	RelError: 2.35407e+02	AbsError: 2.81294e-02
+    Region: "electrostatic"	RelError: 2.35407e+02	AbsError: 2.81294e-02
+      Equation: "PotentialEquation"	RelError: 2.35407e+02	AbsError: 2.81294e-02
+Iteration: 1
+  Device: "gaa_07415e6a"	RelError: 1.30419e-13	AbsError: 7.05879e-17
+    Region: "electrostatic"	RelError: 1.30419e-13	AbsError: 7.05879e-17
+      Equation: "PotentialEquation"	RelError: 1.30419e-13	AbsError: 7.05879e-17
+number of equations 14302
+Iteration: 0
+  Device: "gaa_07415e6a"	RelError: 4.52528e+02	AbsError: 2.71687e+00
+    Region: "electrostatic"	RelError: 4.52528e+02	AbsError: 2.71687e+00
+      Equation: "PotentialEquation"	RelError: 4.52528e+02	AbsError: 2.71687e+00

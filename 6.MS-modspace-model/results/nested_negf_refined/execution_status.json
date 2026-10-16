@@ -1,0 +1,26 @@
+{
+  "execution_status": "INTERRUPTED_NO_ACCEPTED_FINAL_STATE",
+  "last_saved_scf_iteration": {
+    "key": "vg0.800000_vd0.100000",
+    "iteration": "40",
+    "vg_v": "0.8",
+    "vd_v": "0.1",
+    "id_a": "7.213960982355793e-06",
+    "phi_residual_v": "0.24691926737347233",
+    "charge_residual": "0.21526691324274644",
+    "current_change": "0.004557561459779866",
+    "electron_number": "76.52579301125334",
+    "sd_neutrality_relative_error": "-0.11821249830995845",
+    "occupation_change": "0.00327147132014987",
+    "eigenvalue_change_ev": "0.0018047855563144422",
+    "mixing": "screened_anderson",
+    "gain": "0.15",
+    "elapsed_s": "680.9463917630001"
+  },
+  "quantitative_validation_pass": false,
+  "source_sha256": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1",
+  "configuration_fingerprint": "e2501d2a7414408d23b2c6add0ca7b69e62563c46c07971abdaaa7d76e762a29",
+  "reason": "Previous execution session ended during an expensive unconverged calculation. A checkpoint is retained; it is not an accepted physical result. No final current is substituted.",
+  "reproduction_command": "python validation/junction_compatible.py --phase point --vg .8 --vd .1 --config results/nested_negf_refined/reproduction_config.json --initial-state results/negf_equilibrium/states/vg0.800000_vd0.000000.npz --out output/nested_negf_refined_new",
+  "observed_cost": "680.9 seconds at the last saved 40th SCF iteration, before the expensive nonlinear fallback; no accepted final state"
+}

@@ -1,0 +1,8 @@
+{
+  "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1": {
+    "archive": "2bb418bad3e860cc6a041f0ef1d2b5ea9929155844474f78d05311e5002206e1.zip",
+    "archive_sha256": "7e95c110c575c5058192ea13bd7c1e72f97fa1bf8c3a80b2a0ebc3f891c838d1",
+    "python_files": 28,
+    "purpose": "Exact source of computed states before postprocessing/provenance fixes. Extract into a separate STEP06 copy to reproduce/resume those original source identities."
+  }
+}
