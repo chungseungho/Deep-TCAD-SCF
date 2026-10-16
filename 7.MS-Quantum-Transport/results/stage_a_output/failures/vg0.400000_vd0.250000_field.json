@@ -1,0 +1,19 @@
+{
+  "field_state": "FAILED_ITERATE_NOT_SCF_SOLUTION",
+  "fields": {
+    "Silicon": {
+      "maximum_v_nm": 0.05067841716277938,
+      "p99_v_nm": 0.04185371636003569
+    },
+    "GateOxide": {
+      "maximum_v_nm": 0.05788796479501877,
+      "p99_v_nm": 0.05531908509824908
+    },
+    "Spacer": {
+      "maximum_v_nm": 0.11929527402922052,
+      "p99_v_nm": 0.11414166782828696
+    }
+  },
+  "high_field_warning": false,
+  "threshold_v_nm": 0.5
+}

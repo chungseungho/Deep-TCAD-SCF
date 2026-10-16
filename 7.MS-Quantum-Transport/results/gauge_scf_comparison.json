@@ -1,0 +1,8 @@
+{
+  "source_sha256": "c0fbe6dc782c38d9e1ba56e06178bfd7197ba873c4c546f9d0276b3d4ce0eaf0",
+  "potential_reference_change_v": 0.4,
+  "mu_change_error_ev": 0.0,
+  "node_phi_gauge_error_v": 4.121533577206016e-07,
+  "density_relative_difference": 6.97443085023711e-06,
+  "note": "separately iterated SCF fields; differences are bounded by the saved physical residuals, not a frozen-state gauge identity"
+}

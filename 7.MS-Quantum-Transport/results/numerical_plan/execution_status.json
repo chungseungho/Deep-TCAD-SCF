@@ -1,0 +1,6 @@
+{
+  "executed": false,
+  "cases": 22,
+  "plateau_certified": false,
+  "acceptance": "at least three successive levels; density, barrier and nonzero current; all solves valid"
+}

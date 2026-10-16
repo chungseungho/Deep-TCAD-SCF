@@ -1,0 +1,31 @@
+{
+  "tests": 56,
+  "counts": {
+    "transfer": {
+      "points": 25,
+      "numerical_status": {
+        "MS_OCCUPATION_UNRESOLVED": 25
+      }
+    },
+    "output": {
+      "points": 75,
+      "numerical_status": {
+        "SCF_CONVERGED": 3,
+        "MS_OCCUPATION_UNRESOLVED": 72
+      }
+    },
+    "stress_gate": {
+      "points": 6,
+      "numerical_status": {
+        "MS_OCCUPATION_UNRESOLVED": 6
+      }
+    },
+    "stress_drain": {
+      "points": 6,
+      "numerical_status": {
+        "SCF_CONVERGED": 1,
+        "MS_OCCUPATION_UNRESOLVED": 5
+      }
+    }
+  }
+}

@@ -1,0 +1,772 @@
+[
+  {
+    "path": "results/gaa_ms_lowbias/failures/vg0.800000_vd0.050000_occupation.npz",
+    "settings": "results/gaa_ms_lowbias/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/gaa_ms_lowbias/failures/vg0.800000_vd0.100000_occupation.npz",
+    "settings": "results/gaa_ms_lowbias/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.400000_vd0.050000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.400000_vd0.100000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.400000_vd0.150000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.400000_vd0.200000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.400000_vd0.250000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.400000_vd0.300000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.400000_vd0.350000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.400000_vd0.400000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.400000_vd0.450000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.400000_vd0.500000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.400000_vd0.550000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.400000_vd0.600000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.400000_vd0.650000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.400000_vd0.700000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.400000_vd0.750000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.400000_vd0.800000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.400000_vd0.850000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.400000_vd0.900000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.400000_vd0.950000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.400000_vd1.000000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.400000_vd1.050000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.400000_vd1.100000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.400000_vd1.150000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.400000_vd1.200000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.800000_vd0.050000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.800000_vd0.100000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.800000_vd0.150000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.800000_vd0.200000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.800000_vd0.250000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.800000_vd0.300000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.800000_vd0.350000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.800000_vd0.400000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.800000_vd0.450000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.800000_vd0.500000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.800000_vd0.550000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.800000_vd0.600000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.800000_vd0.650000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.800000_vd0.700000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.800000_vd0.750000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.800000_vd0.800000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.800000_vd0.850000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.800000_vd0.900000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.800000_vd0.950000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.800000_vd1.000000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.800000_vd1.050000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.800000_vd1.100000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.800000_vd1.150000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg0.800000_vd1.200000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg1.200000_vd0.050000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg1.200000_vd0.100000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg1.200000_vd0.150000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg1.200000_vd0.200000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg1.200000_vd0.250000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg1.200000_vd0.300000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg1.200000_vd0.350000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg1.200000_vd0.400000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg1.200000_vd0.450000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg1.200000_vd0.500000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg1.200000_vd0.550000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg1.200000_vd0.600000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg1.200000_vd0.650000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg1.200000_vd0.700000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg1.200000_vd0.750000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg1.200000_vd0.800000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg1.200000_vd0.850000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg1.200000_vd0.900000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg1.200000_vd0.950000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg1.200000_vd1.000000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg1.200000_vd1.050000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg1.200000_vd1.100000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg1.200000_vd1.150000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_output/failures/vg1.200000_vd1.200000_occupation.npz",
+    "settings": "results/stage_a_output/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_transfer/failures/vg0.000000_vd0.100000_occupation.npz",
+    "settings": "results/stage_a_transfer/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_transfer/failures/vg0.050000_vd0.100000_occupation.npz",
+    "settings": "results/stage_a_transfer/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_transfer/failures/vg0.100000_vd0.100000_occupation.npz",
+    "settings": "results/stage_a_transfer/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_transfer/failures/vg0.150000_vd0.100000_occupation.npz",
+    "settings": "results/stage_a_transfer/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_transfer/failures/vg0.200000_vd0.100000_occupation.npz",
+    "settings": "results/stage_a_transfer/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_transfer/failures/vg0.250000_vd0.100000_occupation.npz",
+    "settings": "results/stage_a_transfer/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_transfer/failures/vg0.300000_vd0.100000_occupation.npz",
+    "settings": "results/stage_a_transfer/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_transfer/failures/vg0.350000_vd0.100000_occupation.npz",
+    "settings": "results/stage_a_transfer/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_transfer/failures/vg0.400000_vd0.100000_occupation.npz",
+    "settings": "results/stage_a_transfer/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_transfer/failures/vg0.450000_vd0.100000_occupation.npz",
+    "settings": "results/stage_a_transfer/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_transfer/failures/vg0.500000_vd0.100000_occupation.npz",
+    "settings": "results/stage_a_transfer/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_transfer/failures/vg0.550000_vd0.100000_occupation.npz",
+    "settings": "results/stage_a_transfer/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_transfer/failures/vg0.600000_vd0.100000_occupation.npz",
+    "settings": "results/stage_a_transfer/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_transfer/failures/vg0.650000_vd0.100000_occupation.npz",
+    "settings": "results/stage_a_transfer/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_transfer/failures/vg0.700000_vd0.100000_occupation.npz",
+    "settings": "results/stage_a_transfer/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_transfer/failures/vg0.750000_vd0.100000_occupation.npz",
+    "settings": "results/stage_a_transfer/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_transfer/failures/vg0.800000_vd0.100000_occupation.npz",
+    "settings": "results/stage_a_transfer/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_transfer/failures/vg0.850000_vd0.100000_occupation.npz",
+    "settings": "results/stage_a_transfer/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_transfer/failures/vg0.900000_vd0.100000_occupation.npz",
+    "settings": "results/stage_a_transfer/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_transfer/failures/vg0.950000_vd0.100000_occupation.npz",
+    "settings": "results/stage_a_transfer/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_transfer/failures/vg1.000000_vd0.100000_occupation.npz",
+    "settings": "results/stage_a_transfer/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_transfer/failures/vg1.050000_vd0.100000_occupation.npz",
+    "settings": "results/stage_a_transfer/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_transfer/failures/vg1.100000_vd0.100000_occupation.npz",
+    "settings": "results/stage_a_transfer/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_transfer/failures/vg1.150000_vd0.100000_occupation.npz",
+    "settings": "results/stage_a_transfer/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stage_a_transfer/failures/vg1.200000_vd0.100000_occupation.npz",
+    "settings": "results/stage_a_transfer/settings.json",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stress_drain/failures/vg0.800000_vd1.200000_occupation.npz",
+    "settings": "results/stress_drain/settings.json",
+    "source_sha256": "3460c388f09220e41a72f92fb323b7d4467accc678e81c16ae1f32613dbaf6d1",
+    "configuration_fingerprint": "36ba582be382df89a2531c56987923827c0a748aef27c6271faf78b5d76a1201",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stress_drain/failures/vg0.800000_vd2.000000_occupation.npz",
+    "settings": "results/stress_drain/settings.json",
+    "source_sha256": "3460c388f09220e41a72f92fb323b7d4467accc678e81c16ae1f32613dbaf6d1",
+    "configuration_fingerprint": "36ba582be382df89a2531c56987923827c0a748aef27c6271faf78b5d76a1201",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stress_drain/failures/vg0.800000_vd3.000000_occupation.npz",
+    "settings": "results/stress_drain/settings.json",
+    "source_sha256": "3460c388f09220e41a72f92fb323b7d4467accc678e81c16ae1f32613dbaf6d1",
+    "configuration_fingerprint": "36ba582be382df89a2531c56987923827c0a748aef27c6271faf78b5d76a1201",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stress_drain/failures/vg0.800000_vd4.500000_occupation.npz",
+    "settings": "results/stress_drain/settings.json",
+    "source_sha256": "3460c388f09220e41a72f92fb323b7d4467accc678e81c16ae1f32613dbaf6d1",
+    "configuration_fingerprint": "36ba582be382df89a2531c56987923827c0a748aef27c6271faf78b5d76a1201",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stress_drain/failures/vg0.800000_vd6.000000_occupation.npz",
+    "settings": "results/stress_drain/settings.json",
+    "source_sha256": "3460c388f09220e41a72f92fb323b7d4467accc678e81c16ae1f32613dbaf6d1",
+    "configuration_fingerprint": "36ba582be382df89a2531c56987923827c0a748aef27c6271faf78b5d76a1201",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stress_gate/failures/vg0.000000_vd0.100000_occupation.npz",
+    "settings": "results/stress_gate/settings.json",
+    "source_sha256": "3460c388f09220e41a72f92fb323b7d4467accc678e81c16ae1f32613dbaf6d1",
+    "configuration_fingerprint": "36ba582be382df89a2531c56987923827c0a748aef27c6271faf78b5d76a1201",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stress_gate/failures/vg1.200000_vd0.100000_occupation.npz",
+    "settings": "results/stress_gate/settings.json",
+    "source_sha256": "3460c388f09220e41a72f92fb323b7d4467accc678e81c16ae1f32613dbaf6d1",
+    "configuration_fingerprint": "36ba582be382df89a2531c56987923827c0a748aef27c6271faf78b5d76a1201",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stress_gate/failures/vg2.000000_vd0.100000_occupation.npz",
+    "settings": "results/stress_gate/settings.json",
+    "source_sha256": "3460c388f09220e41a72f92fb323b7d4467accc678e81c16ae1f32613dbaf6d1",
+    "configuration_fingerprint": "36ba582be382df89a2531c56987923827c0a748aef27c6271faf78b5d76a1201",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stress_gate/failures/vg3.000000_vd0.100000_occupation.npz",
+    "settings": "results/stress_gate/settings.json",
+    "source_sha256": "3460c388f09220e41a72f92fb323b7d4467accc678e81c16ae1f32613dbaf6d1",
+    "configuration_fingerprint": "36ba582be382df89a2531c56987923827c0a748aef27c6271faf78b5d76a1201",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stress_gate/failures/vg4.500000_vd0.100000_occupation.npz",
+    "settings": "results/stress_gate/settings.json",
+    "source_sha256": "3460c388f09220e41a72f92fb323b7d4467accc678e81c16ae1f32613dbaf6d1",
+    "configuration_fingerprint": "36ba582be382df89a2531c56987923827c0a748aef27c6271faf78b5d76a1201",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  },
+  {
+    "path": "results/stress_gate/failures/vg6.000000_vd0.100000_occupation.npz",
+    "settings": "results/stress_gate/settings.json",
+    "source_sha256": "3460c388f09220e41a72f92fb323b7d4467accc678e81c16ae1f32613dbaf6d1",
+    "configuration_fingerprint": "36ba582be382df89a2531c56987923827c0a748aef27c6271faf78b5d76a1201",
+    "kind": "rejected_eigenstate_occupation_diagnostic_not_solution"
+  }
+]

@@ -1,0 +1,41 @@
+{
+  "source_sha256": "c0fbe6dc782c38d9e1ba56e06178bfd7197ba873c4c546f9d0276b3d4ce0eaf0",
+  "counts": {
+    "transfer": {
+      "points": 25,
+      "numerical_status": {
+        "MS_OCCUPATION_UNRESOLVED": 25
+      }
+    },
+    "output": {
+      "points": 75,
+      "numerical_status": {
+        "SCF_CONVERGED": 3,
+        "MS_OCCUPATION_UNRESOLVED": 72
+      }
+    },
+    "stress_gate": {
+      "points": 6,
+      "numerical_status": {
+        "MS_OCCUPATION_UNRESOLVED": 6
+      }
+    },
+    "stress_drain": {
+      "points": 6,
+      "numerical_status": {
+        "SCF_CONVERGED": 1,
+        "MS_OCCUPATION_UNRESOLVED": 5
+      }
+    }
+  },
+  "levels": {
+    "1": "achieved",
+    "2": "equilibrium_only",
+    "3": "not_achieved_biased_MS",
+    "4": false,
+    "5": false
+  },
+  "tests": 56,
+  "no_AI_training": true,
+  "no_git_mutations_or_hpc_jobs": true
+}

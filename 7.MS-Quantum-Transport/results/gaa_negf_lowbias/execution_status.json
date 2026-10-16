@@ -1,0 +1,6 @@
+{
+  "status": "INTERRUPTED_FOR_PRECONDITIONER_IMPROVEMENT",
+  "completed_iterations": 22,
+  "accepted_solution": false,
+  "seed": "results/inputs/negf_interrupted_seed.npz"
+}

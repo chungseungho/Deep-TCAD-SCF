@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<VTKFile type="vtkMultiBlockDataSet" version="0.1" byte_order="LittleEndian" compressor="vtkZLibDataCompressor">
+  <vtkMultiBlockDataSet>
+    <DataSet group="0" dataset="0" file="/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/7.MS-Quantum-Transport/results/gaa_spectral_regression/fields/vg0.800000_vd0.100000_electrostatics_cm.vtk_0.vtu"/>
+  </vtkMultiBlockDataSet>
+</VTKFile>

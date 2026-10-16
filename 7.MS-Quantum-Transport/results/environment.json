@@ -1,0 +1,14 @@
+{
+  "python": "3.12.14",
+  "packages": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8",
+    "gmsh": "4.15.2",
+    "devsim": "2.11.0",
+    "pytest": "9.1.1"
+  },
+  "source_sha256": "c0fbe6dc782c38d9e1ba56e06178bfd7197ba873c4c546f9d0276b3d4ce0eaf0",
+  "threads": 1,
+  "external_native_libraries": "private OpenBLAS/UMFPACK and Gmsh dependencies; not included"
+}

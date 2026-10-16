@@ -1,0 +1,15 @@
+panel 0.02 current 1.229535733150661e-06 runtime 43.82258224487305
+panel 0.01 current 1.2295357331506573e-06 runtime 35.3739230632782
+{
+  "comparison": "semi-infinite NEGF integration on frozen STEP06 finite-spectral field; not an MS or NEGF SCF",
+  "source_field": "../6.MS-modspace-model/results/device_lowbias/states/vg0.800000_vd0.100000.npz",
+  "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+  "density_relative_volume_l2": 1.0111945683583381e-13,
+  "current_relative_difference": 3.100071156839899e-15,
+  "currents_a": [
+    1.229535733150661e-06,
+    1.2295357331506573e-06
+  ],
+  "eta_added_ev": 0.0,
+  "pass": true
+}

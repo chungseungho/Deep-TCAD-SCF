@@ -1,0 +1,19 @@
+Searching DEVSIM_MATH_LIBS="libopenblas.so.0"
+Loading "libopenblas.so.0": ALL BLAS/LAPACK LOADED
+loading UMFPACK 5.1 as direct solver
+
+==================================== ERRORS ====================================
+___________ ERROR collecting tests/test_shared_poisson_capacitor.py ____________
+ImportError while importing test module '/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/7.MS-Quantum-Transport/tests/test_shared_poisson_capacitor.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_shared_poisson_capacitor.py:7: in <module>
+    from validation.poisson_benchmarks import slab
+E   ModuleNotFoundError: No module named 'validation.poisson_benchmarks'
+=========================== short test summary info ============================
+ERROR tests/test_shared_poisson_capacitor.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.97s

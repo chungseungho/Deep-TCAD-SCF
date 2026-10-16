@@ -1,0 +1,2304 @@
+{"requested_points": 1, "configuration": {"ls": 12.0, "lg": 24.0, "ld": 12.0, "spacer": 3.0, "width": 12.0, "thickness": 5.0, "sd_width": 20.0, "sd_thickness": 15.0, "tox": 2.0, "eps_si": 11.7, "eps_ox": 3.9, "eps_spacer": 7.5, "donor_sd": 1e+19, "donor_channel": 0.0, "transition": 1.0, "temperature": 300.0, "flatband": 0.5, "dx": 0.5, "dy": 1.0, "dz": 1.0, "modes": 2, "sd_modes": 4, "mesh_h": 3.5, "channel_h": 1.8, "junction_h": 1.3, "gamma": 0.01, "backend": "ms", "mapping": "integrated", "fermi_poles": 48, "energy_step": 0.01, "energy_order": 8, "fermi_tail": 16.0, "energy_rtol": 2e-05, "energy_atol": 1e-07, "energy_max_nodes": 120000, "basis": "fixed", "preconditioner": "screened", "mix": 0.15, "history": 5, "max_iterations": 80, "charge_tol": 0.002, "phi_tol": 0.0001, "current_tol": 0.002, "ms_tie_tol": 1e-07, "junction_basis": "nested", "transport_axis": 0, "reservoir_left_nm": 6.0, "reservoir_right_nm": 6.0, "ms_contrast_min": 0.1, "ms_reach_min": 1e-05, "ms_occupation_uncertainty": 1e-07, "ms_degenerate_ev": 1e-07, "ms_boundary_shift_slices": 1, "ms_number_constraint": "finite_total", "mu_source_ev": null, "resonance_order": 32, "resonance_max_iterations": 12, "high_field_v_nm": 0.5, "dispersion_tolerance": 0.02}, "source_sha256": "c38800bb0b63dd4df3bca0a34045d0318085a7377d676da97dde45e3151b1574"}
+Searching DEVSIM_MATH_LIBS="libopenblas.so.0"
+Loading "libopenblas.so.0": ALL BLAS/LAPACK LOADED
+loading UMFPACK 5.1 as direct solver
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_9d385e5d has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+Cell/tetra integration 5000/5020 tetra, 30.7s
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.09811e-15	AbsError: 3.19202e-16
+    Region: "electrostatic"	RelError: 2.09811e-15	AbsError: 3.19202e-16
+      Equation: "PotentialEquation"	RelError: 2.09811e-15	AbsError: 3.19202e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.74918e+02	AbsError: 1.40870e+00
+    Region: "electrostatic"	RelError: 1.74918e+02	AbsError: 1.40870e+00
+      Equation: "PotentialEquation"	RelError: 1.74918e+02	AbsError: 1.40870e+00
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 3.93774e-14	AbsError: 1.17630e-15
+    Region: "electrostatic"	RelError: 3.93774e-14	AbsError: 1.17630e-15
+      Equation: "PotentialEquation"	RelError: 3.93774e-14	AbsError: 1.17630e-15
+vg0.800000_vd0.000000 001: phiR=1.409e+00 nR=1.067e+00 mu=-0.176982 stable=False
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 5.16808e+00	AbsError: 1.38286e+00
+    Region: "electrostatic"	RelError: 5.16808e+00	AbsError: 1.38286e+00
+      Equation: "PotentialEquation"	RelError: 5.16808e+00	AbsError: 1.38286e+00
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.07686e-15	AbsError: 5.53894e-16
+    Region: "electrostatic"	RelError: 2.07686e-15	AbsError: 5.53894e-16
+      Equation: "PotentialEquation"	RelError: 2.07686e-15	AbsError: 5.53894e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.06388e+00	AbsError: 3.60834e-01
+    Region: "electrostatic"	RelError: 3.06388e+00	AbsError: 3.60834e-01
+      Equation: "PotentialEquation"	RelError: 3.06388e+00	AbsError: 3.60834e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.62402e-15	AbsError: 4.40002e-16
+    Region: "electrostatic"	RelError: 2.62402e-15	AbsError: 4.40002e-16
+      Equation: "PotentialEquation"	RelError: 2.62402e-15	AbsError: 4.40002e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 4.51314e+02	AbsError: 1.29001e+00
+    Region: "electrostatic"	RelError: 4.51314e+02	AbsError: 1.29001e+00
+      Equation: "PotentialEquation"	RelError: 4.51314e+02	AbsError: 1.29001e+00
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 4.42990e-13	AbsError: 9.51883e-16
+    Region: "electrostatic"	RelError: 4.42990e-13	AbsError: 9.51883e-16
+      Equation: "PotentialEquation"	RelError: 4.42990e-13	AbsError: 9.51883e-16
+vg0.800000_vd0.000000 002: phiR=1.290e+00 nR=1.045e+00 mu=-0.178899 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 4.79374e+00	AbsError: 1.26419e+00
+    Region: "electrostatic"	RelError: 4.79374e+00	AbsError: 1.26419e+00
+      Equation: "PotentialEquation"	RelError: 4.79374e+00	AbsError: 1.26419e+00
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.88909e-15	AbsError: 7.61899e-16
+    Region: "electrostatic"	RelError: 2.88909e-15	AbsError: 7.61899e-16
+      Equation: "PotentialEquation"	RelError: 2.88909e-15	AbsError: 7.61899e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.06391e+00	AbsError: 1.60865e-01
+    Region: "electrostatic"	RelError: 1.06391e+00	AbsError: 1.60865e-01
+      Equation: "PotentialEquation"	RelError: 1.06391e+00	AbsError: 1.60865e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 7.73203e-16	AbsError: 1.60277e-16
+    Region: "electrostatic"	RelError: 7.73203e-16	AbsError: 1.60277e-16
+      Equation: "PotentialEquation"	RelError: 7.73203e-16	AbsError: 1.60277e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.31901e+02	AbsError: 1.11210e+00
+    Region: "electrostatic"	RelError: 3.31901e+02	AbsError: 1.11210e+00
+      Equation: "PotentialEquation"	RelError: 3.31901e+02	AbsError: 1.11210e+00
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.16407e-14	AbsError: 6.54540e-16
+    Region: "electrostatic"	RelError: 2.16407e-14	AbsError: 6.54540e-16
+      Equation: "PotentialEquation"	RelError: 2.16407e-14	AbsError: 6.54540e-16
+vg0.800000_vd0.000000 003: phiR=1.112e+00 nR=1.009e+00 mu=-0.181409 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 4.22129e+00	AbsError: 1.08631e+00
+    Region: "electrostatic"	RelError: 4.22129e+00	AbsError: 1.08631e+00
+      Equation: "PotentialEquation"	RelError: 4.22129e+00	AbsError: 1.08631e+00
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.43796e-15	AbsError: 3.74279e-16
+    Region: "electrostatic"	RelError: 1.43796e-15	AbsError: 3.74279e-16
+      Equation: "PotentialEquation"	RelError: 1.43796e-15	AbsError: 3.74279e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.99404e-01	AbsError: 3.82193e-02
+    Region: "electrostatic"	RelError: 1.99404e-01	AbsError: 3.82193e-02
+      Equation: "PotentialEquation"	RelError: 1.99404e-01	AbsError: 3.82193e-02
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.40006e-16	AbsError: 6.09189e-17
+    Region: "electrostatic"	RelError: 2.40006e-16	AbsError: 6.09189e-17
+      Equation: "PotentialEquation"	RelError: 2.40006e-16	AbsError: 6.09189e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.94706e+03	AbsError: 7.42661e-01
+    Region: "electrostatic"	RelError: 1.94706e+03	AbsError: 7.42661e-01
+      Equation: "PotentialEquation"	RelError: 1.94706e+03	AbsError: 7.42661e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 5.60216e-13	AbsError: 3.03221e-16
+    Region: "electrostatic"	RelError: 5.60216e-13	AbsError: 3.03221e-16
+      Equation: "PotentialEquation"	RelError: 5.60216e-13	AbsError: 3.03221e-16
+vg0.800000_vd0.000000 004: phiR=7.427e-01 nR=8.697e-01 mu=-0.187689 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 2.94850e+00	AbsError: 7.17065e-01
+    Region: "electrostatic"	RelError: 2.94850e+00	AbsError: 7.17065e-01
+      Equation: "PotentialEquation"	RelError: 2.94850e+00	AbsError: 7.17065e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.35037e-15	AbsError: 3.26062e-16
+    Region: "electrostatic"	RelError: 1.35037e-15	AbsError: 3.26062e-16
+      Equation: "PotentialEquation"	RelError: 1.35037e-15	AbsError: 3.26062e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 6.17325e-02	AbsError: 1.28668e-02
+    Region: "electrostatic"	RelError: 6.17325e-02	AbsError: 1.28668e-02
+      Equation: "PotentialEquation"	RelError: 6.17325e-02	AbsError: 1.28668e-02
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.43802e-16	AbsError: 4.49495e-17
+    Region: "electrostatic"	RelError: 2.43802e-16	AbsError: 4.49495e-17
+      Equation: "PotentialEquation"	RelError: 2.43802e-16	AbsError: 4.49495e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 5.98140e+02	AbsError: 4.99164e-01
+    Region: "electrostatic"	RelError: 5.98140e+02	AbsError: 4.99164e-01
+      Equation: "PotentialEquation"	RelError: 5.98140e+02	AbsError: 4.99164e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 3.11890e-13	AbsError: 4.16407e-16
+    Region: "electrostatic"	RelError: 3.11890e-13	AbsError: 4.16407e-16
+      Equation: "PotentialEquation"	RelError: 3.11890e-13	AbsError: 4.16407e-16
+vg0.800000_vd0.000000 005: phiR=4.992e-01 nR=6.872e-01 mu=-0.191863 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 2.05274e+00	AbsError: 4.74023e-01
+    Region: "electrostatic"	RelError: 2.05274e+00	AbsError: 4.74023e-01
+      Equation: "PotentialEquation"	RelError: 2.05274e+00	AbsError: 4.74023e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 7.62945e-16	AbsError: 1.55996e-16
+    Region: "electrostatic"	RelError: 7.62945e-16	AbsError: 1.55996e-16
+      Equation: "PotentialEquation"	RelError: 7.62945e-16	AbsError: 1.55996e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 7.08919e-02	AbsError: 1.74462e-02
+    Region: "electrostatic"	RelError: 7.08919e-02	AbsError: 1.74462e-02
+      Equation: "PotentialEquation"	RelError: 7.08919e-02	AbsError: 1.74462e-02
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.24973e-16	AbsError: 4.63267e-17
+    Region: "electrostatic"	RelError: 2.24973e-16	AbsError: 4.63267e-17
+      Equation: "PotentialEquation"	RelError: 2.24973e-16	AbsError: 4.63267e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.40521e+03	AbsError: 4.30998e-01
+    Region: "electrostatic"	RelError: 1.40521e+03	AbsError: 4.30998e-01
+      Equation: "PotentialEquation"	RelError: 1.40521e+03	AbsError: 4.30998e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 5.64749e-13	AbsError: 2.49303e-16
+    Region: "electrostatic"	RelError: 5.64749e-13	AbsError: 2.49303e-16
+      Equation: "PotentialEquation"	RelError: 5.64749e-13	AbsError: 2.49303e-16
+vg0.800000_vd0.000000 006: phiR=4.310e-01 nR=6.183e-01 mu=-0.190145 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.81667e+00	AbsError: 4.06259e-01
+    Region: "electrostatic"	RelError: 1.81667e+00	AbsError: 4.06259e-01
+      Equation: "PotentialEquation"	RelError: 1.81667e+00	AbsError: 4.06259e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 6.34502e-16	AbsError: 1.41948e-16
+    Region: "electrostatic"	RelError: 6.34502e-16	AbsError: 1.41948e-16
+      Equation: "PotentialEquation"	RelError: 6.34502e-16	AbsError: 1.41948e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 2.93994e-02	AbsError: 5.67299e-03
+    Region: "electrostatic"	RelError: 2.93994e-02	AbsError: 5.67299e-03
+      Equation: "PotentialEquation"	RelError: 2.93994e-02	AbsError: 5.67299e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.00702e-16	AbsError: 4.65848e-17
+    Region: "electrostatic"	RelError: 2.00702e-16	AbsError: 4.65848e-17
+      Equation: "PotentialEquation"	RelError: 2.00702e-16	AbsError: 4.65848e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 9.71911e+01	AbsError: 2.78450e-01
+    Region: "electrostatic"	RelError: 9.71911e+01	AbsError: 2.78450e-01
+      Equation: "PotentialEquation"	RelError: 9.71911e+01	AbsError: 2.78450e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.51359e-14	AbsError: 2.06694e-16
+    Region: "electrostatic"	RelError: 1.51359e-14	AbsError: 2.06694e-16
+      Equation: "PotentialEquation"	RelError: 1.51359e-14	AbsError: 2.06694e-16
+vg0.800000_vd0.000000 007: phiR=2.785e-01 nR=4.472e-01 mu=-0.179455 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.28823e+00	AbsError: 2.55889e-01
+    Region: "electrostatic"	RelError: 1.28823e+00	AbsError: 2.55889e-01
+      Equation: "PotentialEquation"	RelError: 1.28823e+00	AbsError: 2.55889e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 5.50062e-16	AbsError: 1.42060e-16
+    Region: "electrostatic"	RelError: 5.50062e-16	AbsError: 1.42060e-16
+      Equation: "PotentialEquation"	RelError: 5.50062e-16	AbsError: 1.42060e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 9.78656e-03	AbsError: 1.85451e-03
+    Region: "electrostatic"	RelError: 9.78656e-03	AbsError: 1.85451e-03
+      Equation: "PotentialEquation"	RelError: 9.78656e-03	AbsError: 1.85451e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 3.19421e-16	AbsError: 5.88097e-17
+    Region: "electrostatic"	RelError: 3.19421e-16	AbsError: 5.88097e-17
+      Equation: "PotentialEquation"	RelError: 3.19421e-16	AbsError: 5.88097e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 2.90444e+03	AbsError: 2.08607e-01
+    Region: "electrostatic"	RelError: 2.90444e+03	AbsError: 2.08607e-01
+      Equation: "PotentialEquation"	RelError: 2.90444e+03	AbsError: 2.08607e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.30288e-12	AbsError: 2.72419e-16
+    Region: "electrostatic"	RelError: 1.30288e-12	AbsError: 2.72419e-16
+      Equation: "PotentialEquation"	RelError: 1.30288e-12	AbsError: 2.72419e-16
+vg0.800000_vd0.000000 008: phiR=2.086e-01 nR=3.460e-01 mu=-0.171622 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.25006e+00	AbsError: 2.01092e-01
+    Region: "electrostatic"	RelError: 1.25006e+00	AbsError: 2.01092e-01
+      Equation: "PotentialEquation"	RelError: 1.25006e+00	AbsError: 2.01092e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 8.11356e-16	AbsError: 2.09065e-16
+    Region: "electrostatic"	RelError: 8.11356e-16	AbsError: 2.09065e-16
+      Equation: "PotentialEquation"	RelError: 8.11356e-16	AbsError: 2.09065e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 2.19922e-02	AbsError: 3.86918e-03
+    Region: "electrostatic"	RelError: 2.19922e-02	AbsError: 3.86918e-03
+      Equation: "PotentialEquation"	RelError: 2.19922e-02	AbsError: 3.86918e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.35802e-16	AbsError: 4.04038e-17
+    Region: "electrostatic"	RelError: 2.35802e-16	AbsError: 4.04038e-17
+      Equation: "PotentialEquation"	RelError: 2.35802e-16	AbsError: 4.04038e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 5.63282e+03	AbsError: 2.19286e-01
+    Region: "electrostatic"	RelError: 5.63282e+03	AbsError: 2.19286e-01
+      Equation: "PotentialEquation"	RelError: 5.63282e+03	AbsError: 2.19286e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 3.54513e-12	AbsError: 4.40041e-16
+    Region: "electrostatic"	RelError: 3.54513e-12	AbsError: 4.40041e-16
+      Equation: "PotentialEquation"	RelError: 3.54513e-12	AbsError: 4.40041e-16
+vg0.800000_vd0.000000 009: phiR=2.193e-01 nR=2.905e-01 mu=-0.164107 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.40430e+00	AbsError: 2.11938e-01
+    Region: "electrostatic"	RelError: 1.40430e+00	AbsError: 2.11938e-01
+      Equation: "PotentialEquation"	RelError: 1.40430e+00	AbsError: 2.11938e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 8.05111e-16	AbsError: 1.79011e-16
+    Region: "electrostatic"	RelError: 8.05111e-16	AbsError: 1.79011e-16
+      Equation: "PotentialEquation"	RelError: 8.05111e-16	AbsError: 1.79011e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.82717e-02	AbsError: 6.00498e-03
+    Region: "electrostatic"	RelError: 3.82717e-02	AbsError: 6.00498e-03
+      Equation: "PotentialEquation"	RelError: 3.82717e-02	AbsError: 6.00498e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.94700e-16	AbsError: 3.94754e-17
+    Region: "electrostatic"	RelError: 1.94700e-16	AbsError: 3.94754e-17
+      Equation: "PotentialEquation"	RelError: 1.94700e-16	AbsError: 3.94754e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 4.75305e+02	AbsError: 2.15976e-01
+    Region: "electrostatic"	RelError: 4.75305e+02	AbsError: 2.15976e-01
+      Equation: "PotentialEquation"	RelError: 4.75305e+02	AbsError: 2.15976e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.62456e-13	AbsError: 3.14768e-16
+    Region: "electrostatic"	RelError: 2.62456e-13	AbsError: 3.14768e-16
+      Equation: "PotentialEquation"	RelError: 2.62456e-13	AbsError: 3.14768e-16
+vg0.800000_vd0.000000 010: phiR=2.160e-01 nR=2.653e-01 mu=-0.155911 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.47323e+00	AbsError: 2.08783e-01
+    Region: "electrostatic"	RelError: 1.47323e+00	AbsError: 2.08783e-01
+      Equation: "PotentialEquation"	RelError: 1.47323e+00	AbsError: 2.08783e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 5.22103e-16	AbsError: 1.19847e-16
+    Region: "electrostatic"	RelError: 5.22103e-16	AbsError: 1.19847e-16
+      Equation: "PotentialEquation"	RelError: 5.22103e-16	AbsError: 1.19847e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 4.31690e-02	AbsError: 6.41643e-03
+    Region: "electrostatic"	RelError: 4.31690e-02	AbsError: 6.41643e-03
+      Equation: "PotentialEquation"	RelError: 4.31690e-02	AbsError: 6.41643e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.71255e-16	AbsError: 4.40974e-17
+    Region: "electrostatic"	RelError: 2.71255e-16	AbsError: 4.40974e-17
+      Equation: "PotentialEquation"	RelError: 2.71255e-16	AbsError: 4.40974e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.00626e+03	AbsError: 2.13395e-01
+    Region: "electrostatic"	RelError: 1.00626e+03	AbsError: 2.13395e-01
+      Equation: "PotentialEquation"	RelError: 1.00626e+03	AbsError: 2.13395e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 8.00334e-13	AbsError: 2.46091e-16
+    Region: "electrostatic"	RelError: 8.00334e-13	AbsError: 2.46091e-16
+      Equation: "PotentialEquation"	RelError: 8.00334e-13	AbsError: 2.46091e-16
+vg0.800000_vd0.000000 011: phiR=2.134e-01 nR=2.625e-01 mu=-0.155028 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.46619e+00	AbsError: 2.06290e-01
+    Region: "electrostatic"	RelError: 1.46619e+00	AbsError: 2.06290e-01
+      Equation: "PotentialEquation"	RelError: 1.46619e+00	AbsError: 2.06290e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 5.96264e-16	AbsError: 1.53618e-16
+    Region: "electrostatic"	RelError: 5.96264e-16	AbsError: 1.53618e-16
+      Equation: "PotentialEquation"	RelError: 5.96264e-16	AbsError: 1.53618e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 4.30232e-02	AbsError: 6.34657e-03
+    Region: "electrostatic"	RelError: 4.30232e-02	AbsError: 6.34657e-03
+      Equation: "PotentialEquation"	RelError: 4.30232e-02	AbsError: 6.34657e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.50277e-16	AbsError: 4.84268e-17
+    Region: "electrostatic"	RelError: 2.50277e-16	AbsError: 4.84268e-17
+      Equation: "PotentialEquation"	RelError: 2.50277e-16	AbsError: 4.84268e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.94370e+02	AbsError: 2.10889e-01
+    Region: "electrostatic"	RelError: 3.94370e+02	AbsError: 2.10889e-01
+      Equation: "PotentialEquation"	RelError: 3.94370e+02	AbsError: 2.10889e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.70937e-13	AbsError: 2.75956e-16
+    Region: "electrostatic"	RelError: 1.70937e-13	AbsError: 2.75956e-16
+      Equation: "PotentialEquation"	RelError: 1.70937e-13	AbsError: 2.75956e-16
+vg0.800000_vd0.000000 012: phiR=2.109e-01 nR=2.598e-01 mu=-0.154151 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.45946e+00	AbsError: 2.03867e-01
+    Region: "electrostatic"	RelError: 1.45946e+00	AbsError: 2.03867e-01
+      Equation: "PotentialEquation"	RelError: 1.45946e+00	AbsError: 2.03867e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 6.90083e-16	AbsError: 1.77471e-16
+    Region: "electrostatic"	RelError: 6.90083e-16	AbsError: 1.77471e-16
+      Equation: "PotentialEquation"	RelError: 6.90083e-16	AbsError: 1.77471e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 4.28812e-02	AbsError: 6.27811e-03
+    Region: "electrostatic"	RelError: 4.28812e-02	AbsError: 6.27811e-03
+      Equation: "PotentialEquation"	RelError: 4.28812e-02	AbsError: 6.27811e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.47142e-16	AbsError: 4.27198e-17
+    Region: "electrostatic"	RelError: 2.47142e-16	AbsError: 4.27198e-17
+      Equation: "PotentialEquation"	RelError: 2.47142e-16	AbsError: 4.27198e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.93242e+04	AbsError: 2.08450e-01
+    Region: "electrostatic"	RelError: 1.93242e+04	AbsError: 2.08450e-01
+      Equation: "PotentialEquation"	RelError: 1.93242e+04	AbsError: 2.08450e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 4.38652e-12	AbsError: 3.15771e-16
+    Region: "electrostatic"	RelError: 4.38652e-12	AbsError: 3.15771e-16
+      Equation: "PotentialEquation"	RelError: 4.38652e-12	AbsError: 3.15771e-16
+vg0.800000_vd0.000000 013: phiR=2.084e-01 nR=2.571e-01 mu=-0.153281 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.45300e+00	AbsError: 2.01510e-01
+    Region: "electrostatic"	RelError: 1.45300e+00	AbsError: 2.01510e-01
+      Equation: "PotentialEquation"	RelError: 1.45300e+00	AbsError: 2.01510e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 6.93467e-16	AbsError: 1.61589e-16
+    Region: "electrostatic"	RelError: 6.93467e-16	AbsError: 1.61589e-16
+      Equation: "PotentialEquation"	RelError: 6.93467e-16	AbsError: 1.61589e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 4.27427e-02	AbsError: 6.21099e-03
+    Region: "electrostatic"	RelError: 4.27427e-02	AbsError: 6.21099e-03
+      Equation: "PotentialEquation"	RelError: 4.27427e-02	AbsError: 6.21099e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.46650e-16	AbsError: 5.09110e-17
+    Region: "electrostatic"	RelError: 2.46650e-16	AbsError: 5.09110e-17
+      Equation: "PotentialEquation"	RelError: 2.46650e-16	AbsError: 5.09110e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.94256e+05	AbsError: 2.06074e-01
+    Region: "electrostatic"	RelError: 1.94256e+05	AbsError: 2.06074e-01
+      Equation: "PotentialEquation"	RelError: 1.94256e+05	AbsError: 2.06074e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.19843e-11	AbsError: 2.87306e-16
+    Region: "electrostatic"	RelError: 1.19843e-11	AbsError: 2.87306e-16
+      Equation: "PotentialEquation"	RelError: 1.19843e-11	AbsError: 2.87306e-16
+vg0.800000_vd0.000000 014: phiR=2.061e-01 nR=2.545e-01 mu=-0.152418 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.44677e+00	AbsError: 1.99215e-01
+    Region: "electrostatic"	RelError: 1.44677e+00	AbsError: 1.99215e-01
+      Equation: "PotentialEquation"	RelError: 1.44677e+00	AbsError: 1.99215e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 5.93639e-16	AbsError: 1.52697e-16
+    Region: "electrostatic"	RelError: 5.93639e-16	AbsError: 1.52697e-16
+      Equation: "PotentialEquation"	RelError: 5.93639e-16	AbsError: 1.52697e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 4.26074e-02	AbsError: 6.14512e-03
+    Region: "electrostatic"	RelError: 4.26074e-02	AbsError: 6.14512e-03
+      Equation: "PotentialEquation"	RelError: 4.26074e-02	AbsError: 6.14512e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.15475e-16	AbsError: 4.64910e-17
+    Region: "electrostatic"	RelError: 2.15475e-16	AbsError: 4.64910e-17
+      Equation: "PotentialEquation"	RelError: 2.15475e-16	AbsError: 4.64910e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.55144e+03	AbsError: 2.03757e-01
+    Region: "electrostatic"	RelError: 1.55144e+03	AbsError: 2.03757e-01
+      Equation: "PotentialEquation"	RelError: 1.55144e+03	AbsError: 2.03757e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 4.98861e-13	AbsError: 2.74927e-16
+    Region: "electrostatic"	RelError: 4.98861e-13	AbsError: 2.74927e-16
+      Equation: "PotentialEquation"	RelError: 4.98861e-13	AbsError: 2.74927e-16
+vg0.800000_vd0.000000 015: phiR=2.038e-01 nR=2.520e-01 mu=-0.151561 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.44077e+00	AbsError: 1.96976e-01
+    Region: "electrostatic"	RelError: 1.44077e+00	AbsError: 1.96976e-01
+      Equation: "PotentialEquation"	RelError: 1.44077e+00	AbsError: 1.96976e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 8.45631e-16	AbsError: 2.03303e-16
+    Region: "electrostatic"	RelError: 8.45631e-16	AbsError: 2.03303e-16
+      Equation: "PotentialEquation"	RelError: 8.45631e-16	AbsError: 2.03303e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 4.24750e-02	AbsError: 6.08046e-03
+    Region: "electrostatic"	RelError: 4.24750e-02	AbsError: 6.08046e-03
+      Equation: "PotentialEquation"	RelError: 4.24750e-02	AbsError: 6.08046e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.99517e-16	AbsError: 4.93085e-17
+    Region: "electrostatic"	RelError: 1.99517e-16	AbsError: 4.93085e-17
+      Equation: "PotentialEquation"	RelError: 1.99517e-16	AbsError: 4.93085e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 2.61172e+03	AbsError: 2.01495e-01
+    Region: "electrostatic"	RelError: 2.61172e+03	AbsError: 2.01495e-01
+      Equation: "PotentialEquation"	RelError: 2.61172e+03	AbsError: 2.01495e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 3.39515e-13	AbsError: 2.30959e-16
+    Region: "electrostatic"	RelError: 3.39515e-13	AbsError: 2.30959e-16
+      Equation: "PotentialEquation"	RelError: 3.39515e-13	AbsError: 2.30959e-16
+vg0.800000_vd0.000000 016: phiR=2.015e-01 nR=2.496e-01 mu=-0.150711 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.43497e+00	AbsError: 1.94789e-01
+    Region: "electrostatic"	RelError: 1.43497e+00	AbsError: 1.94789e-01
+      Equation: "PotentialEquation"	RelError: 1.43497e+00	AbsError: 1.94789e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 7.00101e-16	AbsError: 1.32631e-16
+    Region: "electrostatic"	RelError: 7.00101e-16	AbsError: 1.32631e-16
+      Equation: "PotentialEquation"	RelError: 7.00101e-16	AbsError: 1.32631e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 4.23453e-02	AbsError: 6.01693e-03
+    Region: "electrostatic"	RelError: 4.23453e-02	AbsError: 6.01693e-03
+      Equation: "PotentialEquation"	RelError: 4.23453e-02	AbsError: 6.01693e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 3.15647e-16	AbsError: 4.30779e-17
+    Region: "electrostatic"	RelError: 3.15647e-16	AbsError: 4.30779e-17
+      Equation: "PotentialEquation"	RelError: 3.15647e-16	AbsError: 4.30779e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.07015e+03	AbsError: 1.99284e-01
+    Region: "electrostatic"	RelError: 1.07015e+03	AbsError: 1.99284e-01
+      Equation: "PotentialEquation"	RelError: 1.07015e+03	AbsError: 1.99284e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.12729e-12	AbsError: 2.64655e-16
+    Region: "electrostatic"	RelError: 1.12729e-12	AbsError: 2.64655e-16
+      Equation: "PotentialEquation"	RelError: 1.12729e-12	AbsError: 2.64655e-16
+vg0.800000_vd0.000000 017: phiR=1.993e-01 nR=2.472e-01 mu=-0.149868 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.42934e+00	AbsError: 1.92652e-01
+    Region: "electrostatic"	RelError: 1.42934e+00	AbsError: 1.92652e-01
+      Equation: "PotentialEquation"	RelError: 1.42934e+00	AbsError: 1.92652e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 6.58632e-16	AbsError: 1.28270e-16
+    Region: "electrostatic"	RelError: 6.58632e-16	AbsError: 1.28270e-16
+      Equation: "PotentialEquation"	RelError: 6.58632e-16	AbsError: 1.28270e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 4.22180e-02	AbsError: 5.95448e-03
+    Region: "electrostatic"	RelError: 4.22180e-02	AbsError: 5.95448e-03
+      Equation: "PotentialEquation"	RelError: 4.22180e-02	AbsError: 5.95448e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.24309e-16	AbsError: 3.87294e-17
+    Region: "electrostatic"	RelError: 2.24309e-16	AbsError: 3.87294e-17
+      Equation: "PotentialEquation"	RelError: 2.24309e-16	AbsError: 3.87294e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.66580e+02	AbsError: 1.97120e-01
+    Region: "electrostatic"	RelError: 1.66580e+02	AbsError: 1.97120e-01
+      Equation: "PotentialEquation"	RelError: 1.66580e+02	AbsError: 1.97120e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.11619e-13	AbsError: 2.69279e-16
+    Region: "electrostatic"	RelError: 1.11619e-13	AbsError: 2.69279e-16
+      Equation: "PotentialEquation"	RelError: 1.11619e-13	AbsError: 2.69279e-16
+vg0.800000_vd0.000000 018: phiR=1.971e-01 nR=2.448e-01 mu=-0.149032 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.42387e+00	AbsError: 1.90561e-01
+    Region: "electrostatic"	RelError: 1.42387e+00	AbsError: 1.90561e-01
+      Equation: "PotentialEquation"	RelError: 1.42387e+00	AbsError: 1.90561e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 8.30227e-16	AbsError: 1.66761e-16
+    Region: "electrostatic"	RelError: 8.30227e-16	AbsError: 1.66761e-16
+      Equation: "PotentialEquation"	RelError: 8.30227e-16	AbsError: 1.66761e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 4.20929e-02	AbsError: 5.89306e-03
+    Region: "electrostatic"	RelError: 4.20929e-02	AbsError: 5.89306e-03
+      Equation: "PotentialEquation"	RelError: 4.20929e-02	AbsError: 5.89306e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.27133e-16	AbsError: 3.71696e-17
+    Region: "electrostatic"	RelError: 2.27133e-16	AbsError: 3.71696e-17
+      Equation: "PotentialEquation"	RelError: 2.27133e-16	AbsError: 3.71696e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.80701e+02	AbsError: 1.95001e-01
+    Region: "electrostatic"	RelError: 3.80701e+02	AbsError: 1.95001e-01
+      Equation: "PotentialEquation"	RelError: 3.80701e+02	AbsError: 1.95001e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.92050e-13	AbsError: 2.23098e-16
+    Region: "electrostatic"	RelError: 2.92050e-13	AbsError: 2.23098e-16
+      Equation: "PotentialEquation"	RelError: 2.92050e-13	AbsError: 2.23098e-16
+vg0.800000_vd0.000000 019: phiR=1.950e-01 nR=2.425e-01 mu=-0.148202 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.41855e+00	AbsError: 1.88512e-01
+    Region: "electrostatic"	RelError: 1.41855e+00	AbsError: 1.88512e-01
+      Equation: "PotentialEquation"	RelError: 1.41855e+00	AbsError: 1.88512e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 6.22784e-16	AbsError: 1.51066e-16
+    Region: "electrostatic"	RelError: 6.22784e-16	AbsError: 1.51066e-16
+      Equation: "PotentialEquation"	RelError: 6.22784e-16	AbsError: 1.51066e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 4.19699e-02	AbsError: 5.83263e-03
+    Region: "electrostatic"	RelError: 4.19699e-02	AbsError: 5.83263e-03
+      Equation: "PotentialEquation"	RelError: 4.19699e-02	AbsError: 5.83263e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.77465e-16	AbsError: 4.01746e-17
+    Region: "electrostatic"	RelError: 1.77465e-16	AbsError: 4.01746e-17
+      Equation: "PotentialEquation"	RelError: 1.77465e-16	AbsError: 4.01746e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 9.34465e+02	AbsError: 1.92924e-01
+    Region: "electrostatic"	RelError: 9.34465e+02	AbsError: 1.92924e-01
+      Equation: "PotentialEquation"	RelError: 9.34465e+02	AbsError: 1.92924e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.18180e-12	AbsError: 3.24160e-16
+    Region: "electrostatic"	RelError: 1.18180e-12	AbsError: 3.24160e-16
+      Equation: "PotentialEquation"	RelError: 1.18180e-12	AbsError: 3.24160e-16
+vg0.800000_vd0.000000 020: phiR=1.929e-01 nR=2.402e-01 mu=-0.147379 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.41336e+00	AbsError: 1.86504e-01
+    Region: "electrostatic"	RelError: 1.41336e+00	AbsError: 1.86504e-01
+      Equation: "PotentialEquation"	RelError: 1.41336e+00	AbsError: 1.86504e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 7.09266e-16	AbsError: 1.67681e-16
+    Region: "electrostatic"	RelError: 7.09266e-16	AbsError: 1.67681e-16
+      Equation: "PotentialEquation"	RelError: 7.09266e-16	AbsError: 1.67681e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 4.18486e-02	AbsError: 5.77315e-03
+    Region: "electrostatic"	RelError: 4.18486e-02	AbsError: 5.77315e-03
+      Equation: "PotentialEquation"	RelError: 4.18486e-02	AbsError: 5.77315e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.75447e-16	AbsError: 4.07786e-17
+    Region: "electrostatic"	RelError: 1.75447e-16	AbsError: 4.07786e-17
+      Equation: "PotentialEquation"	RelError: 1.75447e-16	AbsError: 4.07786e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 5.51841e+02	AbsError: 1.90886e-01
+    Region: "electrostatic"	RelError: 5.51841e+02	AbsError: 1.90886e-01
+      Equation: "PotentialEquation"	RelError: 5.51841e+02	AbsError: 1.90886e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.36896e-13	AbsError: 2.96526e-16
+    Region: "electrostatic"	RelError: 2.36896e-13	AbsError: 2.96526e-16
+      Equation: "PotentialEquation"	RelError: 2.36896e-13	AbsError: 2.96526e-16
+vg0.800000_vd0.000000 021: phiR=1.909e-01 nR=2.380e-01 mu=-0.146562 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.40828e+00	AbsError: 1.84534e-01
+    Region: "electrostatic"	RelError: 1.40828e+00	AbsError: 1.84534e-01
+      Equation: "PotentialEquation"	RelError: 1.40828e+00	AbsError: 1.84534e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 8.74147e-16	AbsError: 2.05978e-16
+    Region: "electrostatic"	RelError: 8.74147e-16	AbsError: 2.05978e-16
+      Equation: "PotentialEquation"	RelError: 8.74147e-16	AbsError: 2.05978e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 4.17290e-02	AbsError: 5.71457e-03
+    Region: "electrostatic"	RelError: 4.17290e-02	AbsError: 5.71457e-03
+      Equation: "PotentialEquation"	RelError: 4.17290e-02	AbsError: 5.71457e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.11340e-16	AbsError: 4.32927e-17
+    Region: "electrostatic"	RelError: 2.11340e-16	AbsError: 4.32927e-17
+      Equation: "PotentialEquation"	RelError: 2.11340e-16	AbsError: 4.32927e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.50308e+02	AbsError: 1.88886e-01
+    Region: "electrostatic"	RelError: 3.50308e+02	AbsError: 1.88886e-01
+      Equation: "PotentialEquation"	RelError: 3.50308e+02	AbsError: 1.88886e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.03163e-13	AbsError: 2.63833e-16
+    Region: "electrostatic"	RelError: 1.03163e-13	AbsError: 2.63833e-16
+      Equation: "PotentialEquation"	RelError: 1.03163e-13	AbsError: 2.63833e-16
+vg0.800000_vd0.000000 022: phiR=1.889e-01 nR=2.358e-01 mu=-0.145753 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.40331e+00	AbsError: 1.82600e-01
+    Region: "electrostatic"	RelError: 1.40331e+00	AbsError: 1.82600e-01
+      Equation: "PotentialEquation"	RelError: 1.40331e+00	AbsError: 1.82600e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 5.90821e-16	AbsError: 1.38760e-16
+    Region: "electrostatic"	RelError: 5.90821e-16	AbsError: 1.38760e-16
+      Equation: "PotentialEquation"	RelError: 5.90821e-16	AbsError: 1.38760e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 4.16109e-02	AbsError: 5.65686e-03
+    Region: "electrostatic"	RelError: 4.16109e-02	AbsError: 5.65686e-03
+      Equation: "PotentialEquation"	RelError: 4.16109e-02	AbsError: 5.65686e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.06743e-16	AbsError: 4.38458e-17
+    Region: "electrostatic"	RelError: 2.06743e-16	AbsError: 4.38458e-17
+      Equation: "PotentialEquation"	RelError: 2.06743e-16	AbsError: 4.38458e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 2.93830e+02	AbsError: 1.86920e-01
+    Region: "electrostatic"	RelError: 2.93830e+02	AbsError: 1.86920e-01
+      Equation: "PotentialEquation"	RelError: 2.93830e+02	AbsError: 1.86920e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.59194e-13	AbsError: 3.93988e-16
+    Region: "electrostatic"	RelError: 1.59194e-13	AbsError: 3.93988e-16
+      Equation: "PotentialEquation"	RelError: 1.59194e-13	AbsError: 3.93988e-16
+vg0.800000_vd0.000000 023: phiR=1.869e-01 nR=2.336e-01 mu=-0.144950 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.39844e+00	AbsError: 1.80699e-01
+    Region: "electrostatic"	RelError: 1.39844e+00	AbsError: 1.80699e-01
+      Equation: "PotentialEquation"	RelError: 1.39844e+00	AbsError: 1.80699e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 5.96604e-16	AbsError: 1.40025e-16
+    Region: "electrostatic"	RelError: 5.96604e-16	AbsError: 1.40025e-16
+      Equation: "PotentialEquation"	RelError: 5.96604e-16	AbsError: 1.40025e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 4.14942e-02	AbsError: 5.59999e-03
+    Region: "electrostatic"	RelError: 4.14942e-02	AbsError: 5.59999e-03
+      Equation: "PotentialEquation"	RelError: 4.14942e-02	AbsError: 5.59999e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.97991e-16	AbsError: 3.89972e-17
+    Region: "electrostatic"	RelError: 2.97991e-16	AbsError: 3.89972e-17
+      Equation: "PotentialEquation"	RelError: 2.97991e-16	AbsError: 3.89972e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 6.83191e+02	AbsError: 1.84988e-01
+    Region: "electrostatic"	RelError: 6.83191e+02	AbsError: 1.84988e-01
+      Equation: "PotentialEquation"	RelError: 6.83191e+02	AbsError: 1.84988e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.94254e-13	AbsError: 3.11259e-16
+    Region: "electrostatic"	RelError: 1.94254e-13	AbsError: 3.11259e-16
+      Equation: "PotentialEquation"	RelError: 1.94254e-13	AbsError: 3.11259e-16
+vg0.800000_vd0.000000 024: phiR=1.850e-01 nR=2.315e-01 mu=-0.144153 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.39365e+00	AbsError: 1.78831e-01
+    Region: "electrostatic"	RelError: 1.39365e+00	AbsError: 1.78831e-01
+      Equation: "PotentialEquation"	RelError: 1.39365e+00	AbsError: 1.78831e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 5.93260e-16	AbsError: 1.35288e-16
+    Region: "electrostatic"	RelError: 5.93260e-16	AbsError: 1.35288e-16
+      Equation: "PotentialEquation"	RelError: 5.93260e-16	AbsError: 1.35288e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 4.13788e-02	AbsError: 5.54392e-03
+    Region: "electrostatic"	RelError: 4.13788e-02	AbsError: 5.54392e-03
+      Equation: "PotentialEquation"	RelError: 4.13788e-02	AbsError: 5.54392e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.87077e-16	AbsError: 4.14150e-17
+    Region: "electrostatic"	RelError: 2.87077e-16	AbsError: 4.14150e-17
+      Equation: "PotentialEquation"	RelError: 2.87077e-16	AbsError: 4.14150e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.63895e+03	AbsError: 1.83087e-01
+    Region: "electrostatic"	RelError: 1.63895e+03	AbsError: 1.83087e-01
+      Equation: "PotentialEquation"	RelError: 1.63895e+03	AbsError: 1.83087e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 8.43871e-13	AbsError: 2.12721e-16
+    Region: "electrostatic"	RelError: 8.43871e-13	AbsError: 2.12721e-16
+      Equation: "PotentialEquation"	RelError: 8.43871e-13	AbsError: 2.12721e-16
+vg0.800000_vd0.000000 025: phiR=1.831e-01 nR=2.294e-01 mu=-0.143363 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.38893e+00	AbsError: 1.76992e-01
+    Region: "electrostatic"	RelError: 1.38893e+00	AbsError: 1.76992e-01
+      Equation: "PotentialEquation"	RelError: 1.38893e+00	AbsError: 1.76992e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 6.07603e-16	AbsError: 1.31768e-16
+    Region: "electrostatic"	RelError: 6.07603e-16	AbsError: 1.31768e-16
+      Equation: "PotentialEquation"	RelError: 6.07603e-16	AbsError: 1.31768e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 4.12645e-02	AbsError: 5.48864e-03
+    Region: "electrostatic"	RelError: 4.12645e-02	AbsError: 5.48864e-03
+      Equation: "PotentialEquation"	RelError: 4.12645e-02	AbsError: 5.48864e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.99313e-16	AbsError: 3.68692e-17
+    Region: "electrostatic"	RelError: 1.99313e-16	AbsError: 3.68692e-17
+      Equation: "PotentialEquation"	RelError: 1.99313e-16	AbsError: 3.68692e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 2.60689e+02	AbsError: 1.81216e-01
+    Region: "electrostatic"	RelError: 2.60689e+02	AbsError: 1.81216e-01
+      Equation: "PotentialEquation"	RelError: 2.60689e+02	AbsError: 1.81216e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.51491e-13	AbsError: 2.74009e-16
+    Region: "electrostatic"	RelError: 2.51491e-13	AbsError: 2.74009e-16
+      Equation: "PotentialEquation"	RelError: 2.51491e-13	AbsError: 2.74009e-16
+vg0.800000_vd0.000000 026: phiR=1.812e-01 nR=2.273e-01 mu=-0.142580 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.38429e+00	AbsError: 1.75183e-01
+    Region: "electrostatic"	RelError: 1.38429e+00	AbsError: 1.75183e-01
+      Equation: "PotentialEquation"	RelError: 1.38429e+00	AbsError: 1.75183e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 8.06801e-16	AbsError: 1.52505e-16
+    Region: "electrostatic"	RelError: 8.06801e-16	AbsError: 1.52505e-16
+      Equation: "PotentialEquation"	RelError: 8.06801e-16	AbsError: 1.52505e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 4.11511e-02	AbsError: 5.43410e-03
+    Region: "electrostatic"	RelError: 4.11511e-02	AbsError: 5.43410e-03
+      Equation: "PotentialEquation"	RelError: 4.11511e-02	AbsError: 5.43410e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.84761e-16	AbsError: 5.39920e-17
+    Region: "electrostatic"	RelError: 2.84761e-16	AbsError: 5.39920e-17
+      Equation: "PotentialEquation"	RelError: 2.84761e-16	AbsError: 5.39920e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.04654e+04	AbsError: 1.79373e-01
+    Region: "electrostatic"	RelError: 3.04654e+04	AbsError: 1.79373e-01
+      Equation: "PotentialEquation"	RelError: 3.04654e+04	AbsError: 1.79373e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.20047e-11	AbsError: 2.28996e-16
+    Region: "electrostatic"	RelError: 1.20047e-11	AbsError: 2.28996e-16
+      Equation: "PotentialEquation"	RelError: 1.20047e-11	AbsError: 2.28996e-16
+vg0.800000_vd0.000000 027: phiR=1.794e-01 nR=2.253e-01 mu=-0.141803 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.37970e+00	AbsError: 1.73401e-01
+    Region: "electrostatic"	RelError: 1.37970e+00	AbsError: 1.73401e-01
+      Equation: "PotentialEquation"	RelError: 1.37970e+00	AbsError: 1.73401e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 9.12677e-16	AbsError: 1.43211e-16
+    Region: "electrostatic"	RelError: 9.12677e-16	AbsError: 1.43211e-16
+      Equation: "PotentialEquation"	RelError: 9.12677e-16	AbsError: 1.43211e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 4.10387e-02	AbsError: 5.38030e-03
+    Region: "electrostatic"	RelError: 4.10387e-02	AbsError: 5.38030e-03
+      Equation: "PotentialEquation"	RelError: 4.10387e-02	AbsError: 5.38030e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.08837e-16	AbsError: 4.52132e-17
+    Region: "electrostatic"	RelError: 2.08837e-16	AbsError: 4.52132e-17
+      Equation: "PotentialEquation"	RelError: 2.08837e-16	AbsError: 4.52132e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.67108e+03	AbsError: 1.77558e-01
+    Region: "electrostatic"	RelError: 3.67108e+03	AbsError: 1.77558e-01
+      Equation: "PotentialEquation"	RelError: 3.67108e+03	AbsError: 1.77558e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 8.61749e-13	AbsError: 2.47225e-16
+    Region: "electrostatic"	RelError: 8.61749e-13	AbsError: 2.47225e-16
+      Equation: "PotentialEquation"	RelError: 8.61749e-13	AbsError: 2.47225e-16
+vg0.800000_vd0.000000 028: phiR=1.776e-01 nR=2.233e-01 mu=-0.141032 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.37517e+00	AbsError: 1.71645e-01
+    Region: "electrostatic"	RelError: 1.37517e+00	AbsError: 1.71645e-01
+      Equation: "PotentialEquation"	RelError: 1.37517e+00	AbsError: 1.71645e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 7.22667e-16	AbsError: 1.76977e-16
+    Region: "electrostatic"	RelError: 7.22667e-16	AbsError: 1.76977e-16
+      Equation: "PotentialEquation"	RelError: 7.22667e-16	AbsError: 1.76977e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 4.09272e-02	AbsError: 5.32719e-03
+    Region: "electrostatic"	RelError: 4.09272e-02	AbsError: 5.32719e-03
+      Equation: "PotentialEquation"	RelError: 4.09272e-02	AbsError: 5.32719e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.50677e-16	AbsError: 5.00073e-17
+    Region: "electrostatic"	RelError: 2.50677e-16	AbsError: 5.00073e-17
+      Equation: "PotentialEquation"	RelError: 2.50677e-16	AbsError: 5.00073e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 5.06046e+03	AbsError: 1.75769e-01
+    Region: "electrostatic"	RelError: 5.06046e+03	AbsError: 1.75769e-01
+      Equation: "PotentialEquation"	RelError: 5.06046e+03	AbsError: 1.75769e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.57103e-12	AbsError: 1.85272e-16
+    Region: "electrostatic"	RelError: 1.57103e-12	AbsError: 1.85272e-16
+      Equation: "PotentialEquation"	RelError: 1.57103e-12	AbsError: 1.85272e-16
+vg0.800000_vd0.000000 029: phiR=1.758e-01 nR=2.213e-01 mu=-0.140268 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.37068e+00	AbsError: 1.69914e-01
+    Region: "electrostatic"	RelError: 1.37068e+00	AbsError: 1.69914e-01
+      Equation: "PotentialEquation"	RelError: 1.37068e+00	AbsError: 1.69914e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 6.34473e-16	AbsError: 1.32301e-16
+    Region: "electrostatic"	RelError: 6.34473e-16	AbsError: 1.32301e-16
+      Equation: "PotentialEquation"	RelError: 6.34473e-16	AbsError: 1.32301e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 4.08164e-02	AbsError: 5.27478e-03
+    Region: "electrostatic"	RelError: 4.08164e-02	AbsError: 5.27478e-03
+      Equation: "PotentialEquation"	RelError: 4.08164e-02	AbsError: 5.27478e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.60665e-16	AbsError: 4.39257e-17
+    Region: "electrostatic"	RelError: 2.60665e-16	AbsError: 4.39257e-17
+      Equation: "PotentialEquation"	RelError: 2.60665e-16	AbsError: 4.39257e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.33175e+02	AbsError: 1.74005e-01
+    Region: "electrostatic"	RelError: 3.33175e+02	AbsError: 1.74005e-01
+      Equation: "PotentialEquation"	RelError: 3.33175e+02	AbsError: 1.74005e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.14596e-13	AbsError: 2.69693e-16
+    Region: "electrostatic"	RelError: 1.14596e-13	AbsError: 2.69693e-16
+      Equation: "PotentialEquation"	RelError: 1.14596e-13	AbsError: 2.69693e-16
+vg0.800000_vd0.000000 030: phiR=1.740e-01 nR=2.193e-01 mu=-0.139510 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.36624e+00	AbsError: 1.68208e-01
+    Region: "electrostatic"	RelError: 1.36624e+00	AbsError: 1.68208e-01
+      Equation: "PotentialEquation"	RelError: 1.36624e+00	AbsError: 1.68208e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 5.61547e-16	AbsError: 1.49617e-16
+    Region: "electrostatic"	RelError: 5.61547e-16	AbsError: 1.49617e-16
+      Equation: "PotentialEquation"	RelError: 5.61547e-16	AbsError: 1.49617e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 4.07062e-02	AbsError: 5.22302e-03
+    Region: "electrostatic"	RelError: 4.07062e-02	AbsError: 5.22302e-03
+      Equation: "PotentialEquation"	RelError: 4.07062e-02	AbsError: 5.22302e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 3.23060e-16	AbsError: 6.39733e-17
+    Region: "electrostatic"	RelError: 3.23060e-16	AbsError: 6.39733e-17
+      Equation: "PotentialEquation"	RelError: 3.23060e-16	AbsError: 6.39733e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 4.03261e+03	AbsError: 1.72265e-01
+    Region: "electrostatic"	RelError: 4.03261e+03	AbsError: 1.72265e-01
+      Equation: "PotentialEquation"	RelError: 4.03261e+03	AbsError: 1.72265e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.04170e-12	AbsError: 2.66849e-16
+    Region: "electrostatic"	RelError: 2.04170e-12	AbsError: 2.66849e-16
+      Equation: "PotentialEquation"	RelError: 2.04170e-12	AbsError: 2.66849e-16
+vg0.800000_vd0.000000 031: phiR=1.723e-01 nR=2.173e-01 mu=-0.138759 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.36184e+00	AbsError: 1.66524e-01
+    Region: "electrostatic"	RelError: 1.36184e+00	AbsError: 1.66524e-01
+      Equation: "PotentialEquation"	RelError: 1.36184e+00	AbsError: 1.66524e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 5.62422e-16	AbsError: 1.26010e-16
+    Region: "electrostatic"	RelError: 5.62422e-16	AbsError: 1.26010e-16
+      Equation: "PotentialEquation"	RelError: 5.62422e-16	AbsError: 1.26010e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 4.05967e-02	AbsError: 5.17191e-03
+    Region: "electrostatic"	RelError: 4.05967e-02	AbsError: 5.17191e-03
+      Equation: "PotentialEquation"	RelError: 4.05967e-02	AbsError: 5.17191e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.18448e-16	AbsError: 4.79474e-17
+    Region: "electrostatic"	RelError: 2.18448e-16	AbsError: 4.79474e-17
+      Equation: "PotentialEquation"	RelError: 2.18448e-16	AbsError: 4.79474e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.11430e+03	AbsError: 1.70548e-01
+    Region: "electrostatic"	RelError: 1.11430e+03	AbsError: 1.70548e-01
+      Equation: "PotentialEquation"	RelError: 1.11430e+03	AbsError: 1.70548e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 5.98639e-13	AbsError: 2.36563e-16
+    Region: "electrostatic"	RelError: 5.98639e-13	AbsError: 2.36563e-16
+      Equation: "PotentialEquation"	RelError: 5.98639e-13	AbsError: 2.36563e-16
+vg0.800000_vd0.000000 032: phiR=1.705e-01 nR=2.154e-01 mu=-0.138014 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.35747e+00	AbsError: 1.64863e-01
+    Region: "electrostatic"	RelError: 1.35747e+00	AbsError: 1.64863e-01
+      Equation: "PotentialEquation"	RelError: 1.35747e+00	AbsError: 1.64863e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 5.25869e-16	AbsError: 1.06382e-16
+    Region: "electrostatic"	RelError: 5.25869e-16	AbsError: 1.06382e-16
+      Equation: "PotentialEquation"	RelError: 5.25869e-16	AbsError: 1.06382e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 4.04876e-02	AbsError: 5.12143e-03
+    Region: "electrostatic"	RelError: 4.04876e-02	AbsError: 5.12143e-03
+      Equation: "PotentialEquation"	RelError: 4.04876e-02	AbsError: 5.12143e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.82063e-16	AbsError: 3.71422e-17
+    Region: "electrostatic"	RelError: 1.82063e-16	AbsError: 3.71422e-17
+      Equation: "PotentialEquation"	RelError: 1.82063e-16	AbsError: 3.71422e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.56629e+02	AbsError: 1.68853e-01
+    Region: "electrostatic"	RelError: 3.56629e+02	AbsError: 1.68853e-01
+      Equation: "PotentialEquation"	RelError: 3.56629e+02	AbsError: 1.68853e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 9.08242e-14	AbsError: 2.84989e-16
+    Region: "electrostatic"	RelError: 9.08242e-14	AbsError: 2.84989e-16
+      Equation: "PotentialEquation"	RelError: 9.08242e-14	AbsError: 2.84989e-16
+vg0.800000_vd0.000000 033: phiR=1.689e-01 nR=2.135e-01 mu=-0.137276 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.35313e+00	AbsError: 1.63223e-01
+    Region: "electrostatic"	RelError: 1.35313e+00	AbsError: 1.63223e-01
+      Equation: "PotentialEquation"	RelError: 1.35313e+00	AbsError: 1.63223e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 8.25212e-16	AbsError: 1.35827e-16
+    Region: "electrostatic"	RelError: 8.25212e-16	AbsError: 1.35827e-16
+      Equation: "PotentialEquation"	RelError: 8.25212e-16	AbsError: 1.35827e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 4.03791e-02	AbsError: 5.07156e-03
+    Region: "electrostatic"	RelError: 4.03791e-02	AbsError: 5.07156e-03
+      Equation: "PotentialEquation"	RelError: 4.03791e-02	AbsError: 5.07156e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.20688e-16	AbsError: 3.44438e-17
+    Region: "electrostatic"	RelError: 2.20688e-16	AbsError: 3.44438e-17
+      Equation: "PotentialEquation"	RelError: 2.20688e-16	AbsError: 3.44438e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 2.22581e+02	AbsError: 1.67180e-01
+    Region: "electrostatic"	RelError: 2.22581e+02	AbsError: 1.67180e-01
+      Equation: "PotentialEquation"	RelError: 2.22581e+02	AbsError: 1.67180e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.26847e-13	AbsError: 2.29142e-16
+    Region: "electrostatic"	RelError: 1.26847e-13	AbsError: 2.29142e-16
+      Equation: "PotentialEquation"	RelError: 1.26847e-13	AbsError: 2.29142e-16
+vg0.800000_vd0.000000 034: phiR=1.672e-01 nR=2.116e-01 mu=-0.136543 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.34881e+00	AbsError: 1.61604e-01
+    Region: "electrostatic"	RelError: 1.34881e+00	AbsError: 1.61604e-01
+      Equation: "PotentialEquation"	RelError: 1.34881e+00	AbsError: 1.61604e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 7.27445e-16	AbsError: 1.36944e-16
+    Region: "electrostatic"	RelError: 7.27445e-16	AbsError: 1.36944e-16
+      Equation: "PotentialEquation"	RelError: 7.27445e-16	AbsError: 1.36944e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 4.02710e-02	AbsError: 5.02229e-03
+    Region: "electrostatic"	RelError: 4.02710e-02	AbsError: 5.02229e-03
+      Equation: "PotentialEquation"	RelError: 4.02710e-02	AbsError: 5.02229e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.84070e-16	AbsError: 4.92774e-17
+    Region: "electrostatic"	RelError: 1.84070e-16	AbsError: 4.92774e-17
+      Equation: "PotentialEquation"	RelError: 1.84070e-16	AbsError: 4.92774e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 5.38012e+03	AbsError: 1.65528e-01
+    Region: "electrostatic"	RelError: 5.38012e+03	AbsError: 1.65528e-01
+      Equation: "PotentialEquation"	RelError: 5.38012e+03	AbsError: 1.65528e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 4.22689e-13	AbsError: 2.25411e-16
+    Region: "electrostatic"	RelError: 4.22689e-13	AbsError: 2.25411e-16
+      Equation: "PotentialEquation"	RelError: 4.22689e-13	AbsError: 2.25411e-16
+vg0.800000_vd0.000000 035: phiR=1.655e-01 nR=2.097e-01 mu=-0.135817 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.34452e+00	AbsError: 1.60006e-01
+    Region: "electrostatic"	RelError: 1.34452e+00	AbsError: 1.60006e-01
+      Equation: "PotentialEquation"	RelError: 1.34452e+00	AbsError: 1.60006e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 6.23654e-16	AbsError: 1.49676e-16
+    Region: "electrostatic"	RelError: 6.23654e-16	AbsError: 1.49676e-16
+      Equation: "PotentialEquation"	RelError: 6.23654e-16	AbsError: 1.49676e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 4.01632e-02	AbsError: 4.97360e-03
+    Region: "electrostatic"	RelError: 4.01632e-02	AbsError: 4.97360e-03
+      Equation: "PotentialEquation"	RelError: 4.01632e-02	AbsError: 4.97360e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.33865e-16	AbsError: 4.71436e-17
+    Region: "electrostatic"	RelError: 2.33865e-16	AbsError: 4.71436e-17
+      Equation: "PotentialEquation"	RelError: 2.33865e-16	AbsError: 4.71436e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 2.04545e+02	AbsError: 1.63895e-01
+    Region: "electrostatic"	RelError: 2.04545e+02	AbsError: 1.63895e-01
+      Equation: "PotentialEquation"	RelError: 2.04545e+02	AbsError: 1.63895e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 8.59316e-14	AbsError: 2.52292e-16
+    Region: "electrostatic"	RelError: 8.59316e-14	AbsError: 2.52292e-16
+      Equation: "PotentialEquation"	RelError: 8.59316e-14	AbsError: 2.52292e-16
+vg0.800000_vd0.000000 036: phiR=1.639e-01 nR=2.078e-01 mu=-0.135097 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.34024e+00	AbsError: 1.58426e-01
+    Region: "electrostatic"	RelError: 1.34024e+00	AbsError: 1.58426e-01
+      Equation: "PotentialEquation"	RelError: 1.34024e+00	AbsError: 1.58426e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 6.29529e-16	AbsError: 1.39672e-16
+    Region: "electrostatic"	RelError: 6.29529e-16	AbsError: 1.39672e-16
+      Equation: "PotentialEquation"	RelError: 6.29529e-16	AbsError: 1.39672e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 4.00557e-02	AbsError: 4.92547e-03
+    Region: "electrostatic"	RelError: 4.00557e-02	AbsError: 4.92547e-03
+      Equation: "PotentialEquation"	RelError: 4.00557e-02	AbsError: 4.92547e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.57916e-16	AbsError: 4.55276e-17
+    Region: "electrostatic"	RelError: 2.57916e-16	AbsError: 4.55276e-17
+      Equation: "PotentialEquation"	RelError: 2.57916e-16	AbsError: 4.55276e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.28518e+02	AbsError: 1.62282e-01
+    Region: "electrostatic"	RelError: 1.28518e+02	AbsError: 1.62282e-01
+      Equation: "PotentialEquation"	RelError: 1.28518e+02	AbsError: 1.62282e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.04306e-13	AbsError: 2.46107e-16
+    Region: "electrostatic"	RelError: 1.04306e-13	AbsError: 2.46107e-16
+      Equation: "PotentialEquation"	RelError: 1.04306e-13	AbsError: 2.46107e-16
+vg0.800000_vd0.000000 037: phiR=1.623e-01 nR=2.060e-01 mu=-0.134383 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.33599e+00	AbsError: 1.56865e-01
+    Region: "electrostatic"	RelError: 1.33599e+00	AbsError: 1.56865e-01
+      Equation: "PotentialEquation"	RelError: 1.33599e+00	AbsError: 1.56865e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 5.81408e-16	AbsError: 1.20341e-16
+    Region: "electrostatic"	RelError: 5.81408e-16	AbsError: 1.20341e-16
+      Equation: "PotentialEquation"	RelError: 5.81408e-16	AbsError: 1.20341e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.99486e-02	AbsError: 4.87791e-03
+    Region: "electrostatic"	RelError: 3.99486e-02	AbsError: 4.87791e-03
+      Equation: "PotentialEquation"	RelError: 3.99486e-02	AbsError: 4.87791e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.08678e-16	AbsError: 4.12113e-17
+    Region: "electrostatic"	RelError: 2.08678e-16	AbsError: 4.12113e-17
+      Equation: "PotentialEquation"	RelError: 2.08678e-16	AbsError: 4.12113e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 2.98371e+02	AbsError: 1.60689e-01
+    Region: "electrostatic"	RelError: 2.98371e+02	AbsError: 1.60689e-01
+      Equation: "PotentialEquation"	RelError: 2.98371e+02	AbsError: 1.60689e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.31339e-13	AbsError: 2.19967e-16
+    Region: "electrostatic"	RelError: 1.31339e-13	AbsError: 2.19967e-16
+      Equation: "PotentialEquation"	RelError: 1.31339e-13	AbsError: 2.19967e-16
+vg0.800000_vd0.000000 038: phiR=1.607e-01 nR=2.041e-01 mu=-0.133675 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.33174e+00	AbsError: 1.55323e-01
+    Region: "electrostatic"	RelError: 1.33174e+00	AbsError: 1.55323e-01
+      Equation: "PotentialEquation"	RelError: 1.33174e+00	AbsError: 1.55323e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 6.03808e-16	AbsError: 1.43698e-16
+    Region: "electrostatic"	RelError: 6.03808e-16	AbsError: 1.43698e-16
+      Equation: "PotentialEquation"	RelError: 6.03808e-16	AbsError: 1.43698e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.98416e-02	AbsError: 4.83098e-03
+    Region: "electrostatic"	RelError: 3.98416e-02	AbsError: 4.83098e-03
+      Equation: "PotentialEquation"	RelError: 3.98416e-02	AbsError: 4.83098e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.32937e-16	AbsError: 3.92238e-17
+    Region: "electrostatic"	RelError: 2.32937e-16	AbsError: 3.92238e-17
+      Equation: "PotentialEquation"	RelError: 2.32937e-16	AbsError: 3.92238e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 9.03701e+02	AbsError: 1.59113e-01
+    Region: "electrostatic"	RelError: 9.03701e+02	AbsError: 1.59113e-01
+      Equation: "PotentialEquation"	RelError: 9.03701e+02	AbsError: 1.59113e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.10418e-13	AbsError: 1.91450e-16
+    Region: "electrostatic"	RelError: 2.10418e-13	AbsError: 1.91450e-16
+      Equation: "PotentialEquation"	RelError: 2.10418e-13	AbsError: 1.91450e-16
+vg0.800000_vd0.000000 039: phiR=1.591e-01 nR=2.023e-01 mu=-0.132973 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.32751e+00	AbsError: 1.53798e-01
+    Region: "electrostatic"	RelError: 1.32751e+00	AbsError: 1.53798e-01
+      Equation: "PotentialEquation"	RelError: 1.32751e+00	AbsError: 1.53798e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 5.91283e-16	AbsError: 9.82383e-17
+    Region: "electrostatic"	RelError: 5.91283e-16	AbsError: 9.82383e-17
+      Equation: "PotentialEquation"	RelError: 5.91283e-16	AbsError: 9.82383e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.97348e-02	AbsError: 4.78705e-03
+    Region: "electrostatic"	RelError: 3.97348e-02	AbsError: 4.78705e-03
+      Equation: "PotentialEquation"	RelError: 3.97348e-02	AbsError: 4.78705e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.91664e-16	AbsError: 4.34329e-17
+    Region: "electrostatic"	RelError: 1.91664e-16	AbsError: 4.34329e-17
+      Equation: "PotentialEquation"	RelError: 1.91664e-16	AbsError: 4.34329e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.72512e+03	AbsError: 1.57556e-01
+    Region: "electrostatic"	RelError: 1.72512e+03	AbsError: 1.57556e-01
+      Equation: "PotentialEquation"	RelError: 1.72512e+03	AbsError: 1.57556e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.71479e-12	AbsError: 2.27551e-16
+    Region: "electrostatic"	RelError: 1.71479e-12	AbsError: 2.27551e-16
+      Equation: "PotentialEquation"	RelError: 1.71479e-12	AbsError: 2.27551e-16
+vg0.800000_vd0.000000 040: phiR=1.576e-01 nR=2.005e-01 mu=-0.132278 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.32329e+00	AbsError: 1.52291e-01
+    Region: "electrostatic"	RelError: 1.32329e+00	AbsError: 1.52291e-01
+      Equation: "PotentialEquation"	RelError: 1.32329e+00	AbsError: 1.52291e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 5.72520e-16	AbsError: 1.21516e-16
+    Region: "electrostatic"	RelError: 5.72520e-16	AbsError: 1.21516e-16
+      Equation: "PotentialEquation"	RelError: 5.72520e-16	AbsError: 1.21516e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.96282e-02	AbsError: 4.74352e-03
+    Region: "electrostatic"	RelError: 3.96282e-02	AbsError: 4.74352e-03
+      Equation: "PotentialEquation"	RelError: 3.96282e-02	AbsError: 4.74352e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.68983e-16	AbsError: 4.58370e-17
+    Region: "electrostatic"	RelError: 2.68983e-16	AbsError: 4.58370e-17
+      Equation: "PotentialEquation"	RelError: 2.68983e-16	AbsError: 4.58370e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.53507e+03	AbsError: 1.56016e-01
+    Region: "electrostatic"	RelError: 1.53507e+03	AbsError: 1.56016e-01
+      Equation: "PotentialEquation"	RelError: 1.53507e+03	AbsError: 1.56016e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.53989e-12	AbsError: 2.17919e-16
+    Region: "electrostatic"	RelError: 1.53989e-12	AbsError: 2.17919e-16
+      Equation: "PotentialEquation"	RelError: 1.53989e-12	AbsError: 2.17919e-16
+vg0.800000_vd0.000000 041: phiR=1.560e-01 nR=1.988e-01 mu=-0.131588 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.31908e+00	AbsError: 1.50801e-01
+    Region: "electrostatic"	RelError: 1.31908e+00	AbsError: 1.50801e-01
+      Equation: "PotentialEquation"	RelError: 1.31908e+00	AbsError: 1.50801e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 5.91022e-16	AbsError: 1.38454e-16
+    Region: "electrostatic"	RelError: 5.91022e-16	AbsError: 1.38454e-16
+      Equation: "PotentialEquation"	RelError: 5.91022e-16	AbsError: 1.38454e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.95218e-02	AbsError: 4.70036e-03
+    Region: "electrostatic"	RelError: 3.95218e-02	AbsError: 4.70036e-03
+      Equation: "PotentialEquation"	RelError: 3.95218e-02	AbsError: 4.70036e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.71931e-16	AbsError: 4.85172e-17
+    Region: "electrostatic"	RelError: 2.71931e-16	AbsError: 4.85172e-17
+      Equation: "PotentialEquation"	RelError: 2.71931e-16	AbsError: 4.85172e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 2.44576e+02	AbsError: 1.54493e-01
+    Region: "electrostatic"	RelError: 2.44576e+02	AbsError: 1.54493e-01
+      Equation: "PotentialEquation"	RelError: 2.44576e+02	AbsError: 1.54493e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.29748e-13	AbsError: 1.97481e-16
+    Region: "electrostatic"	RelError: 1.29748e-13	AbsError: 1.97481e-16
+      Equation: "PotentialEquation"	RelError: 1.29748e-13	AbsError: 1.97481e-16
+vg0.800000_vd0.000000 042: phiR=1.545e-01 nR=1.970e-01 mu=-0.130904 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.31487e+00	AbsError: 1.49327e-01
+    Region: "electrostatic"	RelError: 1.31487e+00	AbsError: 1.49327e-01
+      Equation: "PotentialEquation"	RelError: 1.31487e+00	AbsError: 1.49327e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 6.47648e-16	AbsError: 1.42906e-16
+    Region: "electrostatic"	RelError: 6.47648e-16	AbsError: 1.42906e-16
+      Equation: "PotentialEquation"	RelError: 6.47648e-16	AbsError: 1.42906e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.94154e-02	AbsError: 4.65758e-03
+    Region: "electrostatic"	RelError: 3.94154e-02	AbsError: 4.65758e-03
+      Equation: "PotentialEquation"	RelError: 3.94154e-02	AbsError: 4.65758e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.44043e-16	AbsError: 3.84115e-17
+    Region: "electrostatic"	RelError: 2.44043e-16	AbsError: 3.84115e-17
+      Equation: "PotentialEquation"	RelError: 2.44043e-16	AbsError: 3.84115e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 2.28343e+03	AbsError: 1.52988e-01
+    Region: "electrostatic"	RelError: 2.28343e+03	AbsError: 1.52988e-01
+      Equation: "PotentialEquation"	RelError: 2.28343e+03	AbsError: 1.52988e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.39020e-13	AbsError: 1.69260e-16
+    Region: "electrostatic"	RelError: 2.39020e-13	AbsError: 1.69260e-16
+      Equation: "PotentialEquation"	RelError: 2.39020e-13	AbsError: 1.69260e-16
+vg0.800000_vd0.000000 043: phiR=1.530e-01 nR=1.953e-01 mu=-0.130226 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.31067e+00	AbsError: 1.47870e-01
+    Region: "electrostatic"	RelError: 1.31067e+00	AbsError: 1.47870e-01
+      Equation: "PotentialEquation"	RelError: 1.31067e+00	AbsError: 1.47870e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 5.89644e-16	AbsError: 1.32624e-16
+    Region: "electrostatic"	RelError: 5.89644e-16	AbsError: 1.32624e-16
+      Equation: "PotentialEquation"	RelError: 5.89644e-16	AbsError: 1.32624e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.93091e-02	AbsError: 4.61517e-03
+    Region: "electrostatic"	RelError: 3.93091e-02	AbsError: 4.61517e-03
+      Equation: "PotentialEquation"	RelError: 3.93091e-02	AbsError: 4.61517e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.34668e-16	AbsError: 3.72917e-17
+    Region: "electrostatic"	RelError: 2.34668e-16	AbsError: 3.72917e-17
+      Equation: "PotentialEquation"	RelError: 2.34668e-16	AbsError: 3.72917e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.17245e+02	AbsError: 1.51498e-01
+    Region: "electrostatic"	RelError: 3.17245e+02	AbsError: 1.51498e-01
+      Equation: "PotentialEquation"	RelError: 3.17245e+02	AbsError: 1.51498e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 8.83645e-14	AbsError: 2.54484e-16
+    Region: "electrostatic"	RelError: 8.83645e-14	AbsError: 2.54484e-16
+      Equation: "PotentialEquation"	RelError: 8.83645e-14	AbsError: 2.54484e-16
+vg0.800000_vd0.000000 044: phiR=1.515e-01 nR=1.935e-01 mu=-0.129554 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.30647e+00	AbsError: 1.46428e-01
+    Region: "electrostatic"	RelError: 1.30647e+00	AbsError: 1.46428e-01
+      Equation: "PotentialEquation"	RelError: 1.30647e+00	AbsError: 1.46428e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 7.11849e-16	AbsError: 1.27801e-16
+    Region: "electrostatic"	RelError: 7.11849e-16	AbsError: 1.27801e-16
+      Equation: "PotentialEquation"	RelError: 7.11849e-16	AbsError: 1.27801e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.92028e-02	AbsError: 4.57314e-03
+    Region: "electrostatic"	RelError: 3.92028e-02	AbsError: 4.57314e-03
+      Equation: "PotentialEquation"	RelError: 3.92028e-02	AbsError: 4.57314e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.14458e-16	AbsError: 4.88063e-17
+    Region: "electrostatic"	RelError: 2.14458e-16	AbsError: 4.88063e-17
+      Equation: "PotentialEquation"	RelError: 2.14458e-16	AbsError: 4.88063e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.02240e+03	AbsError: 1.50024e-01
+    Region: "electrostatic"	RelError: 1.02240e+03	AbsError: 1.50024e-01
+      Equation: "PotentialEquation"	RelError: 1.02240e+03	AbsError: 1.50024e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 6.93269e-13	AbsError: 1.82421e-16
+    Region: "electrostatic"	RelError: 6.93269e-13	AbsError: 1.82421e-16
+      Equation: "PotentialEquation"	RelError: 6.93269e-13	AbsError: 1.82421e-16
+vg0.800000_vd0.000000 045: phiR=1.500e-01 nR=1.918e-01 mu=-0.128887 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.30228e+00	AbsError: 1.45002e-01
+    Region: "electrostatic"	RelError: 1.30228e+00	AbsError: 1.45002e-01
+      Equation: "PotentialEquation"	RelError: 1.30228e+00	AbsError: 1.45002e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 6.13443e-16	AbsError: 1.13965e-16
+    Region: "electrostatic"	RelError: 6.13443e-16	AbsError: 1.13965e-16
+      Equation: "PotentialEquation"	RelError: 6.13443e-16	AbsError: 1.13965e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.90965e-02	AbsError: 4.53146e-03
+    Region: "electrostatic"	RelError: 3.90965e-02	AbsError: 4.53146e-03
+      Equation: "PotentialEquation"	RelError: 3.90965e-02	AbsError: 4.53146e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.17492e-16	AbsError: 4.01661e-17
+    Region: "electrostatic"	RelError: 2.17492e-16	AbsError: 4.01661e-17
+      Equation: "PotentialEquation"	RelError: 2.17492e-16	AbsError: 4.01661e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 2.11542e+04	AbsError: 1.48567e-01
+    Region: "electrostatic"	RelError: 2.11542e+04	AbsError: 1.48567e-01
+      Equation: "PotentialEquation"	RelError: 2.11542e+04	AbsError: 1.48567e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.37835e-12	AbsError: 1.85681e-16
+    Region: "electrostatic"	RelError: 1.37835e-12	AbsError: 1.85681e-16
+      Equation: "PotentialEquation"	RelError: 1.37835e-12	AbsError: 1.85681e-16
+vg0.800000_vd0.000000 046: phiR=1.486e-01 nR=1.901e-01 mu=-0.128227 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.29808e+00	AbsError: 1.43591e-01
+    Region: "electrostatic"	RelError: 1.29808e+00	AbsError: 1.43591e-01
+      Equation: "PotentialEquation"	RelError: 1.29808e+00	AbsError: 1.43591e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 6.71642e-16	AbsError: 1.56400e-16
+    Region: "electrostatic"	RelError: 6.71642e-16	AbsError: 1.56400e-16
+      Equation: "PotentialEquation"	RelError: 6.71642e-16	AbsError: 1.56400e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.89902e-02	AbsError: 4.49015e-03
+    Region: "electrostatic"	RelError: 3.89902e-02	AbsError: 4.49015e-03
+      Equation: "PotentialEquation"	RelError: 3.89902e-02	AbsError: 4.49015e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.25472e-16	AbsError: 3.85824e-17
+    Region: "electrostatic"	RelError: 2.25472e-16	AbsError: 3.85824e-17
+      Equation: "PotentialEquation"	RelError: 2.25472e-16	AbsError: 3.85824e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.20848e+03	AbsError: 1.47124e-01
+    Region: "electrostatic"	RelError: 1.20848e+03	AbsError: 1.47124e-01
+      Equation: "PotentialEquation"	RelError: 1.20848e+03	AbsError: 1.47124e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.94401e-13	AbsError: 2.08053e-16
+    Region: "electrostatic"	RelError: 1.94401e-13	AbsError: 2.08053e-16
+      Equation: "PotentialEquation"	RelError: 1.94401e-13	AbsError: 2.08053e-16
+vg0.800000_vd0.000000 047: phiR=1.471e-01 nR=1.884e-01 mu=-0.127572 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.29389e+00	AbsError: 1.42194e-01
+    Region: "electrostatic"	RelError: 1.29389e+00	AbsError: 1.42194e-01
+      Equation: "PotentialEquation"	RelError: 1.29389e+00	AbsError: 1.42194e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 5.63786e-16	AbsError: 9.76887e-17
+    Region: "electrostatic"	RelError: 5.63786e-16	AbsError: 9.76887e-17
+      Equation: "PotentialEquation"	RelError: 5.63786e-16	AbsError: 9.76887e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.88839e-02	AbsError: 4.44919e-03
+    Region: "electrostatic"	RelError: 3.88839e-02	AbsError: 4.44919e-03
+      Equation: "PotentialEquation"	RelError: 3.88839e-02	AbsError: 4.44919e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.98396e-16	AbsError: 4.03617e-17
+    Region: "electrostatic"	RelError: 2.98396e-16	AbsError: 4.03617e-17
+      Equation: "PotentialEquation"	RelError: 2.98396e-16	AbsError: 4.03617e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 4.36194e+02	AbsError: 1.45697e-01
+    Region: "electrostatic"	RelError: 4.36194e+02	AbsError: 1.45697e-01
+      Equation: "PotentialEquation"	RelError: 4.36194e+02	AbsError: 1.45697e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.36821e-13	AbsError: 1.66801e-16
+    Region: "electrostatic"	RelError: 1.36821e-13	AbsError: 1.66801e-16
+      Equation: "PotentialEquation"	RelError: 1.36821e-13	AbsError: 1.66801e-16
+vg0.800000_vd0.000000 048: phiR=1.457e-01 nR=1.868e-01 mu=-0.126923 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.28969e+00	AbsError: 1.40813e-01
+    Region: "electrostatic"	RelError: 1.28969e+00	AbsError: 1.40813e-01
+      Equation: "PotentialEquation"	RelError: 1.28969e+00	AbsError: 1.40813e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 5.50289e-16	AbsError: 9.91272e-17
+    Region: "electrostatic"	RelError: 5.50289e-16	AbsError: 9.91272e-17
+      Equation: "PotentialEquation"	RelError: 5.50289e-16	AbsError: 9.91272e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.87775e-02	AbsError: 4.40858e-03
+    Region: "electrostatic"	RelError: 3.87775e-02	AbsError: 4.40858e-03
+      Equation: "PotentialEquation"	RelError: 3.87775e-02	AbsError: 4.40858e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 3.16852e-16	AbsError: 4.98878e-17
+    Region: "electrostatic"	RelError: 3.16852e-16	AbsError: 4.98878e-17
+      Equation: "PotentialEquation"	RelError: 3.16852e-16	AbsError: 4.98878e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.00443e+04	AbsError: 1.44291e-01
+    Region: "electrostatic"	RelError: 1.00443e+04	AbsError: 1.44291e-01
+      Equation: "PotentialEquation"	RelError: 1.00443e+04	AbsError: 1.44291e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 3.36034e-12	AbsError: 1.29056e-16
+    Region: "electrostatic"	RelError: 3.36034e-12	AbsError: 1.29056e-16
+      Equation: "PotentialEquation"	RelError: 3.36034e-12	AbsError: 1.29056e-16
+vg0.800000_vd0.000000 049: phiR=1.443e-01 nR=1.851e-01 mu=-0.126279 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.28550e+00	AbsError: 1.39446e-01
+    Region: "electrostatic"	RelError: 1.28550e+00	AbsError: 1.39446e-01
+      Equation: "PotentialEquation"	RelError: 1.28550e+00	AbsError: 1.39446e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 6.51632e-16	AbsError: 1.25743e-16
+    Region: "electrostatic"	RelError: 6.51632e-16	AbsError: 1.25743e-16
+      Equation: "PotentialEquation"	RelError: 6.51632e-16	AbsError: 1.25743e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.86711e-02	AbsError: 4.36833e-03
+    Region: "electrostatic"	RelError: 3.86711e-02	AbsError: 4.36833e-03
+      Equation: "PotentialEquation"	RelError: 3.86711e-02	AbsError: 4.36833e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.85074e-16	AbsError: 4.04380e-17
+    Region: "electrostatic"	RelError: 2.85074e-16	AbsError: 4.04380e-17
+      Equation: "PotentialEquation"	RelError: 2.85074e-16	AbsError: 4.04380e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.25584e+03	AbsError: 1.42907e-01
+    Region: "electrostatic"	RelError: 3.25584e+03	AbsError: 1.42907e-01
+      Equation: "PotentialEquation"	RelError: 3.25584e+03	AbsError: 1.42907e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.45124e-12	AbsError: 2.47596e-16
+    Region: "electrostatic"	RelError: 1.45124e-12	AbsError: 2.47596e-16
+      Equation: "PotentialEquation"	RelError: 1.45124e-12	AbsError: 2.47596e-16
+vg0.800000_vd0.000000 050: phiR=1.429e-01 nR=1.835e-01 mu=-0.125641 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.28130e+00	AbsError: 1.38093e-01
+    Region: "electrostatic"	RelError: 1.28130e+00	AbsError: 1.38093e-01
+      Equation: "PotentialEquation"	RelError: 1.28130e+00	AbsError: 1.38093e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 5.71599e-16	AbsError: 1.13625e-16
+    Region: "electrostatic"	RelError: 5.71599e-16	AbsError: 1.13625e-16
+      Equation: "PotentialEquation"	RelError: 5.71599e-16	AbsError: 1.13625e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.85645e-02	AbsError: 4.32842e-03
+    Region: "electrostatic"	RelError: 3.85645e-02	AbsError: 4.32842e-03
+      Equation: "PotentialEquation"	RelError: 3.85645e-02	AbsError: 4.32842e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.70101e-16	AbsError: 3.41892e-17
+    Region: "electrostatic"	RelError: 2.70101e-16	AbsError: 3.41892e-17
+      Equation: "PotentialEquation"	RelError: 2.70101e-16	AbsError: 3.41892e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 5.58764e+02	AbsError: 1.41538e-01
+    Region: "electrostatic"	RelError: 5.58764e+02	AbsError: 1.41538e-01
+      Equation: "PotentialEquation"	RelError: 5.58764e+02	AbsError: 1.41538e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 4.40294e-13	AbsError: 1.84484e-16
+    Region: "electrostatic"	RelError: 4.40294e-13	AbsError: 1.84484e-16
+      Equation: "PotentialEquation"	RelError: 4.40294e-13	AbsError: 1.84484e-16
+vg0.800000_vd0.000000 051: phiR=1.415e-01 nR=1.818e-01 mu=-0.125009 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.27710e+00	AbsError: 1.36753e-01
+    Region: "electrostatic"	RelError: 1.27710e+00	AbsError: 1.36753e-01
+      Equation: "PotentialEquation"	RelError: 1.27710e+00	AbsError: 1.36753e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 6.39348e-16	AbsError: 1.46943e-16
+    Region: "electrostatic"	RelError: 6.39348e-16	AbsError: 1.46943e-16
+      Equation: "PotentialEquation"	RelError: 6.39348e-16	AbsError: 1.46943e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.84579e-02	AbsError: 4.28885e-03
+    Region: "electrostatic"	RelError: 3.84579e-02	AbsError: 4.28885e-03
+      Equation: "PotentialEquation"	RelError: 3.84579e-02	AbsError: 4.28885e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.38272e-16	AbsError: 4.08132e-17
+    Region: "electrostatic"	RelError: 2.38272e-16	AbsError: 4.08132e-17
+      Equation: "PotentialEquation"	RelError: 2.38272e-16	AbsError: 4.08132e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.86309e+02	AbsError: 1.40182e-01
+    Region: "electrostatic"	RelError: 3.86309e+02	AbsError: 1.40182e-01
+      Equation: "PotentialEquation"	RelError: 3.86309e+02	AbsError: 1.40182e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.95178e-13	AbsError: 2.04932e-16
+    Region: "electrostatic"	RelError: 1.95178e-13	AbsError: 2.04932e-16
+      Equation: "PotentialEquation"	RelError: 1.95178e-13	AbsError: 2.04932e-16
+vg0.800000_vd0.000000 052: phiR=1.402e-01 nR=1.802e-01 mu=-0.124382 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.27289e+00	AbsError: 1.35428e-01
+    Region: "electrostatic"	RelError: 1.27289e+00	AbsError: 1.35428e-01
+      Equation: "PotentialEquation"	RelError: 1.27289e+00	AbsError: 1.35428e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 6.41654e-16	AbsError: 1.20412e-16
+    Region: "electrostatic"	RelError: 6.41654e-16	AbsError: 1.20412e-16
+      Equation: "PotentialEquation"	RelError: 6.41654e-16	AbsError: 1.20412e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.83511e-02	AbsError: 4.24962e-03
+    Region: "electrostatic"	RelError: 3.83511e-02	AbsError: 4.24962e-03
+      Equation: "PotentialEquation"	RelError: 3.83511e-02	AbsError: 4.24962e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.66436e-16	AbsError: 3.48705e-17
+    Region: "electrostatic"	RelError: 2.66436e-16	AbsError: 3.48705e-17
+      Equation: "PotentialEquation"	RelError: 2.66436e-16	AbsError: 3.48705e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 2.67290e+02	AbsError: 1.38839e-01
+    Region: "electrostatic"	RelError: 2.67290e+02	AbsError: 1.38839e-01
+      Equation: "PotentialEquation"	RelError: 2.67290e+02	AbsError: 1.38839e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 8.81253e-14	AbsError: 1.55145e-16
+    Region: "electrostatic"	RelError: 8.81253e-14	AbsError: 1.55145e-16
+      Equation: "PotentialEquation"	RelError: 8.81253e-14	AbsError: 1.55145e-16
+vg0.800000_vd0.000000 053: phiR=1.388e-01 nR=1.786e-01 mu=-0.123760 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.26868e+00	AbsError: 1.34116e-01
+    Region: "electrostatic"	RelError: 1.26868e+00	AbsError: 1.34116e-01
+      Equation: "PotentialEquation"	RelError: 1.26868e+00	AbsError: 1.34116e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 4.87531e-16	AbsError: 8.09580e-17
+    Region: "electrostatic"	RelError: 4.87531e-16	AbsError: 8.09580e-17
+      Equation: "PotentialEquation"	RelError: 4.87531e-16	AbsError: 8.09580e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.82442e-02	AbsError: 4.21073e-03
+    Region: "electrostatic"	RelError: 3.82442e-02	AbsError: 4.21073e-03
+      Equation: "PotentialEquation"	RelError: 3.82442e-02	AbsError: 4.21073e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.92926e-16	AbsError: 5.08092e-17
+    Region: "electrostatic"	RelError: 1.92926e-16	AbsError: 5.08092e-17
+      Equation: "PotentialEquation"	RelError: 1.92926e-16	AbsError: 5.08092e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.42625e+03	AbsError: 1.37509e-01
+    Region: "electrostatic"	RelError: 1.42625e+03	AbsError: 1.37509e-01
+      Equation: "PotentialEquation"	RelError: 1.42625e+03	AbsError: 1.37509e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 7.28358e-13	AbsError: 1.95686e-16
+    Region: "electrostatic"	RelError: 7.28358e-13	AbsError: 1.95686e-16
+      Equation: "PotentialEquation"	RelError: 7.28358e-13	AbsError: 1.95686e-16
+vg0.800000_vd0.000000 054: phiR=1.375e-01 nR=1.770e-01 mu=-0.123144 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.26447e+00	AbsError: 1.32817e-01
+    Region: "electrostatic"	RelError: 1.26447e+00	AbsError: 1.32817e-01
+      Equation: "PotentialEquation"	RelError: 1.26447e+00	AbsError: 1.32817e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 6.06025e-16	AbsError: 1.17967e-16
+    Region: "electrostatic"	RelError: 6.06025e-16	AbsError: 1.17967e-16
+      Equation: "PotentialEquation"	RelError: 6.06025e-16	AbsError: 1.17967e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.81371e-02	AbsError: 4.17217e-03
+    Region: "electrostatic"	RelError: 3.81371e-02	AbsError: 4.17217e-03
+      Equation: "PotentialEquation"	RelError: 3.81371e-02	AbsError: 4.17217e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.22299e-16	AbsError: 3.97958e-17
+    Region: "electrostatic"	RelError: 2.22299e-16	AbsError: 3.97958e-17
+      Equation: "PotentialEquation"	RelError: 2.22299e-16	AbsError: 3.97958e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.92975e+02	AbsError: 1.36192e-01
+    Region: "electrostatic"	RelError: 1.92975e+02	AbsError: 1.36192e-01
+      Equation: "PotentialEquation"	RelError: 1.92975e+02	AbsError: 1.36192e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 4.08751e-14	AbsError: 1.54989e-16
+    Region: "electrostatic"	RelError: 4.08751e-14	AbsError: 1.54989e-16
+      Equation: "PotentialEquation"	RelError: 4.08751e-14	AbsError: 1.54989e-16
+vg0.800000_vd0.000000 055: phiR=1.362e-01 nR=1.755e-01 mu=-0.122533 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.26025e+00	AbsError: 1.31531e-01
+    Region: "electrostatic"	RelError: 1.26025e+00	AbsError: 1.31531e-01
+      Equation: "PotentialEquation"	RelError: 1.26025e+00	AbsError: 1.31531e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 5.60727e-16	AbsError: 1.26528e-16
+    Region: "electrostatic"	RelError: 5.60727e-16	AbsError: 1.26528e-16
+      Equation: "PotentialEquation"	RelError: 5.60727e-16	AbsError: 1.26528e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.80299e-02	AbsError: 4.13395e-03
+    Region: "electrostatic"	RelError: 3.80299e-02	AbsError: 4.13395e-03
+      Equation: "PotentialEquation"	RelError: 3.80299e-02	AbsError: 4.13395e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.41851e-16	AbsError: 5.55589e-17
+    Region: "electrostatic"	RelError: 2.41851e-16	AbsError: 5.55589e-17
+      Equation: "PotentialEquation"	RelError: 2.41851e-16	AbsError: 5.55589e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.28098e+02	AbsError: 1.34888e-01
+    Region: "electrostatic"	RelError: 1.28098e+02	AbsError: 1.34888e-01
+      Equation: "PotentialEquation"	RelError: 1.28098e+02	AbsError: 1.34888e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 8.45455e-14	AbsError: 1.95575e-16
+    Region: "electrostatic"	RelError: 8.45455e-14	AbsError: 1.95575e-16
+      Equation: "PotentialEquation"	RelError: 8.45455e-14	AbsError: 1.95575e-16
+vg0.800000_vd0.000000 056: phiR=1.349e-01 nR=1.739e-01 mu=-0.121928 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.25610e+00	AbsError: 1.30259e-01
+    Region: "electrostatic"	RelError: 1.25610e+00	AbsError: 1.30259e-01
+      Equation: "PotentialEquation"	RelError: 1.25610e+00	AbsError: 1.30259e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 6.15294e-16	AbsError: 1.38486e-16
+    Region: "electrostatic"	RelError: 6.15294e-16	AbsError: 1.38486e-16
+      Equation: "PotentialEquation"	RelError: 6.15294e-16	AbsError: 1.38486e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.79225e-02	AbsError: 4.09605e-03
+    Region: "electrostatic"	RelError: 3.79225e-02	AbsError: 4.09605e-03
+      Equation: "PotentialEquation"	RelError: 3.79225e-02	AbsError: 4.09605e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.30263e-16	AbsError: 3.97842e-17
+    Region: "electrostatic"	RelError: 2.30263e-16	AbsError: 3.97842e-17
+      Equation: "PotentialEquation"	RelError: 2.30263e-16	AbsError: 3.97842e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 2.91244e+02	AbsError: 1.33597e-01
+    Region: "electrostatic"	RelError: 2.91244e+02	AbsError: 1.33597e-01
+      Equation: "PotentialEquation"	RelError: 2.91244e+02	AbsError: 1.33597e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.22488e-13	AbsError: 2.62157e-16
+    Region: "electrostatic"	RelError: 1.22488e-13	AbsError: 2.62157e-16
+      Equation: "PotentialEquation"	RelError: 1.22488e-13	AbsError: 2.62157e-16
+vg0.800000_vd0.000000 057: phiR=1.336e-01 nR=1.724e-01 mu=-0.121328 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.25218e+00	AbsError: 1.28998e-01
+    Region: "electrostatic"	RelError: 1.25218e+00	AbsError: 1.28998e-01
+      Equation: "PotentialEquation"	RelError: 1.25218e+00	AbsError: 1.28998e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 4.92122e-16	AbsError: 1.08611e-16
+    Region: "electrostatic"	RelError: 4.92122e-16	AbsError: 1.08611e-16
+      Equation: "PotentialEquation"	RelError: 4.92122e-16	AbsError: 1.08611e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.78148e-02	AbsError: 4.05848e-03
+    Region: "electrostatic"	RelError: 3.78148e-02	AbsError: 4.05848e-03
+      Equation: "PotentialEquation"	RelError: 3.78148e-02	AbsError: 4.05848e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.98343e-16	AbsError: 3.77836e-17
+    Region: "electrostatic"	RelError: 1.98343e-16	AbsError: 3.77836e-17
+      Equation: "PotentialEquation"	RelError: 1.98343e-16	AbsError: 3.77836e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.02220e+03	AbsError: 1.32318e-01
+    Region: "electrostatic"	RelError: 1.02220e+03	AbsError: 1.32318e-01
+      Equation: "PotentialEquation"	RelError: 1.02220e+03	AbsError: 1.32318e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 4.80971e-13	AbsError: 2.36228e-16
+    Region: "electrostatic"	RelError: 4.80971e-13	AbsError: 2.36228e-16
+      Equation: "PotentialEquation"	RelError: 4.80971e-13	AbsError: 2.36228e-16
+vg0.800000_vd0.000000 058: phiR=1.323e-01 nR=1.708e-01 mu=-0.120733 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.24825e+00	AbsError: 1.27751e-01
+    Region: "electrostatic"	RelError: 1.24825e+00	AbsError: 1.27751e-01
+      Equation: "PotentialEquation"	RelError: 1.24825e+00	AbsError: 1.27751e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 5.60892e-16	AbsError: 1.13762e-16
+    Region: "electrostatic"	RelError: 5.60892e-16	AbsError: 1.13762e-16
+      Equation: "PotentialEquation"	RelError: 5.60892e-16	AbsError: 1.13762e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.77070e-02	AbsError: 4.02124e-03
+    Region: "electrostatic"	RelError: 3.77070e-02	AbsError: 4.02124e-03
+      Equation: "PotentialEquation"	RelError: 3.77070e-02	AbsError: 4.02124e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.46660e-16	AbsError: 4.54393e-17
+    Region: "electrostatic"	RelError: 2.46660e-16	AbsError: 4.54393e-17
+      Equation: "PotentialEquation"	RelError: 2.46660e-16	AbsError: 4.54393e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 7.30847e+02	AbsError: 1.31051e-01
+    Region: "electrostatic"	RelError: 7.30847e+02	AbsError: 1.31051e-01
+      Equation: "PotentialEquation"	RelError: 7.30847e+02	AbsError: 1.31051e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 5.58162e-13	AbsError: 1.68598e-16
+    Region: "electrostatic"	RelError: 5.58162e-13	AbsError: 1.68598e-16
+      Equation: "PotentialEquation"	RelError: 5.58162e-13	AbsError: 1.68598e-16
+vg0.800000_vd0.000000 059: phiR=1.311e-01 nR=1.693e-01 mu=-0.120144 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.24430e+00	AbsError: 1.26516e-01
+    Region: "electrostatic"	RelError: 1.24430e+00	AbsError: 1.26516e-01
+      Equation: "PotentialEquation"	RelError: 1.24430e+00	AbsError: 1.26516e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 5.81242e-16	AbsError: 1.29835e-16
+    Region: "electrostatic"	RelError: 5.81242e-16	AbsError: 1.29835e-16
+      Equation: "PotentialEquation"	RelError: 5.81242e-16	AbsError: 1.29835e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.75990e-02	AbsError: 3.98431e-03
+    Region: "electrostatic"	RelError: 3.75990e-02	AbsError: 3.98431e-03
+      Equation: "PotentialEquation"	RelError: 3.75990e-02	AbsError: 3.98431e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.40862e-16	AbsError: 5.26949e-17
+    Region: "electrostatic"	RelError: 2.40862e-16	AbsError: 5.26949e-17
+      Equation: "PotentialEquation"	RelError: 2.40862e-16	AbsError: 5.26949e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.72040e+02	AbsError: 1.29796e-01
+    Region: "electrostatic"	RelError: 1.72040e+02	AbsError: 1.29796e-01
+      Equation: "PotentialEquation"	RelError: 1.72040e+02	AbsError: 1.29796e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.23561e-13	AbsError: 1.67794e-16
+    Region: "electrostatic"	RelError: 1.23561e-13	AbsError: 1.67794e-16
+      Equation: "PotentialEquation"	RelError: 1.23561e-13	AbsError: 1.67794e-16
+vg0.800000_vd0.000000 060: phiR=1.298e-01 nR=1.678e-01 mu=-0.119559 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.24035e+00	AbsError: 1.25292e-01
+    Region: "electrostatic"	RelError: 1.24035e+00	AbsError: 1.25292e-01
+      Equation: "PotentialEquation"	RelError: 1.24035e+00	AbsError: 1.25292e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 5.56453e-16	AbsError: 1.04356e-16
+    Region: "electrostatic"	RelError: 5.56453e-16	AbsError: 1.04356e-16
+      Equation: "PotentialEquation"	RelError: 5.56453e-16	AbsError: 1.04356e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.74907e-02	AbsError: 3.94770e-03
+    Region: "electrostatic"	RelError: 3.74907e-02	AbsError: 3.94770e-03
+      Equation: "PotentialEquation"	RelError: 3.74907e-02	AbsError: 3.94770e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.06467e-16	AbsError: 3.49972e-17
+    Region: "electrostatic"	RelError: 2.06467e-16	AbsError: 3.49972e-17
+      Equation: "PotentialEquation"	RelError: 2.06467e-16	AbsError: 3.49972e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.97678e+02	AbsError: 1.28554e-01
+    Region: "electrostatic"	RelError: 1.97678e+02	AbsError: 1.28554e-01
+      Equation: "PotentialEquation"	RelError: 1.97678e+02	AbsError: 1.28554e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 8.04119e-14	AbsError: 1.65763e-16
+    Region: "electrostatic"	RelError: 8.04119e-14	AbsError: 1.65763e-16
+      Equation: "PotentialEquation"	RelError: 8.04119e-14	AbsError: 1.65763e-16
+vg0.800000_vd0.000000 061: phiR=1.286e-01 nR=1.663e-01 mu=-0.118980 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.23639e+00	AbsError: 1.24081e-01
+    Region: "electrostatic"	RelError: 1.23639e+00	AbsError: 1.24081e-01
+      Equation: "PotentialEquation"	RelError: 1.23639e+00	AbsError: 1.24081e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 7.51581e-16	AbsError: 1.09476e-16
+    Region: "electrostatic"	RelError: 7.51581e-16	AbsError: 1.09476e-16
+      Equation: "PotentialEquation"	RelError: 7.51581e-16	AbsError: 1.09476e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.73822e-02	AbsError: 3.91141e-03
+    Region: "electrostatic"	RelError: 3.73822e-02	AbsError: 3.91141e-03
+      Equation: "PotentialEquation"	RelError: 3.73822e-02	AbsError: 3.91141e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 3.03089e-16	AbsError: 5.24521e-17
+    Region: "electrostatic"	RelError: 3.03089e-16	AbsError: 5.24521e-17
+      Equation: "PotentialEquation"	RelError: 3.03089e-16	AbsError: 5.24521e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 9.61158e+02	AbsError: 1.27323e-01
+    Region: "electrostatic"	RelError: 9.61158e+02	AbsError: 1.27323e-01
+      Equation: "PotentialEquation"	RelError: 9.61158e+02	AbsError: 1.27323e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 3.54488e-13	AbsError: 1.36942e-16
+    Region: "electrostatic"	RelError: 3.54488e-13	AbsError: 1.36942e-16
+      Equation: "PotentialEquation"	RelError: 3.54488e-13	AbsError: 1.36942e-16
+vg0.800000_vd0.000000 062: phiR=1.273e-01 nR=1.648e-01 mu=-0.118406 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.23241e+00	AbsError: 1.22882e-01
+    Region: "electrostatic"	RelError: 1.23241e+00	AbsError: 1.22882e-01
+      Equation: "PotentialEquation"	RelError: 1.23241e+00	AbsError: 1.22882e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 5.53764e-16	AbsError: 1.24327e-16
+    Region: "electrostatic"	RelError: 5.53764e-16	AbsError: 1.24327e-16
+      Equation: "PotentialEquation"	RelError: 5.53764e-16	AbsError: 1.24327e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.72735e-02	AbsError: 3.87543e-03
+    Region: "electrostatic"	RelError: 3.72735e-02	AbsError: 3.87543e-03
+      Equation: "PotentialEquation"	RelError: 3.72735e-02	AbsError: 3.87543e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.01223e-16	AbsError: 3.64388e-17
+    Region: "electrostatic"	RelError: 2.01223e-16	AbsError: 3.64388e-17
+      Equation: "PotentialEquation"	RelError: 2.01223e-16	AbsError: 3.64388e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.04436e+03	AbsError: 1.26104e-01
+    Region: "electrostatic"	RelError: 1.04436e+03	AbsError: 1.26104e-01
+      Equation: "PotentialEquation"	RelError: 1.04436e+03	AbsError: 1.26104e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.82866e-13	AbsError: 1.55586e-16
+    Region: "electrostatic"	RelError: 1.82866e-13	AbsError: 1.55586e-16
+      Equation: "PotentialEquation"	RelError: 1.82866e-13	AbsError: 1.55586e-16
+vg0.800000_vd0.000000 063: phiR=1.261e-01 nR=1.633e-01 mu=-0.117837 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.22843e+00	AbsError: 1.21695e-01
+    Region: "electrostatic"	RelError: 1.22843e+00	AbsError: 1.21695e-01
+      Equation: "PotentialEquation"	RelError: 1.22843e+00	AbsError: 1.21695e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 4.69113e-16	AbsError: 8.99755e-17
+    Region: "electrostatic"	RelError: 4.69113e-16	AbsError: 8.99755e-17
+      Equation: "PotentialEquation"	RelError: 4.69113e-16	AbsError: 8.99755e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.71645e-02	AbsError: 3.83976e-03
+    Region: "electrostatic"	RelError: 3.71645e-02	AbsError: 3.83976e-03
+      Equation: "PotentialEquation"	RelError: 3.71645e-02	AbsError: 3.83976e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.50634e-16	AbsError: 3.71680e-17
+    Region: "electrostatic"	RelError: 2.50634e-16	AbsError: 3.71680e-17
+      Equation: "PotentialEquation"	RelError: 2.50634e-16	AbsError: 3.71680e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.71137e+03	AbsError: 1.24897e-01
+    Region: "electrostatic"	RelError: 1.71137e+03	AbsError: 1.24897e-01
+      Equation: "PotentialEquation"	RelError: 1.71137e+03	AbsError: 1.24897e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 8.34501e-13	AbsError: 1.87520e-16
+    Region: "electrostatic"	RelError: 8.34501e-13	AbsError: 1.87520e-16
+      Equation: "PotentialEquation"	RelError: 8.34501e-13	AbsError: 1.87520e-16
+vg0.800000_vd0.000000 064: phiR=1.249e-01 nR=1.619e-01 mu=-0.117273 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.22443e+00	AbsError: 1.20519e-01
+    Region: "electrostatic"	RelError: 1.22443e+00	AbsError: 1.20519e-01
+      Equation: "PotentialEquation"	RelError: 1.22443e+00	AbsError: 1.20519e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 4.74636e-16	AbsError: 7.81614e-17
+    Region: "electrostatic"	RelError: 4.74636e-16	AbsError: 7.81614e-17
+      Equation: "PotentialEquation"	RelError: 4.74636e-16	AbsError: 7.81614e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.70552e-02	AbsError: 3.80440e-03
+    Region: "electrostatic"	RelError: 3.70552e-02	AbsError: 3.80440e-03
+      Equation: "PotentialEquation"	RelError: 3.70552e-02	AbsError: 3.80440e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.97056e-16	AbsError: 4.27369e-17
+    Region: "electrostatic"	RelError: 1.97056e-16	AbsError: 4.27369e-17
+      Equation: "PotentialEquation"	RelError: 1.97056e-16	AbsError: 4.27369e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 2.60401e+02	AbsError: 1.23701e-01
+    Region: "electrostatic"	RelError: 2.60401e+02	AbsError: 1.23701e-01
+      Equation: "PotentialEquation"	RelError: 2.60401e+02	AbsError: 1.23701e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.11925e-13	AbsError: 1.80343e-16
+    Region: "electrostatic"	RelError: 2.11925e-13	AbsError: 1.80343e-16
+      Equation: "PotentialEquation"	RelError: 2.11925e-13	AbsError: 1.80343e-16
+vg0.800000_vd0.000000 065: phiR=1.237e-01 nR=1.604e-01 mu=-0.116714 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.22043e+00	AbsError: 1.19355e-01
+    Region: "electrostatic"	RelError: 1.22043e+00	AbsError: 1.19355e-01
+      Equation: "PotentialEquation"	RelError: 1.22043e+00	AbsError: 1.19355e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 5.26771e-16	AbsError: 1.06507e-16
+    Region: "electrostatic"	RelError: 5.26771e-16	AbsError: 1.06507e-16
+      Equation: "PotentialEquation"	RelError: 5.26771e-16	AbsError: 1.06507e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.69457e-02	AbsError: 3.76935e-03
+    Region: "electrostatic"	RelError: 3.69457e-02	AbsError: 3.76935e-03
+      Equation: "PotentialEquation"	RelError: 3.69457e-02	AbsError: 3.76935e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.54753e-16	AbsError: 4.20579e-17
+    Region: "electrostatic"	RelError: 2.54753e-16	AbsError: 4.20579e-17
+      Equation: "PotentialEquation"	RelError: 2.54753e-16	AbsError: 4.20579e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 2.57935e+04	AbsError: 1.22517e-01
+    Region: "electrostatic"	RelError: 2.57935e+04	AbsError: 1.22517e-01
+      Equation: "PotentialEquation"	RelError: 2.57935e+04	AbsError: 1.22517e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 3.68463e-11	AbsError: 2.28264e-16
+    Region: "electrostatic"	RelError: 3.68463e-11	AbsError: 2.28264e-16
+      Equation: "PotentialEquation"	RelError: 3.68463e-11	AbsError: 2.28264e-16
+vg0.800000_vd0.000000 066: phiR=1.225e-01 nR=1.590e-01 mu=-0.116160 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.21641e+00	AbsError: 1.18202e-01
+    Region: "electrostatic"	RelError: 1.21641e+00	AbsError: 1.18202e-01
+      Equation: "PotentialEquation"	RelError: 1.21641e+00	AbsError: 1.18202e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 6.26050e-16	AbsError: 1.38668e-16
+    Region: "electrostatic"	RelError: 6.26050e-16	AbsError: 1.38668e-16
+      Equation: "PotentialEquation"	RelError: 6.26050e-16	AbsError: 1.38668e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.68359e-02	AbsError: 3.73460e-03
+    Region: "electrostatic"	RelError: 3.68359e-02	AbsError: 3.73460e-03
+      Equation: "PotentialEquation"	RelError: 3.68359e-02	AbsError: 3.73460e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.59492e-16	AbsError: 4.77206e-17
+    Region: "electrostatic"	RelError: 2.59492e-16	AbsError: 4.77206e-17
+      Equation: "PotentialEquation"	RelError: 2.59492e-16	AbsError: 4.77206e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 5.25391e+03	AbsError: 1.21344e-01
+    Region: "electrostatic"	RelError: 5.25391e+03	AbsError: 1.21344e-01
+      Equation: "PotentialEquation"	RelError: 5.25391e+03	AbsError: 1.21344e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 6.66391e-12	AbsError: 2.33772e-16
+    Region: "electrostatic"	RelError: 6.66391e-12	AbsError: 2.33772e-16
+      Equation: "PotentialEquation"	RelError: 6.66391e-12	AbsError: 2.33772e-16
+vg0.800000_vd0.000000 067: phiR=1.213e-01 nR=1.576e-01 mu=-0.115610 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.21238e+00	AbsError: 1.17061e-01
+    Region: "electrostatic"	RelError: 1.21238e+00	AbsError: 1.17061e-01
+      Equation: "PotentialEquation"	RelError: 1.21238e+00	AbsError: 1.17061e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 6.68511e-16	AbsError: 8.65803e-17
+    Region: "electrostatic"	RelError: 6.68511e-16	AbsError: 8.65803e-17
+      Equation: "PotentialEquation"	RelError: 6.68511e-16	AbsError: 8.65803e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.67258e-02	AbsError: 3.70015e-03
+    Region: "electrostatic"	RelError: 3.67258e-02	AbsError: 3.70015e-03
+      Equation: "PotentialEquation"	RelError: 3.67258e-02	AbsError: 3.70015e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.30454e-16	AbsError: 3.63588e-17
+    Region: "electrostatic"	RelError: 2.30454e-16	AbsError: 3.63588e-17
+      Equation: "PotentialEquation"	RelError: 2.30454e-16	AbsError: 3.63588e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 2.17194e+02	AbsError: 1.20182e-01
+    Region: "electrostatic"	RelError: 2.17194e+02	AbsError: 1.20182e-01
+      Equation: "PotentialEquation"	RelError: 2.17194e+02	AbsError: 1.20182e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.41668e-13	AbsError: 1.76154e-16
+    Region: "electrostatic"	RelError: 1.41668e-13	AbsError: 1.76154e-16
+      Equation: "PotentialEquation"	RelError: 1.41668e-13	AbsError: 1.76154e-16
+vg0.800000_vd0.000000 068: phiR=1.202e-01 nR=1.562e-01 mu=-0.115066 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.20834e+00	AbsError: 1.15930e-01
+    Region: "electrostatic"	RelError: 1.20834e+00	AbsError: 1.15930e-01
+      Equation: "PotentialEquation"	RelError: 1.20834e+00	AbsError: 1.15930e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 6.27435e-16	AbsError: 8.00098e-17
+    Region: "electrostatic"	RelError: 6.27435e-16	AbsError: 8.00098e-17
+      Equation: "PotentialEquation"	RelError: 6.27435e-16	AbsError: 8.00098e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.66154e-02	AbsError: 3.66601e-03
+    Region: "electrostatic"	RelError: 3.66154e-02	AbsError: 3.66601e-03
+      Equation: "PotentialEquation"	RelError: 3.66154e-02	AbsError: 3.66601e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.53680e-16	AbsError: 4.00746e-17
+    Region: "electrostatic"	RelError: 2.53680e-16	AbsError: 4.00746e-17
+      Equation: "PotentialEquation"	RelError: 2.53680e-16	AbsError: 4.00746e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.10381e+02	AbsError: 1.19031e-01
+    Region: "electrostatic"	RelError: 1.10381e+02	AbsError: 1.19031e-01
+      Equation: "PotentialEquation"	RelError: 1.10381e+02	AbsError: 1.19031e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.19608e-13	AbsError: 1.74183e-16
+    Region: "electrostatic"	RelError: 1.19608e-13	AbsError: 1.74183e-16
+      Equation: "PotentialEquation"	RelError: 1.19608e-13	AbsError: 1.74183e-16
+vg0.800000_vd0.000000 069: phiR=1.190e-01 nR=1.548e-01 mu=-0.114527 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.20429e+00	AbsError: 1.14810e-01
+    Region: "electrostatic"	RelError: 1.20429e+00	AbsError: 1.14810e-01
+      Equation: "PotentialEquation"	RelError: 1.20429e+00	AbsError: 1.14810e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 5.71974e-16	AbsError: 1.24706e-16
+    Region: "electrostatic"	RelError: 5.71974e-16	AbsError: 1.24706e-16
+      Equation: "PotentialEquation"	RelError: 5.71974e-16	AbsError: 1.24706e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.65047e-02	AbsError: 3.63215e-03
+    Region: "electrostatic"	RelError: 3.65047e-02	AbsError: 3.63215e-03
+      Equation: "PotentialEquation"	RelError: 3.65047e-02	AbsError: 3.63215e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 3.07817e-16	AbsError: 4.00557e-17
+    Region: "electrostatic"	RelError: 3.07817e-16	AbsError: 4.00557e-17
+      Equation: "PotentialEquation"	RelError: 3.07817e-16	AbsError: 4.00557e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.33865e+02	AbsError: 1.17890e-01
+    Region: "electrostatic"	RelError: 1.33865e+02	AbsError: 1.17890e-01
+      Equation: "PotentialEquation"	RelError: 1.33865e+02	AbsError: 1.17890e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 9.19445e-14	AbsError: 2.07280e-16
+    Region: "electrostatic"	RelError: 9.19445e-14	AbsError: 2.07280e-16
+      Equation: "PotentialEquation"	RelError: 9.19445e-14	AbsError: 2.07280e-16
+vg0.800000_vd0.000000 070: phiR=1.179e-01 nR=1.534e-01 mu=-0.113992 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.20023e+00	AbsError: 1.13702e-01
+    Region: "electrostatic"	RelError: 1.20023e+00	AbsError: 1.13702e-01
+      Equation: "PotentialEquation"	RelError: 1.20023e+00	AbsError: 1.13702e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 6.13717e-16	AbsError: 1.25484e-16
+    Region: "electrostatic"	RelError: 6.13717e-16	AbsError: 1.25484e-16
+      Equation: "PotentialEquation"	RelError: 6.13717e-16	AbsError: 1.25484e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.63937e-02	AbsError: 3.59860e-03
+    Region: "electrostatic"	RelError: 3.63937e-02	AbsError: 3.59860e-03
+      Equation: "PotentialEquation"	RelError: 3.63937e-02	AbsError: 3.59860e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.26792e-16	AbsError: 3.58546e-17
+    Region: "electrostatic"	RelError: 2.26792e-16	AbsError: 3.58546e-17
+      Equation: "PotentialEquation"	RelError: 2.26792e-16	AbsError: 3.58546e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 2.85837e+02	AbsError: 1.16761e-01
+    Region: "electrostatic"	RelError: 2.85837e+02	AbsError: 1.16761e-01
+      Equation: "PotentialEquation"	RelError: 2.85837e+02	AbsError: 1.16761e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.06639e-13	AbsError: 1.62310e-16
+    Region: "electrostatic"	RelError: 1.06639e-13	AbsError: 1.62310e-16
+      Equation: "PotentialEquation"	RelError: 1.06639e-13	AbsError: 1.62310e-16
+vg0.800000_vd0.000000 071: phiR=1.168e-01 nR=1.520e-01 mu=-0.113462 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.19616e+00	AbsError: 1.12604e-01
+    Region: "electrostatic"	RelError: 1.19616e+00	AbsError: 1.12604e-01
+      Equation: "PotentialEquation"	RelError: 1.19616e+00	AbsError: 1.12604e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 5.42124e-16	AbsError: 8.08847e-17
+    Region: "electrostatic"	RelError: 5.42124e-16	AbsError: 8.08847e-17
+      Equation: "PotentialEquation"	RelError: 5.42124e-16	AbsError: 8.08847e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.62825e-02	AbsError: 3.56533e-03
+    Region: "electrostatic"	RelError: 3.62825e-02	AbsError: 3.56533e-03
+      Equation: "PotentialEquation"	RelError: 3.62825e-02	AbsError: 3.56533e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.59074e-16	AbsError: 4.68797e-17
+    Region: "electrostatic"	RelError: 2.59074e-16	AbsError: 4.68797e-17
+      Equation: "PotentialEquation"	RelError: 2.59074e-16	AbsError: 4.68797e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.95860e+03	AbsError: 1.15642e-01
+    Region: "electrostatic"	RelError: 1.95860e+03	AbsError: 1.15642e-01
+      Equation: "PotentialEquation"	RelError: 1.95860e+03	AbsError: 1.15642e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 6.71279e-13	AbsError: 1.41950e-16
+    Region: "electrostatic"	RelError: 6.71279e-13	AbsError: 1.41950e-16
+      Equation: "PotentialEquation"	RelError: 6.71279e-13	AbsError: 1.41950e-16
+vg0.800000_vd0.000000 072: phiR=1.156e-01 nR=1.506e-01 mu=-0.112937 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.19208e+00	AbsError: 1.11519e-01
+    Region: "electrostatic"	RelError: 1.19208e+00	AbsError: 1.11519e-01
+      Equation: "PotentialEquation"	RelError: 1.19208e+00	AbsError: 1.11519e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 6.20670e-16	AbsError: 1.03736e-16
+    Region: "electrostatic"	RelError: 6.20670e-16	AbsError: 1.03736e-16
+      Equation: "PotentialEquation"	RelError: 6.20670e-16	AbsError: 1.03736e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.61709e-02	AbsError: 3.53236e-03
+    Region: "electrostatic"	RelError: 3.61709e-02	AbsError: 3.53236e-03
+      Equation: "PotentialEquation"	RelError: 3.61709e-02	AbsError: 3.53236e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.41547e-16	AbsError: 5.68548e-17
+    Region: "electrostatic"	RelError: 2.41547e-16	AbsError: 5.68548e-17
+      Equation: "PotentialEquation"	RelError: 2.41547e-16	AbsError: 5.68548e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.04531e+03	AbsError: 1.14534e-01
+    Region: "electrostatic"	RelError: 3.04531e+03	AbsError: 1.14534e-01
+      Equation: "PotentialEquation"	RelError: 3.04531e+03	AbsError: 1.14534e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.56248e-12	AbsError: 1.44610e-16
+    Region: "electrostatic"	RelError: 2.56248e-12	AbsError: 1.44610e-16
+      Equation: "PotentialEquation"	RelError: 2.56248e-12	AbsError: 1.44610e-16
+vg0.800000_vd0.000000 073: phiR=1.145e-01 nR=1.493e-01 mu=-0.112416 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.18799e+00	AbsError: 1.10449e-01
+    Region: "electrostatic"	RelError: 1.18799e+00	AbsError: 1.10449e-01
+      Equation: "PotentialEquation"	RelError: 1.18799e+00	AbsError: 1.10449e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 5.94568e-16	AbsError: 8.75383e-17
+    Region: "electrostatic"	RelError: 5.94568e-16	AbsError: 8.75383e-17
+      Equation: "PotentialEquation"	RelError: 5.94568e-16	AbsError: 8.75383e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.60590e-02	AbsError: 3.49967e-03
+    Region: "electrostatic"	RelError: 3.60590e-02	AbsError: 3.49967e-03
+      Equation: "PotentialEquation"	RelError: 3.60590e-02	AbsError: 3.49967e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.25988e-16	AbsError: 4.01654e-17
+    Region: "electrostatic"	RelError: 2.25988e-16	AbsError: 4.01654e-17
+      Equation: "PotentialEquation"	RelError: 2.25988e-16	AbsError: 4.01654e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 4.25952e+03	AbsError: 1.13437e-01
+    Region: "electrostatic"	RelError: 4.25952e+03	AbsError: 1.13437e-01
+      Equation: "PotentialEquation"	RelError: 4.25952e+03	AbsError: 1.13437e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 5.09651e-13	AbsError: 1.83745e-16
+    Region: "electrostatic"	RelError: 5.09651e-13	AbsError: 1.83745e-16
+      Equation: "PotentialEquation"	RelError: 5.09651e-13	AbsError: 1.83745e-16
+vg0.800000_vd0.000000 074: phiR=1.134e-01 nR=1.480e-01 mu=-0.111900 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.18388e+00	AbsError: 1.09389e-01
+    Region: "electrostatic"	RelError: 1.18388e+00	AbsError: 1.09389e-01
+      Equation: "PotentialEquation"	RelError: 1.18388e+00	AbsError: 1.09389e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 4.62489e-16	AbsError: 1.07553e-16
+    Region: "electrostatic"	RelError: 4.62489e-16	AbsError: 1.07553e-16
+      Equation: "PotentialEquation"	RelError: 4.62489e-16	AbsError: 1.07553e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.59468e-02	AbsError: 3.46727e-03
+    Region: "electrostatic"	RelError: 3.59468e-02	AbsError: 3.46727e-03
+      Equation: "PotentialEquation"	RelError: 3.59468e-02	AbsError: 3.46727e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.36707e-16	AbsError: 3.84818e-17
+    Region: "electrostatic"	RelError: 2.36707e-16	AbsError: 3.84818e-17
+      Equation: "PotentialEquation"	RelError: 2.36707e-16	AbsError: 3.84818e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.16798e+03	AbsError: 1.12350e-01
+    Region: "electrostatic"	RelError: 1.16798e+03	AbsError: 1.12350e-01
+      Equation: "PotentialEquation"	RelError: 1.16798e+03	AbsError: 1.12350e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.23510e-13	AbsError: 1.66302e-16
+    Region: "electrostatic"	RelError: 1.23510e-13	AbsError: 1.66302e-16
+      Equation: "PotentialEquation"	RelError: 1.23510e-13	AbsError: 1.66302e-16
+vg0.800000_vd0.000000 075: phiR=1.123e-01 nR=1.466e-01 mu=-0.111389 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.17977e+00	AbsError: 1.08339e-01
+    Region: "electrostatic"	RelError: 1.17977e+00	AbsError: 1.08339e-01
+      Equation: "PotentialEquation"	RelError: 1.17977e+00	AbsError: 1.08339e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 4.85230e-16	AbsError: 1.05713e-16
+    Region: "electrostatic"	RelError: 4.85230e-16	AbsError: 1.05713e-16
+      Equation: "PotentialEquation"	RelError: 4.85230e-16	AbsError: 1.05713e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.58342e-02	AbsError: 3.43515e-03
+    Region: "electrostatic"	RelError: 3.58342e-02	AbsError: 3.43515e-03
+      Equation: "PotentialEquation"	RelError: 3.58342e-02	AbsError: 3.43515e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.06174e-16	AbsError: 3.31952e-17
+    Region: "electrostatic"	RelError: 2.06174e-16	AbsError: 3.31952e-17
+      Equation: "PotentialEquation"	RelError: 2.06174e-16	AbsError: 3.31952e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.27551e+02	AbsError: 1.11273e-01
+    Region: "electrostatic"	RelError: 3.27551e+02	AbsError: 1.11273e-01
+      Equation: "PotentialEquation"	RelError: 3.27551e+02	AbsError: 1.11273e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.50383e-13	AbsError: 1.84349e-16
+    Region: "electrostatic"	RelError: 2.50383e-13	AbsError: 1.84349e-16
+      Equation: "PotentialEquation"	RelError: 2.50383e-13	AbsError: 1.84349e-16
+vg0.800000_vd0.000000 076: phiR=1.113e-01 nR=1.453e-01 mu=-0.110882 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.17564e+00	AbsError: 1.07299e-01
+    Region: "electrostatic"	RelError: 1.17564e+00	AbsError: 1.07299e-01
+      Equation: "PotentialEquation"	RelError: 1.17564e+00	AbsError: 1.07299e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 5.60153e-16	AbsError: 8.47896e-17
+    Region: "electrostatic"	RelError: 5.60153e-16	AbsError: 8.47896e-17
+      Equation: "PotentialEquation"	RelError: 5.60153e-16	AbsError: 8.47896e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.57213e-02	AbsError: 3.40331e-03
+    Region: "electrostatic"	RelError: 3.57213e-02	AbsError: 3.40331e-03
+      Equation: "PotentialEquation"	RelError: 3.57213e-02	AbsError: 3.40331e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.97643e-16	AbsError: 3.77925e-17
+    Region: "electrostatic"	RelError: 2.97643e-16	AbsError: 3.77925e-17
+      Equation: "PotentialEquation"	RelError: 2.97643e-16	AbsError: 3.77925e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.42861e+02	AbsError: 1.10206e-01
+    Region: "electrostatic"	RelError: 1.42861e+02	AbsError: 1.10206e-01
+      Equation: "PotentialEquation"	RelError: 1.42861e+02	AbsError: 1.10206e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.09836e-13	AbsError: 1.29811e-16
+    Region: "electrostatic"	RelError: 1.09836e-13	AbsError: 1.29811e-16
+      Equation: "PotentialEquation"	RelError: 1.09836e-13	AbsError: 1.29811e-16
+vg0.800000_vd0.000000 077: phiR=1.102e-01 nR=1.440e-01 mu=-0.110380 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.17151e+00	AbsError: 1.06269e-01
+    Region: "electrostatic"	RelError: 1.17151e+00	AbsError: 1.06269e-01
+      Equation: "PotentialEquation"	RelError: 1.17151e+00	AbsError: 1.06269e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 5.12112e-16	AbsError: 6.28384e-17
+    Region: "electrostatic"	RelError: 5.12112e-16	AbsError: 6.28384e-17
+      Equation: "PotentialEquation"	RelError: 5.12112e-16	AbsError: 6.28384e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.56082e-02	AbsError: 3.37175e-03
+    Region: "electrostatic"	RelError: 3.56082e-02	AbsError: 3.37175e-03
+      Equation: "PotentialEquation"	RelError: 3.56082e-02	AbsError: 3.37175e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.52107e-16	AbsError: 5.00881e-17
+    Region: "electrostatic"	RelError: 2.52107e-16	AbsError: 5.00881e-17
+      Equation: "PotentialEquation"	RelError: 2.52107e-16	AbsError: 5.00881e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.00134e+02	AbsError: 1.09149e-01
+    Region: "electrostatic"	RelError: 3.00134e+02	AbsError: 1.09149e-01
+      Equation: "PotentialEquation"	RelError: 3.00134e+02	AbsError: 1.09149e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 3.01508e-13	AbsError: 1.46548e-16
+    Region: "electrostatic"	RelError: 3.01508e-13	AbsError: 1.46548e-16
+      Equation: "PotentialEquation"	RelError: 3.01508e-13	AbsError: 1.46548e-16
+vg0.800000_vd0.000000 078: phiR=1.091e-01 nR=1.427e-01 mu=-0.109882 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.16736e+00	AbsError: 1.05248e-01
+    Region: "electrostatic"	RelError: 1.16736e+00	AbsError: 1.05248e-01
+      Equation: "PotentialEquation"	RelError: 1.16736e+00	AbsError: 1.05248e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 6.91130e-16	AbsError: 8.55322e-17
+    Region: "electrostatic"	RelError: 6.91130e-16	AbsError: 8.55322e-17
+      Equation: "PotentialEquation"	RelError: 6.91130e-16	AbsError: 8.55322e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.54946e-02	AbsError: 3.34047e-03
+    Region: "electrostatic"	RelError: 3.54946e-02	AbsError: 3.34047e-03
+      Equation: "PotentialEquation"	RelError: 3.54946e-02	AbsError: 3.34047e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.09587e-16	AbsError: 5.14699e-17
+    Region: "electrostatic"	RelError: 2.09587e-16	AbsError: 5.14699e-17
+      Equation: "PotentialEquation"	RelError: 2.09587e-16	AbsError: 5.14699e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 8.63840e+02	AbsError: 1.08102e-01
+    Region: "electrostatic"	RelError: 8.63840e+02	AbsError: 1.08102e-01
+      Equation: "PotentialEquation"	RelError: 8.63840e+02	AbsError: 1.08102e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 7.37252e-13	AbsError: 1.53569e-16
+    Region: "electrostatic"	RelError: 7.37252e-13	AbsError: 1.53569e-16
+      Equation: "PotentialEquation"	RelError: 7.37252e-13	AbsError: 1.53569e-16
+vg0.800000_vd0.000000 079: phiR=1.081e-01 nR=1.414e-01 mu=-0.109389 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.16321e+00	AbsError: 1.04237e-01
+    Region: "electrostatic"	RelError: 1.16321e+00	AbsError: 1.04237e-01
+      Equation: "PotentialEquation"	RelError: 1.16321e+00	AbsError: 1.04237e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 4.52400e-16	AbsError: 9.64235e-17
+    Region: "electrostatic"	RelError: 4.52400e-16	AbsError: 9.64235e-17
+      Equation: "PotentialEquation"	RelError: 4.52400e-16	AbsError: 9.64235e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 3.53808e-02	AbsError: 3.30947e-03
+    Region: "electrostatic"	RelError: 3.53808e-02	AbsError: 3.30947e-03
+      Equation: "PotentialEquation"	RelError: 3.53808e-02	AbsError: 3.30947e-03
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 2.66034e-16	AbsError: 5.58856e-17
+    Region: "electrostatic"	RelError: 2.66034e-16	AbsError: 5.58856e-17
+      Equation: "PotentialEquation"	RelError: 2.66034e-16	AbsError: 5.58856e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 7.13891e+02	AbsError: 1.07065e-01
+    Region: "electrostatic"	RelError: 7.13891e+02	AbsError: 1.07065e-01
+      Equation: "PotentialEquation"	RelError: 7.13891e+02	AbsError: 1.07065e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.89172e-13	AbsError: 1.32587e-16
+    Region: "electrostatic"	RelError: 1.89172e-13	AbsError: 1.32587e-16
+      Equation: "PotentialEquation"	RelError: 1.89172e-13	AbsError: 1.32587e-16
+vg0.800000_vd0.000000 080: phiR=1.071e-01 nR=1.401e-01 mu=-0.108900 stable=True
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.15904e+00	AbsError: 1.03236e-01
+    Region: "electrostatic"	RelError: 1.15904e+00	AbsError: 1.03236e-01
+      Equation: "PotentialEquation"	RelError: 1.15904e+00	AbsError: 1.03236e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 6.20472e-16	AbsError: 8.24638e-17
+    Region: "electrostatic"	RelError: 6.20472e-16	AbsError: 8.24638e-17
+      Equation: "PotentialEquation"	RelError: 6.20472e-16	AbsError: 8.24638e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 6.86319e+02	AbsError: 1.03236e-01
+    Region: "electrostatic"	RelError: 6.86319e+02	AbsError: 1.03236e-01
+      Equation: "PotentialEquation"	RelError: 6.86319e+02	AbsError: 1.03236e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 1.71544e-13	AbsError: 1.20894e-16
+    Region: "electrostatic"	RelError: 1.71544e-13	AbsError: 1.20894e-16
+      Equation: "PotentialEquation"	RelError: 1.71544e-13	AbsError: 1.20894e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_9d385e5d"	RelError: 1.15248e+00	AbsError: 1.07065e-01
+    Region: "electrostatic"	RelError: 1.15248e+00	AbsError: 1.07065e-01
+      Equation: "PotentialEquation"	RelError: 1.15248e+00	AbsError: 1.07065e-01
+Iteration: 1
+  Device: "gaa_9d385e5d"	RelError: 9.20442e-16	AbsError: 1.99130e-16
+    Region: "electrostatic"	RelError: 9.20442e-16	AbsError: 1.99130e-16
+      Equation: "PotentialEquation"	RelError: 9.20442e-16	AbsError: 1.99130e-16

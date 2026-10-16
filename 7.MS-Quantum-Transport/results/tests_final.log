@@ -1,0 +1,159 @@
+Searching DEVSIM_MATH_LIBS="libopenblas.so.0"
+Loading "libopenblas.so.0": ALL BLAS/LAPACK LOADED
+loading UMFPACK 5.1 as direct solver
+....Physical group name A has 402 Tetrahedra.
+Physical group name A has 947 Triangles.
+Physical group name A has 698 Lines.
+Physical group name A has 154 Points.
+Physical group name B has 412 Tetrahedra.
+Physical group name B has 967 Triangles.
+Physical group name B has 709 Lines.
+Physical group name B has 155 Points.
+Physical group name Interface has 0 Tetrahedra.
+Physical group name Interface has 66 Triangles.
+Physical group name Interface has 109 Lines.
+Physical group name Interface has 44 Points.
+Physical group name Left has 0 Tetrahedra.
+Physical group name Left has 68 Triangles.
+Physical group name Left has 112 Lines.
+Physical group name Left has 45 Points.
+Physical group name Right has 0 Tetrahedra.
+Physical group name Right has 68 Triangles.
+Physical group name Right has 112 Lines.
+Physical group name Right has 45 Points.
+Device slab_394c86b1141f44279dd4158199edbdfe_device has 265 coordinates with max index 265
+Region A has 154 nodes.
+Region B has 155 nodes.
+Contact left in region A with 45 nodes
+Contact right in region B with 45 nodes
+Adding interface AB with 44, 44 nodes
+number of equations 309
+Iteration: 0
+  Device: "slab_394c86b1141f44279dd4158199edbdfe_device"	RelError: 2.00000e+00	AbsError: 1.00000e+00
+    Region: "A"	RelError: 1.00000e+00	AbsError: 6.66667e-01
+      Equation: "Poisson"	RelError: 1.00000e+00	AbsError: 6.66667e-01
+    Region: "B"	RelError: 1.00000e+00	AbsError: 1.00000e+00
+      Equation: "Poisson"	RelError: 1.00000e+00	AbsError: 1.00000e+00
+Iteration: 1
+  Device: "slab_394c86b1141f44279dd4158199edbdfe_device"	RelError: 1.91707e-15	AbsError: 6.08577e-16
+    Region: "A"	RelError: 1.00421e-15	AbsError: 6.08577e-16
+      Equation: "Poisson"	RelError: 1.00421e-15	AbsError: 6.08577e-16
+    Region: "B"	RelError: 9.12865e-16	AbsError: 6.08577e-16
+      Equation: "Poisson"	RelError: 9.12865e-16	AbsError: 6.08577e-16
+.................................................Physical group name Electrostatic has 477 Tetrahedra.
+Physical group name Electrostatic has 1085 Triangles.
+Physical group name Electrostatic has 765 Lines.
+Physical group name Electrostatic has 158 Points.
+Physical group name Left has 0 Tetrahedra.
+Physical group name Left has 44 Triangles.
+Physical group name Left has 74 Lines.
+Physical group name Left has 31 Points.
+Physical group name Right has 0 Tetrahedra.
+Physical group name Right has 42 Triangles.
+Physical group name Right has 71 Lines.
+Physical group name Right has 30 Points.
+Device slab_4d4b6b6463004a7eb8389a636ffe4e84_device has 158 coordinates with max index 158
+Region all has 158 nodes.
+Contact left in region all with 31 nodes
+Contact right in region all with 30 nodes
+number of equations 158
+Iteration: 0
+  Device: "slab_4d4b6b6463004a7eb8389a636ffe4e84_device"	RelError: 1.00000e+00	AbsError: 1.00000e+00
+    Region: "all"	RelError: 1.00000e+00	AbsError: 1.00000e+00
+      Equation: "Poisson"	RelError: 1.00000e+00	AbsError: 1.00000e+00
+Iteration: 1
+  Device: "slab_4d4b6b6463004a7eb8389a636ffe4e84_device"	RelError: 7.20490e-16	AbsError: 3.11984e-16
+    Region: "all"	RelError: 7.20490e-16	AbsError: 3.11984e-16
+      Equation: "Poisson"	RelError: 7.20490e-16	AbsError: 3.11984e-16
+.Physical group name Electrostatic has 247 Tetrahedra.
+Physical group name Electrostatic has 576 Triangles.
+Physical group name Electrostatic has 420 Lines.
+Physical group name Electrostatic has 92 Points.
+Physical group name Left has 0 Tetrahedra.
+Physical group name Left has 26 Triangles.
+Physical group name Left has 45 Lines.
+Physical group name Left has 20 Points.
+Physical group name Right has 0 Tetrahedra.
+Physical group name Right has 26 Triangles.
+Physical group name Right has 45 Lines.
+Physical group name Right has 20 Points.
+Device slab_d7fc4b9742504c969f91692c66f053b3_device has 92 coordinates with max index 92
+Region all has 92 nodes.
+Contact left in region all with 20 nodes
+Contact right in region all with 20 nodes
+number of equations 92
+Iteration: 0
+  Device: "slab_d7fc4b9742504c969f91692c66f053b3_device"	RelError: 1.00000e+00	AbsError: 8.34384e-04
+    Region: "all"	RelError: 1.00000e+00	AbsError: 8.34384e-04
+      Equation: "Poisson"	RelError: 1.00000e+00	AbsError: 8.34384e-04
+Iteration: 1
+  Device: "slab_d7fc4b9742504c969f91692c66f053b3_device"	RelError: 7.93175e-16	AbsError: 6.38194e-19
+    Region: "all"	RelError: 7.93175e-16	AbsError: 6.38194e-19
+      Equation: "Poisson"	RelError: 7.93175e-16	AbsError: 6.38194e-19
+Physical group name Electrostatic has 1956 Tetrahedra.
+Physical group name Electrostatic has 4302 Triangles.
+Physical group name Electrostatic has 2883 Lines.
+Physical group name Electrostatic has 538 Points.
+Physical group name Left has 0 Tetrahedra.
+Physical group name Left has 118 Triangles.
+Physical group name Left has 191 Lines.
+Physical group name Left has 74 Points.
+Physical group name Right has 0 Tetrahedra.
+Physical group name Right has 118 Triangles.
+Physical group name Right has 191 Lines.
+Physical group name Right has 74 Points.
+Device slab_50fc4d764a53404bbfd0373e461362d8_device has 538 coordinates with max index 538
+Region all has 538 nodes.
+Contact left in region all with 74 nodes
+Contact right in region all with 74 nodes
+number of equations 538
+Iteration: 0
+  Device: "slab_50fc4d764a53404bbfd0373e461362d8_device"	RelError: 1.00000e+00	AbsError: 7.90956e-04
+    Region: "all"	RelError: 1.00000e+00	AbsError: 7.90956e-04
+      Equation: "Poisson"	RelError: 1.00000e+00	AbsError: 7.90956e-04
+Iteration: 1
+  Device: "slab_50fc4d764a53404bbfd0373e461362d8_device"	RelError: 1.50267e-15	AbsError: 1.04729e-18
+    Region: "all"	RelError: 1.50267e-15	AbsError: 1.04729e-18
+      Equation: "Poisson"	RelError: 1.50267e-15	AbsError: 1.04729e-18
+.Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 40 Triangles.
+Physical group name Drain has 68 Lines.
+Physical group name Drain has 29 Points.
+Physical group name Electrostatic has 3375 Tetrahedra.
+Physical group name Electrostatic has 7216 Triangles.
+Physical group name Electrostatic has 4647 Lines.
+Physical group name Electrostatic has 807 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 332 Triangles.
+Physical group name Gate has 522 Lines.
+Physical group name Gate has 190 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 154 Triangles.
+Physical group name OxSpacer has 267 Lines.
+Physical group name OxSpacer has 113 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 312 Triangles.
+Physical group name SiExterior has 508 Lines.
+Physical group name SiExterior has 196 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 192 Triangles.
+Physical group name SiOx has 300 Lines.
+Physical group name SiOx has 108 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 264 Triangles.
+Physical group name SiSpacer has 432 Lines.
+Physical group name SiSpacer has 168 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 40 Triangles.
+Physical group name Source has 68 Lines.
+Physical group name Source has 29 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 208 Triangles.
+Physical group name SpacerExterior has 360 Lines.
+Physical group name SpacerExterior has 152 Points.
+Device gaa_a393194e has 807 coordinates with max index 807
+Region electrostatic has 807 nodes.
+Contact drain in region electrostatic with 29 nodes
+Contact gate in region electrostatic with 190 nodes
+Contact source in region electrostatic with 29 nodes
+number of equations 807

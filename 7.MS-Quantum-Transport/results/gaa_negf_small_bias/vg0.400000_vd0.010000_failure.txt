@@ -1,0 +1,38 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/7.MS-Quantum-Transport/run.py", line 114, in attempt
+    row,n,q=scf(c,p,mapping,builders,grid,mu,g,d,out,key,seed)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/7.MS-Quantum-Transport/solver.py", line 167, in scf
+    refined=newton_physical_map(c,p,mapping,builders,grid,fixed_mu,vg,vd,out,key,phi_node,iteration,tic)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/7.MS-Quantum-Transport/solver.py", line 68, in newton_physical_map
+    root=newton_krylov(lambda x:evaluate(x)[0],phi_start,rdiff=1e-5,inner_maxiter=12,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 6, in newton_krylov
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/7.MS-Quantum-Transport/.venv/lib/python3.12/site-packages/scipy/optimize/_nonlin.py", line 223, in nonlin_solve
+    s, x, Fx, Fx_norm_new = _nonlin_line_search(func, x, Fx, dx,
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/7.MS-Quantum-Transport/.venv/lib/python3.12/site-packages/scipy/optimize/_nonlin.py", line 301, in _nonlin_line_search
+    s, phi1 = scalar_search_armijo(phi, tmp_phi[0], -tmp_phi[0],
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/7.MS-Quantum-Transport/.venv/lib/python3.12/site-packages/scipy/optimize/_linesearch.py", line 698, in scalar_search_armijo
+    phi_a0 = phi(alpha0)
+             ^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/7.MS-Quantum-Transport/.venv/lib/python3.12/site-packages/scipy/optimize/_nonlin.py", line 285, in phi
+    v = func(xt)
+        ^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/7.MS-Quantum-Transport/.venv/lib/python3.12/site-packages/scipy/optimize/_nonlin.py", line 177, in func
+    return _as_inexact(F(_array_like(z, x0))).flatten()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/7.MS-Quantum-Transport/solver.py", line 68, in <lambda>
+    root=newton_krylov(lambda x:evaluate(x)[0],phi_start,rdiff=1e-5,inner_maxiter=12,
+                                ^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/7.MS-Quantum-Transport/solver.py", line 39, in evaluate
+    q=electronic(c,builders,grid,mapping.potential(x),fixed_mu,vd)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/7.MS-Quantum-Transport/solver.py", line 113, in electronic
+    blocks,flux,diag,components=solve_negf(s,c,mu,mu-vd,vd,detail)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/7.MS-Quantum-Transport/transport/negf_reference.py", line 109, in solve_negf
+    raise RuntimeError('BOUND_PREPARATION_REQUIRED: isolated poles have different reservoir Fermi occupations; no unique biased density')
+RuntimeError: BOUND_PREPARATION_REQUIRED: isolated poles have different reservoir Fermi occupations; no unique biased density

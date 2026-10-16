@@ -1,0 +1,6 @@
+{
+  "name": "raised_source_drain_nanosheet_GAA",
+  "world_transport_axis": 0,
+  "coordinates": "quantum/Poisson calculation in canonical longitudinal/transverse frame",
+  "other_geometry_validation": "interface only; no vertical transistor physics certification"
+}

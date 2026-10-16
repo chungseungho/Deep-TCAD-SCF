@@ -1,0 +1,37 @@
+{
+  "source_sha256": "3460c388f09220e41a72f92fb323b7d4467accc678e81c16ae1f32613dbaf6d1",
+  "same_hamiltonian_same_finite_bath": true,
+  "gf_only_after_scf": true,
+  "checks": [
+    {
+      "initial_panel_ev": 0.02,
+      "current_a": 4.492283420876447e-06,
+      "bond_current_a": 4.4922834575988665e-06,
+      "relative_mismatch": 8.174555335796773e-09,
+      "gf_nodes": 24888,
+      "adaptive_panels": 547,
+      "maximum_normalized_error_estimate": 0.8138273913600845
+    },
+    {
+      "initial_panel_ev": 0.01,
+      "current_a": 4.492283420876251e-06,
+      "bond_current_a": 4.4922834575988665e-06,
+      "relative_mismatch": 8.174598891510179e-09,
+      "gf_nodes": 25152,
+      "adaptive_panels": 581,
+      "maximum_normalized_error_estimate": 0.8090947791192379
+    },
+    {
+      "initial_panel_ev": 0.005,
+      "current_a": 4.4922834208758005e-06,
+      "bond_current_a": 4.4922834575988665e-06,
+      "relative_mismatch": 8.174699201638022e-09,
+      "gf_nodes": 25848,
+      "adaptive_panels": 652,
+      "maximum_normalized_error_estimate": 0.8034423048845468
+    }
+  ],
+  "runtime_s": 24.248501579000276,
+  "pass": true,
+  "spectrum_note": "600-point plot samples; independent current uses adaptive quadrature, not this sampled curve"
+}

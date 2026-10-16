@@ -1,0 +1,200 @@
+{"requested_points": 1, "configuration": {"ls": 12.0, "lg": 24.0, "ld": 12.0, "spacer": 3.0, "width": 12.0, "thickness": 5.0, "sd_width": 20.0, "sd_thickness": 15.0, "tox": 2.0, "eps_si": 11.7, "eps_ox": 3.9, "eps_spacer": 7.5, "donor_sd": 1e+19, "donor_channel": 0.0, "transition": 1.0, "temperature": 300.0, "flatband": 0.5, "dx": 0.5, "dy": 1.0, "dz": 1.0, "modes": 2, "sd_modes": 4, "mesh_h": 3.5, "channel_h": 1.8, "junction_h": 1.3, "gamma": 0.01, "backend": "negf", "mapping": "integrated", "fermi_poles": 48, "energy_step": 0.01, "energy_order": 8, "fermi_tail": 16.0, "energy_rtol": 2e-05, "energy_atol": 1e-07, "energy_max_nodes": 120000, "basis": "fixed", "preconditioner": "screened", "mix": 0.15, "history": 5, "max_iterations": 80, "charge_tol": 0.002, "phi_tol": 0.0001, "current_tol": 0.002, "ms_tie_tol": 1e-07, "junction_basis": "nested", "transport_axis": 0, "reservoir_left_nm": 6.0, "reservoir_right_nm": 6.0, "ms_contrast_min": 0.1, "ms_reach_min": 1e-05, "ms_occupation_uncertainty": 1e-07, "ms_degenerate_ev": 1e-07, "ms_boundary_shift_slices": 1, "ms_number_constraint": "finite_total", "mu_source_ev": null, "resonance_order": 32, "resonance_max_iterations": 12, "high_field_v_nm": 0.5, "dispersion_tolerance": 0.02, "newton_start": 1}, "source_sha256": "3460c388f09220e41a72f92fb323b7d4467accc678e81c16ae1f32613dbaf6d1"}
+Searching DEVSIM_MATH_LIBS="libopenblas.so.0"
+Loading "libopenblas.so.0": ALL BLAS/LAPACK LOADED
+loading UMFPACK 5.1 as direct solver
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_90009f43 has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+Cell/tetra integration 5000/5020 tetra, 30.9s
+number of equations 2296
+Iteration: 0
+  Device: "gaa_90009f43"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 3.00000e-01
+Iteration: 1
+  Device: "gaa_90009f43"	RelError: 2.62767e-14	AbsError: 2.99526e-16
+    Region: "electrostatic"	RelError: 2.62767e-14	AbsError: 2.99526e-16
+      Equation: "PotentialEquation"	RelError: 2.62767e-14	AbsError: 2.99526e-16
+number of equations 2296
+Iteration: 0
+  Device: "gaa_90009f43"	RelError: 1.15226e+00	AbsError: 2.33090e-01
+    Region: "electrostatic"	RelError: 1.15226e+00	AbsError: 2.33090e-01
+      Equation: "PotentialEquation"	RelError: 1.15226e+00	AbsError: 2.33090e-01
+Iteration: 1
+  Device: "gaa_90009f43"	RelError: 5.88826e-16	AbsError: 2.04063e-16
+    Region: "electrostatic"	RelError: 5.88826e-16	AbsError: 2.04063e-16
+      Equation: "PotentialEquation"	RelError: 5.88826e-16	AbsError: 2.04063e-16
+vg0.800000_vd0.100000 001: phiR=2.331e-01 nR=2.245e-01 mu=0.009559 stable=True
+vg0.800000_vd0.100000: switching to Newton-Krylov on original physical map
+number of equations 2296
+Iteration: 0
+  Device: "gaa_90009f43"	RelError: 1.69103e-16	AbsError: 3.84197e-17
+    Region: "electrostatic"	RelError: 1.69103e-16	AbsError: 3.84197e-17
+      Equation: "PotentialEquation"	RelError: 1.69103e-16	AbsError: 3.84197e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_90009f43"	RelError: 2.65108e-05	AbsError: 4.49058e-06
+    Region: "electrostatic"	RelError: 2.65108e-05	AbsError: 4.49058e-06
+      Equation: "PotentialEquation"	RelError: 2.65108e-05	AbsError: 4.49058e-06
+Iteration: 1
+  Device: "gaa_90009f43"	RelError: 1.68777e-16	AbsError: 4.95357e-17
+    Region: "electrostatic"	RelError: 1.68777e-16	AbsError: 4.95357e-17
+      Equation: "PotentialEquation"	RelError: 1.68777e-16	AbsError: 4.95357e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_90009f43"	RelError: 3.02549e-04	AbsError: 4.23565e-05
+    Region: "electrostatic"	RelError: 3.02549e-04	AbsError: 4.23565e-05
+      Equation: "PotentialEquation"	RelError: 3.02549e-04	AbsError: 4.23565e-05
+Iteration: 1
+  Device: "gaa_90009f43"	RelError: 2.28027e-16	AbsError: 3.81939e-17
+    Region: "electrostatic"	RelError: 2.28027e-16	AbsError: 3.81939e-17
+      Equation: "PotentialEquation"	RelError: 2.28027e-16	AbsError: 3.81939e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_90009f43"	RelError: 6.10240e-04	AbsError: 8.40068e-05
+    Region: "electrostatic"	RelError: 6.10240e-04	AbsError: 8.40068e-05
+      Equation: "PotentialEquation"	RelError: 6.10240e-04	AbsError: 8.40068e-05
+Iteration: 1
+  Device: "gaa_90009f43"	RelError: 2.70955e-16	AbsError: 4.26532e-17
+    Region: "electrostatic"	RelError: 2.70955e-16	AbsError: 4.26532e-17
+      Equation: "PotentialEquation"	RelError: 2.70955e-16	AbsError: 4.26532e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_90009f43"	RelError: 1.03416e-04	AbsError: 1.51805e-05
+    Region: "electrostatic"	RelError: 1.03416e-04	AbsError: 1.51805e-05
+      Equation: "PotentialEquation"	RelError: 1.03416e-04	AbsError: 1.51805e-05
+Iteration: 1
+  Device: "gaa_90009f43"	RelError: 2.10307e-16	AbsError: 4.06949e-17
+    Region: "electrostatic"	RelError: 2.10307e-16	AbsError: 4.06949e-17
+      Equation: "PotentialEquation"	RelError: 2.10307e-16	AbsError: 4.06949e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_90009f43"	RelError: 2.21273e-04	AbsError: 3.19778e-05
+    Region: "electrostatic"	RelError: 2.21273e-04	AbsError: 3.19778e-05
+      Equation: "PotentialEquation"	RelError: 2.21273e-04	AbsError: 3.19778e-05
+Iteration: 1
+  Device: "gaa_90009f43"	RelError: 2.58512e-16	AbsError: 3.87846e-17
+    Region: "electrostatic"	RelError: 2.58512e-16	AbsError: 3.87846e-17
+      Equation: "PotentialEquation"	RelError: 2.58512e-16	AbsError: 3.87846e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_90009f43"	RelError: 1.44402e-04	AbsError: 1.98699e-05
+    Region: "electrostatic"	RelError: 1.44402e-04	AbsError: 1.98699e-05
+      Equation: "PotentialEquation"	RelError: 1.44402e-04	AbsError: 1.98699e-05
+Iteration: 1
+  Device: "gaa_90009f43"	RelError: 2.64473e-16	AbsError: 3.53375e-17
+    Region: "electrostatic"	RelError: 2.64473e-16	AbsError: 3.53375e-17
+      Equation: "PotentialEquation"	RelError: 2.64473e-16	AbsError: 3.53375e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_90009f43"	RelError: 1.31625e-04	AbsError: 1.96843e-05
+    Region: "electrostatic"	RelError: 1.31625e-04	AbsError: 1.96843e-05
+      Equation: "PotentialEquation"	RelError: 1.31625e-04	AbsError: 1.96843e-05
+Iteration: 1
+  Device: "gaa_90009f43"	RelError: 1.70504e-16	AbsError: 4.51423e-17
+    Region: "electrostatic"	RelError: 1.70504e-16	AbsError: 4.51423e-17
+      Equation: "PotentialEquation"	RelError: 1.70504e-16	AbsError: 4.51423e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_90009f43"	RelError: 2.53560e-05	AbsError: 3.80195e-06
+    Region: "electrostatic"	RelError: 2.53560e-05	AbsError: 3.80195e-06
+      Equation: "PotentialEquation"	RelError: 2.53560e-05	AbsError: 3.80195e-06
+Iteration: 1
+  Device: "gaa_90009f43"	RelError: 2.57236e-16	AbsError: 4.59433e-17
+    Region: "electrostatic"	RelError: 2.57236e-16	AbsError: 4.59433e-17
+      Equation: "PotentialEquation"	RelError: 2.57236e-16	AbsError: 4.59433e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_90009f43"	RelError: 4.98854e-05	AbsError: 6.86539e-06
+    Region: "electrostatic"	RelError: 4.98854e-05	AbsError: 6.86539e-06
+      Equation: "PotentialEquation"	RelError: 4.98854e-05	AbsError: 6.86539e-06
+Iteration: 1
+  Device: "gaa_90009f43"	RelError: 2.01055e-16	AbsError: 4.04763e-17
+    Region: "electrostatic"	RelError: 2.01055e-16	AbsError: 4.04763e-17
+      Equation: "PotentialEquation"	RelError: 2.01055e-16	AbsError: 4.04763e-17
+number of equations 2296
+Iteration: 0
+  Device: "gaa_90009f43"	RelError: 7.30252e-05	AbsError: 1.00492e-05
+    Region: "electrostatic"	RelError: 7.30252e-05	AbsError: 1.00492e-05
+      Equation: "PotentialEquation"	RelError: 7.30252e-05	AbsError: 1.00492e-05
+Iteration: 1
+  Device: "gaa_90009f43"	RelError: 2.44331e-16	AbsError: 4.43538e-17
+    Region: "electrostatic"	RelError: 2.44331e-16	AbsError: 4.43538e-17
+      Equation: "PotentialEquation"	RelError: 2.44331e-16	AbsError: 4.43538e-17
+Traceback (most recent call last):
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/7.MS-Quantum-Transport/run.py", line 114, in attempt
+    row,n,q=scf(c,p,mapping,builders,grid,mu,g,d,out,key,seed)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/7.MS-Quantum-Transport/solver.py", line 167, in scf
+    refined=newton_physical_map(c,p,mapping,builders,grid,fixed_mu,vg,vd,out,key,phi_node,iteration,tic)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/7.MS-Quantum-Transport/solver.py", line 68, in newton_physical_map
+    root=newton_krylov(lambda x:evaluate(x)[0],phi_start,rdiff=1e-5,inner_maxiter=12,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 6, in newton_krylov
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/7.MS-Quantum-Transport/.venv/lib/python3.12/site-packages/scipy/optimize/_nonlin.py", line 223, in nonlin_solve
+    s, x, Fx, Fx_norm_new = _nonlin_line_search(func, x, Fx, dx,
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/7.MS-Quantum-Transport/.venv/lib/python3.12/site-packages/scipy/optimize/_nonlin.py", line 301, in _nonlin_line_search
+    s, phi1 = scalar_search_armijo(phi, tmp_phi[0], -tmp_phi[0],
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/7.MS-Quantum-Transport/.venv/lib/python3.12/site-packages/scipy/optimize/_linesearch.py", line 698, in scalar_search_armijo
+    phi_a0 = phi(alpha0)
+             ^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/7.MS-Quantum-Transport/.venv/lib/python3.12/site-packages/scipy/optimize/_nonlin.py", line 285, in phi
+    v = func(xt)
+        ^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/7.MS-Quantum-Transport/.venv/lib/python3.12/site-packages/scipy/optimize/_nonlin.py", line 177, in func
+    return _as_inexact(F(_array_like(z, x0))).flatten()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/7.MS-Quantum-Transport/solver.py", line 68, in <lambda>
+    root=newton_krylov(lambda x:evaluate(x)[0],phi_start,rdiff=1e-5,inner_maxiter=12,
+                                ^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/7.MS-Quantum-Transport/solver.py", line 39, in evaluate
+    q=electronic(c,builders,grid,mapping.potential(x),fixed_mu,vd)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/7.MS-Quantum-Transport/solver.py", line 113, in electronic
+    blocks,flux,diag,components=solve_negf(s,c,mu,mu-vd,vd,detail)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/7.MS-Quantum-Transport/transport/negf_reference.py", line 109, in solve_negf
+    raise RuntimeError('BOUND_PREPARATION_REQUIRED: isolated poles have different reservoir Fermi occupations; no unique biased density')
+RuntimeError: BOUND_PREPARATION_REQUIRED: isolated poles have different reservoir Fermi occupations; no unique biased density
+

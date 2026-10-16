@@ -1,0 +1,2 @@
+key,iteration,vg_v,vd_v,phi_residual_v,density_relative_residual,mu_l_ev,mu_change_ev,occupation_max_change,classification_stable,electrons,id_a,elapsed_s
+vg0.800000_vd0.100000,1,0.8,0.1,0.23308994620120418,0.22449723366576066,0.009559118670267335,inf,inf,True,73.82934602771951,7.043364786915698e-06,26.133534716000213

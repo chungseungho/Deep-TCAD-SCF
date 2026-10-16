@@ -1,0 +1,90 @@
+[
+  {
+    "path": "results/final_gauge_regression/states/vg0.800000_vd0.000000.npz",
+    "source_sha256": "c0fbe6dc782c38d9e1ba56e06178bfd7197ba873c4c546f9d0276b3d4ce0eaf0",
+    "configuration_fingerprint": "9a2c4051640a5f0f16368356130c2cac95e664e5e374e23ceab580330bb0b3c4",
+    "backend": "ms",
+    "numerically_converged": true,
+    "quantitative_validation_pass": false
+  },
+  {
+    "path": "results/gaa_ms_equilibrium/states/vg0.800000_vd0.000000.npz",
+    "source_sha256": "c38800bb0b63dd4df3bca0a34045d0318085a7377d676da97dde45e3151b1574",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "backend": "ms",
+    "numerically_converged": false,
+    "quantitative_validation_pass": false
+  },
+  {
+    "path": "results/gaa_ms_fixed_mu_equilibrium/states/vg0.800000_vd0.000000.npz",
+    "source_sha256": "3460c388f09220e41a72f92fb323b7d4467accc678e81c16ae1f32613dbaf6d1",
+    "configuration_fingerprint": "9adde5302b9de5dd94a5fe5404bf6ad9c4bf2141886e60e25a5327dad5720c96",
+    "backend": "ms",
+    "numerically_converged": true,
+    "quantitative_validation_pass": false
+  },
+  {
+    "path": "results/gaa_ms_lowbias/states/vg0.800000_vd0.000000.npz",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "backend": "ms",
+    "numerically_converged": true,
+    "quantitative_validation_pass": false
+  },
+  {
+    "path": "results/gaa_negf_equilibrium/states/vg0.800000_vd0.000000.npz",
+    "source_sha256": "3460c388f09220e41a72f92fb323b7d4467accc678e81c16ae1f32613dbaf6d1",
+    "configuration_fingerprint": "09296d72349c7174b64fd953ae43b7bd8246857b9a3688381cc72f7081f64a3c",
+    "backend": "negf",
+    "numerically_converged": true,
+    "quantitative_validation_pass": false
+  },
+  {
+    "path": "results/gaa_negf_small_bias/states/vg0.400000_vd0.000000.npz",
+    "source_sha256": "3460c388f09220e41a72f92fb323b7d4467accc678e81c16ae1f32613dbaf6d1",
+    "configuration_fingerprint": "09296d72349c7174b64fd953ae43b7bd8246857b9a3688381cc72f7081f64a3c",
+    "backend": "negf",
+    "numerically_converged": true,
+    "quantitative_validation_pass": false
+  },
+  {
+    "path": "results/gaa_spectral_regression/states/vg0.800000_vd0.100000.npz",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "458868683994644b0ce503fb932d805e0171ea3fee69b0ab8d788d9e73fe4ef1",
+    "backend": "spectral",
+    "numerically_converged": true,
+    "quantitative_validation_pass": false
+  },
+  {
+    "path": "results/stage_a_output/states/vg0.400000_vd0.000000.npz",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "backend": "ms",
+    "numerically_converged": true,
+    "quantitative_validation_pass": false
+  },
+  {
+    "path": "results/stage_a_output/states/vg0.800000_vd0.000000.npz",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "backend": "ms",
+    "numerically_converged": true,
+    "quantitative_validation_pass": false
+  },
+  {
+    "path": "results/stage_a_output/states/vg1.200000_vd0.000000.npz",
+    "source_sha256": "48d414a81ec29ec50aef1999afd1a43cad63164d14a39ae99c2badd32ead496c",
+    "configuration_fingerprint": "b03881e25710203285fe0a3d9fb676fe69ad06cb5501d9fe949179beea6cd4e2",
+    "backend": "ms",
+    "numerically_converged": true,
+    "quantitative_validation_pass": false
+  },
+  {
+    "path": "results/stress_drain/states/vg0.800000_vd0.000000.npz",
+    "source_sha256": "3460c388f09220e41a72f92fb323b7d4467accc678e81c16ae1f32613dbaf6d1",
+    "configuration_fingerprint": "36ba582be382df89a2531c56987923827c0a748aef27c6271faf78b5d76a1201",
+    "backend": "ms",
+    "numerically_converged": true,
+    "quantitative_validation_pass": false
+  }
+]

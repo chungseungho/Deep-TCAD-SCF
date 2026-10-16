@@ -1,0 +1,14 @@
+{
+  "file_bytes_unchanged": {
+    "results/final_gauge_regression/states/vg0.800000_vd0.000000.npz": true,
+    "results/final_gauge_regression/point.csv": false
+  },
+  "csv_physical_values_match_saved_state": {
+    "id_a": true,
+    "mu_l_ev": true,
+    "mu_r_ev": true,
+    "phi_residual_v": true,
+    "density_relative_residual": true
+  },
+  "note": "resume regenerates derived scalar CSV columns; physical NPZ is immutable"
+}

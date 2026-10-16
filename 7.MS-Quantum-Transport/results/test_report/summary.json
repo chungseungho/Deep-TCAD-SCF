@@ -1,0 +1,44 @@
+{
+  "source_sha256": "c0fbe6dc782c38d9e1ba56e06178bfd7197ba873c4c546f9d0276b3d4ce0eaf0",
+  "groups": [
+    {
+      "group": "quantum",
+      "tests": 52,
+      "skipped": 0,
+      "failures": 0,
+      "exit_code": 0,
+      "command": [
+        "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/7.MS-Quantum-Transport/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests",
+        "--ignore=tests/test_devsim_integration.py",
+        "--ignore=tests/test_shared_poisson_capacitor.py",
+        "--ignore=tests/test_triple_junction.py",
+        "--junitxml=/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/7.MS-Quantum-Transport/results/test_report/quantum.xml"
+      ]
+    },
+    {
+      "group": "native",
+      "tests": 4,
+      "skipped": 0,
+      "failures": 0,
+      "exit_code": 0,
+      "command": [
+        "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/7.MS-Quantum-Transport/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_devsim_integration.py",
+        "tests/test_shared_poisson_capacitor.py",
+        "tests/test_triple_junction.py",
+        "--junitxml=/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/7.MS-Quantum-Transport/results/test_report/native.xml"
+      ]
+    }
+  ],
+  "total_tests": 56,
+  "pass": true,
+  "process_isolation": "native and quantum groups isolated; each requires JUnit completion marker",
+  "monolithic_run": "not used as pass evidence; earlier mixed run terminated before its completion report"
+}

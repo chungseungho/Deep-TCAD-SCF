@@ -1,0 +1,12 @@
+[
+  {
+    "original": "Deep-TCAD-SCF/6.MS-modspace-model/results/device_lowbias/states/vg0.800000_vd0.100000.npz",
+    "packaged": "results/inputs/device_lowbias.npz",
+    "sha256": "699c57886edeaa3f91065dfd315814cb6d12f8fe913d3e725d93d352d9ac4c25"
+  },
+  {
+    "original": "Deep-TCAD-SCF/6.MS-modspace-model/results/negf_equilibrium/states/vg0.800000_vd0.000000.npz",
+    "packaged": "results/inputs/negf_equilibrium.npz",
+    "sha256": "68ba7136cb430acbac6ecfcf37db0e3868c5ac8171611a82dfdcea5587eb78c4"
+  }
+]
