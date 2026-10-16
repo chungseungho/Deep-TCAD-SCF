@@ -1,0 +1,56 @@
+{
+  "regions": [
+    "oxide",
+    "silicon",
+    "spacer"
+  ],
+  "interfaces": [
+    "OxSpacer",
+    "SiOx",
+    "SiSpacer"
+  ],
+  "contacts": [
+    "drain",
+    "gate",
+    "source"
+  ],
+  "silicon_node_count": 1438,
+  "nodevolume_min_nm3": 0.07994501564315441,
+  "nodevolume_sum_nm3": 9000.0,
+  "discretization": {
+    "silicon": {
+      "physical_volume_nm3": 9000.0,
+      "native_NodeVolume_nm3": 11635.079922530182,
+      "native_relative_volume_excess": 0.2927866580589089,
+      "stiffness_row_sum_max_cm": 1.2705494208814505e-21,
+      "signed_edge_couple_negative_fraction": 0.18688135145836082
+    },
+    "oxide": {
+      "physical_volume_nm3": 2015.9999999999984,
+      "native_NodeVolume_nm3": 2154.784191309125,
+      "native_relative_volume_excess": 0.06884136473667013,
+      "stiffness_row_sum_max_cm": 3.1763735522036263e-22,
+      "signed_edge_couple_negative_fraction": 0.16902500484590036
+    },
+    "spacer": {
+      "physical_volume_nm3": 503.9999999999998,
+      "native_NodeVolume_nm3": 643.3129100612513,
+      "native_relative_volume_excess": 0.27641450408978474,
+      "stiffness_row_sum_max_cm": 2.6469779601696886e-22,
+      "signed_edge_couple_negative_fraction": 0.18225760591413137
+    }
+  },
+  "balancing_error": 1.9634213144215096e-09,
+  "iterations": 9101,
+  "kernel_sigma_nm": 1.6878123119402124,
+  "linear_potential_error_v": 1.3322676295501878e-15,
+  "constant_density_relative_error": 1.9634208703322997e-09,
+  "charge_relative_error": 1.857686585688736e-16,
+  "minimum_mapped_density_cm3": 3.751493975960201e+18,
+  "nodevolume_nm3": 9000.0,
+  "quantum_volume_nm3": 9000.0,
+  "electrostatic_work_relative_defect": 3.5797055044080355e-06,
+  "charge_measure": "DEVSIM configured node_volume_model=PhysicalControlVolume",
+  "potential_measure": "original silicon tetrahedra",
+  "limitation": "positive balanced density map is not exact affine-map adjoint; no variational energy proof"
+}

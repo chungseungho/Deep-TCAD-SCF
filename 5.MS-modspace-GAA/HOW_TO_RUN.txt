@@ -1,0 +1,36 @@
+Deep-TCAD-SCF STEP05 - research prototype
+
+Read 5.MS-modspace-GAA/STATUS.md first, then README.md and THEORY.md.
+results/ contains actual computed I-V, representative 3D states/meshes and validation.
+Existing STEP01-04 are unchanged. No GitHub push was performed.
+
+Choose one way to install:
+
+A. Copy the 5.MS-modspace-GAA folder into your Deep-TCAD-SCF repository.
+
+B. Preserve the local commits from STEP05.bundle (requires base 95fc5fd in the repo):
+   git fetch /path/to/extracted/STEP05.bundle step05-finite-gaa:step05-finite-gaa
+   git switch step05-finite-gaa
+   Do this in a clean worktree, before copying the folder by method A.
+
+Verified server smoke configuration:
+cd /home/class/2026_SeungHo/TCAD/Deep-TCAD-SCF/5.MS-modspace-GAA
+source ../../.venv/bin/activate
+python -m pip install -r requirements.txt
+python -m pytest -q tests
+python run.py --phase point --smoke --dx 1 --modes 3 --sd-modes 6 --vg .4 --vd .1 --out output/smoke
+
+Prototype I-V: Id-Vgs 25/25; Id-Vds 71/75 converged. Four failures retained.
+Quantitative device/mode/contact convergence is NOT certified.
+The default finer FULL quantum I-V has NOT been run; Poisson/mapping were checked.
+
+Local branch: step05-finite-gaa
+Base: 95fc5fd
+Head: ce44886e61864ba35fbd68f7ef734a3ef82a7d93
+
+Local commits:
+ce44886 Rebuild aggregate run summaries from saved bias tables during plotting
+3d3e375 Document actual STEP05 validation, failed biases, and prototype limits
+6dac801 Resume failed biases from the neighbouring accepted SCF state
+a1e8e18 Implement finite spectral quantum SCF, transport, and checked density data workflow
+7caf83e Add isolated STEP05 raised GAA geometry and conservative Poisson coupling

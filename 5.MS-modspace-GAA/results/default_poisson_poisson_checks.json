@@ -1,0 +1,58 @@
+{
+  "regions": [
+    "oxide",
+    "silicon",
+    "spacer"
+  ],
+  "interfaces": [
+    "OxSpacer",
+    "SiOx",
+    "SiSpacer"
+  ],
+  "contacts": [
+    "drain",
+    "gate",
+    "source"
+  ],
+  "silicon_node_count": 3202,
+  "nodevolume_min_nm3": 0.04020097118472534,
+  "nodevolume_sum_nm3": 9000.0,
+  "discretization": {
+    "silicon": {
+      "physical_volume_nm3": 9000.000000000002,
+      "native_NodeVolume_nm3": 11085.273672063537,
+      "native_relative_volume_excess": 0.23169707467372613,
+      "stiffness_row_sum_max_cm": 1.5087774372967225e-21,
+      "signed_edge_couple_negative_fraction": 0.2021515999780449
+    },
+    "oxide": {
+      "physical_volume_nm3": 2015.9999999999984,
+      "native_NodeVolume_nm3": 2368.6680687243693,
+      "native_relative_volume_excess": 0.1749345578989936,
+      "stiffness_row_sum_max_cm": 5.178150634581953e-22,
+      "signed_edge_couple_negative_fraction": 0.17896103896103896
+    },
+    "spacer": {
+      "physical_volume_nm3": 503.9999999999998,
+      "native_NodeVolume_nm3": 591.153696843068,
+      "native_relative_volume_excess": 0.17292400167275446,
+      "stiffness_row_sum_max_cm": 2.845501307182415e-22,
+      "signed_edge_couple_negative_fraction": 0.15189030883919064
+    }
+  },
+  "balancing_error": 1.9948326324126242e-09,
+  "iterations": 20361,
+  "kernel_sigma_nm": 1.0439633701818969,
+  "linear_potential_error_v": 1.3322676295501878e-15,
+  "constant_density_relative_error": 1.994833298546439e-09,
+  "charge_relative_error": 5.630863805526795e-16,
+  "minimum_mapped_density_cm3": 3.001495402997369e+18,
+  "nodevolume_nm3": 9000.0,
+  "quantum_volume_nm3": 9000.0,
+  "electrostatic_work_relative_defect": 1.2659215732497262e-05,
+  "charge_measure": "DEVSIM configured node_volume_model=PhysicalControlVolume",
+  "potential_measure": "original silicon tetrahedra",
+  "limitation": "positive balanced density map is not exact affine-map adjoint; no variational energy proof",
+  "neutral_laplace_error_v": 0.0,
+  "gate_response_v": 1.183511283985999
+}

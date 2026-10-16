@@ -1,0 +1,14 @@
+{
+  "summary_kind": "aggregate_from_saved_bias_tables",
+  "phase_summaries": {
+    "idvgs": {
+      "finished_points": 25,
+      "converged_points": 25,
+      "failed_points": 0
+    }
+  },
+  "quantitative_device_validation": false,
+  "finished_points": 25,
+  "converged_points": 25,
+  "failed_points": 0
+}

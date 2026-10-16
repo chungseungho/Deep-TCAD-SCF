@@ -1,0 +1,4 @@
+!NBLOCKS 3
+output/device_screened/electrostatics.vtk_0.vtu
+output/device_screened/electrostatics.vtk_1.vtu
+output/device_screened/electrostatics.vtk_2.vtu

@@ -1,0 +1,29 @@
+{
+  "key": "vg0.400000_vd0.100000",
+  "energy_quadrature": [
+    {
+      "step_ev": 0.002,
+      "current_a": 1.9972448159744788e-08,
+      "bond_current_a": 2.0038731260335588e-08,
+      "relative_mismatch": 0.003307749364452035
+    },
+    {
+      "step_ev": 0.001,
+      "current_a": 1.989120693575339e-08,
+      "bond_current_a": 2.0038731260335588e-08,
+      "relative_mismatch": 0.007361959330938557
+    },
+    {
+      "step_ev": 0.0005,
+      "current_a": 2.00322503540218e-08,
+      "bond_current_a": 2.0038731260335588e-08,
+      "relative_mismatch": 0.00032341899442579725
+    }
+  ],
+  "direct_vs_pole_transmission_max_abs_error": 1.3711254354120683e-14,
+  "energy_window_ev": [
+    -0.5965703822276356,
+    0.8034296177722102
+  ],
+  "note": "Spectral convergence at this saved bias only; not device mesh/contact convergence"
+}

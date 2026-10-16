@@ -1,0 +1,29 @@
+{
+  "model": "RBF-ridge reduced log-density baseline; not DeepSCF",
+  "heldout_entire_bias_points": [
+    [
+      0.2,
+      0.1
+    ],
+    [
+      0.45,
+      0.1
+    ],
+    [
+      0.7,
+      0.1
+    ],
+    [
+      0.95,
+      0.1
+    ],
+    [
+      1.2,
+      0.1
+    ]
+  ],
+  "heldout_log10_rmse": 0.049941722412062343,
+  "heldout_relative_l2": 0.1513086043525193,
+  "training_physics_quantitatively_validated": false,
+  "inference_role": "warm start; reference SCF mandatory"
+}

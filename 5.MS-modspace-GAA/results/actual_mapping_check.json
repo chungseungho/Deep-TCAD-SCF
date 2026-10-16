@@ -1,0 +1,20 @@
+[
+  {
+    "key": "vg0.000000_vd0.100000",
+    "actual_density_work_relative_defect": 0.029872627610076457,
+    "actual_density_charge_relative_error": 1.4909883943979044e-16,
+    "minimum_mapped_density_cm3": 2789228571.82067
+  },
+  {
+    "key": "vg0.400000_vd0.100000",
+    "actual_density_work_relative_defect": 0.021961024104225124,
+    "actual_density_charge_relative_error": 0.0,
+    "minimum_mapped_density_cm3": 6419012165632422.0
+  },
+  {
+    "key": "vg1.200000_vd0.100000",
+    "actual_density_work_relative_defect": 0.03245885378424552,
+    "actual_density_charge_relative_error": 3.026212358973341e-16,
+    "minimum_mapped_density_cm3": 4.4431868229618336e+17
+  }
+]

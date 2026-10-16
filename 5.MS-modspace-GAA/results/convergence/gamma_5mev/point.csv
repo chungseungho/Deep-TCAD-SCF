@@ -1,0 +1,2 @@
+key,vg_v,vd_v,id_a,status,iterations,phi_residual_v,charge_residual,sd_neutrality_relative_error,continuum_hierarchy_pass,current_conservation_relative,quantitative_validation_pass,backend,runtime_s
+vg0.800000_vd0.100000,0.8,0.1,1.276600000576512e-06,SCF_CONVERGED_PROTOTYPE,40,5.194386412319535e-05,6.907262100429986e-05,-0.16727619176127081,False,1.609004305314169e-14,False,spectral,19.89116809899997
