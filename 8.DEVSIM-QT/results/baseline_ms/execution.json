@@ -1,0 +1,20 @@
+{
+  "command": [
+    "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/8.DEVSIM-QT/.venv/bin/python",
+    "/workspace/scratch/3024dd41bc9d/restored_sources/step07/7.MS-Quantum-Transport/run.py",
+    "idvds",
+    "--gates",
+    ".8",
+    "--drain-range",
+    "0,.01,.05,.1",
+    "--config",
+    "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/8.DEVSIM-QT/baseline/ms_config.json",
+    "--out",
+    "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/8.DEVSIM-QT/results/baseline_ms",
+    "--initial-state",
+    "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/8.DEVSIM-QT/baseline/ms_seed.npz"
+  ],
+  "exit_code": 2,
+  "seconds": 39.241520404815674,
+  "warm_start": true
+}

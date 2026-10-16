@@ -1,0 +1,145 @@
+{
+  "source_sha256": "a12692040fa746f46a87b64dfb372756c75d0807556f1628b88733ec00a41ac3",
+  "source_state": "baseline/ms_seed.npz",
+  "cases": [
+    {
+      "modes": 20,
+      "sd_modes": 40,
+      "prescription": "fixed_mu",
+      "mu_ev": -0.05757761083596432,
+      "electrons": 193.98306186110452,
+      "open_electrons": 199.35437606433257,
+      "closed_open_relative_l2": 0.043589066440048174,
+      "dimensions": [
+        4080,
+        4080,
+        4080
+      ],
+      "channel_subband_minima_ev": [
+        [
+          -0.06091344379650897,
+          -0.03908834967898708,
+          -0.028855550720422413,
+          -0.006888212831765135,
+          0.02074780369530882
+        ],
+        [
+          0.0007378278827518526,
+          0.022357413665211715,
+          0.08725049615944426,
+          0.16962992265073062,
+          0.1915974149208495
+        ],
+        [
+          -0.034277919129611034,
+          -0.03381911529599961,
+          0.005133581641808519,
+          0.011891457332704355,
+          0.029699231992368104
+        ]
+      ],
+      "thermal_occupied_eigenstate_counts": [
+        726,
+        933,
+        686
+      ],
+      "linear_response_conductance_fixed_contact_mu_s": 3.0079379424878104e-05,
+      "scf": false,
+      "regional": {
+        "channel": {
+          "electrons": 25.432647969579783,
+          "open_electrons": 25.432647747364776,
+          "closed_open_relative_l2": 3.0452359309445043e-08
+        },
+        "left": {
+          "electrons": 24.71239017896045,
+          "open_electrons": 27.42417728608684,
+          "closed_open_relative_l2": 0.10233139511960374
+        },
+        "right": {
+          "electrons": 24.580073132265934,
+          "open_electrons": 27.264654772080895,
+          "closed_open_relative_l2": 0.1013447044963357
+        },
+        "extension": {
+          "electrons": 119.25795058029831,
+          "open_electrons": 119.2328962588001,
+          "closed_open_relative_l2": 0.000485880483415532
+        }
+      },
+      "runtime_s": 60.17517852783203,
+      "basis_orthogonality_max": 2.6645352591003757e-15
+    },
+    {
+      "modes": 20,
+      "sd_modes": 40,
+      "prescription": "fixed_N",
+      "mu_ev": -0.089893667133806,
+      "electrons": 72.5999999994993,
+      "open_electrons": 74.39856786421991,
+      "closed_open_relative_l2": 0.03548586761786116,
+      "dimensions": [
+        4080,
+        4080,
+        4080
+      ],
+      "channel_subband_minima_ev": [
+        [
+          -0.06091344379650897,
+          -0.03908834967898708,
+          -0.028855550720422413,
+          -0.006888212831765135,
+          0.02074780369530882
+        ],
+        [
+          0.0007378278827518526,
+          0.022357413665211715,
+          0.08725049615944426,
+          0.16962992265073062,
+          0.1915974149208495
+        ],
+        [
+          -0.034277919129611034,
+          -0.03381911529599961,
+          0.005133581641808519,
+          0.011891457332704355,
+          0.029699231992368104
+        ]
+      ],
+      "thermal_occupied_eigenstate_counts": [
+        677,
+        833,
+        633
+      ],
+      "linear_response_conductance_fixed_contact_mu_s": 3.0079379424878104e-05,
+      "scf": false,
+      "regional": {
+        "channel": {
+          "electrons": 8.652472909133428,
+          "open_electrons": 8.652472911138519,
+          "closed_open_relative_l2": 2.1435816650235035e-09
+        },
+        "left": {
+          "electrons": 8.803723977504104,
+          "open_electrons": 9.709561939429936,
+          "closed_open_relative_l2": 0.08878201023726617
+        },
+        "right": {
+          "electrons": 8.753935018426715,
+          "open_electrons": 9.649722544082442,
+          "closed_open_relative_l2": 0.08791890641177007
+        },
+        "extension": {
+          "electrons": 46.38986809443506,
+          "open_electrons": 46.38681046956902,
+          "closed_open_relative_l2": 0.0001946439139766276
+        }
+      },
+      "runtime_s": 67.29652786254883,
+      "basis_orthogonality_max": 2.6645352591003757e-15
+    }
+  ],
+  "complete": false,
+  "plateau_certified": false,
+  "scope": "frozen actual GAA field; T at equilibrium, linear-response integration diagnostic only"
+}

@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/8.DEVSIM-QT/run.py", line 114, in attempt
+    row,n,q=scf(c,p,mapping,builders,grid,mu,g,d,out,key,seed)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/8.DEVSIM-QT/solver.py", line 172, in scf
+    q=electronic(c,builders,grid,phi,fixed_mu,vd)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/8.DEVSIM-QT/solver.py", line 141, in electronic
+    blocks,flux,diag,components=solve_negf(s,c,mu,mu-vd,vd,detail)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/8.DEVSIM-QT/transport/negf_reference.py", line 112, in solve_negf
+    raise BoundOccupationError(bound_audit)
+transport.bound_states.BoundOccupationError: BOUND_PREPARATION_REQUIRED: isolated poles have different reservoir Fermi occupations; no unique biased density

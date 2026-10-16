@@ -1,0 +1,145 @@
+{
+  "Hamiltonian": [
+    {
+      "path": "Src/hsparse.F",
+      "sha256": "92303f3a6da75e6379ec627e8d2250b682f166a08daf325ceecd6ddcb16aeb26",
+      "symbols": [
+        "hsparse",
+        "extend_projector",
+        "add_projector"
+      ]
+    },
+    {
+      "path": "Src/dhscf.F",
+      "sha256": "8ef058d23bfbaf6e1713ad636de1a8eaeadbd52ff782d1f7cc5ba9fdd1c6ffe0",
+      "symbols": [
+        "dhscf_init",
+        "dhscf",
+        "save_bader_charge",
+        "setup_analysis_options",
+        "delk_wrapper",
+        "xc_setup",
+        "msdft_h_component_report",
+        "dhscf_reset"
+      ]
+    }
+  ],
+  "eigen/DM": [
+    {
+      "path": "Src/compute_dm.F",
+      "sha256": "29f5ebb37326cb87ea961dcb7df0683c02e550374881208f0d26bd08478bbd68",
+      "symbols": [
+        "compute_dm"
+      ]
+    },
+    {
+      "path": "Src/diagon.F",
+      "sha256": "d46a15fe3b17f59cc3fa240bb8fc0f6f305c84d05d8e04d94c11abe21adbc42b",
+      "symbols": [
+        "diagon",
+        "to"
+      ]
+    },
+    {
+      "path": "Src/diagg_msdft.F",
+      "sha256": "12291883d921abf1b37f6107d2825cc7db644c0da62757e996ac278076254208",
+      "symbols": [
+        "diagg_msdft",
+        "to"
+      ]
+    },
+    {
+      "path": "Src/diagk_msdft.F",
+      "sha256": "efa1583529c46af32275c09824b5e81f6c2e90eb5ab3a46e9f0ec78b2a8979de",
+      "symbols": [
+        "diagk_msdft",
+        "to"
+      ]
+    },
+    {
+      "path": "Src/msdft.F",
+      "sha256": "266f5cd29156905596f50703f512578b3735dcc623d8fae30a02a9ccb8c44edf",
+      "symbols": [
+        "read_msdft_occupation_rule",
+        "read_msdft_bias_reference",
+        "read_eta_half_occupation_options",
+        "lr_eta_from_weights",
+        "eta_half_occupation_applies",
+        "read_fixed_state_occupation_options",
+        "fixed_occupation_mode_from_token",
+        "fixed_occupation_mode_name",
+        "fixed_state_occupation_mode",
+        "fixed_state_occupation_value",
+        "validate_fixed_state_occupations",
+        "report_fixed_state_occupations",
+        "weighted_channel_occupation",
+        "msdft_get_latest_regions",
+        "msdft",
+        "msfermid",
+        "report_region_occupation_sums",
+        "report_gate_occupation_states",
+        "report_lr_occupation_states",
+        "read_lrdiag_options",
+        "ensure_lrdiag_history",
+        "lr_side_flip",
+        "msfermispin",
+        "stepf",
+        "enpy",
+        "whg",
+        "hp"
+      ]
+    }
+  ],
+  "SCF": [
+    {
+      "path": "Src/siesta.F",
+      "sha256": "cefc6d8472bfb86db324e0dc7cfc4ba63fdca77ffc63444e2fa64888fcbacdbb",
+      "symbols": []
+    }
+  ],
+  "leads": [
+    {
+      "path": "Src/m_ts_electrode.F90",
+      "sha256": "72dc482f6aff4959b8866c1238d400f53280b8aabf8b1cff6d85ba6a382a3b00",
+      "symbols": [
+        "SSR_sGreen_DOS",
+        "switch_alpha_beta_rh1",
+        "SSR_sGreen_NoDOS",
+        "print_Elec_Green",
+        "create_Green",
+        "init_TSGF",
+        "store_HS",
+        "store_GS",
+        "finish_TSGF",
+        "set_HS_Transfer_1d",
+        "set_HS_Transfer_2d",
+        "calc_next_GS_Elec",
+        "copy_over"
+      ]
+    },
+    {
+      "path": "Src/m_ts_gf.F90",
+      "sha256": "98a0c6b37696c191c70d9a96cc6e1a63ae8322e387ef58fe3f00181c2623a0ae",
+      "symbols": [
+        "do_Green",
+        "read_next_GS_Elec",
+        "read_next_GS",
+        "read_Green",
+        "reread_Gamma_Green",
+        "check_Green"
+      ]
+    }
+  ],
+  "NEGF": [
+    {
+      "path": "Src/m_transiesta.F90",
+      "sha256": "1e9ca89522e56636db7b632f7ac449d8dab7c2b31e47ab073ef317ec16607b8d",
+      "symbols": [
+        "transiesta",
+        "open_GF",
+        "ts_print_memory"
+      ]
+    }
+  ],
+  "TBtrans": []
+}

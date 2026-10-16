@@ -1,0 +1,9 @@
+{
+  "status": "MEMORY_LIMIT",
+  "exit_code": -9,
+  "cgroup_memory_limit_bytes": 8589934592,
+  "cgroup_oom_kill_counter": 1,
+  "last_completed_modes": 20,
+  "incomplete_modes": 28,
+  "unattempted_modes": 36
+}

@@ -1,0 +1,15 @@
+{
+  "key": "vg0.800000_vd0.010000",
+  "backend": "negf",
+  "vg_v": 0.8,
+  "vd_v": 0.01,
+  "id_a": NaN,
+  "numerical_status": "BOUND_PREPARATION_REQUIRED",
+  "physical_status": "NOT_EVALUATED",
+  "transport_status": "NOT_RUN",
+  "error": "BoundOccupationError('BOUND_PREPARATION_REQUIRED: isolated poles have different reservoir Fermi occupations; no unique biased density')",
+  "source_sha256": "c0fbe6dc782c38d9e1ba56e06178bfd7197ba873c4c546f9d0276b3d4ce0eaf0",
+  "configuration_fingerprint": "a990b03b2fbc536f00fc7051fbcc1406129129407e5c05ed9924ff6f09a39717",
+  "point_kind": "requested",
+  "maximum_failed_iterate_field_v_nm": 0.21925477982752628
+}

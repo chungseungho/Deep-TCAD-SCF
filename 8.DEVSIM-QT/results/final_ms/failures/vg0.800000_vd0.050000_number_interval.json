@@ -1,0 +1,18 @@
+{
+  "constraint": "finite_total",
+  "target_electrons": 72.6,
+  "chemical_potential_interval_ev": [
+    -0.047422911410464355,
+    -0.04686515072679351
+  ],
+  "chemical_potential_interval_width_ev": 0.0005577606836708465,
+  "electron_number_interval_at_audit_mu": [
+    72.04560806131445,
+    73.16232108484266
+  ],
+  "electron_number_uncertainty_bound": 1.116713023528206,
+  "audit_mu_ev": -0.04714403106862893,
+  "unresolved_assignment_in_number_equation": false,
+  "bias_constraint_error_ev": -6.938893903907228e-18,
+  "variational_functional_implemented": false
+}

@@ -1,0 +1,10 @@
+{
+  "command": [
+    "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/8.DEVSIM-QT/.venv/bin/python",
+    "validation/step08_origin_sensitivity.py",
+    "baseline/ms_fixed_mu_seed.npz",
+    "results/origin_sensitivity"
+  ],
+  "exit_code": 0,
+  "seconds": 62.599228382110596
+}

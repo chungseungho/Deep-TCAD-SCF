@@ -1,0 +1,136 @@
+{
+  "scope": "STEP08 artifact integrity and recorded evidence, not physical certification",
+  "source_sha256": "fe3c540c88e57070da79b59a8083e2a0bbf947e9d7faea752dac402fb6ff5fdc",
+  "pass": true,
+  "checks": [
+    {
+      "name": "source_snapshots",
+      "pass": true,
+      "details": {
+        "current_core_sha256": "fe3c540c88e57070da79b59a8083e2a0bbf947e9d7faea752dac402fb6ff5fdc",
+        "snapshots": {
+          "c0fbe6dc782c38d9e1ba56e06178bfd7197ba873c4c546f9d0276b3d4ce0eaf0": "baseline/step07_production_c0fbe6dc.zip",
+          "a12692040fa746f46a87b64dfb372756c75d0807556f1628b88733ec00a41ac3": "results/source_snapshots/a12692040fa746f46a87b64dfb372756c75d0807556f1628b88733ec00a41ac3.zip",
+          "fe3c540c88e57070da79b59a8083e2a0bbf947e9d7faea752dac402fb6ff5fdc": "results/source_snapshots/fe3c540c88e57070da79b59a8083e2a0bbf947e9d7faea752dac402fb6ff5fdc.zip"
+        },
+        "digest_scope": "production Python; validation/tests covered by package manifest"
+      }
+    },
+    {
+      "name": "completed_tests",
+      "pass": true,
+      "details": {
+        "completed_passed": 64,
+        "skipped": 0
+      }
+    },
+    {
+      "name": "saved_states",
+      "pass": true,
+      "details": {
+        "state_count": 9,
+        "states": [
+          {
+            "path": "results/baseline_ms/states/vg0.800000_vd0.000000.json",
+            "numerical_status": "SCF_CONVERGED",
+            "physical_certification": false
+          },
+          {
+            "path": "results/baseline_negf/states/vg0.800000_vd0.000000.json",
+            "numerical_status": "SCF_CONVERGED",
+            "physical_certification": false
+          },
+          {
+            "path": "results/baseline_spectral/states/vg0.800000_vd0.100000.json",
+            "numerical_status": "SCF_CONVERGED",
+            "physical_certification": false
+          },
+          {
+            "path": "results/final_ms/states/vg0.800000_vd0.000000.json",
+            "numerical_status": "SCF_CONVERGED",
+            "physical_certification": false
+          },
+          {
+            "path": "results/final_negf_equilibrium/states/vg0.800000_vd0.000000.json",
+            "numerical_status": "SCF_CONVERGED",
+            "physical_certification": false
+          },
+          {
+            "path": "results/final_spectral/states/vg0.800000_vd0.100000.json",
+            "numerical_status": "SCF_CONVERGED",
+            "physical_certification": false
+          },
+          {
+            "path": "results/repaired_ms/states/vg0.800000_vd0.000000.json",
+            "numerical_status": "SCF_CONVERGED",
+            "physical_certification": false
+          },
+          {
+            "path": "results/repaired_negf/states/vg0.800000_vd0.000000.json",
+            "numerical_status": "SCF_CONVERGED",
+            "physical_certification": false
+          },
+          {
+            "path": "results/repaired_negf_vg04/states/vg0.400000_vd0.000000.json",
+            "numerical_status": "SCF_CONVERGED",
+            "physical_certification": false
+          }
+        ],
+        "scope": "saved numeric fields and identities, not a fresh SCF solve"
+      }
+    },
+    {
+      "name": "honest_failure_status",
+      "pass": true,
+      "details": {
+        "rejected_bias_rows_with_nan_current": 22,
+        "interrupted_runs": 2,
+        "oom_runs": 1
+      }
+    },
+    {
+      "name": "experiment_completion",
+      "pass": true,
+      "details": {
+        "uniform": 80,
+        "constriction": 45,
+        "gaa_modes": 14,
+        "gaa_modes_batched": 6,
+        "matched_mu_modes": 14,
+        "origin_sensitivity": 21,
+        "open_chain": 15,
+        "finite_bath": 16,
+        "scope": "completion evidence; no GAA plateau assertion"
+      }
+    },
+    {
+      "name": "certification_and_hpc_status",
+      "pass": true,
+      "details": {
+        "quantitative_validation_pass": false,
+        "ready_for_training": false,
+        "hpc_configurations_generated": 17,
+        "hpc_jobs_submitted": 0
+      }
+    },
+    {
+      "name": "original_step07_integrity",
+      "pass": true,
+      "details": {
+        "inventory_files": 917,
+        "original_directory_checked": true,
+        "all_original_payloads_unchanged": true
+      }
+    },
+    {
+      "name": "package_payload",
+      "pass": true,
+      "details": {
+        "figures": 7,
+        "private_source_files_in_payload": 0,
+        "manifest_checked": false,
+        "reason": "pre-package audit; rerun after unpacking"
+      }
+    }
+  ]
+}

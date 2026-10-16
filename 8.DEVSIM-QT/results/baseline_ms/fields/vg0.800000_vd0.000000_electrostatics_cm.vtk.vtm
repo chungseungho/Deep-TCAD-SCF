@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<VTKFile type="vtkMultiBlockDataSet" version="0.1" byte_order="LittleEndian" compressor="vtkZLibDataCompressor">
+  <vtkMultiBlockDataSet>
+    <DataSet group="0" dataset="0" file="/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/8.DEVSIM-QT/results/baseline_ms/fields/vg0.800000_vd0.000000_electrostatics_cm.vtk_0.vtu"/>
+  </vtkMultiBlockDataSet>
+</VTKFile>

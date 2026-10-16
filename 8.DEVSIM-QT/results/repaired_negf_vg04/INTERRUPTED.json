@@ -1,0 +1,5 @@
+{
+  "status": "INTERRUPTED_NOT_A_COMPLETED_SWEEP",
+  "reason": "resource-bounded audit; accepted domain-search steps recorded but no certified biased fixed point; patching contour memory batching next",
+  "production_source_sha256": "a12692040fa746f46a87b64dfb372756c75d0807556f1628b88733ec00a41ac3"
+}

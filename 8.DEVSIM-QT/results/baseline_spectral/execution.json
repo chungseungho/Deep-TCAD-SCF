@@ -1,0 +1,20 @@
+{
+  "command": [
+    "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/8.DEVSIM-QT/.venv/bin/python",
+    "/workspace/scratch/3024dd41bc9d/restored_sources/step07/7.MS-Quantum-Transport/run.py",
+    "point",
+    "--vg",
+    ".8",
+    "--vd",
+    ".1",
+    "--config",
+    "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/8.DEVSIM-QT/baseline/spectral_config.json",
+    "--out",
+    "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/8.DEVSIM-QT/results/baseline_spectral",
+    "--initial-state",
+    "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/8.DEVSIM-QT/baseline/spectral_seed.npz"
+  ],
+  "exit_code": 0,
+  "seconds": 39.834399461746216,
+  "warm_start": true
+}

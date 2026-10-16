@@ -1,0 +1,11 @@
+{
+  "command": [
+    "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/8.DEVSIM-QT/.venv/bin/python",
+    "validation/step08_modes.py",
+    "baseline/ms_seed.npz",
+    "results/gaa_modes_batched",
+    "20,28,36"
+  ],
+  "exit_code": 0,
+  "seconds": 557.1035733222961
+}

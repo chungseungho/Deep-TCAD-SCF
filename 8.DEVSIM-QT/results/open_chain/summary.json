@@ -1,0 +1,340 @@
+{
+  "source_sha256": "fe3c540c88e57070da79b59a8083e2a0bbf947e9d7faea752dac402fb6ff5fdc",
+  "open_chain": [
+    {
+      "vd_v": 0.0,
+      "energy_panel_ev": 0.02,
+      "density_max_abs_error": 3.823330541052883e-13,
+      "current_a_per_degeneracy": 0.0,
+      "direct_current_a_per_degeneracy": 1.8254127569840724e-24,
+      "current_abs_error_a": 3.024939672150089e-22,
+      "current_conservation_relative": 0.0,
+      "direct_density_matrix_min_eigenvalue": 7.45430998825703e-11,
+      "gf_nodes": 0,
+      "dense_integrator_error_estimate": 3.3429507046929584e-10
+    },
+    {
+      "vd_v": 0.0,
+      "energy_panel_ev": 0.01,
+      "density_max_abs_error": 3.823330541052883e-13,
+      "current_a_per_degeneracy": 0.0,
+      "direct_current_a_per_degeneracy": 1.8254127569840724e-24,
+      "current_abs_error_a": 3.024939672150089e-22,
+      "current_conservation_relative": 0.0,
+      "direct_density_matrix_min_eigenvalue": 7.45430998825703e-11,
+      "gf_nodes": 0,
+      "dense_integrator_error_estimate": 3.3429507046929584e-10
+    },
+    {
+      "vd_v": 0.0,
+      "energy_panel_ev": 0.005,
+      "density_max_abs_error": 3.823330541052883e-13,
+      "current_a_per_degeneracy": 0.0,
+      "direct_current_a_per_degeneracy": 1.8254127569840724e-24,
+      "current_abs_error_a": 3.024939672150089e-22,
+      "current_conservation_relative": 0.0,
+      "direct_density_matrix_min_eigenvalue": 7.45430998825703e-11,
+      "gf_nodes": 0,
+      "dense_integrator_error_estimate": 3.3429507046929584e-10
+    },
+    {
+      "vd_v": 0.001,
+      "energy_panel_ev": 0.02,
+      "density_max_abs_error": 5.419842352694104e-11,
+      "current_a_per_degeneracy": 3.6870047509048686e-08,
+      "direct_current_a_per_degeneracy": 3.6870051756951766e-08,
+      "current_abs_error_a": 4.247903483140941e-15,
+      "current_conservation_relative": 3.58960475914774e-16,
+      "direct_density_matrix_min_eigenvalue": 7.450057305444241e-11,
+      "gf_nodes": 1776,
+      "dense_integrator_error_estimate": 2.8245242617133354e-10
+    },
+    {
+      "vd_v": 0.001,
+      "energy_panel_ev": 0.01,
+      "density_max_abs_error": 5.419842352694104e-11,
+      "current_a_per_degeneracy": 3.6870047509048686e-08,
+      "direct_current_a_per_degeneracy": 3.6870051756951766e-08,
+      "current_abs_error_a": 4.247903483140941e-15,
+      "current_conservation_relative": 1.79480237957387e-16,
+      "direct_density_matrix_min_eigenvalue": 7.450057305444241e-11,
+      "gf_nodes": 2520,
+      "dense_integrator_error_estimate": 2.8245242617133354e-10
+    },
+    {
+      "vd_v": 0.001,
+      "energy_panel_ev": 0.005,
+      "density_max_abs_error": 5.419836801578981e-11,
+      "current_a_per_degeneracy": 3.6870047509048686e-08,
+      "direct_current_a_per_degeneracy": 3.6870051756951766e-08,
+      "current_abs_error_a": 4.247903489758386e-15,
+      "current_conservation_relative": 3.58960475914774e-16,
+      "direct_density_matrix_min_eigenvalue": 7.450057305444241e-11,
+      "gf_nodes": 4512,
+      "dense_integrator_error_estimate": 2.8245242617133354e-10
+    },
+    {
+      "vd_v": 0.01,
+      "energy_panel_ev": 0.02,
+      "density_max_abs_error": 4.6244738594047874e-10,
+      "current_a_per_degeneracy": 3.6832061197566305e-07,
+      "direct_current_a_per_degeneracy": 3.683206478845882e-07,
+      "current_abs_error_a": 3.5908925559914216e-14,
+      "current_conservation_relative": 1.437322742255103e-16,
+      "direct_density_matrix_min_eigenvalue": 7.419854011951286e-11,
+      "gf_nodes": 1776,
+      "dense_integrator_error_estimate": 3.255833369829532e-10
+    },
+    {
+      "vd_v": 0.01,
+      "energy_panel_ev": 0.01,
+      "density_max_abs_error": 4.6244738594047874e-10,
+      "current_a_per_degeneracy": 3.6832061197566305e-07,
+      "direct_current_a_per_degeneracy": 3.683206478845882e-07,
+      "current_abs_error_a": 3.5908925506974656e-14,
+      "current_conservation_relative": 0.0,
+      "direct_density_matrix_min_eigenvalue": 7.419854011951286e-11,
+      "gf_nodes": 2544,
+      "dense_integrator_error_estimate": 3.255833369829532e-10
+    },
+    {
+      "vd_v": 0.01,
+      "energy_panel_ev": 0.005,
+      "density_max_abs_error": 4.6244738594047874e-10,
+      "current_a_per_degeneracy": 3.6832061197566305e-07,
+      "direct_current_a_per_degeneracy": 3.683206478845882e-07,
+      "current_abs_error_a": 3.5908925559914216e-14,
+      "current_conservation_relative": 1.437322742255103e-16,
+      "direct_density_matrix_min_eigenvalue": 7.419854011951286e-11,
+      "gf_nodes": 4560,
+      "dense_integrator_error_estimate": 3.255833369829532e-10
+    },
+    {
+      "vd_v": 0.05,
+      "energy_panel_ev": 0.02,
+      "density_max_abs_error": 1.269647081914016e-09,
+      "current_a_per_degeneracy": 1.8218324027860642e-06,
+      "direct_current_a_per_degeneracy": 1.8218324984722152e-06,
+      "current_abs_error_a": 9.568615155963387e-14,
+      "current_conservation_relative": 3.4870096144366624e-16,
+      "direct_density_matrix_min_eigenvalue": 7.659993261389226e-11,
+      "gf_nodes": 1824,
+      "dense_integrator_error_estimate": 3.618543913624858e-10
+    },
+    {
+      "vd_v": 0.05,
+      "energy_panel_ev": 0.01,
+      "density_max_abs_error": 1.269645055756996e-09,
+      "current_a_per_degeneracy": 1.8218324027860716e-06,
+      "direct_current_a_per_degeneracy": 1.8218324984722152e-06,
+      "current_abs_error_a": 9.56861437245791e-14,
+      "current_conservation_relative": 2.324673076291099e-16,
+      "direct_density_matrix_min_eigenvalue": 7.659993261389226e-11,
+      "gf_nodes": 2880,
+      "dense_integrator_error_estimate": 3.618543913624858e-10
+    },
+    {
+      "vd_v": 0.05,
+      "energy_panel_ev": 0.005,
+      "density_max_abs_error": 1.269644916979118e-09,
+      "current_a_per_degeneracy": 1.8218324027860723e-06,
+      "direct_current_a_per_degeneracy": 1.8218324984722152e-06,
+      "current_abs_error_a": 9.568614330106263e-14,
+      "current_conservation_relative": 3.487009614436647e-16,
+      "direct_density_matrix_min_eigenvalue": 7.659993261389226e-11,
+      "gf_nodes": 4464,
+      "dense_integrator_error_estimate": 3.618543913624858e-10
+    },
+    {
+      "vd_v": 0.1,
+      "energy_panel_ev": 0.02,
+      "density_max_abs_error": 1.5081943471884074e-09,
+      "current_a_per_degeneracy": 3.3918953086432296e-06,
+      "direct_current_a_per_degeneracy": 3.39189541782728e-06,
+      "current_abs_error_a": 1.0918405123159364e-13,
+      "current_conservation_relative": 3.745839140859789e-16,
+      "direct_density_matrix_min_eigenvalue": 8.432974810280833e-11,
+      "gf_nodes": 1896,
+      "dense_integrator_error_estimate": 3.007916443867285e-10
+    },
+    {
+      "vd_v": 0.1,
+      "energy_panel_ev": 0.01,
+      "density_max_abs_error": 1.5081943471884074e-09,
+      "current_a_per_degeneracy": 3.3918953086432296e-06,
+      "direct_current_a_per_degeneracy": 3.39189541782728e-06,
+      "current_abs_error_a": 1.0918405123159364e-13,
+      "current_conservation_relative": 1.2486130469532632e-16,
+      "direct_density_matrix_min_eigenvalue": 8.432974810280833e-11,
+      "gf_nodes": 2760,
+      "dense_integrator_error_estimate": 3.007916443867285e-10
+    },
+    {
+      "vd_v": 0.1,
+      "energy_panel_ev": 0.005,
+      "density_max_abs_error": 1.5081942916772562e-09,
+      "current_a_per_degeneracy": 3.3918953086432313e-06,
+      "direct_current_a_per_degeneracy": 3.39189541782728e-06,
+      "current_abs_error_a": 1.0918404911401127e-13,
+      "current_conservation_relative": 0.0,
+      "direct_density_matrix_min_eigenvalue": 8.432974810280833e-11,
+      "gf_nodes": 4728,
+      "dense_integrator_error_estimate": 3.007916443867285e-10
+    }
+  ],
+  "standing_state_counterexample": {
+    "active_states": 19,
+    "ambiguous_active_states": 19,
+    "max_absolute_LR_weight_difference": 3.191891195797325e-14,
+    "open_transmission_at_mu": 1.0000000000000009,
+    "closed_H_time_reversal_real": true
+  },
+  "finite_bath_contact_sweep": [
+    {
+      "electrode_cells": 8,
+      "gamma_ev": 0.0025,
+      "current_a": 2.779892041808881e-07,
+      "open_current_a": 3.641578597654352e-06,
+      "current_relative_to_open": 0.9236624456327953,
+      "channel_density_relative_to_open": 0.02847088222936462,
+      "current_conservation_relative": 1.333062251520463e-14
+    },
+    {
+      "electrode_cells": 8,
+      "gamma_ev": 0.005,
+      "current_a": 5.495754138188951e-07,
+      "open_current_a": 3.641578597654352e-06,
+      "current_relative_to_open": 0.8490831931588974,
+      "channel_density_relative_to_open": 0.027059147193999496,
+      "current_conservation_relative": 2.6008588858792364e-14
+    },
+    {
+      "electrode_cells": 8,
+      "gamma_ev": 0.01,
+      "current_a": 1.0559262694605397e-06,
+      "open_current_a": 3.641578597654352e-06,
+      "current_relative_to_open": 0.7100361172649979,
+      "channel_density_relative_to_open": 0.02316360607419957,
+      "current_conservation_relative": 2.1859147253218567e-14
+    },
+    {
+      "electrode_cells": 8,
+      "gamma_ev": 0.02,
+      "current_a": 1.8857631243258261e-06,
+      "open_current_a": 3.641578597654352e-06,
+      "current_relative_to_open": 0.48215778576343193,
+      "channel_density_relative_to_open": 0.017043122006072615,
+      "current_conservation_relative": 3.705673170030963e-15
+    },
+    {
+      "electrode_cells": 16,
+      "gamma_ev": 0.0025,
+      "current_a": 5.321305781588656e-07,
+      "open_current_a": 3.641578597654352e-06,
+      "current_relative_to_open": 0.8538736528983264,
+      "channel_density_relative_to_open": 0.017718059259062936,
+      "current_conservation_relative": 9.948603101622335e-15
+    },
+    {
+      "electrode_cells": 16,
+      "gamma_ev": 0.005,
+      "current_a": 1.0368024039802544e-06,
+      "open_current_a": 3.641578597654352e-06,
+      "current_relative_to_open": 0.7152876489750656,
+      "channel_density_relative_to_open": 0.015857684137408054,
+      "current_conservation_relative": 2.1853856869996274e-14
+    },
+    {
+      "electrode_cells": 16,
+      "gamma_ev": 0.01,
+      "current_a": 1.8966157358814284e-06,
+      "open_current_a": 3.641578597654352e-06,
+      "current_relative_to_open": 0.4791775915249792,
+      "channel_density_relative_to_open": 0.011056797657907602,
+      "current_conservation_relative": 3.650973791265015e-14
+    },
+    {
+      "electrode_cells": 16,
+      "gamma_ev": 0.02,
+      "current_a": 2.936373033859516e-06,
+      "open_current_a": 3.641578597654352e-06,
+      "current_relative_to_open": 0.19365380833715354,
+      "channel_density_relative_to_open": 0.008329537751716626,
+      "current_conservation_relative": 1.9615437054190056e-14
+    },
+    {
+      "electrode_cells": 32,
+      "gamma_ev": 0.0025,
+      "current_a": 1.048208546008092e-06,
+      "open_current_a": 3.6415785976543518e-06,
+      "current_relative_to_open": 0.7121554518462752,
+      "channel_density_relative_to_open": 0.018841224455190594,
+      "current_conservation_relative": 2.929278191339164e-14
+    },
+    {
+      "electrode_cells": 32,
+      "gamma_ev": 0.005,
+      "current_a": 1.9052326612189464e-06,
+      "open_current_a": 3.6415785976543518e-06,
+      "current_relative_to_open": 0.4768113305459992,
+      "channel_density_relative_to_open": 0.012938045399396102,
+      "current_conservation_relative": 1.2226016550960449e-14
+    },
+    {
+      "electrode_cells": 32,
+      "gamma_ev": 0.01,
+      "current_a": 2.9475860161642817e-06,
+      "open_current_a": 3.6415785976543518e-06,
+      "current_relative_to_open": 0.19057465406268898,
+      "channel_density_relative_to_open": 0.005397787675936539,
+      "current_conservation_relative": 1.0201456195893335e-14
+    },
+    {
+      "electrode_cells": 32,
+      "gamma_ev": 0.02,
+      "current_a": 3.5255892455238996e-06,
+      "open_current_a": 3.6415785976543518e-06,
+      "current_relative_to_open": 0.031851393295524166,
+      "channel_density_relative_to_open": 0.011328926042580824,
+      "current_conservation_relative": 2.2103264368171098e-14
+    },
+    {
+      "electrode_cells": 64,
+      "gamma_ev": 0.0025,
+      "current_a": 1.9073754335072295e-06,
+      "open_current_a": 3.6415785976543526e-06,
+      "current_relative_to_open": 0.4762229120261675,
+      "channel_density_relative_to_open": 0.013535699109022083,
+      "current_conservation_relative": 2.1538024040864766e-14
+    },
+    {
+      "electrode_cells": 64,
+      "gamma_ev": 0.005,
+      "current_a": 2.954368861575936e-06,
+      "open_current_a": 3.6415785976543526e-06,
+      "current_relative_to_open": 0.18871204277207382,
+      "channel_density_relative_to_open": 0.005889339131571935,
+      "current_conservation_relative": 3.6268209166851503e-14
+    },
+    {
+      "electrode_cells": 64,
+      "gamma_ev": 0.01,
+      "current_a": 3.541189335939944e-06,
+      "open_current_a": 3.6415785976543526e-06,
+      "current_relative_to_open": 0.02756751200676329,
+      "channel_density_relative_to_open": 0.005549769350761341,
+      "current_conservation_relative": 2.6311392969684803e-14
+    },
+    {
+      "electrode_cells": 64,
+      "gamma_ev": 0.02,
+      "current_a": 3.6135263617658724e-06,
+      "open_current_a": 3.6415785976543526e-06,
+      "current_relative_to_open": 0.007703317431223232,
+      "channel_density_relative_to_open": 0.012147743696255106,
+      "current_conservation_relative": 1.7111651876630265e-14
+    }
+  ],
+  "scope": "independent small frozen chains, not fully SCF GAA I-V",
+  "pass": true
+}

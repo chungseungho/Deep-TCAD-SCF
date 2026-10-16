@@ -1,0 +1,62 @@
+{
+  "source_sha256": "a12692040fa746f46a87b64dfb372756c75d0807556f1628b88733ec00a41ac3",
+  "active_ambiguous_state_records": 186,
+  "tracking": [
+    {
+      "valley": "Delta_z",
+      "from_vd": 0.01,
+      "to_vd": 0.05,
+      "active_pairs": 89,
+      "matched_origin_changes": 32,
+      "active_overlap_min": 1.0963001443628713e-05,
+      "does_not_determine_injection_origin": true
+    },
+    {
+      "valley": "Delta_z",
+      "from_vd": 0.05,
+      "to_vd": 0.1,
+      "active_pairs": 93,
+      "matched_origin_changes": 25,
+      "active_overlap_min": 4.5587132579932467e-07,
+      "does_not_determine_injection_origin": true
+    },
+    {
+      "valley": "Delta_x",
+      "from_vd": 0.01,
+      "to_vd": 0.05,
+      "active_pairs": 213,
+      "matched_origin_changes": 57,
+      "active_overlap_min": 8.977012365935633e-13,
+      "does_not_determine_injection_origin": true
+    },
+    {
+      "valley": "Delta_x",
+      "from_vd": 0.05,
+      "to_vd": 0.1,
+      "active_pairs": 224,
+      "matched_origin_changes": 52,
+      "active_overlap_min": 1.4381944005900108e-13,
+      "does_not_determine_injection_origin": true
+    },
+    {
+      "valley": "Delta_y",
+      "from_vd": 0.01,
+      "to_vd": 0.05,
+      "active_pairs": 84,
+      "matched_origin_changes": 24,
+      "active_overlap_min": 0.11884560011025232,
+      "does_not_determine_injection_origin": true
+    },
+    {
+      "valley": "Delta_y",
+      "from_vd": 0.05,
+      "to_vd": 0.1,
+      "active_pairs": 90,
+      "matched_origin_changes": 20,
+      "active_overlap_min": 8.93473495276306e-07,
+      "does_not_determine_injection_origin": true
+    }
+  ],
+  "scope": "same fixed mode basis, biased failed-iterate profiles; not converged biased wavefunctions",
+  "classification_and_tracking_are_independent": true
+}

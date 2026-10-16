@@ -1,0 +1,9 @@
+{
+  "command": [
+    "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/8.DEVSIM-QT/.venv/bin/python",
+    "validation/run_tests.py",
+    "results/tests_batched"
+  ],
+  "exit_code": 0,
+  "seconds": 3.415735960006714
+}

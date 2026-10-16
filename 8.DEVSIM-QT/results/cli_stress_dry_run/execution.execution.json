@@ -1,0 +1,20 @@
+{
+  "command": [
+    "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/8.DEVSIM-QT/.venv/bin/python",
+    "run.py",
+    "stress",
+    "--config",
+    "configs/step08_negf.json",
+    "--axis",
+    "drain",
+    "--vg",
+    ".8",
+    "--drain-range",
+    "0:6:.05",
+    "--dry-run",
+    "--out",
+    "results/cli_stress_dry_run"
+  ],
+  "exit_code": 0,
+  "seconds": 0.13797426223754883
+}

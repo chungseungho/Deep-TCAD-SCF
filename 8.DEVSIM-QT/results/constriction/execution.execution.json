@@ -1,0 +1,9 @@
+{
+  "command": [
+    "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/8.DEVSIM-QT/.venv/bin/python",
+    "validation/step08_constriction.py",
+    "results/constriction"
+  ],
+  "exit_code": 0,
+  "seconds": 11.398776054382324
+}

@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/8.DEVSIM-QT/run.py", line 114, in attempt
+    row,n,q=scf(c,p,mapping,builders,grid,mu,g,d,out,key,seed)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/8.DEVSIM-QT/solver.py", line 172, in scf
+    q=electronic(c,builders,grid,phi,fixed_mu,vd)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/8.DEVSIM-QT/solver.py", line 118, in electronic
+    mu,states,constraint=solve_number(states,deg,target,vd,c,fixed_mu)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/8.DEVSIM-QT/multispace/constraints.py", line 49, in solve_number
+    raise error
+multispace.occupation.AmbiguousOccupation: MS_OCCUPATION_UNRESOLVED: 15 active states; indices [21, 33, 38, 39, 41, 46, 51, 54, 55, 56, 57, 58]; no guessed filling

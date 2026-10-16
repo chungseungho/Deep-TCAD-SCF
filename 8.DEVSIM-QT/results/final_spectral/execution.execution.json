@@ -1,0 +1,19 @@
+{
+  "command": [
+    "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/8.DEVSIM-QT/.venv/bin/python",
+    "run.py",
+    "point",
+    "--config",
+    "baseline/spectral_config.json",
+    "--vg",
+    ".8",
+    "--vd",
+    ".1",
+    "--initial-state",
+    "baseline/spectral_seed.npz",
+    "--out",
+    "results/final_spectral"
+  ],
+  "exit_code": 0,
+  "seconds": 48.76482892036438
+}

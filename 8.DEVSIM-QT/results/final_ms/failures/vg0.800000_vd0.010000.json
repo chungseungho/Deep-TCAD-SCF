@@ -1,0 +1,15 @@
+{
+  "key": "vg0.800000_vd0.010000",
+  "backend": "ms",
+  "vg_v": 0.8,
+  "vd_v": 0.01,
+  "id_a": NaN,
+  "numerical_status": "MS_OCCUPATION_UNRESOLVED",
+  "physical_status": "NOT_EVALUATED",
+  "transport_status": "NOT_RUN",
+  "error": "AmbiguousOccupation('MS_OCCUPATION_UNRESOLVED: 28 active states; indices [12, 20, 28, 29, 30, 33, 39, 40, 46, 47, 48, 49]; no guessed filling')",
+  "source_sha256": "fe3c540c88e57070da79b59a8083e2a0bbf947e9d7faea752dac402fb6ff5fdc",
+  "configuration_fingerprint": "7d81b7e5adb1a7399f1a37a21c74f4900c9eb22738165effa48c2594aee0bd4e",
+  "point_kind": "requested",
+  "maximum_failed_iterate_field_v_nm": 0.16911068526083467
+}

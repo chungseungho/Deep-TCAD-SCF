@@ -1,0 +1,16 @@
+{
+  "valley": "Delta_z",
+  "lowest_propagating_edge_ev": 0.005505444128599768,
+  "bound_poles_below_both_leads": [
+    {
+      "energy_ev": 0.00504798178093691,
+      "fermi_left": 0.5435142809000751,
+      "fermi_right": 0.5314948482736708,
+      "occupation_difference": 0.01201943262640437,
+      "needs_preparation_model": true
+    }
+  ],
+  "bias_dependent_bound_occupation_unresolved": true,
+  "embedded_dark_states_excluded": false,
+  "method": "nonlinear E-lambda_j[H+Sigma(E)] roots below lowest lead band"
+}

@@ -1,0 +1,9 @@
+{
+  "command": [
+    "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/8.DEVSIM-QT/.venv/bin/python",
+    "validation/step08_uniform.py",
+    "results/uniform"
+  ],
+  "exit_code": 0,
+  "seconds": 4.885019779205322
+}

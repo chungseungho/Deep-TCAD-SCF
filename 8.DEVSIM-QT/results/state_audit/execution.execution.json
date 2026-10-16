@@ -1,0 +1,10 @@
+{
+  "command": [
+    "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/8.DEVSIM-QT/.venv/bin/python",
+    "validation/step08_states.py",
+    "results/repaired_ms",
+    "results/state_audit"
+  ],
+  "exit_code": 0,
+  "seconds": 1.4247550964355469
+}

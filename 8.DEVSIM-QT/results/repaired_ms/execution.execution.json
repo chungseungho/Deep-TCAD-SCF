@@ -1,0 +1,19 @@
+{
+  "command": [
+    "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/8.DEVSIM-QT/.venv/bin/python",
+    "run.py",
+    "idvds",
+    "--config",
+    "configs/step08_ms.json",
+    "--gates",
+    ".8",
+    "--drain-range",
+    "0,.01,.05,.1",
+    "--initial-state",
+    "baseline/ms_seed.npz",
+    "--out",
+    "results/repaired_ms"
+  ],
+  "exit_code": 2,
+  "seconds": 48.48071908950806
+}

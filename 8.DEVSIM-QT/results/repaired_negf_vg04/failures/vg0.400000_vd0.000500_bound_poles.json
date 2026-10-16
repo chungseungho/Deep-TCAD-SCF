@@ -1,0 +1,23 @@
+{
+  "valley": "Delta_y",
+  "lowest_propagating_edge_ev": 0.009288095824030451,
+  "bound_poles_below_both_leads": [
+    {
+      "energy_ev": 0.008914007596342617,
+      "fermi_left": 0.5062381789156299,
+      "fermi_right": 0.5014032830546805,
+      "occupation_difference": 0.004834895860949429,
+      "needs_preparation_model": true
+    },
+    {
+      "energy_ev": 0.009093078244576027,
+      "fermi_left": 0.5045066900891056,
+      "fermi_right": 0.4996715963010029,
+      "occupation_difference": 0.004835093788102762,
+      "needs_preparation_model": true
+    }
+  ],
+  "bias_dependent_bound_occupation_unresolved": true,
+  "embedded_dark_states_excluded": false,
+  "method": "nonlinear E-lambda_j[H+Sigma(E)] roots below lowest lead band"
+}

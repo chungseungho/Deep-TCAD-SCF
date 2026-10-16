@@ -1,0 +1,429 @@
+{
+  "source_sha256": "fe3c540c88e57070da79b59a8083e2a0bbf947e9d7faea752dac402fb6ff5fdc",
+  "source_state": "baseline/ms_seed.npz",
+  "cases": [
+    {
+      "modes": 20,
+      "sd_modes": 40,
+      "prescription": "fixed_mu",
+      "mu_ev": -0.05757761083596432,
+      "electrons": 193.98306186110452,
+      "open_electrons": 199.35437606433257,
+      "closed_open_relative_l2": 0.04358906644004796,
+      "dimensions": [
+        4080,
+        4080,
+        4080
+      ],
+      "channel_subband_minima_ev": [
+        [
+          -0.06091344379650897,
+          -0.03908834967898708,
+          -0.028855550720422413,
+          -0.006888212831765135,
+          0.02074780369530882
+        ],
+        [
+          0.0007378278827518526,
+          0.022357413665211715,
+          0.08725049615944426,
+          0.16962992265073062,
+          0.1915974149208495
+        ],
+        [
+          -0.034277919129611034,
+          -0.03381911529599961,
+          0.005133581641808519,
+          0.011891457332704355,
+          0.029699231992368104
+        ]
+      ],
+      "thermal_occupied_eigenstate_counts": [
+        726,
+        933,
+        686
+      ],
+      "linear_response_conductance_fixed_contact_mu_s": 3.0079379424878104e-05,
+      "scf": false,
+      "regional": {
+        "channel": {
+          "electrons": 25.432647969579783,
+          "open_electrons": 25.432647747364747,
+          "closed_open_relative_l2": 3.045235865093961e-08
+        },
+        "left": {
+          "electrons": 24.71239017896045,
+          "open_electrons": 27.42417728608687,
+          "closed_open_relative_l2": 0.10233139511960439
+        },
+        "right": {
+          "electrons": 24.580073132265934,
+          "open_electrons": 27.264654772080856,
+          "closed_open_relative_l2": 0.10134470449633395
+        },
+        "extension": {
+          "electrons": 119.25795058029831,
+          "open_electrons": 119.23289625880011,
+          "closed_open_relative_l2": 0.00048588048341549503
+        }
+      },
+      "runtime_s": 56.606582164764404,
+      "basis_orthogonality_max": 2.6645352591003757e-15
+    },
+    {
+      "modes": 20,
+      "sd_modes": 40,
+      "prescription": "fixed_N",
+      "mu_ev": -0.089893667133806,
+      "electrons": 72.5999999994993,
+      "open_electrons": 74.39856786421997,
+      "closed_open_relative_l2": 0.035485867617861176,
+      "dimensions": [
+        4080,
+        4080,
+        4080
+      ],
+      "channel_subband_minima_ev": [
+        [
+          -0.06091344379650897,
+          -0.03908834967898708,
+          -0.028855550720422413,
+          -0.006888212831765135,
+          0.02074780369530882
+        ],
+        [
+          0.0007378278827518526,
+          0.022357413665211715,
+          0.08725049615944426,
+          0.16962992265073062,
+          0.1915974149208495
+        ],
+        [
+          -0.034277919129611034,
+          -0.03381911529599961,
+          0.005133581641808519,
+          0.011891457332704355,
+          0.029699231992368104
+        ]
+      ],
+      "thermal_occupied_eigenstate_counts": [
+        677,
+        833,
+        633
+      ],
+      "linear_response_conductance_fixed_contact_mu_s": 3.0079379424878104e-05,
+      "scf": false,
+      "regional": {
+        "channel": {
+          "electrons": 8.652472909133428,
+          "open_electrons": 8.65247291113853,
+          "closed_open_relative_l2": 2.143581817931735e-09
+        },
+        "left": {
+          "electrons": 8.803723977504104,
+          "open_electrons": 9.709561939429971,
+          "closed_open_relative_l2": 0.08878201023726855
+        },
+        "right": {
+          "electrons": 8.753935018426715,
+          "open_electrons": 9.6497225440824,
+          "closed_open_relative_l2": 0.08791890641176792
+        },
+        "extension": {
+          "electrons": 46.38986809443506,
+          "open_electrons": 46.38681046956906,
+          "closed_open_relative_l2": 0.00019464391397675107
+        }
+      },
+      "runtime_s": 63.706398010253906,
+      "basis_orthogonality_max": 2.6645352591003757e-15
+    },
+    {
+      "modes": 28,
+      "sd_modes": 56,
+      "prescription": "fixed_mu",
+      "mu_ev": -0.05757761083596432,
+      "electrons": 197.84958905119885,
+      "open_electrons": 203.2700866961656,
+      "closed_open_relative_l2": 0.042935493953871896,
+      "dimensions": [
+        5712,
+        5712,
+        5712
+      ],
+      "channel_subband_minima_ev": [
+        [
+          -0.060919277812112926,
+          -0.039277528216943365,
+          -0.029129990806714856,
+          -0.0070445584113187154,
+          0.020509427495630356
+        ],
+        [
+          0.0007338971073581501,
+          0.02235315351918514,
+          0.08724162838506995,
+          0.16961513697245423,
+          0.19158337603328762
+        ],
+        [
+          -0.03440118422908577,
+          -0.034004870810554845,
+          0.004966824037597188,
+          0.011728865434411767,
+          0.029604534020489227
+        ]
+      ],
+      "thermal_occupied_eigenstate_counts": [
+        880,
+        1010,
+        824
+      ],
+      "linear_response_conductance_fixed_contact_mu_s": 3.0118978680748488e-05,
+      "scf": false,
+      "regional": {
+        "channel": {
+          "electrons": 25.532080722442984,
+          "open_electrons": 25.532080497295674,
+          "closed_open_relative_l2": 3.076720680711996e-08
+        },
+        "left": {
+          "electrons": 25.13636775371552,
+          "open_electrons": 27.872521726551362,
+          "closed_open_relative_l2": 0.10130026924742208
+        },
+        "right": {
+          "electrons": 24.997738083319526,
+          "open_electrons": 27.706978222692367,
+          "closed_open_relative_l2": 0.10038166464956785
+        },
+        "extension": {
+          "electrons": 122.1834024917208,
+          "open_electrons": 122.15850624962621,
+          "closed_open_relative_l2": 0.00047215086075394155
+        }
+      },
+      "runtime_s": 136.14998364448547,
+      "density_change_from_previous": 0.04920019980667992,
+      "channel_charge_change_from_previous": 0.0038944241930034965,
+      "transmission_relative_l2_change": 0.06608670605688181,
+      "basis_orthogonality_max": 3.552713678800501e-15
+    },
+    {
+      "modes": 28,
+      "sd_modes": 56,
+      "prescription": "fixed_N",
+      "mu_ev": -0.09047363375848369,
+      "electrons": 72.59999999984174,
+      "open_electrons": 74.37666409249448,
+      "closed_open_relative_l2": 0.03483141502164016,
+      "dimensions": [
+        5712,
+        5712,
+        5712
+      ],
+      "channel_subband_minima_ev": [
+        [
+          -0.060919277812112926,
+          -0.039277528216943365,
+          -0.029129990806714856,
+          -0.0070445584113187154,
+          0.020509427495630356
+        ],
+        [
+          0.0007338971073581501,
+          0.02235315351918514,
+          0.08724162838506995,
+          0.16961513697245423,
+          0.19158337603328762
+        ],
+        [
+          -0.03440118422908577,
+          -0.034004870810554845,
+          0.004966824037597188,
+          0.011728865434411767,
+          0.029604534020489227
+        ]
+      ],
+      "thermal_occupied_eigenstate_counts": [
+        812,
+        879,
+        746
+      ],
+      "linear_response_conductance_fixed_contact_mu_s": 3.0118978680748488e-05,
+      "scf": false,
+      "regional": {
+        "channel": {
+          "electrons": 8.511076163497153,
+          "open_electrons": 8.511076165856295,
+          "closed_open_relative_l2": 2.1837480725124047e-09
+        },
+        "left": {
+          "electrons": 8.773890835412653,
+          "open_electrons": 9.668497278875899,
+          "closed_open_relative_l2": 0.08766931107997834
+        },
+        "right": {
+          "electrons": 8.722087629883067,
+          "open_electrons": 9.606933285541126,
+          "closed_open_relative_l2": 0.0868868632267886
+        },
+        "extension": {
+          "electrons": 46.59294537104887,
+          "open_electrons": 46.59015736222115,
+          "closed_open_relative_l2": 0.00018765549986219125
+        }
+      },
+      "runtime_s": 152.93207144737244,
+      "density_change_from_previous": 0.0468215427756893,
+      "channel_charge_change_from_previous": 0.01661326287299677,
+      "transmission_relative_l2_change": 0.06608670605688181,
+      "basis_orthogonality_max": 3.552713678800501e-15
+    },
+    {
+      "modes": 36,
+      "sd_modes": 72,
+      "prescription": "fixed_mu",
+      "mu_ev": -0.05757761083596432,
+      "electrons": 199.71068948676728,
+      "open_electrons": 205.1475652766207,
+      "closed_open_relative_l2": 0.0425521824340488,
+      "dimensions": [
+        7344,
+        7344,
+        7344
+      ],
+      "channel_subband_minima_ev": [
+        [
+          -0.0609291808316584,
+          -0.0392857377016141,
+          -0.029138577743866453,
+          -0.007052945576941449,
+          0.020495743364908843
+        ],
+        [
+          0.0007331754158789224,
+          0.02235066369333559,
+          0.08723960211718244,
+          0.1696069952804891,
+          0.19158117600717744
+        ],
+        [
+          -0.03440965975550869,
+          -0.03401704660348445,
+          0.004926551217293263,
+          0.011686082983523745,
+          0.029514255797064914
+        ]
+      ],
+      "thermal_occupied_eigenstate_counts": [
+        984,
+        1016,
+        919
+      ],
+      "linear_response_conductance_fixed_contact_mu_s": 2.9330217085151242e-05,
+      "scf": false,
+      "regional": {
+        "channel": {
+          "electrons": 25.545869903587242,
+          "open_electrons": 25.54586967777811,
+          "closed_open_relative_l2": 3.0904544180609425e-08
+        },
+        "left": {
+          "electrons": 25.32686854051089,
+          "open_electrons": 28.071008345366106,
+          "closed_open_relative_l2": 0.10072378984776358
+        },
+        "right": {
+          "electrons": 25.185231175979183,
+          "open_electrons": 27.902822729575973,
+          "closed_open_relative_l2": 0.09985525824460101
+        },
+        "extension": {
+          "electrons": 123.65271986669,
+          "open_electrons": 123.62786452390048,
+          "closed_open_relative_l2": 0.0004647374327202323
+        }
+      },
+      "runtime_s": 308.4709429740906,
+      "density_change_from_previous": 0.02979869598614069,
+      "channel_charge_change_from_previous": 0.0005397812325945284,
+      "transmission_relative_l2_change": 0.05660076181377854,
+      "basis_orthogonality_max": 2.4424906541753444e-15
+    },
+    {
+      "modes": 36,
+      "sd_modes": 72,
+      "prescription": "fixed_N",
+      "mu_ev": -0.09074185497956538,
+      "electrons": 72.5999999999258,
+      "open_electrons": 74.3647262112971,
+      "closed_open_relative_l2": 0.034478140812279984,
+      "dimensions": [
+        7344,
+        7344,
+        7344
+      ],
+      "channel_subband_minima_ev": [
+        [
+          -0.0609291808316584,
+          -0.0392857377016141,
+          -0.029138577743866453,
+          -0.007052945576941449,
+          0.020495743364908843
+        ],
+        [
+          0.0007331754158789224,
+          0.02235066369333559,
+          0.08723960211718244,
+          0.1696069952804891,
+          0.19158117600717744
+        ],
+        [
+          -0.03440965975550869,
+          -0.03401704660348445,
+          0.004926551217293263,
+          0.011686082983523745,
+          0.029514255797064914
+        ]
+      ],
+      "thermal_occupied_eigenstate_counts": [
+        896,
+        881,
+        824
+      ],
+      "linear_response_conductance_fixed_contact_mu_s": 2.9330217085151242e-05,
+      "scf": false,
+      "regional": {
+        "channel": {
+          "electrons": 8.435324747668298,
+          "open_electrons": 8.435324750134258,
+          "closed_open_relative_l2": 2.197056027185596e-09
+        },
+        "left": {
+          "electrons": 8.757138053817048,
+          "open_electrons": 9.645614751596598,
+          "closed_open_relative_l2": 0.08707295091592263
+        },
+        "right": {
+          "electrons": 8.703876718185668,
+          "open_electrons": 9.582793216194892,
+          "closed_open_relative_l2": 0.08635351935948223
+        },
+        "extension": {
+          "electrons": 46.70366048025478,
+          "open_electrons": 46.70099349337134,
+          "closed_open_relative_l2": 0.0001840718076762186
+        }
+      },
+      "runtime_s": 339.27831077575684,
+      "density_change_from_previous": 0.027862750953673313,
+      "channel_charge_change_from_previous": 0.008980260759942096,
+      "transmission_relative_l2_change": 0.05660076181377854,
+      "basis_orthogonality_max": 2.4424906541753444e-15
+    }
+  ],
+  "complete": true,
+  "plateau_certified": false,
+  "scope": "frozen actual GAA field; T at equilibrium, linear-response integration diagnostic only"
+}

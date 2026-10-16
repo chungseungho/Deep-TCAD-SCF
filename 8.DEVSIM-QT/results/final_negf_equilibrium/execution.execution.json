@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/workspace/scratch/3024dd41bc9d/Deep-TCAD-SCF/8.DEVSIM-QT/.venv/bin/python",
+    "run.py",
+    "idvds",
+    "--config",
+    "configs/step08_negf.json",
+    "--gates",
+    ".8",
+    "--drain-range",
+    "0,.001,.01",
+    "--initial-state",
+    "baseline/negf_seed.npz",
+    "--out",
+    "results/final_negf_equilibrium",
+    "--max-iterations",
+    "6"
+  ],
+  "exit_code": 2,
+  "seconds": 64.6548855304718
+}

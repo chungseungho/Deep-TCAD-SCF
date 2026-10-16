@@ -1,0 +1,110 @@
+{
+  "executed": false,
+  "jobs_submitted": 0,
+  "cases": [
+    {
+      "name": "negf_m36_sd72_L12",
+      "config": "hpc_plan/negf_m36_sd72_L12.json",
+      "phase": "frozen/equilibrium first",
+      "executed": false
+    },
+    {
+      "name": "negf_m36_sd72_L24",
+      "config": "hpc_plan/negf_m36_sd72_L24.json",
+      "phase": "frozen/equilibrium first",
+      "executed": false
+    },
+    {
+      "name": "negf_m36_sd72_L36",
+      "config": "hpc_plan/negf_m36_sd72_L36.json",
+      "phase": "frozen/equilibrium first",
+      "executed": false
+    },
+    {
+      "name": "negf_m48_sd96_L12",
+      "config": "hpc_plan/negf_m48_sd96_L12.json",
+      "phase": "frozen/equilibrium first",
+      "executed": false
+    },
+    {
+      "name": "negf_m48_sd96_L24",
+      "config": "hpc_plan/negf_m48_sd96_L24.json",
+      "phase": "frozen/equilibrium first",
+      "executed": false
+    },
+    {
+      "name": "negf_m48_sd96_L36",
+      "config": "hpc_plan/negf_m48_sd96_L36.json",
+      "phase": "frozen/equilibrium first",
+      "executed": false
+    },
+    {
+      "name": "negf_m60_sd120_L12",
+      "config": "hpc_plan/negf_m60_sd120_L12.json",
+      "phase": "frozen/equilibrium first",
+      "executed": false
+    },
+    {
+      "name": "negf_m60_sd120_L24",
+      "config": "hpc_plan/negf_m60_sd120_L24.json",
+      "phase": "frozen/equilibrium first",
+      "executed": false
+    },
+    {
+      "name": "negf_m60_sd120_L36",
+      "config": "hpc_plan/negf_m60_sd120_L36.json",
+      "phase": "frozen/equilibrium first",
+      "executed": false
+    },
+    {
+      "name": "conditional_dx025",
+      "config": "hpc_plan/conditional_dx025.json",
+      "phase": "ONLY after mode/contact gate",
+      "executed": false
+    },
+    {
+      "name": "conditional_dx0125",
+      "config": "hpc_plan/conditional_dx0125.json",
+      "phase": "ONLY after mode/contact gate",
+      "executed": false
+    },
+    {
+      "name": "conditional_yz05",
+      "config": "hpc_plan/conditional_yz05.json",
+      "phase": "ONLY after mode/contact gate",
+      "executed": false
+    },
+    {
+      "name": "conditional_yz025",
+      "config": "hpc_plan/conditional_yz025.json",
+      "phase": "ONLY after mode/contact gate",
+      "executed": false
+    },
+    {
+      "name": "conditional_poisson_mid",
+      "config": "hpc_plan/conditional_poisson_mid.json",
+      "phase": "ONLY after mode/contact gate",
+      "executed": false
+    },
+    {
+      "name": "conditional_poisson_fine",
+      "config": "hpc_plan/conditional_poisson_fine.json",
+      "phase": "ONLY after mode/contact gate",
+      "executed": false
+    },
+    {
+      "name": "conditional_scf_tight",
+      "config": "hpc_plan/conditional_scf_tight.json",
+      "phase": "ONLY after mode/contact gate",
+      "executed": false
+    },
+    {
+      "name": "conditional_energy_tight",
+      "config": "hpc_plan/conditional_energy_tight.json",
+      "phase": "ONLY after mode/contact gate",
+      "executed": false
+    }
+  ],
+  "gate": "3 successive refinements stable in regional density, charge, barrier and independently integrated nonzero current; valid occupations required",
+  "configuration_certified": false
+}

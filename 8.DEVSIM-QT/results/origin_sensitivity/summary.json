@@ -1,0 +1,863 @@
+{
+  "source_sha256": "fe3c540c88e57070da79b59a8083e2a0bbf947e9d7faea752dac402fb6ff5fdc",
+  "cases": [
+    {
+      "channel_modes": 2,
+      "sd_modes": 4,
+      "vd_v": 0.0,
+      "mu_l_ev": 0.009559118670267335,
+      "number_interval": [
+        86.6985872771802,
+        86.6985872771802
+      ],
+      "valleys": [
+        {
+          "valley": "Delta_z",
+          "active": 0,
+          "ambiguous_active": 0,
+          "boundary_unstable_active": 0,
+          "occupation_uncertainty_electrons": 0.0
+        },
+        {
+          "valley": "Delta_x",
+          "active": 0,
+          "ambiguous_active": 0,
+          "boundary_unstable_active": 0,
+          "occupation_uncertainty_electrons": 0.0
+        },
+        {
+          "valley": "Delta_y",
+          "active": 0,
+          "ambiguous_active": 0,
+          "boundary_unstable_active": 0,
+          "occupation_uncertainty_electrons": 0.0
+        }
+      ]
+    },
+    {
+      "channel_modes": 2,
+      "sd_modes": 4,
+      "vd_v": 0.001,
+      "mu_l_ev": 0.009559118670267335,
+      "number_interval": [
+        86.43493601192154,
+        86.97596556884565
+      ],
+      "valleys": [
+        {
+          "valley": "Delta_z",
+          "active": 80,
+          "ambiguous_active": 47,
+          "boundary_unstable_active": 3,
+          "occupation_uncertainty_electrons": 0.3189409290910817,
+          "matched_active_pairs": 80,
+          "matched_origin_changes": 14,
+          "median_active_overlap": 0.9984300956665344
+        },
+        {
+          "valley": "Delta_x",
+          "active": 174,
+          "ambiguous_active": 86,
+          "boundary_unstable_active": 2,
+          "occupation_uncertainty_electrons": 0.07612734001861528,
+          "matched_active_pairs": 174,
+          "matched_origin_changes": 45,
+          "median_active_overlap": 0.9957978356529795
+        },
+        {
+          "valley": "Delta_y",
+          "active": 74,
+          "ambiguous_active": 44,
+          "boundary_unstable_active": 2,
+          "occupation_uncertainty_electrons": 0.14596128781439197,
+          "matched_active_pairs": 74,
+          "matched_origin_changes": 20,
+          "median_active_overlap": 0.998946828327911
+        }
+      ]
+    },
+    {
+      "channel_modes": 2,
+      "sd_modes": 4,
+      "vd_v": 0.002,
+      "mu_l_ev": 0.009559118670267335,
+      "number_interval": [
+        86.36751802383984,
+        86.9515767685322
+      ],
+      "valleys": [
+        {
+          "valley": "Delta_z",
+          "active": 82,
+          "ambiguous_active": 45,
+          "boundary_unstable_active": 3,
+          "occupation_uncertainty_electrons": 0.3413074786129313,
+          "matched_active_pairs": 82,
+          "matched_origin_changes": 6,
+          "median_active_overlap": 0.9989864633221757
+        },
+        {
+          "valley": "Delta_x",
+          "active": 184,
+          "ambiguous_active": 60,
+          "boundary_unstable_active": 6,
+          "occupation_uncertainty_electrons": 0.07485090164036952,
+          "matched_active_pairs": 184,
+          "matched_origin_changes": 33,
+          "median_active_overlap": 0.9956650338984482
+        },
+        {
+          "valley": "Delta_y",
+          "active": 80,
+          "ambiguous_active": 36,
+          "boundary_unstable_active": 2,
+          "occupation_uncertainty_electrons": 0.16790036443907494,
+          "matched_active_pairs": 80,
+          "matched_origin_changes": 10,
+          "median_active_overlap": 0.9989283975768273
+        }
+      ]
+    },
+    {
+      "channel_modes": 2,
+      "sd_modes": 4,
+      "vd_v": 0.005,
+      "mu_l_ev": 0.009559118670267335,
+      "number_interval": [
+        85.84465418647983,
+        86.8465344080617
+      ],
+      "valleys": [
+        {
+          "valley": "Delta_z",
+          "active": 84,
+          "ambiguous_active": 35,
+          "boundary_unstable_active": 2,
+          "occupation_uncertainty_electrons": 0.515066787925643,
+          "matched_active_pairs": 84,
+          "matched_origin_changes": 13,
+          "median_active_overlap": 0.9928988997843609
+        },
+        {
+          "valley": "Delta_x",
+          "active": 191,
+          "ambiguous_active": 42,
+          "boundary_unstable_active": 9,
+          "occupation_uncertainty_electrons": 0.11409230141417658,
+          "matched_active_pairs": 191,
+          "matched_origin_changes": 31,
+          "median_active_overlap": 0.9614130718093451
+        },
+        {
+          "valley": "Delta_y",
+          "active": 81,
+          "ambiguous_active": 29,
+          "boundary_unstable_active": 3,
+          "occupation_uncertainty_electrons": 0.3727211322420409,
+          "matched_active_pairs": 81,
+          "matched_origin_changes": 10,
+          "median_active_overlap": 0.9920817274281356
+        }
+      ]
+    },
+    {
+      "channel_modes": 2,
+      "sd_modes": 4,
+      "vd_v": 0.01,
+      "mu_l_ev": 0.009559118670267335,
+      "number_interval": [
+        85.32160967121554,
+        86.18230432993415
+      ],
+      "valleys": [
+        {
+          "valley": "Delta_z",
+          "active": 85,
+          "ambiguous_active": 25,
+          "boundary_unstable_active": 5,
+          "occupation_uncertainty_electrons": 0.5643320757729775,
+          "matched_active_pairs": 85,
+          "matched_origin_changes": 13,
+          "median_active_overlap": 0.9843060680853566
+        },
+        {
+          "valley": "Delta_x",
+          "active": 200,
+          "ambiguous_active": 29,
+          "boundary_unstable_active": 8,
+          "occupation_uncertainty_electrons": 0.19998338507340066,
+          "matched_active_pairs": 200,
+          "matched_origin_changes": 31,
+          "median_active_overlap": 0.896045840646458
+        },
+        {
+          "valley": "Delta_y",
+          "active": 82,
+          "ambiguous_active": 17,
+          "boundary_unstable_active": 2,
+          "occupation_uncertainty_electrons": 0.09637919787224827,
+          "matched_active_pairs": 82,
+          "matched_origin_changes": 13,
+          "median_active_overlap": 0.9753710307410681
+        }
+      ]
+    },
+    {
+      "channel_modes": 2,
+      "sd_modes": 4,
+      "vd_v": 0.05,
+      "mu_l_ev": 0.009559118670267335,
+      "number_interval": [
+        77.45751736793245,
+        82.13433022906531
+      ],
+      "valleys": [
+        {
+          "valley": "Delta_z",
+          "active": 90,
+          "ambiguous_active": 17,
+          "boundary_unstable_active": 6,
+          "occupation_uncertainty_electrons": 3.666391442215514,
+          "matched_active_pairs": 90,
+          "matched_origin_changes": 25,
+          "median_active_overlap": 0.5226974345532172
+        },
+        {
+          "valley": "Delta_x",
+          "active": 216,
+          "ambiguous_active": 29,
+          "boundary_unstable_active": 9,
+          "occupation_uncertainty_electrons": 0.2762657147162297,
+          "matched_active_pairs": 216,
+          "matched_origin_changes": 50,
+          "median_active_overlap": 0.3266351330267283
+        },
+        {
+          "valley": "Delta_y",
+          "active": 88,
+          "ambiguous_active": 13,
+          "boundary_unstable_active": 5,
+          "occupation_uncertainty_electrons": 0.7341557042011356,
+          "matched_active_pairs": 88,
+          "matched_origin_changes": 27,
+          "median_active_overlap": 0.5196097969885152
+        }
+      ]
+    },
+    {
+      "channel_modes": 2,
+      "sd_modes": 4,
+      "vd_v": 0.1,
+      "mu_l_ev": 0.009559118670267335,
+      "number_interval": [
+        75.24239757407288,
+        77.77928438883345
+      ],
+      "valleys": [
+        {
+          "valley": "Delta_z",
+          "active": 95,
+          "ambiguous_active": 16,
+          "boundary_unstable_active": 9,
+          "occupation_uncertainty_electrons": 0.8375373711113281,
+          "matched_active_pairs": 95,
+          "matched_origin_changes": 16,
+          "median_active_overlap": 0.480088206542875
+        },
+        {
+          "valley": "Delta_x",
+          "active": 230,
+          "ambiguous_active": 22,
+          "boundary_unstable_active": 5,
+          "occupation_uncertainty_electrons": 0.2695375541535936,
+          "matched_active_pairs": 230,
+          "matched_origin_changes": 51,
+          "median_active_overlap": 0.3182385489502866
+        },
+        {
+          "valley": "Delta_y",
+          "active": 92,
+          "ambiguous_active": 8,
+          "boundary_unstable_active": 4,
+          "occupation_uncertainty_electrons": 1.4298118894956335,
+          "matched_active_pairs": 92,
+          "matched_origin_changes": 22,
+          "median_active_overlap": 0.46807957183541693
+        }
+      ]
+    },
+    {
+      "channel_modes": 4,
+      "sd_modes": 8,
+      "vd_v": 0.0,
+      "mu_l_ev": 0.009559118670267335,
+      "number_interval": [
+        142.99234788292208,
+        142.99234788292208
+      ],
+      "valleys": [
+        {
+          "valley": "Delta_z",
+          "active": 0,
+          "ambiguous_active": 0,
+          "boundary_unstable_active": 0,
+          "occupation_uncertainty_electrons": 0.0
+        },
+        {
+          "valley": "Delta_x",
+          "active": 0,
+          "ambiguous_active": 0,
+          "boundary_unstable_active": 0,
+          "occupation_uncertainty_electrons": 0.0
+        },
+        {
+          "valley": "Delta_y",
+          "active": 0,
+          "ambiguous_active": 0,
+          "boundary_unstable_active": 0,
+          "occupation_uncertainty_electrons": 0.0
+        }
+      ]
+    },
+    {
+      "channel_modes": 4,
+      "sd_modes": 8,
+      "vd_v": 0.001,
+      "mu_l_ev": 0.009559118670267335,
+      "number_interval": [
+        142.5551900862127,
+        143.40665166656623
+      ],
+      "valleys": [
+        {
+          "valley": "Delta_z",
+          "active": 155,
+          "ambiguous_active": 97,
+          "boundary_unstable_active": 4,
+          "occupation_uncertainty_electrons": 0.5636934702058438,
+          "matched_active_pairs": 155,
+          "matched_origin_changes": 22,
+          "median_active_overlap": 0.9976077241828046
+        },
+        {
+          "valley": "Delta_x",
+          "active": 313,
+          "ambiguous_active": 130,
+          "boundary_unstable_active": 5,
+          "occupation_uncertainty_electrons": 0.05967349211145881,
+          "matched_active_pairs": 313,
+          "matched_origin_changes": 79,
+          "median_active_overlap": 0.990982241131599
+        },
+        {
+          "valley": "Delta_y",
+          "active": 145,
+          "ambiguous_active": 89,
+          "boundary_unstable_active": 3,
+          "occupation_uncertainty_electrons": 0.228094618036281,
+          "matched_active_pairs": 145,
+          "matched_origin_changes": 29,
+          "median_active_overlap": 0.9968696650351286
+        }
+      ]
+    },
+    {
+      "channel_modes": 4,
+      "sd_modes": 8,
+      "vd_v": 0.002,
+      "mu_l_ev": 0.009559118670267335,
+      "number_interval": [
+        142.12125565847708,
+        143.2315798413931
+      ],
+      "valleys": [
+        {
+          "valley": "Delta_z",
+          "active": 160,
+          "ambiguous_active": 88,
+          "boundary_unstable_active": 9,
+          "occupation_uncertainty_electrons": 0.8350817834259822,
+          "matched_active_pairs": 160,
+          "matched_origin_changes": 21,
+          "median_active_overlap": 0.9980005077101683
+        },
+        {
+          "valley": "Delta_x",
+          "active": 333,
+          "ambiguous_active": 103,
+          "boundary_unstable_active": 8,
+          "occupation_uncertainty_electrons": 0.09220453245826855,
+          "matched_active_pairs": 333,
+          "matched_origin_changes": 53,
+          "median_active_overlap": 0.9850537097718299
+        },
+        {
+          "valley": "Delta_y",
+          "active": 156,
+          "ambiguous_active": 72,
+          "boundary_unstable_active": 4,
+          "occupation_uncertainty_electrons": 0.18303786703179586,
+          "matched_active_pairs": 156,
+          "matched_origin_changes": 32,
+          "median_active_overlap": 0.9962323262707076
+        }
+      ]
+    },
+    {
+      "channel_modes": 4,
+      "sd_modes": 8,
+      "vd_v": 0.005,
+      "mu_l_ev": 0.009559118670267335,
+      "number_interval": [
+        141.58973203689018,
+        142.9075989697282
+      ],
+      "valleys": [
+        {
+          "valley": "Delta_z",
+          "active": 165,
+          "ambiguous_active": 60,
+          "boundary_unstable_active": 6,
+          "occupation_uncertainty_electrons": 0.7890544505759043,
+          "matched_active_pairs": 165,
+          "matched_origin_changes": 35,
+          "median_active_overlap": 0.9812204837767515
+        },
+        {
+          "valley": "Delta_x",
+          "active": 349,
+          "ambiguous_active": 75,
+          "boundary_unstable_active": 5,
+          "occupation_uncertainty_electrons": 0.10617438952627574,
+          "matched_active_pairs": 349,
+          "matched_origin_changes": 69,
+          "median_active_overlap": 0.9176109698297356
+        },
+        {
+          "valley": "Delta_y",
+          "active": 162,
+          "ambiguous_active": 56,
+          "boundary_unstable_active": 6,
+          "occupation_uncertainty_electrons": 0.4226380927358759,
+          "matched_active_pairs": 162,
+          "matched_origin_changes": 25,
+          "median_active_overlap": 0.9770810119679355
+        }
+      ]
+    },
+    {
+      "channel_modes": 4,
+      "sd_modes": 8,
+      "vd_v": 0.01,
+      "mu_l_ev": 0.009559118670267335,
+      "number_interval": [
+        141.4478717377091,
+        142.58422412750573
+      ],
+      "valleys": [
+        {
+          "valley": "Delta_z",
+          "active": 169,
+          "ambiguous_active": 46,
+          "boundary_unstable_active": 9,
+          "occupation_uncertainty_electrons": 0.5918457133434394,
+          "matched_active_pairs": 169,
+          "matched_origin_changes": 29,
+          "median_active_overlap": 0.9525202278362407
+        },
+        {
+          "valley": "Delta_x",
+          "active": 368,
+          "ambiguous_active": 58,
+          "boundary_unstable_active": 10,
+          "occupation_uncertainty_electrons": 0.25359883183603055,
+          "matched_active_pairs": 368,
+          "matched_origin_changes": 86,
+          "median_active_overlap": 0.8341555763904267
+        },
+        {
+          "valley": "Delta_y",
+          "active": 165,
+          "ambiguous_active": 43,
+          "boundary_unstable_active": 1,
+          "occupation_uncertainty_electrons": 0.2909078446171525,
+          "matched_active_pairs": 165,
+          "matched_origin_changes": 32,
+          "median_active_overlap": 0.9673685074522155
+        }
+      ]
+    },
+    {
+      "channel_modes": 4,
+      "sd_modes": 8,
+      "vd_v": 0.05,
+      "mu_l_ev": 0.009559118670267335,
+      "number_interval": [
+        133.78349219003366,
+        139.92239399254504
+      ],
+      "valleys": [
+        {
+          "valley": "Delta_z",
+          "active": 179,
+          "ambiguous_active": 25,
+          "boundary_unstable_active": 13,
+          "occupation_uncertainty_electrons": 4.3565702186988355,
+          "matched_active_pairs": 179,
+          "matched_origin_changes": 57,
+          "median_active_overlap": 0.4718865172886759
+        },
+        {
+          "valley": "Delta_x",
+          "active": 403,
+          "ambiguous_active": 64,
+          "boundary_unstable_active": 15,
+          "occupation_uncertainty_electrons": 0.5117668945508963,
+          "matched_active_pairs": 403,
+          "matched_origin_changes": 128,
+          "median_active_overlap": 0.26790147138951376
+        },
+        {
+          "valley": "Delta_y",
+          "active": 172,
+          "ambiguous_active": 29,
+          "boundary_unstable_active": 9,
+          "occupation_uncertainty_electrons": 1.270564689261634,
+          "matched_active_pairs": 172,
+          "matched_origin_changes": 41,
+          "median_active_overlap": 0.5350093672149837
+        }
+      ]
+    },
+    {
+      "channel_modes": 4,
+      "sd_modes": 8,
+      "vd_v": 0.1,
+      "mu_l_ev": 0.009559118670267335,
+      "number_interval": [
+        125.33901005022108,
+        133.11428006819415
+      ],
+      "valleys": [
+        {
+          "valley": "Delta_z",
+          "active": 187,
+          "ambiguous_active": 21,
+          "boundary_unstable_active": 11,
+          "occupation_uncertainty_electrons": 4.696325040540762,
+          "matched_active_pairs": 187,
+          "matched_origin_changes": 46,
+          "median_active_overlap": 0.4177849542443576
+        },
+        {
+          "valley": "Delta_x",
+          "active": 427,
+          "ambiguous_active": 49,
+          "boundary_unstable_active": 7,
+          "occupation_uncertainty_electrons": 1.657624762971014,
+          "matched_active_pairs": 427,
+          "matched_origin_changes": 105,
+          "median_active_overlap": 0.258966611887
+        },
+        {
+          "valley": "Delta_y",
+          "active": 182,
+          "ambiguous_active": 17,
+          "boundary_unstable_active": 7,
+          "occupation_uncertainty_electrons": 1.4213202144613046,
+          "matched_active_pairs": 182,
+          "matched_origin_changes": 43,
+          "median_active_overlap": 0.47832458519624577
+        }
+      ]
+    },
+    {
+      "channel_modes": 10,
+      "sd_modes": 20,
+      "vd_v": 0.0,
+      "mu_l_ev": 0.009559118670267335,
+      "number_interval": [
+        213.1743996286096,
+        213.1743996286096
+      ],
+      "valleys": [
+        {
+          "valley": "Delta_z",
+          "active": 0,
+          "ambiguous_active": 0,
+          "boundary_unstable_active": 0,
+          "occupation_uncertainty_electrons": 0.0
+        },
+        {
+          "valley": "Delta_x",
+          "active": 0,
+          "ambiguous_active": 0,
+          "boundary_unstable_active": 0,
+          "occupation_uncertainty_electrons": 0.0
+        },
+        {
+          "valley": "Delta_y",
+          "active": 0,
+          "ambiguous_active": 0,
+          "boundary_unstable_active": 0,
+          "occupation_uncertainty_electrons": 0.0
+        }
+      ]
+    },
+    {
+      "channel_modes": 10,
+      "sd_modes": 20,
+      "vd_v": 0.001,
+      "mu_l_ev": 0.009559118670267335,
+      "number_interval": [
+        212.6098040181954,
+        213.4187504618743
+      ],
+      "valleys": [
+        {
+          "valley": "Delta_z",
+          "active": 351,
+          "ambiguous_active": 195,
+          "boundary_unstable_active": 7,
+          "occupation_uncertainty_electrons": 0.5099718901472964,
+          "matched_active_pairs": 351,
+          "matched_origin_changes": 83,
+          "median_active_overlap": 0.9923821468831789
+        },
+        {
+          "valley": "Delta_x",
+          "active": 546,
+          "ambiguous_active": 115,
+          "boundary_unstable_active": 5,
+          "occupation_uncertainty_electrons": 0.08239142550456631,
+          "matched_active_pairs": 546,
+          "matched_origin_changes": 193,
+          "median_active_overlap": 0.934479489438031
+        },
+        {
+          "valley": "Delta_y",
+          "active": 335,
+          "ambiguous_active": 188,
+          "boundary_unstable_active": 6,
+          "occupation_uncertainty_electrons": 0.216583128027029,
+          "matched_active_pairs": 335,
+          "matched_origin_changes": 64,
+          "median_active_overlap": 0.9912947382181941
+        }
+      ]
+    },
+    {
+      "channel_modes": 10,
+      "sd_modes": 20,
+      "vd_v": 0.002,
+      "mu_l_ev": 0.009559118670267335,
+      "number_interval": [
+        212.34765834135112,
+        213.2652399176987
+      ],
+      "valleys": [
+        {
+          "valley": "Delta_z",
+          "active": 369,
+          "ambiguous_active": 164,
+          "boundary_unstable_active": 11,
+          "occupation_uncertainty_electrons": 0.5437779893343783,
+          "matched_active_pairs": 369,
+          "matched_origin_changes": 73,
+          "median_active_overlap": 0.991535963478365
+        },
+        {
+          "valley": "Delta_x",
+          "active": 582,
+          "ambiguous_active": 87,
+          "boundary_unstable_active": 5,
+          "occupation_uncertainty_electrons": 0.07016640322271289,
+          "matched_active_pairs": 582,
+          "matched_origin_changes": 101,
+          "median_active_overlap": 0.953190694230377
+        },
+        {
+          "valley": "Delta_y",
+          "active": 352,
+          "ambiguous_active": 160,
+          "boundary_unstable_active": 9,
+          "occupation_uncertainty_electrons": 0.30363718379052257,
+          "matched_active_pairs": 352,
+          "matched_origin_changes": 61,
+          "median_active_overlap": 0.9909075053619278
+        }
+      ]
+    },
+    {
+      "channel_modes": 10,
+      "sd_modes": 20,
+      "vd_v": 0.005,
+      "mu_l_ev": 0.009559118670267335,
+      "number_interval": [
+        211.4841503508065,
+        212.71212584562056
+      ],
+      "valleys": [
+        {
+          "valley": "Delta_z",
+          "active": 387,
+          "ambiguous_active": 113,
+          "boundary_unstable_active": 9,
+          "occupation_uncertainty_electrons": 0.6745372332161265,
+          "matched_active_pairs": 387,
+          "matched_origin_changes": 98,
+          "median_active_overlap": 0.9340818255536567
+        },
+        {
+          "valley": "Delta_x",
+          "active": 640,
+          "ambiguous_active": 61,
+          "boundary_unstable_active": 8,
+          "occupation_uncertainty_electrons": 0.06182353703379985,
+          "matched_active_pairs": 640,
+          "matched_origin_changes": 133,
+          "median_active_overlap": 0.8142720561947248
+        },
+        {
+          "valley": "Delta_y",
+          "active": 373,
+          "ambiguous_active": 116,
+          "boundary_unstable_active": 9,
+          "occupation_uncertainty_electrons": 0.49161472456413874,
+          "matched_active_pairs": 373,
+          "matched_origin_changes": 80,
+          "median_active_overlap": 0.9397117830860703
+        }
+      ]
+    },
+    {
+      "channel_modes": 10,
+      "sd_modes": 20,
+      "vd_v": 0.01,
+      "mu_l_ev": 0.009559118670267335,
+      "number_interval": [
+        210.0393135337839,
+        212.05855318768778
+      ],
+      "valleys": [
+        {
+          "valley": "Delta_z",
+          "active": 401,
+          "ambiguous_active": 83,
+          "boundary_unstable_active": 12,
+          "occupation_uncertainty_electrons": 0.9654575464272153,
+          "matched_active_pairs": 401,
+          "matched_origin_changes": 84,
+          "median_active_overlap": 0.8382988002232291
+        },
+        {
+          "valley": "Delta_x",
+          "active": 678,
+          "ambiguous_active": 68,
+          "boundary_unstable_active": 9,
+          "occupation_uncertainty_electrons": 0.21195574682474236,
+          "matched_active_pairs": 678,
+          "matched_origin_changes": 141,
+          "median_active_overlap": 0.6776834294172371
+        },
+        {
+          "valley": "Delta_y",
+          "active": 388,
+          "ambiguous_active": 82,
+          "boundary_unstable_active": 6,
+          "occupation_uncertainty_electrons": 0.8418263606519009,
+          "matched_active_pairs": 388,
+          "matched_origin_changes": 80,
+          "median_active_overlap": 0.9040775613831462
+        }
+      ]
+    },
+    {
+      "channel_modes": 10,
+      "sd_modes": 20,
+      "vd_v": 0.05,
+      "mu_l_ev": 0.009559118670267335,
+      "number_interval": [
+        197.22065111275452,
+        202.9778806417848
+      ],
+      "valleys": [
+        {
+          "valley": "Delta_z",
+          "active": 425,
+          "ambiguous_active": 61,
+          "boundary_unstable_active": 13,
+          "occupation_uncertainty_electrons": 3.950337921047361,
+          "matched_active_pairs": 425,
+          "matched_origin_changes": 152,
+          "median_active_overlap": 0.32547297585018525
+        },
+        {
+          "valley": "Delta_x",
+          "active": 784,
+          "ambiguous_active": 72,
+          "boundary_unstable_active": 12,
+          "occupation_uncertainty_electrons": 0.500341308489037,
+          "matched_active_pairs": 784,
+          "matched_origin_changes": 213,
+          "median_active_overlap": 0.28860356070198045
+        },
+        {
+          "valley": "Delta_y",
+          "active": 412,
+          "ambiguous_active": 63,
+          "boundary_unstable_active": 15,
+          "occupation_uncertainty_electrons": 1.3065502994938853,
+          "matched_active_pairs": 412,
+          "matched_origin_changes": 145,
+          "median_active_overlap": 0.3233357305766137
+        }
+      ]
+    },
+    {
+      "channel_modes": 10,
+      "sd_modes": 20,
+      "vd_v": 0.1,
+      "mu_l_ev": 0.009559118670267335,
+      "number_interval": [
+        192.40428963182256,
+        201.69225783958973
+      ],
+      "valleys": [
+        {
+          "valley": "Delta_z",
+          "active": 442,
+          "ambiguous_active": 53,
+          "boundary_unstable_active": 21,
+          "occupation_uncertainty_electrons": 6.529116905568621,
+          "matched_active_pairs": 442,
+          "matched_origin_changes": 123,
+          "median_active_overlap": 0.2887221911858311
+        },
+        {
+          "valley": "Delta_x",
+          "active": 844,
+          "ambiguous_active": 58,
+          "boundary_unstable_active": 6,
+          "occupation_uncertainty_electrons": 1.3110775582220093,
+          "matched_active_pairs": 844,
+          "matched_origin_changes": 198,
+          "median_active_overlap": 0.269460694493044
+        },
+        {
+          "valley": "Delta_y",
+          "active": 432,
+          "ambiguous_active": 41,
+          "boundary_unstable_active": 11,
+          "occupation_uncertainty_electrons": 1.4477737439765348,
+          "matched_active_pairs": 432,
+          "matched_origin_changes": 116,
+          "median_active_overlap": 0.2956604957629724
+        }
+      ]
+    }
+  ],
+  "scope": "phi(vd)=saved equilibrium phi + vd*x/L controlled frozen family; NOT self-consistent bias continuation",
+  "unknown_occupations_applied_to_density": false,
+  "source_state": "baseline/ms_fixed_mu_seed.npz"
+}
