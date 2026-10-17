@@ -17,10 +17,11 @@ def voltage_range(value):
 
 
 def parser():
+    from transport.registry import registered_backends
     a=argparse.ArgumentParser(description=__doc__)
     a.add_argument('phase',choices=['point','idvgs','idvds','stress','frozen'])
     a.add_argument('--config');a.add_argument('--out',required=True)
-    a.add_argument('--backend',choices=['ms','negf','spectral'])
+    a.add_argument('--backend',choices=registered_backends())
     a.add_argument('--vg',type=float,default=.8);a.add_argument('--vd',type=float,default=.1)
     a.add_argument('--gate-range',default='0:1.2:.05');a.add_argument('--drain-range',default='0:1.2:.05')
     a.add_argument('--gates',default='.4,.8,1.2');a.add_argument('--axis',choices=['gate','drain'],default='drain')
@@ -45,7 +46,7 @@ def prepare(c,out):
     from modespace.hamiltonian import Grid,ModeBuilder
     from modespace.junction_basis import JunctionCompatibleBuilder
     from device.definition import DeviceDefinition
-    from transport.negf import neutral_lead_mu
+    from transport.registry import create_transport_backend
     from solver import write_json
     mesh=out/'mesh'/'gaa_cm.msh'
     if not mesh.exists():mesh=build_mesh(c,out/'mesh')
@@ -57,13 +58,11 @@ def prepare(c,out):
         device=DeviceDefinition(transport_axis=c.transport_axis)
         cls=JunctionCompatibleBuilder if c.junction_basis=='nested' else ModeBuilder
         builders=[cls(c,grid,v) for v in device.frame.valleys()]
+        backend=create_transport_backend(c.backend,c)
         if c.mu_source_ev is not None:mu=c.mu_source_ev;cal={'calibration':'explicit fixed source μ','mu_source_ev':mu}
-        elif c.backend=='spectral':
-            from transport.reservoir import neutral_mu
-            mu,cal=neutral_mu(builders,c,grid)
-        else:mu,cal=neutral_lead_mu(builders,c,grid)
+        else:mu,cal=backend.calibrate_contacts({'builders':builders,'grid':grid,'config':c})
         write_json(out/'contact_calibration.json',cal);write_json(out/'device.json',device.describe())
-        return p,grid,mapping,builders,mu
+        return p,grid,mapping,builders,mu,backend
     except Exception:p.close();raise
 
 
@@ -97,7 +96,7 @@ def main():
     write_json(settings,{'config':c.to_dict(),'configuration_fingerprint':identity,'source_sha256':sha,
                         'command':sys.argv,'python':sys.version})
     rows=[];initial=None;previous=None
-    p,grid,mapping,builders,mu=prepare(c,out)
+    p,grid,mapping,builders,mu,backend=prepare(c,out)
     if args.initial_state:
         saved=np.load(args.initial_state)
         if saved['node_xyz_nm'].shape!=p.xyz['silicon'].shape or not np.allclose(saved['node_xyz_nm'],p.xyz['silicon'],atol=1e-9,rtol=0):
@@ -111,7 +110,7 @@ def main():
             if row['numerical_status']=='SCF_CONVERGED':
                 s=np.load(meta.with_suffix('.npz'));return {k:v for k,v in row.items() if not isinstance(v,(dict,list))},s['poisson_density_cm3'],None
         try:
-            row,n,q=scf(c,p,mapping,builders,grid,mu,g,d,out,key,seed)
+            row,n,q=scf(c,p,mapping,builders,grid,mu,g,d,out,key,seed,backend=backend)
             row['point_kind']=kind;return row,n,q
         except Exception as exc:
             failure=traceback.format_exc();(out/f'{key}_failure.txt').write_text(failure)

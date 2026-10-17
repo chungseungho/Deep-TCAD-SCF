@@ -3,10 +3,7 @@ from pathlib import Path
 import csv,json,time,os
 import numpy as np
 from config import KB_EV,Q
-from device.regions import mode_regions,diagnose
-from modespace.hamiltonian import density_from_matrix
-from multispace.occupation import solve_states
-from multispace.constraints import solve_number
+from device.regions import diagnose
 from coupling.mixing import Anderson
 from provenance import source_digest,fingerprint
 
@@ -30,7 +27,7 @@ def append_csv(path,row):
         w.writerow(row)
 
 
-def newton_physical_map(c,p,mapping,builders,grid,fixed_mu,vg,vd,out,key,phi_start,start,tic):
+def newton_physical_map(c,p,mapping,backend,builders,grid,fixed_mu,vg,vd,out,key,phi_start,start,tic):
     """Admissible-domain Newton on the original physical Poisson map."""
     from coupling.domain_newton import solve,DomainSearchFailure
     from transport.bound_states import BoundOccupationError
@@ -41,7 +38,7 @@ def newton_physical_map(c,p,mapping,builders,grid,fixed_mu,vg,vd,out,key,phi_sta
             f.write(json.dumps(row,default=lambda x:x.tolist() if isinstance(x,np.ndarray) else x.item())+'\n')
     def evaluate(x):
         if 'x' in cache and np.array_equal(x,cache['x']):return cache['value']
-        q=electronic(c,builders,grid,mapping.potential(x),fixed_mu,vd)
+        q=electronic(backend,builders,grid,mapping.potential(x),fixed_mu,vd)
         density=mapping.charge(q['n']);p.set_charge(density);new=p.solve(vg,vd)
         value=(new-x,new,density,q);cache.update(x=x.copy(),value=value);return value
     def callback(x,residual):
@@ -52,7 +49,7 @@ def newton_physical_map(c,p,mapping,builders,grid,fixed_mu,vg,vd,out,key,phi_sta
             residual_v=res,numerically_converged=False,vg_v=vg,vd_v=vd,
             config_json=json.dumps(c.to_dict()),source_sha256=source_digest())
         # A Poisson image is another trial. Invalid images are not final states.
-        try:qnew=electronic(c,builders,grid,phi,fixed_mu,vd)
+        try:qnew=electronic(backend,builders,grid,phi,fixed_mu,vd)
         except (BoundOccupationError,AmbiguousOccupation) as e:
             event({'kind':'physical_image','iteration':outer,'valid':False,'reason':str(e),
                    'bound_audit':getattr(e,'bound_diagnostics',None)})
@@ -60,15 +57,15 @@ def newton_physical_map(c,p,mapping,builders,grid,fixed_mu,vg,vd,out,key,phi_sta
         raw=mapping.charge(qnew['n'])
         nr=float(np.sqrt(np.dot(p.volume,(raw-n)**2)/max(np.dot(p.volume,raw*raw),1e-30)))
         p.set_charge(raw);pr=float(max(abs(p.solve(vg,vd)-new)))
-        stable,track=state_stability(q,qnew,c)
-        ir=abs(qnew['id_a']-q['id_a'])/max(abs(qnew['id_a']),1e-15) if c.backend!='ms' else 0.
+        metrics=backend.convergence_metrics(q,qnew)
+        stable=metrics['classification_stable']; ir=metrics['current_relative_change']
         row={'key':key,'iteration':start+outer,'vg_v':vg,'vd_v':vd,'phi_residual_v':pr,
             'density_relative_residual':nr,'mu_l_ev':qnew['mu'],'mu_change_ev':abs(qnew['mu']-q['mu']),
-            'occupation_max_change':float(max(abs(qnew['tracking']-q['tracking']))),
+            'occupation_max_change':metrics['occupation_max_change'],
             'classification_stable':stable,'electrons':float(qnew['n'].sum()*grid.cell_volume*1e-21),
             'id_a':qnew['id_a'],'elapsed_s':time.perf_counter()-tic,'current_relative_change':ir}
         append_csv(Path(out)/'scf_history.csv',row)
-        accepted=bool(pr<c.phi_tol and nr<c.charge_tol and stable and row['mu_change_ev']<c.phi_tol and ir<c.current_tol)
+        accepted=backend.converged(start+outer,metrics,pr,nr,row['mu_change_ev'])
         last=(n,new,phi,qnew,accepted,start+outer)
         atomic_npz(Path(out)/'checkpoints'/f'{key}.npz',n=n,phi_node_v=new,vg_v=vg,vd_v=vd,
                    iteration=start+outer,source_sha256=source_digest(),config_json=json.dumps(c.to_dict()))
@@ -92,106 +89,36 @@ def newton_physical_map(c,p,mapping,builders,grid,fixed_mu,vg,vd,out,key,phi_sta
     return last
 
 
-def state_stability(old,new,c):
-    if c.backend!='ms':return True,[]
-    from multispace.tracking import match_states
-    from scipy.linalg import block_diag
-    stable=True;reports=[]
-    for a,b,sa,sb in zip(old['states'],new['states'],old['systems'],new['systems']):
-        overlaps=[ua.reshape(-1,ua.shape[-1]).T@ub.reshape(-1,ub.shape[-1]) for ua,ub in zip(sa.bases,sb.bases)]
-        match=match_states(a,b,c.ms_degenerate_ev,basis_overlap=block_diag(*overlaps))
-        i,j=match['old_indices'],match['new_indices'];active=a['active'][i]|b['active'][j]
-        stable=stable and bool(np.all(a['origin'][i][active]==b['origin'][j][active]))
-        reports.append(match)
-    return stable,reports
+def electronic(backend,builders,grid,phi,fixed_mu,vd,detail=False):
+    """Execute one transport step through the replaceable backend contract."""
+    context={'config':backend.config,'builders':builders,'grid':grid,
+             'fixed_mu':fixed_mu,'detail':detail,'bias':vd}
+    result=backend.solve(phi,vd,context)
+    backend.validate(result)
+    return result
 
 
-def _electronic_impl(c,builders,grid,phi,fixed_mu,vd,detail=False):
-    systems=[b.build(phi) for b in builders];deg=[2*s.valley.multiplicity for s in systems]
-    density=np.zeros(len(grid.xyz));left=density.copy();right=density.copy();unresolved=density.copy()
-    states=[];diagnostics=[];matrices=[];bonds=np.zeros(len(grid.x)-1);tracking=[]
-    mu=float(fixed_mu);constraint={}
-    if c.backend=='ms':
-        for s in systems:
-            labels=mode_regions(s,c);alternatives=[]
-            step=c.ms_boundary_shift_slices*c.dx
-            if step:
-                for sign in (-1,1):alternatives.append(mode_regions(s,c,sign*step))
-            states.append(solve_states(s.H,labels,c,alternatives))
-        target=float(c.doping(grid.xyz).sum()*grid.cell_volume*1e-21)
-        mu,states,constraint=solve_number(states,deg,target,vd,c,fixed_mu)
-        for s,g,state in zip(systems,deg,states):
-            u,f=state['u'],state['occupation'];rho=(u*f)@u.conj().T
-            density+=density_from_matrix(s,rho,g)
-            for origin,out in ((0,left),(2,right),(-1,unresolved)):
-                use=state['origin']==origin
-                part=(u[:,use]*f[use])@u[:,use].conj().T
-                out+=density_from_matrix(s,part,g)
-            ortho=float(np.max(abs(u.conj().T@u-np.eye(len(u)))))
-            from transport.reservoir import bond_currents
-            closed=bond_currents(s,rho,g)
-            diagnostics.append({'valley':s.valley.name,'dimension':s.dimension,
-                'orthogonality_error':ortho,'projector_sum_error':float(max(abs(state['weights'].sum(axis=1)-1))),
-                'closed_stationary_max_current_a':float(max(abs(closed))),
-                'pauli_min':float(min(f)),'pauli_max':float(max(f)),
-                'origin_counts':{str(o):int(sum(state['origin']==o)) for o in (-1,0,2)},
-                'active_states':int(sum(state['active'])),'degenerate_clusters':state['clusters'],
-                'gf_evaluations_inside_scf':0})
-            tracking.extend(f)
-            if detail:matrices.append(rho)
-    elif c.backend=='negf':
-        from transport.negf import solve_negf,blocks_density
-        for s,g in zip(systems,deg):
-            blocks,flux,diag,components=solve_negf(s,c,mu,mu-vd,vd,detail)
-            density+=blocks_density(s,blocks,g);bonds+=g*flux
-            tracking.extend(np.concatenate([np.linalg.eigvalsh(x) for x in blocks]))
-            diag['valley']=s.valley.name;diagnostics.append(diag)
-            if detail:matrices.append(blocks)
-    elif c.backend=='spectral':
-        from transport.finite_spectral import solve_finite_spectral
-        from transport.reservoir import bond_currents
-        for s,g in zip(systems,deg):
-            rho,diag,parts=solve_finite_spectral(s.H,s.regions,c.gamma,mu,mu-vd,c.temperature,
-                                               split=detail,diagnostic_detail=detail)
-            tracking.extend(np.linalg.eigvalsh(rho) if detail else diag.pop('_correlation_spectrum'))
-            density+=density_from_matrix(s,rho,g);bonds+=bond_currents(s,rho,g)
-            if detail:
-                left+=density_from_matrix(s,parts[0],g);right+=density_from_matrix(s,parts[1],g)
-                matrices.append(rho)
-            diag['valley']=s.valley.name;diagnostics.append(diag)
-    else:raise ValueError('Unsupported DEVSIM-QT backend')
-    current=float('nan') if c.backend=='ms' else float(bonds[(grid.x[:-1]>=c.ls)&(grid.x[1:]<=c.drain_start)].mean())
-    return {'n':density,'systems':systems,'states':states,'matrices':matrices,'mu':mu,
-        'tracking':np.asarray(tracking),'bonds':bonds,'id_a':current,'constraint':constraint,
-        'density_l':left,'density_r':right,'density_unresolved':unresolved,'valleys':diagnostics}
-
-
-def electronic(c,builders,grid,phi,fixed_mu,vd,detail=False):
-    """Compatibility bridge used by the unchanged STEP08 SCF iteration."""
-    from transport.registry import create_transport_backend
-    backend=create_transport_backend(c.backend,c)
-    raw=backend.solve(phi,vd,{'builders':builders,'grid':grid,'fixed_mu':fixed_mu,
-                              'detail':detail,'legacy_evaluator':_electronic_impl})
-    return raw
-
-
-def scf(c,p,mapping,builders,grid,fixed_mu,vg,vd,out,key,initial=None):
+def scf(c,p,mapping,builders,grid,fixed_mu,vg,vd,out,key,initial=None,backend=None):
+    if backend is None:
+        raise ValueError('SCF requires a backend instance from the transport registry')
     out=Path(out);tic=time.perf_counter();n=p.donors.copy() if initial is None else initial.copy()
     mixer=Anderson(p.volume,c.mix,c.history);prev_mu=None;prev_track=None;prev_sig=None;prev_q=None;prev_current=None
     accepted=False;rows=[];phi_initial=None
+    backend.prepare({'grid':grid,'mapping':mapping})
     for iteration in range(1,c.max_iterations+1):
-        p.set_charge(n);phi_node=p.solve(vg,vd);phi=mapping.potential(phi_node)
+        from coupling.scf_controller import evaluate_transport_step
+        step=evaluate_transport_step(p,mapping,backend,builders,grid,n,fixed_mu,vg,vd)
+        phi_node=step.poisson_potential;phi=step.quantum_potential
         if phi_initial is None:phi_initial=phi.copy()
-        q=electronic(c,builders,grid,phi,fixed_mu,vd)
-        raw=mapping.charge(q['n']);res=raw-n
+        q=step.transport_result
+        raw=step.mapped_density;res=raw-n
         nr=float(np.sqrt(np.dot(p.volume,res*res)/max(np.dot(p.volume,raw*raw),1e-30)))
-        p.set_charge(raw);new_phi=p.solve(vg,vd);pr=float(max(abs(new_phi-phi_node)))
+        new_phi=step.poisson_image;pr=step.potential_residual
         mr=float(abs(q['mu']-prev_mu)) if prev_mu is not None else float('inf')
-        tr=float(max(abs(q['tracking']-prev_track))) if prev_track is not None else float('inf')
-        signature=tuple(tuple(s['origin'][s['active']]) for s in q['states'])
-        classification_stable=prev_q is not None and state_stability(prev_q,q,c)[0]
-        ir=abs(q['id_a']-prev_current)/max(abs(q['id_a']),1e-15) if prev_current is not None and c.backend!='ms' else (0. if c.backend=='ms' else float('inf'))
-        if c.backend!='ms':classification_stable=True
+        metrics=backend.convergence_metrics(prev_q,q)
+        tr=metrics['occupation_max_change']
+        classification_stable=metrics['classification_stable']
+        ir=metrics['current_relative_change']
         row={'key':key,'iteration':iteration,'vg_v':vg,'vd_v':vd,'phi_residual_v':pr,
              'density_relative_residual':nr,'mu_l_ev':q['mu'],'mu_change_ev':mr,
              'occupation_max_change':tr,'classification_stable':classification_stable,
@@ -199,14 +126,13 @@ def scf(c,p,mapping,builders,grid,fixed_mu,vg,vd,out,key,initial=None):
              'elapsed_s':time.perf_counter()-tic,'current_relative_change':ir}
         append_csv(out/'scf_history.csv',row);rows.append(row)
         print(f'{key} {iteration:03d}: phiR={pr:.3e} nR={nr:.3e} mu={q["mu"]:.6f} stable={classification_stable}',flush=True)
-        accepted=bool(iteration>=3 and pr<c.phi_tol and nr<c.charge_tol and
-                      mr<c.phi_tol and classification_stable and ir<c.current_tol)
+        accepted=backend.converged(iteration,metrics,pr,nr,mr)
         atomic_npz(out/'checkpoints'/f'{key}.npz',n=n,phi_node_v=phi_node,vg_v=vg,vd_v=vd,
                    iteration=iteration,source_sha256=source_digest(),config_json=json.dumps(c.to_dict()))
         if accepted:break
         if iteration>=c.newton_start and pr>10*c.phi_tol and iteration<c.max_iterations-4:
             print(f'{key}: switching to Newton-Krylov on original physical map',flush=True)
-            refined=newton_physical_map(c,p,mapping,builders,grid,fixed_mu,vg,vd,out,key,phi_node,iteration,tic)
+            refined=newton_physical_map(c,p,mapping,backend,builders,grid,fixed_mu,vg,vd,out,key,phi_node,iteration,tic)
             if refined is not None:n,phi_node,phi,q,accepted,iteration=refined
             break
         target=raw
@@ -216,9 +142,9 @@ def scf(c,p,mapping,builders,grid,fixed_mu,vg,vd,out,key,initial=None):
         nnext,method,gain=mixer.update(n/c.donor_sd,target/c.donor_sd)
         # Do not replace n with an unused mixed proposal after the last solve.
         if iteration<c.max_iterations:n=nnext*c.donor_sd
-        prev_mu=q['mu'];prev_track=q['tracking'];prev_sig=signature;prev_q=q;prev_current=q['id_a']
+        prev_mu=q['mu'];prev_q=q
     # Exactly reevaluate the saved H and raw residual before deciding acceptance.
-    final=electronic(c,builders,grid,phi,fixed_mu,vd,True)
+    final=electronic(backend,builders,grid,phi,fixed_mu,vd,True)
     raw=mapping.charge(final['n']);nr=float(np.sqrt(np.dot(p.volume,(raw-n)**2)/max(np.dot(p.volume,raw*raw),1e-30)))
     p.set_charge(raw);pr=float(max(abs(p.solve(vg,vd)-phi_node)))
     accepted=bool(accepted and nr<c.charge_tol and pr<c.phi_tol)
@@ -228,28 +154,20 @@ def scf(c,p,mapping,builders,grid,fixed_mu,vg,vd,out,key,initial=None):
     region=diagnose(grid,final['n'],phi,c)
     from analysis.validity import element_fields,evaluate
     validity=evaluate(c,final['systems'],final['mu'],vd,element_fields(p.mesh_path,p))
-    post=[];post_error=None
-    if accepted and c.backend=='ms':
-        from transport.ms_postprocess import postprocess
-        try:
-            post=[postprocess(s,c,final['mu'],vd) for s in final['systems']]
-            final['id_a']=sum(x['current_a'] for x in post)
-            final['bonds']=sum((x['bonds_a'] for x in post),np.zeros(len(grid.x)-1))
-        except Exception as exc:post_error=repr(exc)
+    final['config']=c
+    backend_final=backend.finalize(final,vd,grid,accepted)
     current=final['id_a'];bonds=final['bonds']
-    central=(grid.x[:-1]>=c.ls)&(grid.x[1:]<=c.drain_start)
-    if c.backend=='ms':defect=max(abs(bonds-current)) if post else float('nan')
-    else:defect=max(abs(bonds[central]-current))
-    current_ok=bool(np.isfinite(current) and defect<max(1e-15,abs(current)*1e-6))
-    result={'key':key,'backend':c.backend,'vg_v':vg,'vd_v':vd,'id_a':current,
+    defect=backend_final['current_conservation_abs_a']
+    current_ok=backend_final['current_ok']
+    result={'key':key,'backend':backend.name,'vg_v':vg,'vd_v':vd,'id_a':current,
         'numerical_status':'SCF_CONVERGED' if accepted else 'SCF_NOT_CONVERGED',
-        'transport_status':'POST_SCF_FAILED' if post_error else 'CALCULATED' if accepted and current_ok else 'UNVALIDATED',
+        'transport_status':backend_final['transport_status'],
         'physical_status':validity['physical_status'],'iterations':iteration,
         'phi_residual_v':pr,'density_relative_residual':nr,'mu_l_ev':final['mu'],'mu_r_ev':final['mu']-vd,
         'current_conservation_abs_a':float(defect),'current_conservation_relative':float(defect/max(abs(current),1e-15)),
         'gauss_relative_error':gauss['gauss_relative_error'],
         'reservoir_screening_pass':region['reservoir_screening_diagnostic_pass'],
-        'quantitative_validation_pass':False,'gf_inside_scf':c.backend=='negf',
+        'quantitative_validation_pass':False,**backend.result_metadata(),
         'source_sha256':source_digest(),'configuration_fingerprint':fingerprint(c),'runtime_s':time.perf_counter()-tic}
     data={'xyz_nm':grid.xyz,'x_nm':grid.x,'y_nm':grid.y,'z_nm':grid.z,'silicon_mask':grid.mask,
         'phi_v':phi,'electron_density_cm3':final['n'],'poisson_density_cm3':n,
@@ -261,19 +179,12 @@ def scf(c,p,mapping,builders,grid,fixed_mu,vg,vd,out,key,initial=None):
     data.update(world_xyz_nm=Frame(c.transport_axis).to_world(grid.xyz),
                 world_node_xyz_nm=Frame(c.transport_axis).to_world(p.xyz['silicon']),
                 world_transport_axis=c.transport_axis,potential_reference_v=c.potential_reference_v)
-    if c.backend in ('ms','spectral'):
-        data.update(density_from_l_cm3=final['density_l'],density_from_r_cm3=final['density_r'],
-                    density_unresolved_origin_cm3=final['density_unresolved'])
-    for i,s in enumerate(final['systems']):
-        data[f'valley{i}_subbands_ev']=np.stack([a[:min(c.modes,len(a))] for a in s.subbands])
-        if c.backend=='ms':
-            for name in ('e','weights','origin','largest_region','occupation','ambiguous','reach','contrast','boundary_unstable','cluster_unstable'):
-                data[f'valley{i}_{name}']=final['states'][i][name]
+    data.update(backend.export_fields(final))
     file=out/'states'/f'{key}.npz';atomic_npz(file,**data)
     write_json(file.with_suffix('.json'),{**result,'regions':region,'constraint':final['constraint'],
         'valleys':final['valleys'],'validity':validity,'gauss':gauss,
-        'postprocess':post,'postprocess_error':post_error,
-        'density_current_distinction':'closed stationary MS density; independent open scattering current after SCF'})
+        'postprocess':backend_final['postprocess'],'postprocess_error':backend_final['postprocess_error'],
+        **backend.result_metadata()})
     if accepted:
         from export_fields import export_state
         export_state(file,out/'fields'/f'{key}_nm.vtu')

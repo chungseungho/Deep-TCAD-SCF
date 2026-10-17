@@ -112,7 +112,8 @@ class Config:
             raise ValueError('All numerical inputs must be finite')
         if min(self.donor_sd,self.eps_si,self.eps_ox,self.eps_spacer)<=0 or self.donor_channel<0 or self.transition<0 or self.history<0:
             raise ValueError('Invalid doping, permittivity, transition length or mixing history')
-        if self.backend not in ('spectral', 'ms', 'negf'): raise ValueError('Unknown backend')
+        from transport.registry import registered_backends
+        if self.backend not in registered_backends(): raise ValueError(f'Unknown backend: {self.backend}')
         if self.mapping not in ('integrated','adjoint','balanced_adjoint','legacy'): raise ValueError('Unknown mapping')
         if min(self.contour_batch_size,self.transmission_batch_size)<1:raise ValueError('Invalid GF batch size')
         if self.fermi_poles<4 or self.energy_order<2 or self.energy_step<=0 or self.fermi_tail<8 or min(self.energy_rtol,self.energy_atol,self.energy_max_nodes)<=0:

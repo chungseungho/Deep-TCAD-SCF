@@ -1,0 +1,28 @@
+{
+  "origin": "restored_step08/8.DEVSIM-QT baseline solver.electronic",
+  "device": "reduced 3D GAA quantum grid; all three silicon valleys",
+  "config": {
+    "ls": 4.0,
+    "lg": 4.0,
+    "ld": 4.0,
+    "spacer": 2.0,
+    "width": 4.0,
+    "thickness": 4.0,
+    "sd_width": 8.0,
+    "sd_thickness": 8.0,
+    "tox": 2.0,
+    "dx": 1.0,
+    "dy": 1.0,
+    "dz": 1.0,
+    "modes": 2,
+    "sd_modes": 2
+  },
+  "potential_v": "uniform zero; source chemical potential -0.1 eV; drain bias 0 V; detail enabled",
+  "observables": [
+    "electron density",
+    "bond current",
+    "source chemical potential",
+    "backend tracking signature"
+  ],
+  "limitations": "This isolates quantum backend migration. Gmsh/DEVSIM Poisson solve and end-to-end SCF were not included."
+}

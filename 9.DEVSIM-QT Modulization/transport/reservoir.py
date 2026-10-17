@@ -76,14 +76,12 @@ def reservoir_spacing(levels,mu,temperature):
 
 
 def neutral_mu(builders,c,grid):
-    """One common mu from all valleys and isolated finite source spectrum.
+    """Legacy finite-source Fermi calibration; select other models explicitly."""
+    return neutral_finite_mu(builders,c,grid,spectral=False)
 
-    Match nominal donor number in quantum cells, with the SAME modes/masses/
-    grid/finite length as transport. Do not adjust doping or mass to match I-V.
-    """
-    if c.backend=='negf':
-        from transport.negf_reference import neutral_lead_mu
-        return neutral_lead_mu(builders,c,grid)
+
+def neutral_finite_mu(builders,c,grid,spectral=False):
+    """Calibrate a finite-reservoir contact without consulting backend config."""
     spectra=[]
     for b in builders:
         sys=b.build(np.zeros(len(grid.xyz)));ind=np.where(sys.regions==0)[0]
@@ -92,7 +90,7 @@ def neutral_mu(builders,c,grid):
     target=c.donor_sd*c.ls*c.sd_width*c.sd_thickness*1e-21
     capacity=sum(g*len(e) for e,g in spectra)
     if target>=capacity*.95: raise ValueError('Insufficient source modes for neutral doping')
-    if c.backend=='spectral':
+    if spectral:
         from transport.finite_spectral import broadened_occupation
         filling=lambda e,mu:broadened_occupation(e,c.gamma,mu,c.temperature)
     else: filling=lambda e,mu:fermi(e,mu,c.temperature)
