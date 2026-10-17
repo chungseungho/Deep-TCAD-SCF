@@ -1,0 +1,3 @@
+# STEP08 안내
+
+이전 STEP07 문서는 `baseline/MS_IMPLEMENTATION_STUDY.md`에 보존했다. 이번 분석은 `MSDFT_SOURCE_COMPARISON.md`, `ROOT_CAUSE_REPORT.md`, `MS_NEGF_COMPARISON.md`를 읽는다.

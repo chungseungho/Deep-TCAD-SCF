@@ -1,0 +1,23 @@
+{
+  "step": 8,
+  "project_name": "DEVSIM-QT",
+  "source_sha256": "fe3c540c88e57070da79b59a8083e2a0bbf947e9d7faea752dac402fb6ff5fdc",
+  "tests_passed": 64,
+  "mode_levels_completed": [
+    2,
+    4,
+    6,
+    8,
+    10,
+    14,
+    20,
+    28,
+    36
+  ],
+  "biased_gaa_certified_points": 0,
+  "quantitative_validation_pass": false,
+  "ready_for_training": false,
+  "full_task_physics_goal_complete": false,
+  "siesta_latest_attachment_read": false,
+  "previous_siesta_archive_analyzed": true
+}
