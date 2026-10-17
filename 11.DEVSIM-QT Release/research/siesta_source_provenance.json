@@ -1,0 +1,77 @@
+{
+  "archive_sha256": "43f05274cd94a7a966a0164e11ad9b4b5576d987925844e00289b580a5b33fc0",
+  "provenance": "restored previous attachment; newest siesta-5.4.2.tar(1).gz unavailable and NOT compared",
+  "source_code_redistributed": false,
+  "files": [
+    {
+      "path": "Src/compute_dm.F",
+      "sha256": "29f5ebb37326cb87ea961dcb7df0683c02e550374881208f0d26bd08478bbd68",
+      "lines": 322
+    },
+    {
+      "path": "Src/dhscf.F",
+      "sha256": "8ef058d23bfbaf6e1713ad636de1a8eaeadbd52ff782d1f7cc5ba9fdd1c6ffe0",
+      "lines": 2692
+    },
+    {
+      "path": "Src/diagg_msdft.F",
+      "sha256": "12291883d921abf1b37f6107d2825cc7db644c0da62757e996ac278076254208",
+      "lines": 367
+    },
+    {
+      "path": "Src/diagk_msdft.F",
+      "sha256": "efa1583529c46af32275c09824b5e81f6c2e90eb5ab3a46e9f0ec78b2a8979de",
+      "lines": 513
+    },
+    {
+      "path": "Src/diagon.F",
+      "sha256": "d46a15fe3b17f59cc3fa240bb8fc0f6f305c84d05d8e04d94c11abe21adbc42b",
+      "lines": 419
+    },
+    {
+      "path": "Src/m_mixing_scf.F90",
+      "sha256": "daf23a20aeffd9f699adbf9c50564d9cf171d8fc5ec68d522f1b62bfccd7c435",
+      "lines": 347
+    },
+    {
+      "path": "Src/m_msdft_mulliken_partition.F90",
+      "sha256": "f652b0d1b69feb8d00f09016771be64bfe705fca432f7bd7dabcdaff695209a5",
+      "lines": 469
+    },
+    {
+      "path": "Src/m_ts_dm_update.F90",
+      "sha256": "f9e3cb79cde7c91f48bb104e0e31780fa7a3aec85f02531e6643602753e87ffe",
+      "lines": 875
+    },
+    {
+      "path": "Src/m_ts_elec_se.F90",
+      "sha256": "3b9013c3351181af59812bb8d6cbd125cc3c5ecf3f424e40721fa08699315d05",
+      "lines": 774
+    },
+    {
+      "path": "Src/m_ts_electrode.F90",
+      "sha256": "72dc482f6aff4959b8866c1238d400f53280b8aabf8b1cff6d85ba6a382a3b00",
+      "lines": 1850
+    },
+    {
+      "path": "Src/msdft.F",
+      "sha256": "266f5cd29156905596f50703f512578b3735dcc623d8fae30a02a9ccb8c44edf",
+      "lines": 1980
+    },
+    {
+      "path": "Src/scfconvergence_test.F",
+      "sha256": "fcbad9bdf07b752705581baf3c38bb17b6fa93bd9b45ddff1528378f6aff1c3e",
+      "lines": 209
+    },
+    {
+      "path": "Util/TS/TBtrans/m_tbt_save.F90",
+      "sha256": "ac8c41d5e8baa544f4317c7ebdd0e353b4ce13a29053ecaf89a633f70f5242b9",
+      "lines": 2880
+    },
+    {
+      "path": "Util/TS/TBtrans/m_tbt_tri_scat.F90",
+      "sha256": "eb653619fc629eeb667d0501bef2c143e185a27aedfdc476a41470d17401370c",
+      "lines": 2023
+    }
+  ]
+}

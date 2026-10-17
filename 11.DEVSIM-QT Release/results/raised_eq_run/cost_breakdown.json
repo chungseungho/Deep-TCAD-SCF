@@ -1,0 +1,92 @@
+{
+  "run.py:prepare": {
+    "calls": 1,
+    "self_s": 0.014657795000000001,
+    "cumulative_s": 46.203894569000006
+  },
+  "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy/linalg/_linalg.py:solve": {
+    "calls": 3,
+    "self_s": 0.001839146,
+    "cumulative_s": 0.001892475
+  },
+  "/workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/modespace/hamiltonian.py:build": {
+    "calls": 81,
+    "self_s": 0.69020667,
+    "cumulative_s": 3.8103187980000004
+  },
+  "/workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/modespace/hamiltonian.py:transverse_matrix": {
+    "calls": 18,
+    "self_s": 0.020263986,
+    "cumulative_s": 0.033946449000000004
+  },
+  "/workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/transport/backends/negf.py:solve": {
+    "calls": 27,
+    "self_s": 0.023303865,
+    "cumulative_s": 67.940250866
+  },
+  "/workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/poisson/device.py:solve": {
+    "calls": 43,
+    "self_s": 0.000547913,
+    "cumulative_s": 0.9730701390000001
+  },
+  "/workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/coupling/mapping.py:build": {
+    "calls": 1,
+    "self_s": 0.01623449,
+    "cumulative_s": 43.208460508
+  },
+  "/workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/modespace/junction_basis.py:build": {
+    "calls": 81,
+    "self_s": 0.6371786730000001,
+    "cumulative_s": 5.071058906
+  },
+  "/root/.local/lib/python3.12/site-packages/devsim/umfpack/umfpack_loader.py:solve": {
+    "calls": 83,
+    "self_s": 0.00021428900000000002,
+    "cumulative_s": 0.047783145000000006
+  },
+  "/root/.local/lib/python3.12/site-packages/devsim/umfpack/umfshim.py:solve": {
+    "calls": 83,
+    "self_s": 0.000290633,
+    "cumulative_s": 0.048073778000000005
+  },
+  "/workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/transport/contact_model.py:embedding": {
+    "calls": 81,
+    "self_s": 0.044928833,
+    "cumulative_s": 0.045059334
+  },
+  "/workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/coupling/cell_integrals.py:integrated_matrix": {
+    "calls": 1,
+    "self_s": 3.6061593330000004,
+    "cumulative_s": 43.059535153000006
+  },
+  "/workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/transport/negf_reference.py:solve_negf": {
+    "calls": 81,
+    "self_s": 0.587104005,
+    "cumulative_s": 57.327388018
+  },
+  "/workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/transport/negf_reference.py:rgf": {
+    "calls": 486,
+    "self_s": 18.588836135,
+    "cumulative_s": 54.318352672
+  },
+  "/workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/coupling/domain_newton.py:solve": {
+    "calls": 1,
+    "self_s": 0.00030989900000000004,
+    "cumulative_s": 43.245208138
+  },
+  "/workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/transport/negf_reference.py:lead_matrices": {
+    "calls": 486,
+    "self_s": 1.014415471,
+    "cumulative_s": 1.1573508570000002
+  },
+  "/workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/transport/contracts.py:solve": {
+    "calls": 81,
+    "self_s": 0.016682041,
+    "cumulative_s": 57.344070059
+  },
+  "/workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/transport/backends/negf.py:prepare": {
+    "calls": 2,
+    "self_s": 7.181e-06,
+    "cumulative_s": 0.0008811260000000001
+  }
+}

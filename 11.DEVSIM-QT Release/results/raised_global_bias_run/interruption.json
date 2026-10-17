@@ -1,0 +1,69 @@
+{
+  "validation_status": "INCONCLUSIVE",
+  "runtime_status": "STOPPED_AFTER_MODEL_AUDIT",
+  "is_timeout": false,
+  "observed_elapsed_s_lower_bound": 1390.7856702849995,
+  "process_memory": {
+    "VmHWM": "338520 kB",
+    "VmRSS": "293600 kB"
+  },
+  "reason": "Stop expanding an uncertified numerical configuration after independent actual-trial near-dark pole evidence and failed mode/grid/contact refinement. No arbitrary walltime cutoff, no physical nonexistence claim, no completed biased SCF claimed. First biased trial did not complete before this decision.",
+  "evidence": [
+    "results/embedded_candidates/summary.json",
+    "results/assessment/fully_scf_mode_comparison.json",
+    "results/assessment/poisson_mesh_comparison.json",
+    "results/assessment/buffer_comparison.json"
+  ],
+  "last_completed_stage_progress": {
+    "elapsed_s": 1390.7856702849995,
+    "stages": {
+      "lead transverse SP": {
+        "calls": 1,
+        "inclusive_seconds": 1.889725885000189,
+        "energy_nodes": 0
+      },
+      "Poisson solve": {
+        "calls": 1,
+        "inclusive_seconds": 0.028283947999625525,
+        "energy_nodes": 0
+      },
+      "transverse basis/base blocks": {
+        "calls": 3,
+        "inclusive_seconds": 0.1050632440001209,
+        "energy_nodes": 0
+      },
+      "nested blocks": {
+        "calls": 3,
+        "inclusive_seconds": 0.1563420539996514,
+        "energy_nodes": 0
+      },
+      "bound audit": {
+        "calls": 5,
+        "inclusive_seconds": 0.22570868200091354,
+        "energy_nodes": 0
+      },
+      "contact self-energy": {
+        "calls": 9680,
+        "inclusive_seconds": 27.560582839001654,
+        "energy_nodes": 98080
+      },
+      "RGF contour/injectivity": {
+        "calls": 9680,
+        "inclusive_seconds": 668.4830108199758,
+        "energy_nodes": 98080
+      },
+      "banded resonance search": {
+        "calls": 2,
+        "inclusive_seconds": 12.590125583999907,
+        "energy_nodes": 0
+      },
+      "real-energy integration": {
+        "calls": 1,
+        "inclusive_seconds": 796.9818586869997,
+        "energy_nodes": 0
+      }
+    }
+  },
+  "checkpoint": "equilibrium seed/checkpoint retained; no accepted nonzero-bias iteration checkpoint exists",
+  "timestamp_unix": 1792228034.991867
+}

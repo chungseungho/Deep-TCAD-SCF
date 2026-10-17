@@ -1,0 +1,23 @@
+{
+  "category": "B: computational lead extension with original gate/channel/junction coordinates restored",
+  "outer_extension_each_side_nm": 6,
+  "original_target_domain_matched": true,
+  "potential_reference_and_neutral_mu_unchanged": true,
+  "bias_v": 0.0,
+  "regions": {
+    "channel": {
+      "density_l2": 0.00435545919192192,
+      "phi_max_difference_v": 0.0010599062857639258
+    },
+    "junction_extension": {
+      "density_l2": 0.012148944873496232,
+      "phi_max_difference_v": 0.001984217613947483
+    },
+    "original_reservoir": {
+      "density_l2": 0.022071084414062685,
+      "phi_max_difference_v": 0.007430680540408487
+    }
+  },
+  "status": "FAIL",
+  "reason": "One extension at equilibrium does not establish a plateau or biased transport convergence; remeshing is a secondary numerical contributor."
+}

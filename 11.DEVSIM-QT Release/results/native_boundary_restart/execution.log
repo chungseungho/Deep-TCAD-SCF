@@ -1,0 +1,77 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.14, pytest-9.1.1, pluggy-1.7.0 -- /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python
+cachedir: .pytest_cache
+rootdir: /workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release
+configfile: pytest.ini
+collecting ... collected 3 items
+
+tests/test_step11_restart_boundary.py::test_restart_rejects_source_config_mesh_and_negative_charge PASSED
+tests/test_step11_restart_boundary.py::test_common_scf_has_only_neutral_transport_domain_exception PASSED
+tests/test_step11_restart_boundary.py::test_native_boundary_profile_changes_data_not_stiffness Searching DEVSIM_MATH_LIBS="libopenblas.so.0"
+Loading "libopenblas.so.0": ALL BLAS/LAPACK LOADED
+loading UMFPACK 5.1 as direct solver
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 14 Triangles.
+Physical group name Drain has 25 Lines.
+Physical group name Drain has 12 Points.
+Physical group name Electrostatic has 932 Tetrahedra.
+Physical group name Electrostatic has 2038 Triangles.
+Physical group name Electrostatic has 1360 Lines.
+Physical group name Electrostatic has 255 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 72 Triangles.
+Physical group name Gate has 120 Lines.
+Physical group name Gate has 48 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 40 Triangles.
+Physical group name OxSpacer has 80 Lines.
+Physical group name OxSpacer has 40 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 152 Triangles.
+Physical group name SiExterior has 248 Lines.
+Physical group name SiExterior has 96 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 56 Triangles.
+Physical group name SiOx has 92 Lines.
+Physical group name SiOx has 36 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 104 Triangles.
+Physical group name SiSpacer has 176 Lines.
+Physical group name SiSpacer has 72 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 14 Triangles.
+Physical group name Source has 25 Lines.
+Physical group name Source has 12 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 96 Triangles.
+Physical group name SpacerExterior has 168 Lines.
+Physical group name SpacerExterior has 72 Points.
+Device gaa_d7aa5abb has 255 coordinates with max index 255
+Region electrostatic has 255 nodes.
+Contact drain in region electrostatic with 12 nodes
+Contact gate in region electrostatic with 48 nodes
+Contact source in region electrostatic with 12 nodes
+number of equations 255
+Iteration: 0
+  Device: "gaa_d7aa5abb"	RelError: 0.00000e+00	AbsError: 0.00000e+00
+    Region: "electrostatic"	RelError: 0.00000e+00	AbsError: 0.00000e+00
+      Equation: "PotentialEquation"	RelError: 0.00000e+00	AbsError: 0.00000e+00
+number of equations 255
+Iteration: 0
+  Device: "gaa_d7aa5abb"	RelError: 1.00000e+00	AbsError: 4.60000e-02
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 4.60000e-02
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 4.60000e-02
+Iteration: 1
+  Device: "gaa_d7aa5abb"	RelError: 1.31656e-14	AbsError: 1.69609e-17
+    Region: "electrostatic"	RelError: 1.31656e-14	AbsError: 1.69609e-17
+      Equation: "PotentialEquation"	RelError: 1.31656e-14	AbsError: 1.69609e-17
+PASSED
+
+=============================== warnings summary ===============================
+tests/test_step11_restart_boundary.py::test_native_boundary_profile_changes_data_not_stiffness
+  /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy/_core/getlimits.py:552: UserWarning: Signature b'\x00\xd0\xcc\xcc\xcc\xcc\xcc\xcc\xfb\xbf\x00\x00\x00\x00\x00\x00' for <class 'numpy.longdouble'> does not match any known type: falling back to type probe function.
+  This warnings indicates broken support for the dtype!
+    machar = _get_machar(dtype)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+========================= 3 passed, 1 warning in 0.55s =========================

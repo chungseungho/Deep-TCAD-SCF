@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/validation/revalidate_equilibrium_seed.py", line 37, in <module>
+    if __name__=='__main__':migrate(*sys.argv[1:])
+                            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/validation/revalidate_equilibrium_seed.py", line 33, in migrate
+    if error>1e-10:raise ValueError('Equilibrium density not reproduced')
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Equilibrium density not reproduced

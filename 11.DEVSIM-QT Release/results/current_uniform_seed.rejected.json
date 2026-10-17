@@ -1,0 +1,6 @@
+{
+  "status": "FAIL",
+  "density_relative_error": 1.5389005223665922e-05,
+  "maximum_density_difference_cm3": 1112373477756928.0,
+  "input": "results/uniform_eq/states/vg0.400000_vd0.000000.npz"
+}

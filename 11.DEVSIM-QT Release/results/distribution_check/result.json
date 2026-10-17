@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "pytest_exit_code": 0,
+  "pytest_passed": 92,
+  "resume_exit_code": 0,
+  "clean_python": "/tmp/step11-clean-venv/bin/python",
+  "candidate_archive": "/tmp/step11-candidate.zip",
+  "extraction_directory": "/tmp/step11-clean-check/11.DEVSIM-QT Release",
+  "resume_runtime_s": 23.74905824661255,
+  "source_unchanged_in_resume": true,
+  "scope": "Candidate extracted source; final exact archive verification recorded separately."
+}

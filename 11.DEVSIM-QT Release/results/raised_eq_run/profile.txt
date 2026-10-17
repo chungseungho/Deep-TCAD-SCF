@@ -1,0 +1,55 @@
+Sat Oct 17 17:12:24 2026    11.DEVSIM-QT Release/results/raised_eq_run/profile.pstats
+
+         50115135 function calls (50035213 primitive calls) in 116.491 seconds
+
+   Ordered by: cumulative time
+   List reduced from 3506 to 45 due to restriction <45>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+    651/1    0.008    0.000  116.496  116.496 {built-in method builtins.exec}
+        1    0.001    0.001  116.496  116.496 run.py:1(<module>)
+        1    0.000    0.000  116.424  116.424 run.py:80(main)
+        1    0.001    0.001   69.946   69.946 run.py:108(attempt)
+        1    0.004    0.004   69.945   69.945 /workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/solver.py:101(scf)
+       27    0.023    0.001   67.940    2.516 /workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/transport/backends/negf.py:19(solve)
+       81    0.017    0.000   57.344    0.708 /workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/transport/contracts.py:15(solve)
+       81    0.587    0.007   57.327    0.708 /workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/transport/negf_reference.py:106(solve_negf)
+      486   18.589    0.038   54.318    0.112 /workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/transport/negf_reference.py:62(rgf)
+       19    0.003    0.000   47.752    2.513 /workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/solver.py:92(electronic)
+        1    0.015    0.015   46.204   46.204 run.py:41(prepare)
+        1    0.000    0.000   45.697   45.697 /workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/solver.py:30(newton_physical_map)
+        1    0.000    0.000   43.245   43.245 /workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/coupling/domain_newton.py:17(solve)
+        1    0.016    0.016   43.208   43.208 /workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/coupling/mapping.py:84(build)
+        1    3.606    3.606   43.060   43.060 /workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/coupling/cell_integrals.py:37(integrated_matrix)
+   156978    4.878    0.000   35.666    0.000 /workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/transport/negf_reference.py:75(invblock)
+       19    0.001    0.000   34.560    1.819 /workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/solver.py:38(evaluate)
+   256163   11.595    0.000   33.887    0.000 /workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/coupling/cell_integrals.py:19(polyhedron_volume_centroid)
+       13    0.000    0.000   32.121    2.471 /workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/coupling/domain_newton.py:23(evaluate)
+       14    0.000    0.000   32.120    2.294 /workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/solver.py:80(<lambda>)
+   167028   29.380    0.000   30.537    0.000 /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy/linalg/_linalg.py:557(inv)
+     1068    0.002    0.000   24.632    0.023 /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/sparse/linalg/_interface.py:231(matvec)
+        3    0.001    0.000   24.613    8.204 /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/sparse/linalg/_isolve/iterative.py:587(gmres)
+       26    0.000    0.000   24.613    0.947 /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/sparse/linalg/_interface.py:619(_matvec)
+       10    0.000    0.000   24.607    2.461 /workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/coupling/domain_newton.py:38(jv)
+        8    0.002    0.000   20.569    2.571 /workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/coupling/scf_controller.py:16(evaluate_transport_step)
+   273681    1.552    0.000   15.006    0.000 /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy/lib/_arraysetops_impl.py:145(unique)
+        4    0.002    0.000   11.115    2.779 /workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/solver.py:43(callback)
+    71880    0.025    0.000    5.866    0.000 /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy/_core/einsumfunc.py:1057(einsum)
+    71880    5.841    0.000    5.841    0.000 {built-in method numpy._core._multiarray_umath.c_einsum}
+   273681    2.599    0.000    5.485    0.000 /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy/lib/_arraysetops_impl.py:348(_unique1d)
+       27    0.015    0.001    5.087    0.188 /workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/transport/backend_common.py:7(initialize)
+       81    0.637    0.008    5.071    0.063 /workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/modespace/junction_basis.py:8(build)
+       81    0.173    0.002    5.028    0.062 /workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/transport/negf_reference.py:197(blocks_density)
+   515528    1.232    0.000    4.418    0.000 /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy/_core/numeric.py:1482(moveaxis)
+  1417457    4.051    0.000    4.051    0.000 {method 'reduce' of 'numpy.ufunc' objects}
+       81    0.690    0.009    3.810    0.047 /workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/modespace/hamiltonian.py:92(build)
+   256164    0.464    0.000    2.975    0.000 /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy/lib/_arraysetops_impl.py:333(reshape_uniq)
+   401189    0.689    0.000    2.850    0.000 /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy/_core/fromnumeric.py:69(_wrapreduction)
+  1031056    1.683    0.000    2.621    0.000 /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy/_core/numeric.py:1420(normalize_axis_tuple)
+17587/17581    0.105    0.000    1.952    0.000 /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/_lib/_util.py:1149(wrapper)
+        1    0.000    0.000    1.793    1.793 /workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/transport/backends/negf.py:13(calibrate_contacts)
+    17574    1.534    0.000    1.768    0.000 /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/linalg/_decomp.py:284(eigh)
+        1    0.002    0.002    1.651    1.651 /workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/transport/contact_model.py:57(solve_reference)
+   154073    0.110    0.000    1.599    0.000 {method 'mean' of 'numpy.ndarray' objects}
+
+

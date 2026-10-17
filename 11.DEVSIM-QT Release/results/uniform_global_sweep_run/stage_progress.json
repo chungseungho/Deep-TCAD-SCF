@@ -1,0 +1,50 @@
+{
+  "elapsed_s": 1243.2330254090002,
+  "stages": {
+    "lead transverse SP": {
+      "calls": 1,
+      "inclusive_seconds": 0.324559575999956,
+      "energy_nodes": 0
+    },
+    "Poisson solve": {
+      "calls": 47,
+      "inclusive_seconds": 1.0128601920023357,
+      "energy_nodes": 0
+    },
+    "transverse basis/base blocks": {
+      "calls": 87,
+      "inclusive_seconds": 2.108026078997682,
+      "energy_nodes": 0
+    },
+    "nested blocks": {
+      "calls": 87,
+      "inclusive_seconds": 2.788627780002571,
+      "energy_nodes": 0
+    },
+    "contact self-energy": {
+      "calls": 13757,
+      "inclusive_seconds": 7.632271054076227,
+      "energy_nodes": 144288
+    },
+    "RGF contour/injectivity": {
+      "calls": 13756,
+      "inclusive_seconds": 621.5031849949901,
+      "energy_nodes": 144280
+    },
+    "bound audit": {
+      "calls": 11,
+      "inclusive_seconds": 0.33460307299992564,
+      "energy_nodes": 0
+    },
+    "banded resonance search": {
+      "calls": 5,
+      "inclusive_seconds": 12.5142740329984,
+      "energy_nodes": 0
+    },
+    "real-energy integration": {
+      "calls": 4,
+      "inclusive_seconds": 1137.4201019009988,
+      "energy_nodes": 0
+    }
+  }
+}

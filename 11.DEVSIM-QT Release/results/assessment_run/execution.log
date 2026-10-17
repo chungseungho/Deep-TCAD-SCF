@@ -1,0 +1,50 @@
+[
+  {
+    "file": "results/raised_eq_final/states/vg0.400000_vd0.000000.npz",
+    "geometry": "raised",
+    "modes": 8,
+    "sd_modes": 32,
+    "vg_v": 0.4,
+    "vd_v": 0.0,
+    "id_a": 0.0,
+    "SCF_CONVERGED": true,
+    "runtime_s": 69.75790760600012,
+    "teacher_ready": false
+  },
+  {
+    "file": "results/raised_resume/states/vg0.400000_vd0.000000.npz",
+    "geometry": "raised",
+    "modes": 8,
+    "sd_modes": 32,
+    "vg_v": 0.4,
+    "vd_v": 0.0,
+    "id_a": 0.0,
+    "SCF_CONVERGED": true,
+    "runtime_s": 12.063438322000366,
+    "teacher_ready": false
+  },
+  {
+    "file": "results/uniform_diagnostic/states/vg0.400000_vd0.000000.npz",
+    "geometry": "uniform",
+    "modes": 8,
+    "sd_modes": 32,
+    "vg_v": 0.4,
+    "vd_v": 0.0,
+    "id_a": 0.0,
+    "SCF_CONVERGED": true,
+    "runtime_s": 7.010269913000229,
+    "teacher_ready": false
+  },
+  {
+    "file": "results/uniform_eq/states/vg0.400000_vd0.000000.npz",
+    "geometry": "uniform",
+    "modes": 8,
+    "sd_modes": 32,
+    "vg_v": 0.4,
+    "vd_v": 0.0,
+    "id_a": 0.0,
+    "SCF_CONVERGED": true,
+    "runtime_s": 40.68101276499965,
+    "teacher_ready": false
+  }
+]

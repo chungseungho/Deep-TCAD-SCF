@@ -1,0 +1,11 @@
+{
+  "baseline_files_changed": [],
+  "unchanged_operator_mapping_controller": {
+    "poisson/discretization.py": true,
+    "coupling/mapping.py": true,
+    "coupling/cell_integrals.py": true,
+    "coupling/scf_controller.py": true
+  },
+  "poisson_device_change": "generic ContactReference boundary data; native test asserts unchanged stiffness",
+  "SCF_change": "solver catches backend-neutral domain exceptions and delegates model validity to backend; coupling/scf_controller.py remains byte-identical"
+}

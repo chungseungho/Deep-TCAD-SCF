@@ -1,0 +1,14 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.14, pytest-9.1.1, pluggy-1.7.0 -- /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python
+cachedir: .pytest_cache
+rootdir: /workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release
+configfile: pytest.ini
+collecting ... collected 5 items
+
+tests/test_step11_contacts.py::test_reference_neutrality_gauge_and_actual_rotated_coupling PASSED
+tests/test_step11_contacts.py::test_cut_invariance_rotated_multichannel_density_and_transmission PASSED
+tests/test_step11_contacts.py::test_left_right_contour_same_density_without_isolated_states PASSED
+tests/test_step11_contacts.py::test_rectangular_device_contact_cut_invariance PASSED
+tests/test_step11_contacts.py::test_small_full_realspace_sp_contact_density_matches_projected_rgf PASSED
+
+============================== 5 passed in 0.83s ===============================

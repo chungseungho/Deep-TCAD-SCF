@@ -1,0 +1,15 @@
+{
+  "key": "vg0.400000_vd0.100000",
+  "backend": "negf",
+  "vg_v": 0.4,
+  "vd_v": 0.1,
+  "id_a": NaN,
+  "numerical_status": "NUMERICAL_FAILURE",
+  "physical_status": "NOT_EVALUATED",
+  "transport_status": "NOT_RUN",
+  "error": "RuntimeError('Energy integration exhausted 240000 GF nodes; increase integration budget, not SCF tolerance')",
+  "source_sha256": "e542a5a7a4e8161236eafa7ba3b75df628988af3da59cd84ae6f5aa89541e80c",
+  "configuration_fingerprint": "fa90ebf4fca05b2849927f1cfd35f1d69fbb386398f7aadf2bef81f4e5434904",
+  "point_kind": "requested",
+  "maximum_failed_iterate_field_v_nm": 0.048044457405021085
+}

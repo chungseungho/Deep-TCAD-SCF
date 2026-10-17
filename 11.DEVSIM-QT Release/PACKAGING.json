@@ -1,0 +1,14 @@
+{
+  "directory": "11.DEVSIM-QT Release",
+  "classification": "RELEASE_CANDIDATE",
+  "excluded_directory_names": [
+    ".git",
+    ".pytest_cache",
+    ".venv",
+    "__pycache__",
+    "node_modules"
+  ],
+  "native_libraries_bundled": false,
+  "siesta_originals_bundled": false,
+  "source_results_logs_checkpoints_included": true
+}

@@ -1,0 +1,34 @@
+{
+  "valley": "Delta_z",
+  "lowest_propagating_edge_ev": -0.03144633341697589,
+  "bound_poles_below_both_leads": [
+    {
+      "energy_ev": -0.04102004898396094,
+      "enclosure_ev": [
+        -0.04102004898421162,
+        -0.041020048983710256
+      ],
+      "fermi_left": 0.8216470546034853,
+      "fermi_right": 0.39974208943229156,
+      "occupation_difference": 0.42190496517119375,
+      "needs_preparation_model": true
+    },
+    {
+      "energy_ev": -0.03324076083452286,
+      "enclosure_ev": [
+        -0.03324076083477355,
+        -0.03324076083427218
+      ],
+      "fermi_left": 0.7732282365656943,
+      "fermi_right": 0.33016118104731407,
+      "occupation_difference": 0.4430670555183802,
+      "needs_preparation_model": true
+    }
+  ],
+  "bias_dependent_bound_occupation_unresolved": true,
+  "embedded_dark_states_excluded": false,
+  "above_band_bound_states_excluded": false,
+  "near_threshold_exclusion_ev": 1.000000013351432e-10,
+  "classification_scope": "isolated poles of the retained open Hamiltonian; full-basis and contact convergence required to establish physical device states",
+  "method": "block LDL inertia and monotone bisection of H+Sigma(E)-E below lowest lead band; no eta"
+}

@@ -1,0 +1,10 @@
+file,vg_v,vd_v,status,id_a,error
+results/raised_diagnostic/failures/vg0.400000_vd0.010000.json,0.4,0.01,MODEL_UNDERSPECIFIED,,BoundOccupationError('BOUND_PREPARATION_REQUIRED: isolated poles have different reservoir Fermi occupations; no unique biased density')
+results/raised_diagnostic/failures/vg0.400000_vd0.050000.json,0.4,0.05,MODEL_UNDERSPECIFIED,,BoundOccupationError('BOUND_PREPARATION_REQUIRED: isolated poles have different reservoir Fermi occupations; no unique biased density')
+results/raised_diagnostic/failures/vg0.400000_vd0.100000.json,0.4,0.1,MODEL_UNDERSPECIFIED,,BoundOccupationError('BOUND_PREPARATION_REQUIRED: isolated poles have different reservoir Fermi occupations; no unique biased density')
+results/uniform_small/failures/vg0.400000_vd0.006250.json,0.4,0.00625,MODEL_UNDERSPECIFIED,,BoundOccupationError('BOUND_PREPARATION_REQUIRED: isolated poles have different reservoir Fermi occupations; no unique biased density')
+results/uniform_small/failures/vg0.400000_vd0.010000.json,0.4,0.01,MODEL_UNDERSPECIFIED,,BoundOccupationError('BOUND_PREPARATION_REQUIRED: isolated poles have different reservoir Fermi occupations; no unique biased density')
+results/uniform_small/failures/vg0.400000_vd0.012500.json,0.4,0.0125,NUMERICAL_FAILURE,,"RuntimeError('Energy integration exhausted 240000 GF nodes; increase integration budget, not SCF tolerance')"
+results/uniform_small/failures/vg0.400000_vd0.025000.json,0.4,0.025,NUMERICAL_FAILURE,,"RuntimeError('Energy integration exhausted 240000 GF nodes; increase integration budget, not SCF tolerance')"
+results/uniform_small/failures/vg0.400000_vd0.050000.json,0.4,0.05,NUMERICAL_FAILURE,,RuntimeError('UNRESOLVED_RESONANCE: local error budget not resolved; no artificial broadening')
+results/uniform_small/failures/vg0.400000_vd0.100000.json,0.4,0.1,NUMERICAL_FAILURE,,"RuntimeError('Energy integration exhausted 240000 GF nodes; increase integration budget, not SCF tolerance')"

@@ -1,0 +1,6 @@
+{
+  "status": "NUMERICAL_FAILURE",
+  "reason": "per-panel full density arrays still scale with number of resonance panels; simultaneous runs reached cgroup 7.10 GB / 8 GiB; interrupted before OOM to implement constant-memory adaptive accumulation",
+  "timeout_used": false,
+  "completed_biased_iterations": 0
+}

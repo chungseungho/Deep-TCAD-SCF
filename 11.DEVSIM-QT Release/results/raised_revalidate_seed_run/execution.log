@@ -1,0 +1,11 @@
+{
+  "input_state": "results/raised_refined_eq/states/vg0.400000_vd0.000000.npz",
+  "input_source_sha256": "8b23b2f72cfe53d75020d6e3f5a78ac4ef7392114aa261c6205395438d72b6df",
+  "current_source_sha256": "e542a5a7a4e8161236eafa7ba3b75df628988af3da59cd84ae6f5aa89541e80c",
+  "changed_files": [
+    "transport/quadrature.py"
+  ],
+  "equilibrium_density_relative_error": 4.003445230615898e-14,
+  "meaning": "revalidated initial guess only; next SCF must converge and reevaluate",
+  "TEACHER_READY": false
+}

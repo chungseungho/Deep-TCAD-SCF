@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "environment": "/tmp/step11-clean-venv",
+  "command": "python -m venv /tmp/step11-clean-venv && /tmp/step11-clean-venv/bin/python -m pip install -r requirements.txt",
+  "evidence": "results/clean_install.log",
+  "isolated_system_site_packages": false
+}

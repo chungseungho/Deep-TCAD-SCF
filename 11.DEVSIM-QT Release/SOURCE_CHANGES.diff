@@ -1,0 +1,1987 @@
+--- STEP10/config.py
++++ STEP11/config.py
+@@ -95,6 +95,12 @@
+     newton_max_backtracks: int = 16
+     potential_reference_v: float = 0.
+ 
++    density_reference: str = 'lower'
++    contact_model: str = 'legacy_flat'
++    lead_k_nodes: int = 256
++    lead_max_iterations: int = 240
++    lead_residual_tol: float = 1e-9
++
+     def __post_init__(self):
+         if self.reservoir_left_nm is None:self.reservoir_left_nm=self.ls/2
+         if self.reservoir_right_nm is None:self.reservoir_right_nm=self.ld/2
+@@ -115,6 +121,9 @@
+             raise ValueError('Invalid doping, permittivity, transition length or mixing history')
+         from transport.registry import registered_backends
+         if self.backend not in registered_backends(): raise ValueError(f'Unknown backend: {self.backend}')
++        if self.density_reference not in ('lower','left','right'):raise ValueError('Invalid contour reference')
++        if self.contact_model not in ('legacy_flat','transverse_sp'):raise ValueError('Unknown contact model')
++        if self.lead_k_nodes<32 or self.lead_residual_tol<=0:raise ValueError('Invalid lead controls')
+         if self.mapping not in ('integrated','adjoint','balanced_adjoint','legacy'): raise ValueError('Unknown mapping')
+         if min(self.contour_batch_size,self.transmission_batch_size)<1:raise ValueError('Invalid GF batch size')
+         if self.fermi_poles<4 or self.energy_order<2 or self.energy_step<=0 or self.fermi_tail<8 or min(self.energy_rtol,self.energy_atol,self.energy_max_nodes)<=0:
+--- STEP10/coupling/domain_newton.py
++++ STEP11/coupling/domain_newton.py
+@@ -27,8 +27,7 @@
+             return value
+         except invalid as e:
+             event={'kind':kind,'iteration':iteration,'step_scale':float(scale),'valid':False,'reason':str(e)}
+-            if hasattr(e,'bound_diagnostics'):event['bound_audit']=e.bound_diagnostics
+-            if hasattr(e,'number_diagnostics'):event['number_interval']=e.number_diagnostics
++            if hasattr(e,'diagnostics'):event['transport_diagnostics']=e.diagnostics
+             record(event);return None
+     # An invalid initial iterate is reported as such, never as a failed solution.
+     f=fun(x)
+--- STEP10/modespace/hamiltonian.py
++++ STEP11/modespace/hamiltonian.py
+@@ -54,7 +54,7 @@
+ 
+ @dataclass
+ class System:
+-    H: np.ndarray
++    H: np.ndarray | None
+     bases: list
+     subbands: list
+     offsets: np.ndarray
+@@ -63,8 +63,22 @@
+     hop: list
+     valley: object
+ 
++    onsite: list | None = None
++    contacts: object = None
++
+     @property
+-    def dimension(self): return len(self.H)
++    def dimension(self): return int(self.offsets[-1])
++    def diagonal_blocks(self):
++        return [self.H[self.sl(i),self.sl(i)] for i in range(len(self.grid.x))] if self.H is not None else self.onsite
++    def dense(self):
++        """Explicit opt-in for finite MS/Spectral or small reference calculations."""
++        if self.H is None:
++            H=np.zeros((self.dimension,self.dimension))
++            for i,h in enumerate(self.onsite):H[self.sl(i),self.sl(i)]=h
++            for i,t in enumerate(self.hop):
++                H[self.sl(i),self.sl(i+1)]=t;H[self.sl(i+1),self.sl(i)]=t.conj().T
++            self.H=H
++        return self.H
+     def sl(self,i): return slice(self.offsets[i],self.offsets[i+1])
+     def realspace_transform(self):
+         """Only for independent small-mesh verification, not production."""
+@@ -73,10 +87,11 @@
+ 
+ class ModeBuilder:
+     def __init__(self,c,grid,valley):
+-        self.c,self.g,self.v=c,grid,valley;self.cache={};self.fixed={}
++        self.c,self.g,self.v=c,grid,valley;self.cache={};self.fixed={};self.config_signature=c.to_dict()
+ 
+     def build(self,phi):
+         c,g,v=self.c,self.g,self.v
++        if c.to_dict()!=self.config_signature:raise ValueError('Configuration changed; create a new Hamiltonian provider to invalidate caches')
+         if np.asarray(phi).shape!=(len(g.xyz),): raise ValueError('Invalid potential shape')
+         tx=KIN/(v.mx*c.dx**2);ty=KIN/(v.my*c.dy**2);tz=KIN/(v.mz*c.dz**2)
+         bases=[];subbands=[];onsite=[];regs=[]
+@@ -111,14 +126,14 @@
+             h=transverse+2*tx*np.eye(m)+tx*(u.T@(wall[mask,None]*u))
+             onsite.append(h);regs.extend([0 if x<c.ls else 2 if x>c.drain_start else 1]*m)
+         off=np.r_[0,np.cumsum([len(e) for e in subbands])]
+-        H=np.zeros((off[-1],off[-1]));hop=[]
+-        for i,h in enumerate(onsite): H[off[i]:off[i+1],off[i]:off[i+1]]=h
++        hop=[]
+         for i in range(len(g.x)-1):
+             u=bases[i].reshape(-1,bases[i].shape[-1]);w=bases[i+1].reshape(-1,bases[i+1].shape[-1])
+-            h=-tx*(u.T@w);hop.append(h)
+-            H[off[i]:off[i+1],off[i+1]:off[i+2]]=h
+-            H[off[i+1]:off[i+2],off[i]:off[i+1]]=h.T
+-        return System(H,bases,subbands,off,np.array(regs),g,hop,v)
++            hop.append(-tx*(u.T@w))
++        system=System(None,bases,subbands,off,np.array(regs),g,hop,v,onsite,getattr(self,'contacts',None))
++        if not getattr(self,'block_only',False):system.dense()
++        return system
++
+ 
+ 
+ def density_from_matrix(sys,rho,degeneracy):
+--- STEP10/modespace/junction_basis.py
++++ STEP11/modespace/junction_basis.py
+@@ -10,24 +10,31 @@
+         n=len(g.x);channel=np.where((g.x>=c.ls)&(g.x<=c.drain_start))[0]
+         targets={0:original.bases[channel[0]],2:original.bases[channel[-1]]}
+         bases=[];onsite=[];subbands=[];regions=[];tx=KIN/(v.mx*c.dx**2)
++        if not hasattr(self,'nested_cache'):self.nested_cache={}
+         for i,x in enumerate(g.x):
+             mask=g.mask[i];region=0 if x<c.ls else 2 if x>c.drain_start else 1
+-            U=original.bases[i].reshape(-1,original.bases[i].shape[-1])
+-            if region!=1:
+-                narrow=targets[region].reshape(-1,targets[region].shape[-1])
+-                U=orth(np.column_stack([U,narrow]),rcond=1e-11)
++            cache_key=(region,mask.tobytes())
++            if c.basis=='fixed' and cache_key in self.nested_cache:
++                U,kinetic=self.nested_cache[cache_key]
++            else:
++                U=original.bases[i].reshape(-1,original.bases[i].shape[-1])
++                if region!=1:
++                    narrow=targets[region].reshape(-1,targets[region].shape[-1])
++                    U=orth(np.column_stack([U,narrow]),rcond=1e-11)
++                u=U[mask.ravel()]
++                transverse=transverse_matrix(mask,KIN/(v.my*c.dy**2),KIN/(v.mz*c.dz**2))
++                kinetic=u.T@transverse@u
++                if c.basis=='fixed':self.nested_cache[cache_key]=(U,kinetic)
+             u=U[mask.ravel()];m=u.shape[1]
+-            transverse=transverse_matrix(mask,KIN/(v.my*c.dy**2),KIN/(v.mz*c.dz**2))
+-            ht=u.T@transverse@u-u.T@(g.slice_values(phi,i)[:,None]*u)
++            ht=kinetic-u.T@(g.slice_values(phi,i)[:,None]*u)
+             left=g.mask[i-1] if i else np.zeros_like(mask);right=g.mask[i+1] if i+1<n else np.zeros_like(mask)
+             wall=(~left).astype(float)+(~right).astype(float)
+             h=ht+2*tx*np.eye(m)+tx*(u.T@(wall[mask,None]*u))
+             bases.append(U.reshape(*mask.shape,m));onsite.append(h)
+             subbands.append(eigh(ht,eigvals_only=True,check_finite=False));regions.extend([region]*m)
+-        off=np.r_[0,np.cumsum([len(h) for h in onsite])];H=np.zeros((off[-1],off[-1]));hop=[]
+-        for i,h in enumerate(onsite):H[off[i]:off[i+1],off[i]:off[i+1]]=h
++        off=np.r_[0,np.cumsum([len(h) for h in onsite])];hop=[]
+         for i in range(n-1):
+-            a=bases[i].reshape(-1,bases[i].shape[-1]);b=bases[i+1].reshape(-1,bases[i+1].shape[-1]);t=-tx*a.T@b;hop.append(t)
+-            H[off[i]:off[i+1],off[i+1]:off[i+2]]=t;H[off[i+1]:off[i+2],off[i]:off[i+1]]=t.T
+-        return System(H,bases,subbands,off,np.array(regions),g,hop,v)
+-
++            a=bases[i].reshape(-1,bases[i].shape[-1]);b=bases[i+1].reshape(-1,bases[i+1].shape[-1]);hop.append(-tx*a.T@b)
++        system=System(None,bases,subbands,off,np.array(regions),g,hop,v,onsite,getattr(self,'contacts',None))
++        if not getattr(self,'block_only',False):system.dense()
++        return system
+--- STEP10/multispace/occupation.py
++++ STEP11/multispace/occupation.py
+@@ -9,7 +9,9 @@
+ def fermi(e,mu,temperature): return expit(-(np.asarray(e)-mu)/(KB_EV*temperature))
+ 
+ 
+-class AmbiguousOccupation(RuntimeError):
++from transport.errors import TransportDomainError
++
++class AmbiguousOccupation(TransportDomainError):
+     def __init__(self,state):
+         self.state=state
+         ids=np.flatnonzero(state['ambiguous'])
+--- STEP10/poisson/device.py
++++ STEP11/poisson/device.py
+@@ -57,7 +57,7 @@
+         self.K=K*EPS0;self.global_volume=total;self.si_volume=si
+         self.volume=si[self.indices['silicon']]*1e21
+         self.donors=c.doping(self.xyz['silicon'])
+-        for name in ['PhysicalControlVolume','SiliconVolumeFraction','Donors','Electrons','Susceptibility','PhiReference','Potential']:
++        for name in ['PhysicalControlVolume','SiliconVolumeFraction','Donors','Electrons','Susceptibility','PhiReference','ContactReference','Potential']:
+             d.node_solution(**self.args,name=name)
+         self._set('PhysicalControlVolume',total);self._set('SiliconVolumeFraction',si/total)
+         d.edge_from_node_model(**self.args,node_model='node_index')
+@@ -79,7 +79,7 @@
+         self.boundary=np.zeros(len(coords),bool)
+         for name in ['source','drain','gate']:
+             d.set_parameter(device=self.device,name=name+'_bias',value=0.)
+-            d.contact_node_model(device=self.device,contact=name,name=name+'_bc',equation='Potential-'+name+'_bias')
++            d.contact_node_model(device=self.device,contact=name,name=name+'_bc',equation='Potential-ContactReference-'+name+'_bias')
+             d.contact_node_model(device=self.device,contact=name,name=name+'_bc:Potential',equation='1')
+             d.contact_equation(device=self.device,contact=name,name='PotentialEquation',node_model=name+'_bc',edge_charge_model='DField')
+             elements=d.get_element_node_list(device=self.device,region='electrostatic',contact=name)
+@@ -101,6 +101,13 @@
+         n=np.asarray(n)
+         if n.shape!=self.donors.shape or np.any(n<0) or not np.isfinite(n).all(): raise ValueError('Invalid Poisson density')
+         self.set_values('Electrons',n)
++    def set_boundary_profile(self,provider):
++        # Only end-face boundary data change. Stiffness, loads and mapping stay
++        # identical; gate reference remains zero.
++        profile=np.zeros(len(self.allxyz))
++        end=np.isclose(self.allxyz[:,0],0,atol=1e-8)|np.isclose(self.allxyz[:,0],self.c.length,atol=1e-8)
++        profile[end]=provider(self.allxyz[end]);self._set('ContactReference',profile)
++
+     def solve(self,vg,vd,screening=None):
+         if screening is None: self._set('Susceptibility',np.zeros(len(self.allxyz)))
+         else:
+--- STEP10/provenance.py
++++ STEP11/provenance.py
+@@ -13,3 +13,18 @@
+         if any(p in ('output','results','tests','validation','__pycache__','.venv','venv','.git','.pytest_cache') for p in f.relative_to(root).parts): continue
+         h.update(str(f.relative_to(root)).encode());h.update(f.read_bytes())
+     return h.hexdigest()
++
++
++def validate_restart(path,c,xyz):
++    import numpy as np
++    saved=np.load(path,allow_pickle=False)
++    required={'config_json','source_sha256','node_xyz_nm','poisson_density_cm3'}
++    if not required.issubset(saved.files):raise ValueError('Restart missing provenance or coordinates')
++    if str(saved['source_sha256'])!=source_digest():raise ValueError('Restart source mismatch')
++    old=json.loads(str(saved['config_json']))
++    if old!=c.to_dict():raise ValueError('Restart model/geometry/config mismatch')
++    if saved['node_xyz_nm'].shape!=xyz.shape or not np.allclose(saved['node_xyz_nm'],xyz,rtol=0,atol=1e-9):
++        raise ValueError('Restart mesh coordinate mismatch')
++    density=saved['poisson_density_cm3']
++    if density.shape!=(len(xyz),) or not np.isfinite(density).all() or np.min(density)<0:raise ValueError('Invalid restart density')
++    return saved
+--- STEP10/run.py
++++ STEP11/run.py
+@@ -59,8 +59,12 @@
+         cls=JunctionCompatibleBuilder if c.junction_basis=='nested' else ModeBuilder
+         builders=[cls(c,grid,v) for v in device.frame.valleys()]
+         backend=create_transport_backend(c.backend,c)
+-        if c.mu_source_ev is not None:mu=c.mu_source_ev;cal={'calibration':'explicit fixed source μ','mu_source_ev':mu}
+-        else:mu,cal=backend.calibrate_contacts({'builders':builders,'grid':grid,'config':c})
++        mu,cal=backend.calibrate_contacts({'builders':builders,'grid':grid,'config':c})
++        if c.mu_source_ev is not None:mu=c.mu_source_ev;cal.update(explicit_mu_override_ev=mu)
++        backend.prepare({'poisson':p,'grid':grid,'mapping':mapping})
++        if getattr(backend,'contact',None) is not None:
++            ref=backend.contact
++            np.savez_compressed(out/'lead_reference.npz',y_nm=ref.y,z_nm=ref.z,phi_v=ref.phi,density_cm3=ref.density,mu_ev=ref.mu)
+         write_json(out/'contact_calibration.json',cal);write_json(out/'device.json',device.describe())
+         return p,grid,mapping,builders,mu,backend
+     except Exception:p.close();raise
+@@ -98,9 +102,8 @@
+     rows=[];initial=None;previous=None
+     p,grid,mapping,builders,mu,backend=prepare(c,out)
+     if args.initial_state:
+-        saved=np.load(args.initial_state)
+-        if saved['node_xyz_nm'].shape!=p.xyz['silicon'].shape or not np.allclose(saved['node_xyz_nm'],p.xyz['silicon'],atol=1e-9,rtol=0):
+-            p.close();raise ValueError('Seed has different Poisson nodes')
++        from provenance import validate_restart
++        saved=validate_restart(args.initial_state,c,p.xyz['silicon'])
+         initial=saved['poisson_density_cm3']
+     def attempt(g,d,seed,kind='requested'):
+         key=f'vg{g:.6f}_vd{d:.6f}'
+@@ -124,8 +127,8 @@
+                     atomic_npz(out/'failures'/f'{key}_valley{valley}_occupation.npz',**{k:v for k,v in state.items() if isinstance(v,np.ndarray)})
+             if hasattr(exc,'bound_diagnostics'):
+                 write_json(out/'failures'/f'{key}_bound_poles.json',exc.bound_diagnostics)
+-            row={'key':key,'backend':c.backend,'vg_v':g,'vd_v':d,'id_a':float('nan'),
+-                'numerical_status':'MS_OCCUPATION_UNRESOLVED' if hasattr(exc,'state') else 'BOUND_PREPARATION_REQUIRED' if hasattr(exc,'bound_diagnostics') else 'DOMAIN_SEARCH_STALLED' if hasattr(exc,'events') else 'ERROR',
++            row={'key':key,'backend':c.backend,'vg_v':g,'vd_v':d,'id_a':None,
++                'numerical_status':getattr(exc,'status','NUMERICAL_FAILURE'),
+                 'physical_status':'NOT_EVALUATED','transport_status':'NOT_RUN','error':repr(exc),
+                 'source_sha256':sha,'configuration_fingerprint':identity,'point_kind':kind}
+             # Report actual fields of the failed iterate, clearly distinguished
+@@ -147,7 +150,7 @@
+             row,n,q=attempt(g,d,initial)
+             # On numerical SCF failure, bisect continuation from last accepted point.
+             # An unresolved occupation is missing model evidence; do not bypass it.
+-            if previous is not None and row['numerical_status'] in ('ERROR','SCF_NOT_CONVERGED','DOMAIN_SEARCH_STALLED','BOUND_PREPARATION_REQUIRED') and 'integration' not in str(row.get('error','')).lower():
++            if previous is not None and row['numerical_status'] in ('NUMERICAL_FAILURE','SCF_NOT_CONVERGED','DOMAIN_SEARCH_STALLED') and 'integration' not in str(row.get('error','')).lower():
+                 old=np.asarray(previous);new=np.array([g,d]);distance=float(max(abs(new-old)))
+                 intervals=2
+                 while distance/intervals>=args.minimum_bias_step and row['numerical_status']!='SCF_CONVERGED':
+@@ -158,6 +161,7 @@
+                         if rr['numerical_status']!='SCF_CONVERGED':ok=False;break
+                         seed=nn
+                     if ok:row,n=rr,nn
++                    if rr['numerical_status']=='MODEL_UNDERSPECIFIED':break
+                     intervals*=2
+             rows.append(row);write_rows(out/(args.phase+'.csv'),rows)
+             if row['numerical_status']=='SCF_CONVERGED':initial=n;previous=(g,d)
+--- STEP10/solver.py
++++ STEP11/solver.py
+@@ -30,8 +30,7 @@
+ def newton_physical_map(c,p,mapping,backend,builders,grid,fixed_mu,vg,vd,out,key,phi_start,start,tic):
+     """Admissible-domain Newton on the original physical Poisson map."""
+     from coupling.domain_newton import solve,DomainSearchFailure
+-    from transport.bound_states import BoundOccupationError
+-    from multispace.occupation import AmbiguousOccupation
++    from transport.errors import TransportDomainError
+     cache={};last=None;outer=0
+     def event(row):
+         with (Path(out)/(key+'_newton_trials.jsonl')).open('a') as f:
+@@ -50,9 +49,9 @@
+             config_json=json.dumps(c.to_dict()),source_sha256=source_digest())
+         # A Poisson image is another trial. Invalid images are not final states.
+         try:qnew=electronic(backend,builders,grid,phi,fixed_mu,vd)
+-        except (BoundOccupationError,AmbiguousOccupation) as e:
++        except (TransportDomainError,) as e:
+             event({'kind':'physical_image','iteration':outer,'valid':False,'reason':str(e),
+-                   'bound_audit':getattr(e,'bound_diagnostics',None)})
++                   'transport_diagnostics':e.diagnostics})
+             return
+         raw=mapping.charge(qnew['n'])
+         nr=float(np.sqrt(np.dot(p.volume,(raw-n)**2)/max(np.dot(p.volume,raw*raw),1e-30)))
+@@ -79,7 +78,7 @@
+         preconditioner=screened_inverse(p.K,Q*chi*p.si_volume,p.indices['silicon'],p.boundary)
+     try:
+         root,info=solve(lambda x:evaluate(x)[0],phi_start,
+-            invalid=(BoundOccupationError,AmbiguousOccupation),preconditioner=preconditioner,
++            invalid=(TransportDomainError,),preconditioner=preconditioner,
+             maxiter=c.max_iterations-start,tol=c.phi_tol*.1,
+             trust_radius=c.newton_trust_radius_v,max_backtracks=c.newton_max_backtracks,
+             callback=callback,log=event)
+@@ -154,8 +153,8 @@
+     if max(abs(restored-phi_node))>1e-10:raise RuntimeError('Saved Poisson field did not restore')
+     gauss=p.gauss_balance();accepted=accepted and gauss['gauss_relative_error']<1e-7
+     region=diagnose(grid,final['n'],phi,c)
+-    from analysis.validity import element_fields,evaluate
+-    validity=evaluate(c,final['systems'],final['mu'],vd,element_fields(p.mesh_path,p))
++    from analysis.validity import element_fields
++    validity=backend.physical_validity(final,element_fields(p.mesh_path,p))
+     final['config']=c
+     backend_final=backend.finalize(final,vd,grid,accepted)
+     current=final['id_a'];bonds=final['bonds']
+--- STEP10/tests/test_step11_certificate.py
++++ STEP11/tests/test_step11_certificate.py
+@@ -0,0 +1,7 @@
++from validation.release_certificate import all_required_pass
++
++def test_certificate_requires_every_mandatory_pass():
++    assert not all_required_pass({})
++    assert all_required_pass({'one':{'status':'PASS'}})
++    for status in ('FAIL','NOT_RUN','INCONCLUSIVE','OUT_OF_SCOPE'):
++        assert not all_required_pass({'one':{'status':'PASS'},'two':{'status':status}})
+--- STEP10/tests/test_step11_contacts.py
++++ STEP11/tests/test_step11_contacts.py
+@@ -0,0 +1,85 @@
++import numpy as np
++from numpy.testing import assert_allclose
++from dataclasses import replace
++from config import Config,Valley
++from modespace.hamiltonian import Grid
++from modespace.junction_basis import JunctionCompatibleBuilder
++from transport.contact_model import solve_reference,transverse_laplacian
++from transport.negf_reference import lead_matrices,rgf,device_blocks,solve_negf
++from validation.analytical import chain
++
++
++def test_reference_neutrality_gauge_and_actual_rotated_coupling():
++    c=Config(geometry_profile='uniform',width=2,thickness=2,sd_width=2,sd_thickness=2,dy=1,dz=1,modes=2,sd_modes=2)
++    g=Grid.build(c);v=Valley('test',.19,.19,.916,2);r=solve_reference(c,g,[v])
++    assert r.diagnostics['neutrality_relative_error']<1e-10
++    assert max(abs(transverse_laplacian(2,2,1,1)@r.phi-1.602176634e-19*1e-14/(8.8541878128e-14*c.eps_si)*(c.donor_sd-r.density)))<1e-9
++    b=JunctionCompatibleBuilder(c,g,v);b.contacts=r;b.block_only=True;s=b.build(np.tile(r.phi,len(g.x)))
++    ons,hop,t,lead=device_blocks(s,c,(0,0));energy=.8+.02j
++    actual=lead_matrices(np.array([energy]),t,lead)[0][0]
++    e,u,tx=r.spectra[v.name];U=s.bases[0][g.mask[0]]
++    from transport.negf_reference import surface_sigma
++    V=-tx*U.T@u;gs=np.diag(surface_sigma([energy],e+2*tx,tx)[0]/tx**2)
++    assert_allclose(actual,V@gs@V.T,atol=1e-14)
++    assert s.H is None
++
++
++def test_cut_invariance_rotated_multichannel_density_and_transmission():
++    # Same open two-channel Hamiltonian; add ideal layers on either end, then
++    # compare the identical central region. Complex z tests spectral density.
++    t=.3;eps=np.array([.2,.45]);ang=.41;U=np.array([[np.cos(ang),-np.sin(ang)],[np.sin(ang),np.cos(ang)]])
++    lead=[(eps,U),(eps,U)];E=np.array([.29,.37,.61]);z=E+.001j
++    H=U@np.diag(eps)@U.T;barrier=np.array([[.07,.01],[.01,.02]])
++    values=[]
++    for padding in (0,1,4):
++        ons=[H.copy() for _ in range(5+2*padding)];ons[padding+2]+=barrier
++        hop=[-t*np.eye(2) for _ in range(len(ons)-1)];sl,sr=lead_matrices(z,t,lead)
++        G,_=rgf(z,ons,hop,sl,sr)
++        sl,sr=lead_matrices(E,t,lead);_,A=rgf(E,ons,hop,sl,sr,False,0)
++        gam=1j*(sr-sr.conj().transpose(0,2,1));T=np.einsum('eij,ejk,eik->e',gam,A[-1],A[-1].conj()).real
++        values.append((np.array(G[padding:padding+5]),np.array(A[padding:padding+5])@np.array(A[padding:padding+5]).conj().transpose(0,1,3,2),T))
++    for v in values[1:]:
++        for a,b in zip(values[0],v):assert_allclose(a,b,rtol=1e-10,atol=1e-11)
++
++
++def test_left_right_contour_same_density_without_isolated_states():
++    c,s,e=chain(n=9,barrier=.05);mu=e+.14;vd=.04
++    left=solve_negf(s,replace(c,density_reference='left'),mu,mu-vd,vd)
++    right=solve_negf(s,replace(c,density_reference='right'),mu,mu-vd,vd)
++    assert_allclose(left[0],right[0],atol=2e-8,rtol=2e-7)
++    assert_allclose(left[1],right[1],atol=1e-13,rtol=1e-7)
++
++
++def test_rectangular_device_contact_cut_invariance():
++    # Two device states coupled to four lead modes. Moving the cut adds a
++    # complete ideal lead layer; it must not turn V into a same-size identity.
++    t=.24;eps=np.array([.1,.3,.6,.9]);rng=np.random.default_rng(9)
++    U=np.linalg.qr(rng.normal(size=(4,4)))[0];W=U[:2];lead=[(eps,W),(eps,W)]
++    device=[np.array([[.4,.03],[.03,.5]])]*3;hop=[-.15*np.eye(2)]*2;E=np.array([.23,.44,.67])+.003j
++    sl,sr=lead_matrices(E,t,lead);G,_=rgf(E,device,hop,sl,sr)
++    complete=[(eps,np.eye(4)),(eps,np.eye(4))];sl2,sr2=lead_matrices(E,t,complete)
++    ons=[np.diag(eps),*device,np.diag(eps)];hops=[-t*W.T,*hop,-t*W]
++    G2,_=rgf(E,ons,hops,sl2,sr2)
++    assert_allclose(np.array(G),np.array(G2[1:-1]),atol=2e-12,rtol=2e-12)
++
++
++def test_small_full_realspace_sp_contact_density_matches_projected_rgf():
++    from validation.reduced_realspace import full_operator
++    from modespace.hamiltonian import ModeBuilder,transverse_matrix
++    from config import KIN
++    from scipy.linalg import eigh
++    c=Config(geometry_profile='uniform',ls=2,ld=2,lg=2,spacer=1,width=4,thickness=2,sd_width=4,sd_thickness=2,dx=1,dy=1,dz=1,modes=8,sd_modes=8)
++    g=Grid.build(c);v=Valley('small',.19,.19,.916,2);ref=solve_reference(c,g,[v]);b=ModeBuilder(c,g,v);b.contacts=ref;b.block_only=True
++    phi=np.tile(ref.phi,len(g.x));phi[(g.xyz[:,0]>3)&(g.xyz[:,0]<5)]-=.03;s=b.build(phi);ons,hop,t,lead=device_blocks(s,c,(0,0))
++    H=full_operator(g,c,v,phi);m=g.counts[0];H[:m,:m]-=t*np.eye(m);H[-m:,-m:]-=t*np.eye(m)
++    ht=transverse_matrix(g.mask[0],KIN/(v.my*c.dy**2),KIN/(v.mz*c.dz**2)).toarray()-np.diag(ref.phi)+2*t*np.eye(m)
++    eps,U=eigh(ht);transform=s.realspace_transform()
++    for energy in (.25,.35,.5):
++        # Independent dense open real-space lesser density; analytic scalar
++        # surface roots reconstructed separately from the block implementation.
++        a=energy-eps;root=np.sqrt(a-2*t+0j)*np.sqrt(a+2*t+0j);sig=U@np.diag((a-root)/2)@U.T
++        S=np.zeros_like(H,dtype=complex);S[:m,:m]+=sig;S[-m:,-m:]+=sig;G=np.linalg.inv(energy*np.eye(len(H))-H-S)
++        gamma=np.zeros_like(S);gamma[:m,:m]=1j*(sig-sig.conj().T)*.7;gamma[-m:,-m:]+=1j*(sig-sig.conj().T)*.2;rho=G@gamma@G.conj().T/(2*np.pi)
++        sl,sr=lead_matrices(np.array([energy]),t,lead);_,AL=rgf([energy],ons,hop,sl,sr,False,0);_,AR=rgf([energy],ons,hop,sl,sr,False,1)
++        diagonal=np.concatenate([np.diag(s.bases[i][g.mask[i]]@(.7*L[0]@L[0].conj().T+.2*R[0]@R[0].conj().T)@s.bases[i][g.mask[i]].T).real/(2*np.pi) for i,(L,R) in enumerate(zip(AL,AR))])
++        assert_allclose(diagonal,np.diag(rho).real,atol=3e-12,rtol=3e-12)
+--- STEP10/tests/test_step11_contracts.py
++++ STEP11/tests/test_step11_contracts.py
+@@ -0,0 +1,30 @@
++import numpy as np
++import pytest
++from dataclasses import replace
++from validation.analytical import chain
++from transport.backends.negf import NEGFBackend
++from config import Config,VALLEYS
++from modespace.hamiltonian import Grid,ModeBuilder
++
++
++def test_uncomputed_negf_contact_density_is_none_and_not_zero_export():
++    c,s,e=chain(n=5);c=replace(c,ls=1,ld=1,lg=1,spacer=1,reservoir_left_nm=1,reservoir_right_nm=1)
++    class Builder:
++        def build(self,potential):return s
++    backend=NEGFBackend(c);r=backend.solve(np.zeros(5),0.,{'builders':[Builder()],'grid':s.grid,'fixed_mu':e+.1,'bias':0.,'detail':True})
++    assert r['density_l'] is None and r['density_r'] is None and r['density_unresolved'] is None
++    exported=backend.export_fields(r)
++    assert str(exported['source_drain_density_status'])=='UNSUPPORTED'
++    assert 'density_from_l_cm3' not in exported
++
++
++def test_mutated_config_cannot_reuse_stale_basis_cache():
++    c=Config();b=ModeBuilder(c,Grid.build(c),VALLEYS[0]);c.modes+=1
++    with pytest.raises(ValueError,match='Configuration changed'):b.build(np.zeros(len(b.g.xyz)))
++
++
++def test_scf_delegates_model_scope_assessment_to_backend():
++    from pathlib import Path
++    text=(Path(__file__).resolve().parents[1]/'solver.py').read_text()
++    assert 'backend.physical_validity(' in text
++    assert 'validity=evaluate(' not in text
+--- STEP10/tests/test_step11_density_completeness.py
++++ STEP11/tests/test_step11_density_completeness.py
+@@ -0,0 +1,58 @@
++"""Independent dense spectral sum and energy-dependent bound residue checks."""
++import numpy as np
++import pytest
++from scipy.integrate import quad_vec
++from scipy.linalg import eigh
++from scipy.optimize import brentq
++from scipy.special import expit
++from transport.negf_reference import surface_sigma,fermi_poles
++from transport.bound_states import block_inertia
++from transport.errors import TransportNumericalError
++
++
++def test_bound_pole_residue_spectral_sum_and_fermi_density():
++    n=7;t=.2;U=.12;mu=-.04;kT=.02585
++    H=np.diag(np.zeros(n))+np.diag(np.full(n-1,-t),1)+np.diag(np.full(n-1,-t),-1);H[n//2,n//2]-=U
++    def sigma(z):
++        a=np.zeros((n,n),complex);a[0,0]=a[-1,-1]=surface_sigma([z],[0],t)[0,0];return a
++    E=-np.sqrt(4*t*t+U*U);ev,vec=eigh(H+sigma(E).real);v=vec[:,np.argmin(abs(ev-E))]
++    delta=1e-6;derivative=(sigma(E+delta)-sigma(E-delta))/(2*delta)
++    residue=np.outer(v,v)/(v@(np.eye(n)-derivative.real)@v)
++    def integrand(k):
++        e=-2*t*np.cos(k);G=np.linalg.inv(e*np.eye(n)-H-sigma(e));gam=1j*(sigma(e)-sigma(e).conj().T)
++        spec=(G@gam@G.conj().T).real/(2*np.pi)*2*t*np.sin(k)
++        return np.stack([spec,spec*expit((mu-e)/kT)])
++    continuum,error=quad_vec(integrand,1e-9,np.pi-1e-9,epsabs=2e-10,epsrel=2e-10)
++    assert np.max(abs(continuum[0]+residue-np.eye(n)))<1e-7
++    poles,weights=fermi_poles(96);contour=.5*np.eye(n)
++    for p,w in zip(poles,weights):contour+=2*kT*w*np.linalg.inv((mu+1j*p*kT)*np.eye(n)-H-sigma(mu+1j*p*kT)).real
++    # Contour ALREADY contains the bound pole. Add only to continuum, never to
++    # a complete equilibrium contour (which would double count it).
++    expected=continuum[1]+residue*expit((mu-E)/kT)
++    assert np.max(abs(contour-expected))<1e-7
++    assert abs(np.trace(residue)-1)>1e-3 # lead tail: naive normalization fails
++
++
++def test_dark_state_inside_other_channel_continuum_is_not_excluded_by_low_edge_audit():
++    H=np.diag([0.,.1]);sig=np.diag([surface_sigma([.1],[0.],.3)[0,0],0.])
++    dark=np.array([0.,1.]);gamma=1j*(sig-sig.conj().T)
++    assert np.linalg.norm((H+sig-.1*np.eye(2))@dark)==0
++    assert np.linalg.norm(gamma@dark)==0
++    assert -.6<.1<.6 # embedded in the first lead channel continuum
++    # Its density is an independent occupation input at bias, not eta filling.
++    rho_cont=np.diag([.4,0]);rho_bound=np.outer(dark,dark)*.7
++    assert np.trace(rho_cont+rho_bound)==pytest.approx(1.1)
++
++
++def test_singular_ldl_pivot_is_numerical_failure_not_bound_evidence():
++    ons=[np.array([[0.]]),np.array([[0.]])];hop=[np.array([[.2]])]
++    with pytest.raises(TransportNumericalError,match='SINGULAR_LDL_PIVOT'):
++        block_inertia(ons,hop,np.zeros((1,1)),np.zeros((1,1)),0.)
++    for e in (-1e-9,1e-9):assert block_inertia(ons,hop,np.zeros((1,1)),np.zeros((1,1)),e)==1
++
++
++def test_degenerate_poles_and_threshold_are_counted_with_multiplicity():
++    t=.2;U=.12;E=-np.sqrt(4*t*t+U*U);ons=[-U*np.eye(2)]
++    for energy,expected in [(E-1e-7,0),(E+1e-7,2),(-2*t-1e-10,2)]:
++        sig=surface_sigma([energy],np.zeros(2),t)[0].real
++        assert block_inertia(ons,[],np.diag(sig),np.diag(sig),energy)==expected
+--- STEP10/tests/test_step11_resonance.py
++++ STEP11/tests/test_step11_resonance.py
+@@ -0,0 +1,25 @@
++import numpy as np
++from scipy.integrate import quad_vec
++from transport.resonances import resonance_breaks
++from transport.negf_reference import rgf,lead_matrices
++from transport.quadrature import integrate_vector
++
++
++def test_banded_guidance_finds_narrow_resonance_against_dense_reference():
++    t=.2;weak=.0007;ons=[np.array([[.4]]) for _ in range(3)];hop=[np.array([[-weak]])]*2;leads=[(np.array([.4]),np.eye(1))]*2
++    breaks,diag=resonance_breaks(ons,hop,t,leads,.2,.6,.02)
++    def production(E):
++        sl,sr=lead_matrices(E,t,leads);_,A=rgf(E,ons,hop,sl,sr,False,0)
++        return (abs(A[1][:,0,0])**2/(2*np.pi))[:,None]
++    integrated,error=integrate_vector(production,breaks,8,2e-5,1e-9,120000)
++    H=np.diag([.4]*3)+np.diag([-weak]*2,1)+np.diag([-weak]*2,-1)
++    def reference(E):
++        sl,sr=lead_matrices(np.array([E]),t,leads);sigma=np.diag([sl[0,0,0],0,sr[0,0,0]])
++        G=np.linalg.inv(E*np.eye(3)-H-sigma);gamma=-2*sl[0,0,0].imag
++        return abs(G[1,0])**2*gamma/(2*np.pi)
++    width=2*weak**2/t
++    points=np.unique(np.r_[.2,.6,.4,.4+width*np.array([-1000,-100,-10,-1,1,10,100,1000])])
++    exact=sum(quad_vec(reference,a,b,epsabs=1e-10,epsrel=1e-9)[0] for a,b in zip(points[:-1],points[1:]))
++    assert abs(integrated[0]-exact)<2e-6
++    assert abs(exact-.5)<2e-4
++    assert 'band' in diag['storage']
+--- STEP10/tests/test_step11_restart_boundary.py
++++ STEP11/tests/test_step11_restart_boundary.py
+@@ -0,0 +1,40 @@
++import json
++from pathlib import Path
++import numpy as np
++import pytest
++from config import Config
++from provenance import validate_restart,source_digest
++
++
++def test_restart_rejects_source_config_mesh_and_negative_charge(tmp_path):
++    c=Config();xyz=np.zeros((2,3));p=tmp_path/'restart.npz'
++    base=dict(config_json=json.dumps(c.to_dict()),source_sha256=source_digest(),node_xyz_nm=xyz,poisson_density_cm3=np.ones(2))
++    np.savez(p,**base);assert validate_restart(p,c,xyz)['poisson_density_cm3'].shape==(2,)
++    for key,val,match in [('source_sha256','wrong','source'),('config_json',json.dumps({**c.to_dict(),'flatband':.7}),'config'),('node_xyz_nm',xyz+1,'coordinate'),('poisson_density_cm3',np.array([-1,2]),'density')]:
++        np.savez(p,**{**base,key:val})
++        with pytest.raises(ValueError,match=match):validate_restart(p,c,xyz)
++
++
++def test_common_scf_has_only_neutral_transport_domain_exception():
++    root=Path(__file__).resolve().parents[1]
++    for path in ('solver.py','coupling/domain_newton.py'):
++        text=(root/path).read_text()
++        assert 'BoundOccupationError' not in text and 'AmbiguousOccupation' not in text
++        assert 'bound_diagnostics' not in text
++
++
++def test_native_boundary_profile_changes_data_not_stiffness(tmp_path):
++    pytest.importorskip('gmsh');pytest.importorskip('devsim')
++    from geometry.build import build_mesh
++    from poisson.device import Poisson
++    c=Config(ls=2,ld=2,lg=2,spacer=1,width=2,thickness=2,sd_width=4,sd_thickness=4,tox=.5,mesh_h=2,channel_h=1,junction_h=1,dx=1,dy=1,dz=1)
++    p=Poisson(c,build_mesh(c,tmp_path))
++    try:
++        K=p.K.copy();p.set_charge(p.donors);p.solve(.5,0)
++        profile=lambda xyz:.003*xyz[:,1]+.005*xyz[:,2]
++        p.set_boundary_profile(profile);p.solve(.5,.03)
++        assert (p.K-K).nnz==0
++        for x,bias in [(0,0),(c.length,.03)]:
++            m=np.isclose(p.allxyz[:,0],x,atol=1e-8)
++            np.testing.assert_allclose(p._get('Potential')[m],profile(p.allxyz[m])+bias,atol=1e-12)
++    finally:p.close()
+--- STEP10/tests/test_step11_streaming_memory.py
++++ STEP11/tests/test_step11_streaming_memory.py
+@@ -0,0 +1,15 @@
++import tracemalloc
++import numpy as np
++from transport.quadrature import integrate_vector
++
++
++def test_many_component_integral_does_not_store_all_energy_or_panel_values():
++    # The previous vector algorithm retained >100 MiB for this modest fixture.
++    # This is a measured resource regression, not a mock of the implementation.
++    tracemalloc.start()
++    try:
++        result,diag=integrate_vector(lambda e:np.repeat((e*e)[:,None],1024,axis=1),np.linspace(0,1,401),8,1e-7,1e-10,20000)
++        _,peak=tracemalloc.get_traced_memory()
++    finally:tracemalloc.stop()
++    np.testing.assert_allclose(result,1/3,rtol=1e-9)
++    assert peak<8*1024*1024
+--- STEP10/transport/api.py
++++ STEP11/transport/api.py
+@@ -25,6 +25,7 @@
+                   density_residual: float, mu_change: float) -> bool: ...
+     def finalize(self, result: TransportResult, bias: float, grid: Any,
+                  accepted: bool) -> dict[str, Any]: ...
++    def physical_validity(self,result: TransportResult,fields: Any) -> dict[str,Any]: ...
+     def export_fields(self, result: TransportResult) -> dict[str, Any]: ...
+     def result_metadata(self) -> dict[str, Any]: ...
+ 
+--- STEP10/transport/backend_hooks.py
++++ STEP11/transport/backend_hooks.py
+@@ -81,8 +81,14 @@
+ 
+ 
+ def open_export(result):
+-    out={'density_from_l_cm3':result['density_l'],'density_from_r_cm3':result['density_r'],
+-         'density_unresolved_origin_cm3':result['density_unresolved']}
++    out={'source_drain_density_status':np.array('UNSUPPORTED' if result['density_l'] is None else 'COMPUTED')}
++    if result['density_l'] is not None:
++        out.update(density_from_l_cm3=result['density_l'],density_from_r_cm3=result['density_r'])
+     for i,s in enumerate(result['systems']):
+         out[f'valley{i}_subbands_ev']=np.stack([a[:min(result['config'].modes,len(a))] for a in s.subbands])
+     return out
++
++
++def physical_validity(config,result,fields):
++    from analysis.validity import evaluate
++    return evaluate(config,result['systems'],result['mu'],result.mu_left_ev-result.mu_right_ev,fields)
+--- STEP10/transport/backends/mock_quantum.py
++++ STEP11/transport/backends/mock_quantum.py
+@@ -32,6 +32,7 @@
+     def finalize(self,result,bias,grid,accepted):return {'postprocess':[],'postprocess_error':None,
+         'current_conservation_abs_a':0.0,'current_conservation_relative':0.0,
+         'current_ok':True,'transport_status':'CALCULATED' if accepted else 'UNVALIDATED'}
++    def physical_validity(self,result,fields):return {'physical_status':'UNSUPPORTED'}
+     def export_fields(self,result):return {}
+     def result_metadata(self):return {'gf_inside_scf':False}
+     def validate(self,result):
+--- STEP10/transport/backends/ms.py
++++ STEP11/transport/backends/ms.py
+@@ -46,6 +46,7 @@
+     def converged(self,iteration,metrics,phi_residual,density_residual,mu_change):
+         return bool(iteration>=3 and phi_residual<self.config.phi_tol and density_residual<self.config.charge_tol and mu_change<self.config.phi_tol and metrics['classification_stable'] and metrics['current_relative_change']<self.config.current_tol)
+     def finalize(self,result,bias,grid,accepted): return backend_hooks.ms_finalize(self.config,result,bias,grid,accepted)
++    def physical_validity(self,result,fields):return backend_hooks.physical_validity(self.config,result,fields)
+     def export_fields(self,result): return backend_hooks.ms_export(result)
+     def result_metadata(self): return {'gf_inside_scf':False,
+         'density_current_distinction':'closed stationary MS density; independent open scattering current after SCF'}
+--- STEP10/transport/backends/negf.py
++++ STEP11/transport/backends/negf.py
+@@ -4,19 +4,35 @@
+ 
+ class NEGFBackend:
+     name='negf'
+-    def __init__(self,config): self.config=config
+-    def prepare(self,context): return None
+-    def calibrate_contacts(self,context): return backend_hooks.negf_calibrate(self.config,context)
++    def __init__(self,config):
++        from transport.contracts import RGFDensitySolver
++        self.config=config;self.density_solver=RGFDensitySolver()
++    def prepare(self,context):
++        if 'poisson' in context and getattr(self,'contact',None) is not None:
++            context['poisson'].set_boundary_profile(self.contact.profile)
++    def calibrate_contacts(self,context):
++        if self.config.contact_model=='legacy_flat':return backend_hooks.negf_calibrate(self.config,context)
++        from transport.contact_model import solve_reference
++        self.contact=solve_reference(self.config,context['grid'],[b.v for b in context['builders']])
++        for b in context['builders']:b.contacts=self.contact;b.block_only=True
++        return self.contact.mu-self.config.potential_reference_v,self.contact.diagnostics
+     def solve(self,potential,bias,context):
+         import numpy as np
+         from transport.negf import solve_negf,blocks_density
++        for builder in context['builders']:builder.block_only=True
+         d=initialize(dict(context,config=self.config,potential=potential)); c=d['c']; detail=d['detail']
++        if abs(bias)>1e-14:
++            from transport.bound_states import audit,BoundOccupationError
++            for system in d['systems']:
++                check=audit(system,c,d['mu'],bias)
++                if check['bias_dependent_bound_occupation_unresolved']:raise BoundOccupationError(check)
+         for s,g in zip(d['systems'],d['deg']):
+-            blocks,flux,diag,components=solve_negf(s,c,d['mu'],d['mu']-bias,bias,detail)
++            blocks,flux,diag,components=self.density_solver.solve(s,c,d['mu'],d['mu']-bias,bias,detail)
+             d['density']+=blocks_density(s,blocks,g); d['bonds']+=g*flux
+             d['tracking'].extend(np.concatenate([np.linalg.eigvalsh(x) for x in blocks]))
+             diag['valley']=s.valley.name;d['diagnostics'].append(diag)
+             if detail:d['matrices'].append(blocks)
++        d['left']=d['right']=d['unresolved']=None
+         return finish(d)
+     def convergence_metrics(self,previous,current): return backend_hooks.metrics(self,previous,current,self.config)
+     def initial_convergence_metrics(self): return {'occupation_max_change':float('inf'),'classification_stable':True,'current_relative_change':float('inf')}
+@@ -25,6 +41,7 @@
+     def converged(self,iteration,metrics,phi_residual,density_residual,mu_change):
+         return bool(iteration>=3 and phi_residual<self.config.phi_tol and density_residual<self.config.charge_tol and mu_change<self.config.phi_tol and metrics['classification_stable'] and metrics['current_relative_change']<self.config.current_tol)
+     def finalize(self,result,bias,grid,accepted): return backend_hooks.open_finalize(self.config,result,bias,grid,accepted)
++    def physical_validity(self,result,fields):return backend_hooks.physical_validity(self.config,result,fields)
+     def export_fields(self,result): return backend_hooks.open_export(result)
+-    def result_metadata(self): return {'gf_inside_scf':True}
++    def result_metadata(self): return {'gf_inside_scf':True,'source_drain_density':'UNSUPPORTED','contact_model':self.config.contact_model,'bound_occupation_policy':'equilibrium Fermi; biased isolated states with unresolved population rejected','training_ready':False}
+     def validate(self,result): return backend_hooks.validate_density(result)
+--- STEP10/transport/backends/spectral.py
++++ STEP11/transport/backends/spectral.py
+@@ -20,6 +20,8 @@
+             if detail:
+                 d['left']+=density_from_matrix(s,parts[0],g);d['right']+=density_from_matrix(s,parts[1],g);d['matrices'].append(rho)
+             diag['valley']=s.valley.name;d['diagnostics'].append(diag)
++        if not detail:d['left']=d['right']=None
++        d['unresolved']=None
+         return finish(d)
+     def convergence_metrics(self,previous,current): return backend_hooks.metrics(self,previous,current,self.config)
+     def initial_convergence_metrics(self): return {'occupation_max_change':float('inf'),'classification_stable':True,'current_relative_change':float('inf')}
+@@ -28,6 +30,7 @@
+     def converged(self,iteration,metrics,phi_residual,density_residual,mu_change):
+         return bool(iteration>=3 and phi_residual<self.config.phi_tol and density_residual<self.config.charge_tol and mu_change<self.config.phi_tol and metrics['classification_stable'] and metrics['current_relative_change']<self.config.current_tol)
+     def finalize(self,result,bias,grid,accepted): return backend_hooks.open_finalize(self.config,result,bias,grid,accepted)
++    def physical_validity(self,result,fields):return backend_hooks.physical_validity(self.config,result,fields)
+     def export_fields(self,result): return backend_hooks.open_export(result)
+     def result_metadata(self): return {'gf_inside_scf':False}
+     def validate(self,result): return backend_hooks.validate_density(result)
+--- STEP10/transport/bound_states.py
++++ STEP11/transport/bound_states.py
+@@ -11,10 +11,12 @@
+ from multispace.occupation import fermi
+ 
+ 
+-class BoundOccupationError(RuntimeError):
++from transport.errors import TransportDomainError,TransportNumericalError
++
++class BoundOccupationError(TransportDomainError):
+     def __init__(self,diagnostics):
+         self.bound_diagnostics=diagnostics
+-        super().__init__('BOUND_PREPARATION_REQUIRED: isolated poles have different reservoir Fermi occupations; no unique biased density')
++        super().__init__('BOUND_PREPARATION_REQUIRED: isolated poles have different reservoir Fermi occupations; no unique biased density',diagnostics)
+ 
+ 
+ def block_inertia(ons,hop,left,right,energy):
+@@ -28,7 +30,13 @@
+         d=h.copy()-energy*np.eye(len(h))
+         if i==0:d+=left
+         if i==len(ons)-1:d+=right
+-        if previous is not None:d-=hop[i-1].conj().T@np.linalg.solve(previous,hop[i-1])
++        if previous is not None:
++            scale=max(1.,np.linalg.norm(previous,2))
++            if np.min(abs(np.linalg.eigvalsh(previous)))<1e-13*scale:
++                # A singular block pivot is a numerical condition, not a pole
++                # classification. Caller must bracket it from either side.
++                raise TransportNumericalError('SINGULAR_LDL_PIVOT: move the audit energy off this pivot')
++            d-=hop[i-1].conj().T@np.linalg.solve(previous,hop[i-1])
+         d=(d+d.conj().T)/2
+         negative+=int(np.count_nonzero(np.linalg.eigvalsh(d)<0.))
+         previous=d
+@@ -43,7 +51,17 @@
+     def count(e):
+         sl,sr=lead_matrices(np.array([complex(e)]),tx,leads)
+         if max(abs(sl.imag).max(),abs(sr.imag).max())>1e-10:raise ValueError('Expected evanescent self-energy')
+-        return block_inertia(ons,hop,sl[0].real,sr[0].real,e)
++        try:return block_inertia(ons,hop,sl[0].real,sr[0].real,e)
++        except TransportNumericalError:
++            delta=1e-11*max(1.,abs(e));counts=[]
++            for shifted in (e-delta,e+delta):
++                ll,rr=lead_matrices(np.array([complex(shifted)]),tx,leads)
++                counts.append(block_inertia(ons,hop,ll[0].real,rr[0].real,shifted))
++            if counts[0]!=counts[1]:
++                # At a genuine pole use the lower-side count; enclosing root
++                # uncertainty is bounded by delta and retained in diagnostics.
++                return counts[0]
++            return counts[0]
+     number=count(upper);found=[]
+     minima=[]
+     for i,h in enumerate(ons):
+--- STEP10/transport/contact_model.py
++++ STEP11/transport/contact_model.py
+@@ -0,0 +1,100 @@
++"""Translationally invariant EMA wire with insulating transverse electrostatics.
++
++Cell-centred carriers use hard-wall confinement; electrostatics has zero normal
++field on the exposed S/D side walls and zero mean gauge. The same full-basis
++reference supplies neutrality, surface Green functions and Poisson end data.
++This is an ideal infinitely long isolated doped wire, not a metal spill-in model.
++"""
++from dataclasses import dataclass
++import time
++import numpy as np
++from scipy.linalg import eigh
++from scipy.optimize import brentq
++from scipy.sparse import lil_matrix, bmat, csc_matrix
++from scipy.sparse.linalg import spsolve
++from scipy.interpolate import RegularGridInterpolator
++from numpy.polynomial.legendre import leggauss
++from config import KIN,KB_EV,Q
++from modespace.hamiltonian import transverse_matrix
++from multispace.occupation import fermi
++
++@dataclass
++class LeadReference:
++    y: np.ndarray
++    z: np.ndarray
++    phi: np.ndarray
++    density: np.ndarray
++    mu: float
++    spectra: dict
++    diagnostics: dict
++
++    def profile(self,xyz):
++        yz=np.asarray(xyz)[:,1:3].copy()
++        yz[:,0]=np.clip(yz[:,0],self.y[0],self.y[-1]);yz[:,1]=np.clip(yz[:,1],self.z[0],self.z[-1])
++        return RegularGridInterpolator((self.y,self.z),self.phi.reshape(len(self.y),len(self.z)),bounds_error=False,fill_value=None)(yz)
++
++    def embedding(self,system,c,lead_phi):
++        e,u,tx=self.spectra[system.valley.name];out=[]
++        for i,shift in [(0,lead_phi[0]),(-1,lead_phi[1])]:
++            device_basis=system.bases[i][system.grid.mask[i]]
++            # V=-tx U_device^T U_lead; sigma=V g_surface V^dagger.
++            overlap=device_basis.conj().T@u
++            out.append((e+2*tx-shift,overlap))
++        return out
++
++
++def transverse_laplacian(ny,nz,dy,dz):
++    K=lil_matrix((ny*nz,ny*nz))
++    for j in range(ny):
++        for k in range(nz):
++            a=j*nz+k
++            for jj,kk,h in [(j+1,k,dy),(j-1,k,dy),(j,k+1,dz),(j,k-1,dz)]:
++                if 0<=jj<ny and 0<=kk<nz:
++                    K[a,a]+=1/h**2;K[a,jj*nz+kk]-=1/h**2
++    return K.tocsc()
++
++
++def solve_reference(c,grid,valleys):
++    start=time.perf_counter();ny,nz=len(grid.y),len(grid.z);size=ny*nz
++    mask=np.ones((ny,nz),bool);K=transverse_laplacian(ny,nz,c.dy,c.dz)
++    alpha=Q*1e-14/(8.8541878128e-14*c.eps_si)
++    x,w=leggauss(c.lead_k_nodes);k=(x+1)*np.pi/2;weights=w/2
++    transverse={v.name:transverse_matrix(mask,KIN/(v.my*c.dy**2),KIN/(v.mz*c.dz**2)).toarray() for v in valleys}
++    def density(phi):
++        spectra={};terms=[]
++        for v in valleys:
++            e,u=eigh(transverse[v.name]-np.diag(phi),check_finite=False)
++            tx=KIN/(v.mx*c.dx**2);spectra[v.name]=(e,u,tx)
++            terms.append((v,e[:,None]+2*tx*(1-np.cos(k)),u))
++        target=c.donor_sd*size*c.dx*c.dy*c.dz*1e-21
++        def populations(mu):return [(2*v.multiplicity)*(fermi(E,mu,c.temperature)@weights) for v,E,u in terms]
++        mu=brentq(lambda m:sum(np.sum(o) for o in populations(m))-target,-5,5,xtol=2e-14)
++        n=sum((abs(u)**2@o for (v,E,u),o in zip(terms,populations(mu))),np.zeros(size))/(c.dx*c.dy*c.dz)*1e21
++        return n,mu,spectra
++    phi=np.zeros(size);flat_n,flat_mu,_=density(phi);history=[]
++    for iteration in range(c.lead_max_iterations):
++        n,mu,spectra=density(phi);res=alpha*(c.donor_sd-n)-K@phi
++        # Approximate compressibility preconditioner; neutrality is solved exactly
++        # at every image. Gauge constraint removes the Neumann nullspace.
++        chi=alpha*n/(KB_EV*c.temperature)
++        M=K+csc_matrix(np.diag(chi));one=csc_matrix(np.ones((size,1)))
++        step=spsolve(bmat([[M,one],[one.T,None]],format='csc'),np.r_[res,0.])[:-1]
++        history.append({'iteration':iteration,'potential_correction_v':float(max(abs(step))),'poisson_residual_v_nm2':float(max(abs(res))),'mu_ev':float(mu)})
++        if max(abs(res))<c.lead_residual_tol:break
++        phi+=.7*step;phi-=phi.mean()
++    else:raise RuntimeError('NUMERICAL_FAILURE: transverse lead SP did not converge')
++    # Flat-profile inconsistency measured by a zero-mean Poisson inverse, not
++    # by altering the finite device length or fitting its current.
++    one=csc_matrix(np.ones((size,1)))
++    flat_defect=spsolve(bmat([[K,one],[one.T,None]],format='csc'),np.r_[alpha*(c.donor_sd-flat_n),0.])[:-1]
++    diag={'model':'transverse SP; full transverse EMA basis; Neumann exposed side walls; zero mean phi',
++        'converged':True,'iterations':iteration+1,'runtime_s':time.perf_counter()-start,
++        'mu_source_ev':float(mu-c.potential_reference_v),'zero_reference_mu_ev':float(mu),
++        'neutrality_relative_error':float(abs(n.mean()/c.donor_sd-1)),
++        'phi_range_v':float(np.ptp(phi)),'flat_poisson_correction_range_v':float(np.ptp(flat_defect)),
++        'flat_vs_sp_density_relative_l2':float(np.linalg.norm(n-flat_n)/np.linalg.norm(n)),
++        'flat_mu_ev':float(flat_mu),'flat_vs_sp_mu_change_ev':float(mu-flat_mu),
++        'full_transverse_dimension':size,'k_nodes':c.lead_k_nodes,'history':history,
++        'gauge':'phi -> phi+V, H -> H-V eV, mu -> mu-V eV; electron charge -q',
++        'boundary_assumption':'zero normal electric field on exposed transverse S/D side faces'}
++    return LeadReference(grid.y,grid.z,phi,n,float(mu),spectra,diag)
+--- STEP10/transport/contracts.py
++++ STEP11/transport/contracts.py
+@@ -0,0 +1,23 @@
++"""Extension contracts: density and contact kernels are independent of SCF."""
++from typing import Protocol,Any
++
++class ContactModel(Protocol):
++    def profile(self,xyz:Any)->Any: ...
++    def embedding(self,system:Any,config:Any,lead_phi:Any)->Any: ...
++
++class HamiltonianProvider(Protocol):
++    def build(self,potential:Any)->Any: ...
++
++class DensitySolver(Protocol):
++    def solve(self,system:Any,config:Any,mu_left:float,mu_right:float,bias:float,detail:bool=False)->Any: ...
++
++class RGFDensitySolver:
++    def solve(self,system,config,mu_left,mu_right,bias,detail=False):
++        from transport.negf_reference import solve_negf
++        return solve_negf(system,config,mu_left,mu_right,bias,detail)
++
++# Reserved data-only contracts; no DFT correction or learned predictor is run.
++FUTURE_INPUT_CONTRACT={'coordinates':'nm','potential':'V','hamiltonian':'eV',
++    'electron_density':'cm^-3','bias_gauge':'electron energy shifts by -potential',
++    'predictor_role':'initial guess only; raw physical residual required',
++    'kinetic_correction_role':'Hermitian block operators with declared basis/units/provenance'}
+--- STEP10/transport/errors.py
++++ STEP11/transport/errors.py
+@@ -0,0 +1,9 @@
++"""Common transport failure contract; SCF does not interpret backend diagnostics."""
++class TransportDomainError(RuntimeError):
++    status='MODEL_UNDERSPECIFIED'
++    def __init__(self,message,diagnostics=None):
++        self.diagnostics={} if diagnostics is None else diagnostics
++        super().__init__(message)
++
++class TransportNumericalError(RuntimeError):
++    status='NUMERICAL_FAILURE'
+--- STEP10/transport/ms_postprocess.py
++++ STEP11/transport/ms_postprocess.py
+@@ -25,7 +25,7 @@
+     if abs(vd)<1e-14:return {'current_a':0.,'bonds_a':np.zeros(size),'nodes':0,'conservation_relative':0.}
+     lo=min(mu,mu-vd)-c.fermi_tail*KB_EV*c.temperature
+     hi=max(mu,mu-vd)+c.fermi_tail*KB_EV*c.temperature
+-    breaks,info=resonance_breaks(ons,hop,tx,leads,lo,hi,c.energy_step)
++    breaks,info=resonance_breaks(ons,hop,tx,leads,lo,hi,c.energy_step,c.energy_order)
+     def integrand(e):
+         sl,sr=lead_matrices(e.astype(complex),tx,leads);_,a=rgf(e,ons,hop,sl,sr,False,0)
+         gamma=1j*(sr-sr.conj().transpose(0,2,1));v=a[-1]
+--- STEP10/transport/negf_reference.py
++++ STEP11/transport/negf_reference.py
+@@ -36,9 +36,11 @@
+ def device_blocks(system,c,lead_phi=None):
+     if lead_phi is None:lead_phi=(c.potential_reference_v,c.potential_reference_v)
+     tx=KIN/(system.valley.mx*c.dx**2)
+-    onsite=[system.H[system.sl(i),system.sl(i)].copy() for i in range(len(system.grid.x))]
++    onsite=[h.copy() for h in system.diagonal_blocks()]
+     # Replace the two closed half-cell x hard walls by continuation into leads.
+     onsite[0]-=tx*np.eye(len(onsite[0]));onsite[-1]-=tx*np.eye(len(onsite[-1]))
++    if system.contacts is not None:
++        return onsite,system.hop,tx,system.contacts.embedding(system,c,lead_phi)
+     from modespace.hamiltonian import transverse_matrix
+     lead=[]
+     for i,phi in [(0,lead_phi[0]),(-1,lead_phi[1])]:
+@@ -111,8 +113,13 @@
+         from transport.bound_states import BoundOccupationError
+         raise BoundOccupationError(bound_audit)
+     # Verify the rational Fermi approximation over a conservative H range.
+-    H=system.H;radius=np.sum(abs(H),axis=1)-abs(np.diag(H))
+-    extremum=max(abs(np.diag(H)-radius-min(mu_l,mu_r)).max(),abs(np.diag(H)+radius-min(mu_l,mu_r)).max())/kbt
++    extrema=[]
++    for i,h in enumerate(onsite):
++        radius=np.sum(abs(h),axis=1)-abs(np.diag(h))
++        if i:radius+=np.sum(abs(hop[i-1]),axis=0)
++        if i<len(hop):radius+=np.sum(abs(hop[i]),axis=1)
++        extrema.extend([max(abs(np.diag(h)-radius-min(mu_l,mu_r))),max(abs(np.diag(h)+radius-min(mu_l,mu_r)))])
++    extremum=max(extrema)/kbt
+     sample=np.linspace(-extremum,extremum,2001);used=c.fermi_poles
+     from scipy.special import expit
+     while True:
+@@ -122,7 +129,7 @@
+         if fermi_error<min(1e-10,c.energy_atol*.01):break
+         used*=2
+         if used>768:raise RuntimeError('Fermi contour could not resolve Hamiltonian energy range')
+-    base=min(mu_l,mu_r);z=base+1j*pole*kbt
++    base={'lower':min(mu_l,mu_r),'left':mu_l,'right':mu_r}[c.density_reference];z=base+1j*pole*kbt
+     # Each pole contributes linearly. Batching changes memory, not the contour,
+     # contact physics, number of poles, or integration tolerance.
+     equilibrium=[.5*np.eye(len(h)) for h in onsite]
+@@ -138,16 +145,16 @@
+     bonds=np.zeros(len(hop));current_integral=0.;points=0
+     # Error from tails is separately controlled by fermi_tail, not by eta.
+     if abs(mu_l-mu_r)>1e-14:
+-        origin=0 if mu_l>mu_r else 1
+-        low=base-c.fermi_tail*kbt;high=max(mu_l,mu_r)+c.fermi_tail*kbt
++        origin=0 if base==mu_r else 1
++        low=min(mu_l,mu_r)-c.fermi_tail*kbt;high=max(mu_l,mu_r)+c.fermi_tail*kbt
+         edges=np.concatenate([np.r_[e-2*tx,e+2*tx] for e,u in leads])
+         from transport.resonances import resonance_breaks
+-        breaks,pole_diagnostic=resonance_breaks(onsite,hop,tx,leads,low,high,c.energy_step)
++        breaks,pole_diagnostic=resonance_breaks(onsite,hop,tx,leads,low,high,c.energy_step,c.energy_order)
+         sizes=[len(h)**2 for h in onsite];offsets=np.r_[0,np.cumsum(sizes)]
+         def integrand(e):
+             sl,sr=lead_matrices(e.astype(complex),tx,leads)
+             _,amp=rgf(e,onsite,hop,sl,sr,False,origin)
+-            df=abs(fermi(e,mu_l,c.temperature)-fermi(e,mu_r,c.temperature))/(2*np.pi)
++            df=(fermi(e,mu_l if origin==0 else mu_r,c.temperature)-fermi(e,base,c.temperature))/(2*np.pi)
+             pieces=[(A@A.conj().transpose(0,2,1)).reshape(len(e),-1) for A in amp]
+             flux=[]
+             for i,h in enumerate(hop):
+--- STEP10/transport/quadrature.py
++++ STEP11/transport/quadrature.py
+@@ -1,46 +1,59 @@
+-"""Batched adaptive Gauss integration with a componentwise global error budget.
++"""Constant-memory global-error adaptive Gauss integration.
+ 
+-The q/2q difference is an estimator, not a rigorous missed-resonance bound.
+-Independent changes in initial panel width/order remain mandatory.
++The accepted componentwise error sum has the same global interpretation as the
++legacy adaptive method. Parent panels are recomputed on subdivision to avoid
++retaining panel x density-component arrays. No artificial broadening is added.
++The q/2q difference is an estimator; independent resonance checks remain required.
+ """
+ import numpy as np
+ from numpy.polynomial.legendre import leggauss
+ 
+ 
+ def integrate_vector(fun,breaks,order,rtol,atol,max_nodes=60000):
+-    lower=np.asarray(breaks[:-1]);upper=np.asarray(breaks[1:]);levels=np.zeros(len(lower),int)
+-    nodes=0
+-    def evaluate(a,b,q):
++    breaks=np.asarray(breaks);nodes=0;rules={}
++    if len(breaks)<2 or np.any(np.diff(breaks)<=0):raise ValueError('Strictly increasing energy breaks required')
++    minimum_nodes=4*order*(len(breaks)-1)
++    if minimum_nodes>max_nodes:raise RuntimeError(f'Energy integration guidance requires at least {minimum_nodes} GF nodes, budget is {max_nodes}; increase budget or validate a more economical guidance rule')
++    for q in (order,2*order):
++        x,w=leggauss(q);a=np.pi*(x+1)/4;rules[q]=(np.sin(a)**2,w*np.pi/4*np.sin(2*a))
++    def panel(a,b,q):
+         nonlocal nodes
+-        x,w=leggauss(q)
+-        # Each lead band edge is a panel boundary. A sin^2 coordinate
+-        # removes its integrable 1/sqrt(E-Eedge) DOS singularity.
+-        angle=np.pi*(x+1)/4
+-        e=(a[:,None]+(b-a)[:,None]*np.sin(angle)**2).ravel();nodes+=len(e)
+-        jac=(b-a)[:,None]*(np.pi/4)*np.sin(2*angle)
+-        if nodes>max_nodes: raise RuntimeError(f'Energy integration exhausted {max_nodes} GF nodes; increase integration budget, not SCF tolerance')
+-        pieces=[]
+-        for start in range(0,len(e),192): pieces.append(fun(e[start:start+192]))
+-        values=np.concatenate(pieces).reshape(len(a),q,-1)
+-        return np.einsum('pqk,q,pq->pk',values,w,jac,optimize=True)
+-    low=evaluate(lower,upper,order);high=evaluate(lower,upper,2*order)
+-    errors=abs(high-low)
+-    for iteration in range(45):
+-        total=high.sum(axis=0);target=np.asarray(atol)+rtol*abs(total)
+-        global_error=errors.sum(axis=0)
+-        if np.all(global_error<=target):
+-            return total,{'gf_nodes':nodes,'adaptive_panels':len(lower),'maximum_normalized_error_estimate':float(np.max(global_error/target))}
+-        unresolved=global_error>target
+-        bad=np.any(errors[:,unresolved]>target[unresolved][None,:]/(2*len(lower)),axis=1)
+-        if not bad.any(): bad[np.argmax(np.max(errors/target,axis=1))]=True
+-        if np.max(levels[bad])>=44:
+-            worst=int(np.argmax(global_error/target))
+-            raise RuntimeError(f'Unresolved energy integral after 44 subdivisions: component={worst}, error estimate={global_error[worst]:g}, target={target[worst]:g}')
+-        middle=(lower[bad]+upper[bad])/2
+-        if np.any((middle==lower[bad])|(middle==upper[bad])):
+-            raise RuntimeError('UNRESOLVED_RESONANCE: energy floating-point resolution exhausted; no artificial broadening')
+-        a=np.r_[lower[bad],middle];b=np.r_[middle,upper[bad]];depth=np.tile(levels[bad]+1,2)
+-        ll=evaluate(a,b,order);hh=evaluate(a,b,2*order)
+-        lower=np.r_[lower[~bad],a];upper=np.r_[upper[~bad],b];levels=np.r_[levels[~bad],depth]
+-        high=np.concatenate([high[~bad],hh]);errors=np.concatenate([errors[~bad],abs(hh-ll)])
+-    raise RuntimeError('Energy quadrature did not meet its independent integration error budget')
++        if nodes+q>max_nodes:raise RuntimeError(f'Energy integration exhausted {max_nodes} GF nodes; increase integration budget, not SCF tolerance')
++        x,w=rules[q];e=a+(b-a)*x;nodes+=q;value=None
++        for first in range(0,q,16):
++            last=min(first+16,q);part=np.einsum('e,ek->k',w[first:last]*(b-a),fun(e[first:last]),optimize=True)
++            value=part if value is None else value+part
++        return value
++    estimate=None
++    for a,b in zip(breaks[:-1],breaks[1:]):
++        value=panel(a,b,order);estimate=value if estimate is None else estimate+value
++    target=np.asarray(atol)+rtol*abs(estimate)
++    total=np.zeros_like(estimate);errors=np.zeros_like(abs(estimate));leaves=[]
++    def pair(a,b):
++        low=panel(a,b,order);high=panel(a,b,2*order);return high,abs(high-low)
++    for a,b in zip(breaks[:-1],breaks[1:]):
++        high,err=pair(a,b);total+=high;errors+=err;leaves.append((a,b,0,float(max(err/target))))
++    for iteration in range(90):
++        final_target=np.asarray(atol)+rtol*abs(total)
++        if np.all(errors<=final_target):
++            return total,{'gf_nodes':nodes,'adaptive_panels':len(leaves),'initial_panels':len(breaks)-1,
++                'maximum_normalized_error_estimate':float(max(errors/final_target)),
++                'algorithm':'constant-memory globally budgeted q/2q; recompute parent before replacement',
++                'energy_batch_limit':16,'stored_panel_density_vectors':0}
++        # A scalar conservative envelope identifies panels needing attention;
++        # acceptance always uses the actual componentwise GLOBAL error sum.
++        scale=float(max(target/final_target));target=final_target
++        leaves=[(a,b,d,score*scale) for a,b,d,score in leaves]
++        bad=[i for i,(a,b,d,score) in enumerate(leaves) if score>1/(2*len(leaves)) and d<44 and a<(a+b)/2<b]
++        if not bad:
++            candidates=[(x[3],i) for i,x in enumerate(leaves) if x[2]<44 and x[0]<(x[0]+x[1])/2<x[1]]
++            if not candidates:
++                raise RuntimeError(f'UNRESOLVED_RESONANCE: global estimated error ratio {max(errors/target):g}; energy resolution exhausted')
++            bad=[max(candidates)[1]]
++        marked=set(bad);updated=[x for i,x in enumerate(leaves) if i not in marked]
++        for i in bad:
++            a,b,depth,score=leaves[i];old,old_error=pair(a,b);total-=old;errors-=old_error;mid=(a+b)/2
++            for l,h in ((a,mid),(mid,b)):
++                value,error=pair(l,h);total+=value;errors+=error;updated.append((l,h,depth+1,float(max(error/target))))
++        leaves=updated
++    raise RuntimeError('Energy quadrature failed its global error budget')
+--- STEP10/transport/resonances.py
++++ STEP11/transport/resonances.py
+@@ -5,19 +5,24 @@
+ the independent adaptive budget must still pass. It is not a pole proof.
+ """
+ import numpy as np
+-from scipy.linalg import eigh
++from scipy.linalg import eig_banded
+ from transport.negf_reference import surface_sigma
+ 
+ 
+-def resonance_breaks(onsite,hop,tx,leads,low,high,panel):
++def resonance_breaks(onsite,hop,tx,leads,low,high,panel,order=8):
+     sizes=[len(h) for h in onsite];off=np.r_[0,np.cumsum(sizes)]
+-    H=np.zeros((off[-1],off[-1]))
+-    for i,h in enumerate(onsite):H[off[i]:off[i+1],off[i]:off[i+1]]=h
++    # Hermitian lower band storage: O(N * block width), no global dense H.
++    bandwidth=max([len(h)-1 for h in onsite]+[len(onsite[i])+len(onsite[i+1])-1 for i in range(len(hop))])
++    band=np.zeros((bandwidth+1,off[-1]))
++    for i,h in enumerate(onsite):
++        for j in range(len(h)):
++            for k in range(j,len(h)):band[k-j,off[i]+j]=h[k,j]
+     for i,t in enumerate(hop):
+-        H[off[i]:off[i+1],off[i+1]:off[i+2]]=t
+-        H[off[i+1]:off[i+2],off[i]:off[i+1]]=t.conj().T
+-    # Only levels relevant to the real bias integral need eigenvectors.
+-    e,u=eigh(H,subset_by_value=(low-2*tx,high+2*tx),check_finite=False)
++        for j in range(t.shape[0]):
++            for k in range(t.shape[1]):band[off[i+1]+k-off[i]-j,off[i]+j]=t[j,k]
++    # On the real axis ||Sigma|| <= tx for orthonormal rectangular overlaps.
++    # Hence a closed level farther than tx cannot shift into this window.
++    e,u=eig_banded(band,lower=True,select='v',select_range=(low-tx,high+tx),check_finite=False)
+     centres=e.copy();width=np.zeros(len(e));shift=np.zeros(len(e))
+     for idx,(spectrum,w) in enumerate(leads):
+         endpoint=u[:sizes[0]] if idx==0 else u[-sizes[-1]:]
+@@ -26,11 +31,13 @@
+         shift+=(abs(amplitudes.T)**2*sig.real).sum(axis=1)
+         width+=(abs(amplitudes.T)**2*(-2*sig.imag)).sum(axis=1)
+     centres+=shift
+-    peaks=(centres>low)&(centres<high)&(width<panel)
+-    additions=[e[(e>low)&(e<high)],centres[peaks]]
++    # Broad peaks are already sampled by the closed/shifted centres and GL
++    # panels. Reserve multiscale seeding for widths below the node scale.
++    peaks=(centres>low)&(centres<high)&(width<panel/max(2,order))
++    additions=[e[(e>low)&(e<high)],centres[(centres>low)&(centres<high)]]
+     # Include distance scales much larger than a first-order width: shifts are
+     # only estimates. Adaptive refinement, not this estimate, accepts the result.
+-    for scale in (.125,.5,2.,8.,32.,128.):
++    for scale in (.25,1.,4.,16.):
+         additions.extend([centres[peaks]-scale*width[peaks],centres[peaks]+scale*width[peaks]])
+     edges=np.concatenate([np.r_[a-2*tx,a+2*tx] for a,w in leads])
+     breaks=np.unique(np.r_[low,np.arange(low,high,panel),high,*additions,edges])
+@@ -39,7 +46,7 @@
+     distance=np.diff(breaks);keep=np.r_[True,distance>32*np.finfo(float).eps*np.maximum(1,abs(breaks[1:]))]
+     breaks=breaks[keep]
+     if breaks[-1]<high:breaks=np.r_[breaks,high]
+-    return breaks,{'seed_levels':len(e),'narrow_peak_seeds':int(peaks.sum()),
++    return breaks,{'storage':'Hermitian block-band; no dense Hamiltonian','band_storage_bytes':band.nbytes,'embedding_shift_bound_ev':tx,'multiscale_width_threshold_ev':panel/max(2,order),'seed_levels':len(e),'narrow_peak_seeds':int(peaks.sum()),
+         'minimum_seed_width_ev':float(width[peaks].min()) if peaks.any() else None,
+         'algorithm':'closed-H pole/embedding-shift and endpoint-width guided panels; adaptive independent acceptance',
+         'eta_added_ev':0.}
+--- STEP10/validation/buffer_assessment.py
++++ STEP11/validation/buffer_assessment.py
+@@ -0,0 +1,14 @@
++import json
++from pathlib import Path
++import numpy as np
++from scipy.spatial import cKDTree
++ROOT=Path(__file__).resolve().parents[1]
++a=np.load(ROOT/'results/raised_eq_final/states/vg0.400000_vd0.000000.npz');b=np.load(ROOT/'results/buffer_eq/states/vg0.400000_vd0.000000.npz')
++xyz=b['xyz_nm'].copy();xyz[:,0]-=6;distance,index=cKDTree(xyz).query(a['xyz_nm'])
++if max(distance)>1e-9:raise ValueError('Original target domain not preserved')
++x=a['xyz_nm'][:,0];na=a['electron_density_cm3'];nb=b['electron_density_cm3'][index]
++rows={}
++for name,mask in [('channel',(x>=15)&(x<=39)),('junction_extension',((x>=12)&(x<15))|((x>39)&(x<=42))),('original_reservoir',(x<12)|(x>42))]:
++ rows[name]={'density_l2':float(np.linalg.norm((na-nb)[mask])/np.linalg.norm(nb[mask])),'phi_max_difference_v':float(max(abs(a['phi_v'][mask]-b['phi_v'][index][mask])))}
++report={'category':'B: computational lead extension with original gate/channel/junction coordinates restored','outer_extension_each_side_nm':6,'original_target_domain_matched':True,'potential_reference_and_neutral_mu_unchanged':True,'bias_v':0.,'regions':rows,'status':'FAIL' if any(r['density_l2']>.01 for r in rows.values()) else 'INCONCLUSIVE','reason':'One extension at equilibrium does not establish a plateau or biased transport convergence; remeshing is a secondary numerical contributor.'}
++(ROOT/'results/assessment/buffer_comparison.json').write_text(json.dumps(report,indent=2));print(json.dumps(report,indent=2))
+--- STEP10/validation/build_release_report.py
++++ STEP11/validation/build_release_report.py
+@@ -0,0 +1,66 @@
++"""Derive the release verdict and human report from executed evidence."""
++import json,csv,sys
++from pathlib import Path
++ROOT=Path(__file__).resolve().parents[1]
++sys.path.insert(0,str(ROOT))
++from validation.release_certificate import certify
++
++def build():
++    out=ROOT/'results/assessment';out.mkdir(exist_ok=True)
++    def read(path,default=None):
++        p=ROOT/path;return json.loads(p.read_text()) if p.exists() else default
++    mode=read('results/assessment/fully_scf_mode_comparison.json',{})
++    grid=read('results/assessment/poisson_mesh_comparison.json',{})
++    buffer=read('results/assessment/buffer_comparison.json',{})
++    lead=read('results/lead_convergence/summary.json',{})
++    gates={}
++    def gate(name,status,evidence,reason):gates[name]={'status':status,'evidence':evidence,'reason':reason}
++    gate('lead_device_matching_and_cut','FAIL' if buffer.get('status')=='FAIL' else 'INCONCLUSIVE',['tests/test_step11_contacts.py','tests/test_step11_restart_boundary.py','results/assessment/device_lead_matching.json','results/assessment/buffer_comparison.json'],'Kernel rotated/rectangular cut invariance and native nodal boundary checks pass; finite-device electrostatic matching/refinement remains outside accuracy target.')
++    gate('bound_state_completeness','INCONCLUSIVE',['tests/test_step11_density_completeness.py','results/state_poles/summary.json','results/bound_localization/summary.json','results/embedded_candidates/summary.json'],'Correct residue/equilibrium sum rule tested on small references. Physical-vs-artificial classification of device poles and global embedded-dark/above-band coverage remain incomplete; no biased preparation invented.')
++    gate('mode_convergence',mode.get('status','NOT_RUN'),['results/assessment/fully_scf_mode_comparison.json','results/frozen_modes/summary.json','results/lead_convergence/summary.json'],'Fixed-phi/fixed-mu, lead-DOS and fully-SCF experiments separated; no representative biased convergence plateau established.')
++    status='FAIL' if lead.get('grid_mu_change_ev',0)>1e-4 or grid.get('status')=='FAIL' else 'NOT_RUN'
++    gate('grid_convergence',status,['results/lead_convergence/summary.json','results/assessment/poisson_mesh_comparison.json'],'Lead transverse grid 1 -> 0.5 nm and independent Poisson mesh refinement exceed required accuracy; coupled refined biased checks not certified.')
++    gate('electrostatic_buffer_convergence',buffer.get('status','NOT_RUN'),'results/assessment/buffer_comparison.json','Category B extends identical outer lead by 6 nm on both ends, with original target coordinates restored. One equilibrium comparison is not a biased plateau. Physical category C is not used as convergence evidence.')
++    gate('energy_convergence','NOT_RUN',['tests/test_step11_resonance.py','tests/test_step11_streaming_memory.py'],'Kernel narrow-resonance and memory regression pass. Device-level tight/loose observable convergence and Newton-noise budget have not been certified.')
++    clean=read('results/clean_install_result.json',{});resume=read('results/distribution_check/result.json',{})
++    gate('clean_install_and_resume','PASS' if clean.get('status')=='PASS' and resume.get('resume_exit_code')==0 else 'NOT_RUN',['results/clean_install.log','results/distribution_check/result.json','results/assessment/restart_comparison.json'],'Fresh venv installation and actual extracted-source checkpoint continuation required.')
++    gate('extracted_archive_execution','PASS' if resume.get('pytest_exit_code')==0 else 'NOT_RUN','results/distribution_check/result.json','All source tests run from a new extracted path with isolated installed dependencies.')
++    (out/'gates.json').write_text(json.dumps(gates,indent=2))
++    cert=certify(ROOT)
++    failures=[]
++    for p in sorted((ROOT/'results').glob('*/failures/*.json')):
++        row=json.loads(p.read_text())
++        if 'numerical_status' in row:failures.append({'file':str(p.relative_to(ROOT)),'vg_v':row['vg_v'],'vd_v':row['vd_v'],'status':row['numerical_status'],'id_a':None,'error':row.get('error')})
++    with (out/'failed_bias_attempts.csv').open('w',newline='') as f:
++        w=csv.DictWriter(f,fieldnames=['file','vg_v','vd_v','status','id_a','error']);w.writeheader();w.writerows(failures)
++    rows=[]
++    for p in sorted((ROOT/'results').glob('*/execution.json')):
++        d=json.loads(p.read_text());rows.append({'run':p.parent.name,'exit_code':d['exit_code'],'wall_seconds':d['runtime_s'],'peak_child_rss_mib':d.get('peak_child_rss_kib',0)/1024,'timeout_seconds':d['timeout_s']})
++    with (out/'performance.csv').open('w',newline='') as f:
++        w=csv.DictWriter(f,fieldnames=['run','exit_code','wall_seconds','peak_child_rss_mib','timeout_seconds']);w.writeheader();w.writerows(rows)
++    lines=['# STEP11 실행 결과','', '**판정: Release Candidate. RELEASE_READY=false, TEACHER_READY=false.**', '',
++        '실제 코드·Native 계산·회귀 검사를 수행했다. 원래 Raised S/D의 정량 I–V 출시 목표는 아직 충족하지 못했다. 기존 STEP01–10 소스는 보존했다.','',
++        '## 변경 사항','',
++        '- Full-basis transverse Schrödinger–Poisson 전극 기준해를 Poisson boundary와 self-energy에서 함께 사용한다.',
++        '- 실제 basis overlap을 사용한 Σ=V g V†, block Hamiltonian, banded resonance guidance, 전체 오차 기준 constant-memory 적분을 구현했다.',
++        '- Backend-neutral domain 예외, Backend 소유 model-validity hook, 미지원 관측량 None/UNSUPPORTED, 엄격한 재시작 검사를 구현했다.',
++        '- 환경/단일점/sweep/refine/export/certify CLI와 자동 필수 게이트 certificate를 추가했다.','',
++        '## 필수 게이트','', '| 항목 | 결과 |', '|---|---|']
++    lines.extend(f'| {name} | {item["status"]} |' for name,item in cert['mandatory'].items())
++    lines+=['','## 실제 수치와 한계','',
++        '- 최종 pytest: 92 passed, 0 skipped. Native Gmsh/DEVSIM 및 mock backend 포함. 독립 Quantum Reference 13개 사례 통과.',
++        '- 20×15 nm 전극의 constant-profile vs SP 밀도 차이 33.93%, μ 차이 8.094 meV. 상수 전위 근사는 채택하지 않았다.',
++        '- 전극 grid 1→0.5 nm의 μ 차이는 1.886 meV로 0.1 meV 기준에 미달한다.',
++        '- Fully-SCF 8/32→16/64: channel 밀도 0.485%, junction/extension 5.037%, reservoir 3.066% 차이. 평형 결과이며 수송 모드 수렴 인증이 아니다.',
++        '- Poisson mesh refinement: channel 1.127%, junction/extension 5.190%, reservoir 1.673% 차이.',
++        '- 동일 목표 영역을 유지한 6 nm buffer 확장: channel 0.436%, junction/extension 1.215%, original reservoir 2.207% 차이.','',
++        '`results/assessment/computed_bias_points.csv`에 실제 SCF 상태를, `failed_bias_attempts.csv`에 실패를 구분했다. CSV/PNG에는 보간·피팅·실패점 대체값이 없다. 원래 요청 sweep 125개 항목의 상태는 `requested_sweep_status.json`에 있다.','',
++        'Bound-state spectral residue와 continuum+bound 합은 독립 소형 문제에서 검증했다. 실제 소자에서 발견한 pole의 물리적 기원, 모든 dark state, 비평형 점유는 완결되지 않았다. Δx pole의 energy/localization/Gamma 및 mode/mesh/buffer 변화를 원자료로 제공하며 이를 임의로 점유하지 않았다.','',
++        '## 시간·메모리 및 재현','',
++        '최종 비평형 시도는 모델 판별 및 정밀화 관문 미통과 후 중단했다. Raised는 최소 1390.8초, Uniform은 최소 1243.2초 실행했으나 첫 비평형 SCF iteration이 완료되지 않았다. 각각 관측 peak RSS 330.6 / 255.3 MiB. 임의 TIMEOUT이나 물리적 해 부재로 표시하지 않았으며 `interrupted_attempts.csv`와 interruption 원기록에 구분했다.',
++        '측정 자원은 CPU quota 8 cores, RAM limit 8 GiB. 실제 시간과 peak RSS는 `performance.csv`, 단계별 비용은 profile 로그에 있다. 이는 이 환경의 측정값이며 다른 시스템의 walltime 보장이 아니다. 첫 고차 적분 시도의 메모리 결함과 보수적인 국소 오차 배분을 수정했다. 중단된 시도는 별도 interruption/resource_stop 기록으로 남겼으며 성공 또는 TIMEOUT 없는 수렴으로 꾸미지 않았다.','',
++        '환경 설치, 실행, checkpoint, 모드 refinement, 전체 목표 sweep 명령은 `RUN_INSTRUCTIONS.md`를 따른다. 모든 필수 항목이 PASS일 때만 certificate가 RELEASE_READY를 true로 계산한다. 현재 결과에서 SS/Ioff/Vth/gm 또는 1% 전류 정확도를 보장하지 않는다.','',
++        'AI/DFT/phonon/DD는 OUT_OF_SCOPE이다. GitHub push와 학교 HPC 제출을 하지 않았고 SIESTA/private 원본은 ZIP에 포함하지 않았다.']
++    (ROOT/'RESULTS.md').write_text('\n'.join(lines)+'\n')
++    return cert
++if __name__=='__main__':print(build()['classification'])
+--- STEP10/validation/embedded_candidates.py
++++ STEP11/validation/embedded_candidates.py
+@@ -0,0 +1,59 @@
++"""Sparse diagnostic of narrow/dark candidates in the actual biased Hamiltonian.
++
++Finite sampling of nonlinear real-part pole branches is not an exhaustive dark
++state audit. Width/rank diagnostics never create an occupation or certify one.
++"""
++import sys,json,shutil,time
++from pathlib import Path
++sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
++import numpy as np
++from scipy.sparse import bmat,csc_matrix
++from scipy.sparse.linalg import eigsh
++from config import Config
++from run import prepare
++from transport.negf_reference import device_blocks,lead_matrices
++ROOT=Path(__file__).resolve().parents[1]
++out=ROOT/'results/embedded_candidates';out.mkdir(exist_ok=True)
++if not (out/'mesh').exists():shutil.copytree(ROOT/'results/raised_global_bias/mesh',out/'mesh')
++c=Config(**json.loads((ROOT/'configs/release_raised.json').read_text()));p,g,mapping,builders,mu,backend=prepare(c,out)
++seed=np.load(ROOT/'results/current_seed8.npz');p.set_charge(seed['poisson_density_cm3']);phi_node=p.solve(.4,.01);phi=mapping.potential(phi_node)
++np.savez_compressed(out/'frozen_initial_trial.npz',node_xyz_nm=p.xyz['silicon'],node_phi_v=phi_node,xyz_nm=g.xyz,phi_v=phi,mu_l_ev=mu,vd_v=.01,numerically_converged=False)
++rows=[]
++try:
++ for builder in builders:
++    tic=time.time();s=builder.build(phi);ons,hop,t,lead=device_blocks(s,c,(0.,.01));n=len(ons);blocks=[[None]*n for _ in range(n)]
++    for i,h in enumerate(ons):blocks[i][i]=csc_matrix(h)
++    for i,h in enumerate(hop):blocks[i][i+1]=csc_matrix(h);blocks[i+1][i]=csc_matrix(h.T)
++    H=bmat(blocks,format='csc');N=H.shape[0];off=s.offsets
++    def embedded(energy):
++        sl,sr=lead_matrices(np.array([energy+0j]),t,lead)
++        rr,cc=np.indices(sl[0].shape);r2,c2=np.indices(sr[0].shape)
++        B=csc_matrix((np.r_[sl[0].real.ravel(),sr[0].real.ravel()],(np.r_[rr.ravel(),(N-len(sr[0])+r2).ravel()],np.r_[cc.ravel(),(N-len(sr[0])+c2).ravel()])),shape=(N,N))
++        return H+B,sl[0],sr[0]
++    seeds=[]
++    for energy in (mu-.02,mu+.03,mu+.07):
++        e,U=eigsh(H,k=6,sigma=energy,which='LM',tol=1e-10)
++        seeds.extend(zip(e,U.T))
++    found=[]
++    for energy,vector in seeds:
++        converged=False
++        try:
++            for iteration in range(15):
++                A,sl,sr=embedded(energy);e,U=eigsh(A,k=3,sigma=energy+1e-10,which='LM',tol=1e-10,v0=vector)
++                j=int(np.argmax(abs(U.T@vector)));new=float(e[j]);vector=U[:,j]
++                if abs(new-energy)<1e-9:energy=new;converged=True;break
++                energy=new
++            if any(abs(energy+x['energy_ev']*-1)<1e-7 for x in found):continue
++            A,sl,sr=embedded(energy);vl=vector[s.sl(0)];vr=vector[s.sl(n-1)];gl=1j*(sl-sl.conj().T);gr=1j*(sr-sr.conj().T)
++            width=float(np.real(vl.conj()@gl@vl+vr.conj()@gr@vr));residual=float(np.linalg.norm(A@vector-energy*vector))
++            probability=np.array([np.sum(abs(vector[s.sl(i)])**2) for i in range(n)])
++            row={'energy_ev':energy,'gamma_expectation_ev':width,'gamma_vector_norm_ev':float(np.hypot(np.linalg.norm(gl@vl),np.linalg.norm(gr@vr))),
++                'real_part_pole_residual_ev':residual,'root_iteration_converged':converged,
++                'below_global_lead_edge':bool(energy<min(a.min()-2*t for a,w in lead)),
++                'source_probability':float(probability[g.x<c.ls].sum()),'channel_extension_probability':float(probability[(g.x>=c.ls)&(g.x<=c.drain_start)].sum()),'drain_probability':float(probability[g.x>c.drain_start].sum()),
++                'classification':'narrow_or_dark_candidate' if converged and width<1e-10 else 'finite_width_or_unresolved_candidate',
++                'occupation':'NOT_ASSIGNED','device_physical_origin':'INCONCLUSIVE'}
++            found.append(row)
++        except Exception as exc:found.append({'energy_ev':float(energy),'numerical_failure':repr(exc),'occupation':'NOT_ASSIGNED'})
++    rows.append({'valley':s.valley.name,'seconds':time.time()-tic,'candidates':found});(out/'summary.json').write_text(json.dumps({'scope':'sampled real-part pole candidates of actual initial biased trial; NOT an SCF result or exhaustive exclusion','rows':rows},indent=2));print(s.valley.name,len(found),'candidates',time.time()-tic,flush=True)
++finally:p.close()
+--- STEP10/validation/execute.py
++++ STEP11/validation/execute.py
+@@ -1,11 +1,11 @@
+ """Record commands, environment and logs for reproducible validation runs."""
+-import argparse,json,os,subprocess,sys,time,hashlib,zipfile
++import argparse,json,os,subprocess,sys,time,hashlib,zipfile,resource
+ from pathlib import Path
+ 
+ def main():
+     parser=argparse.ArgumentParser()
+     parser.add_argument('--log-dir',required=True)
+-    parser.add_argument('--timeout',type=float,default=300.)
++    parser.add_argument('--timeout',type=float,default=None)
+     parser.add_argument('command',nargs=argparse.REMAINDER)
+     args=parser.parse_args();root=Path(__file__).resolve().parents[1]
+     out=(root/args.log_dir).resolve();out.mkdir(parents=True,exist_ok=True)
+@@ -36,7 +36,7 @@
+         except subprocess.TimeoutExpired:
+             code=124;log.write('\nVALIDATION_TIMEOUT: run stopped; no convergence claimed.\n')
+     info={'command':cmd,'cwd':str(root),'python':sys.version,'exit_code':code,
+-          'runtime_s':time.time()-start,'native_library_dir':str(native) if native.exists() else None,
++          'runtime_s':time.time()-start,'peak_child_rss_kib':resource.getrusage(resource.RUSAGE_CHILDREN).ru_maxrss,'native_library_dir':str(native) if native.exists() else None,
+           'threads':1,'timeout_s':args.timeout,'source_unchanged_during_run':before==manifest()}
+     (out/'execution.json').write_text(json.dumps(info,indent=2)+'\n')
+     print(json.dumps(info),flush=True)
+--- STEP10/validation/mode_selection.py
++++ STEP11/validation/mode_selection.py
+@@ -0,0 +1,32 @@
++"""Conservative starting basis plus mandatory observable-driven refinement.
++
++An energy/occupation criterion is a proposal, never a convergence certificate.
++Degenerate multiplets are retained. Junction evanescent guard is explicit.
++"""
++import json
++from pathlib import Path
++import numpy as np
++from scipy.linalg import eigh
++from config import Config,KIN,KB_EV
++from modespace.hamiltonian import Grid,transverse_matrix
++from device.definition import DeviceDefinition
++from transport.contact_model import solve_reference
++
++def select(config,out,evanescent_guard_ev=.1):
++    c=Config(**json.loads(Path(config).read_text()));g=Grid.build(c);valleys=DeviceDefinition(transport_axis=c.transport_axis).frame.valleys();r=solve_reference(c,g,valleys)
++    report={'scope':'starting proposal only; run refine at off/threshold/on and low/high drain','contact_full_basis':len(r.phi),'evanescent_guard_ev':evanescent_guard_ev,'valleys':[],'numerical_convergence_verified':False};nm=1;ns=1
++    for v in valleys:
++        sd=r.spectra[v.name][0];i=np.flatnonzero((g.x>=c.gate_start)&(g.x<=c.gate_end))[0]
++        ch=eigh(transverse_matrix(g.mask[i],KIN/(v.my*c.dy**2),KIN/(v.mz*c.dz**2)).toarray(),eigvals_only=True)
++        # Scan configured gate window: a positive gate can lower channel bands.
++        channel_ceiling=r.mu+1.2+12*KB_EV*c.temperature+evanescent_guard_ev
++        contact_ceiling=r.mu+12*KB_EV*c.temperature+evanescent_guard_ev
++        def count(e,cut):
++            n=max(1,int(np.sum(e<=cut)))
++            while n<len(e) and abs(e[n]-e[n-1])<1e-6:n+=1
++            return min(n,len(e))
++        a,b=count(ch,channel_ceiling),count(sd,contact_ceiling);nm=max(nm,a);ns=max(ns,b)
++        report['valleys'].append({'valley':v.name,'channel_modes':a,'contact_modes':b,'contact_cutoff_ev':contact_ceiling,'channel_cutoff_ev':channel_ceiling})
++    values=c.to_dict();values.update(modes=nm,sd_modes=ns);Path(out).write_text(json.dumps(values,indent=2))
++    report.update(requested_modes=nm,requested_sd_modes=ns,warning='A full gate window can require full channel basis; nested enrichment adds further contact states. Resource and fully SCF convergence checks remain mandatory.')
++    Path(out).with_suffix('.selection.json').write_text(json.dumps(report,indent=2));return report
+--- STEP10/validation/package_release.py
++++ STEP11/validation/package_release.py
+@@ -0,0 +1,55 @@
++"""Create a complete, hash-manifested source/results archive without caches."""
++import argparse
++import hashlib
++import json
++from pathlib import Path
++import zipfile
++
++ROOT = Path(__file__).resolve().parents[1]
++EXCLUDED = {"__pycache__", ".pytest_cache", ".git", ".venv", "node_modules"}
++
++
++def package(destination):
++    destination = Path(destination).resolve()
++    if destination.is_relative_to(ROOT):
++        raise ValueError("Archive destination must be outside the source directory")
++    files = [p for p in sorted(ROOT.rglob("*")) if p.is_file()
++             and not EXCLUDED.intersection(p.relative_to(ROOT).parts)
++             and p.name not in {"PACKAGE_MANIFEST.json", "PACKAGING.json"}]
++    if any(p.is_symlink() for p in files):
++        raise ValueError("Do not bundle unreviewed symlink targets")
++    prohibited = [str(p.relative_to(ROOT)) for p in files
++                  if p.suffix.lower() in {".f", ".f90", ".f95", ".pem", ".key"}
++                  or p.name.lower().endswith((".tar", ".tar.gz", ".tgz"))]
++    if prohibited:
++        raise ValueError(f"Review excluded private/source artifacts: {prohibited}")
++    metadata = {"directory": ROOT.name, "classification": "RELEASE_CANDIDATE",
++                "excluded_directory_names": sorted(EXCLUDED),
++                "native_libraries_bundled": False,
++                "siesta_originals_bundled": False,
++                "source_results_logs_checkpoints_included": True}
++    (ROOT / "PACKAGING.json").write_text(json.dumps(metadata, indent=2) + "\n")
++    files.append(ROOT / "PACKAGING.json")
++    manifest = {p.relative_to(ROOT).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
++                for p in sorted(files)}
++    (ROOT / "PACKAGE_MANIFEST.json").write_text(json.dumps(manifest, indent=2) + "\n")
++    files.append(ROOT / "PACKAGE_MANIFEST.json")
++    with zipfile.ZipFile(destination, "w", zipfile.ZIP_DEFLATED, compresslevel=6) as z:
++        for p in sorted(files):
++            z.write(p, Path(ROOT.name) / p.relative_to(ROOT))
++    with zipfile.ZipFile(destination) as z:
++        if z.testzip() is not None:
++            raise ValueError("Archive CRC verification failed")
++        for name, sha in manifest.items():
++            if hashlib.sha256(z.read(ROOT.name + "/" + name)).hexdigest() != sha:
++                raise ValueError("Archive manifest mismatch: " + name)
++    return {"archive": str(destination), "files": len(files),
++            "bytes": destination.stat().st_size,
++            "sha256": hashlib.sha256(destination.read_bytes()).hexdigest()}
++
++
++if __name__ == "__main__":
++    parser = argparse.ArgumentParser()
++    parser.add_argument("destination")
++    args = parser.parse_args()
++    print(json.dumps(package(args.destination), indent=2))
+--- STEP10/validation/profile_device.py
++++ STEP11/validation/profile_device.py
+@@ -0,0 +1,40 @@
++"""Transparent timing wrapper around the real driver; no numerical substitutions."""
++import sys,time,json,functools
++from pathlib import Path
++ROOT=Path(__file__).resolve().parents[1]
++sys.path.insert(0,str(ROOT))
++out=Path(sys.argv[1]);out.mkdir(parents=True,exist_ok=True);args=sys.argv[2:]
++if args and args[0]=='--':args=args[1:]
++counts={};last=time.monotonic();start=last
++
++def wrap(module,name,label,announce=False):
++    original=getattr(module,name)
++    @functools.wraps(original)
++    def measured(*a,**kw):
++        global last
++        tic=time.perf_counter()
++        if announce:print('PROFILE START',label,flush=True)
++        try:return original(*a,**kw)
++        finally:
++            row=counts.setdefault(label,{'calls':0,'inclusive_seconds':0.,'energy_nodes':0});row['calls']+=1;row['inclusive_seconds']+=time.perf_counter()-tic
++            if name in ('rgf','lead_matrices'):row['energy_nodes']+=len(a[0])
++            if announce or time.monotonic()-last>30:
++                (out/'stage_progress.json').write_text(json.dumps({'elapsed_s':time.monotonic()-start,'stages':counts},indent=2));last=time.monotonic()
++                print('PROFILE',label,json.dumps(row),flush=True)
++    setattr(module,name,measured)
++
++import transport.negf_reference as nr
++import transport.resonances as rs
++import transport.quadrature as quad
++import transport.bound_states as bs
++import transport.contact_model as cm
++from modespace.hamiltonian import ModeBuilder
++from modespace.junction_basis import JunctionCompatibleBuilder
++from poisson.device import Poisson
++from coupling.mapping import Mapping
++for module,name,label,announce in [(nr,'rgf','RGF contour/injectivity',False),(nr,'lead_matrices','contact self-energy',False),(rs,'resonance_breaks','banded resonance search',True),(quad,'integrate_vector','real-energy integration',True),(bs,'audit','bound audit',False),(cm,'solve_reference','lead transverse SP',True),(ModeBuilder,'build','transverse basis/base blocks',False),(JunctionCompatibleBuilder,'build','nested blocks',False),(Poisson,'solve','Poisson solve',False)]:wrap(module,name,label,announce)
++import run
++sys.argv=['run.py',*args]
++try:code=run.main()
++finally:(out/'stage_totals.json').write_text(json.dumps({'elapsed_s':time.monotonic()-start,'stages':counts,'timings_are_inclusive_do_not_sum_nested_categories':True},indent=2))
++raise SystemExit(code)
+--- STEP10/validation/release_certificate.py
++++ STEP11/validation/release_certificate.py
+@@ -0,0 +1,66 @@
++"""Fail-closed release certificate. Missing evidence never becomes a pass."""
++import json
++from pathlib import Path
++import xml.etree.ElementTree as ET
++
++ALLOWED={'PASS','FAIL','NOT_RUN','INCONCLUSIVE','OUT_OF_SCOPE'}
++
++def all_required_pass(items):
++    return bool(items) and all(x.get('status')=='PASS' for x in items.values() if x.get('required',True))
++
++def certify(root):
++    root=Path(root);results=root/'results';items={}
++    from provenance import source_digest
++    current_source=source_digest()
++    def put(name,status,evidence,reason=''):
++        if status not in ALLOWED:raise ValueError(status)
++        items[name]={'status':status,'required':True,'evidence':evidence,'reason':reason}
++    def execution(name):
++        p=results/name/'execution.json'
++        return json.loads(p.read_text()) if p.exists() else {}
++    xml=results/'pytest_final/junit.xml'
++    if xml.exists():
++        tree=ET.parse(xml);cases=tree.findall('.//testcase');bad=tree.findall('.//failure')+tree.findall('.//error');skips=tree.findall('.//skipped')
++        native=[x for x in cases if any(k in x.attrib.get('classname','') for k in ('devsim','triple_junction','shared_poisson','restart_boundary'))]
++        put('native_integration','PASS' if native and not bad and not skips else 'FAIL',str(xml.relative_to(root)),f'{len(cases)} tests; {len(bad)} failures/errors; {len(skips)} skipped')
++        mock=[x for x in cases if 'mock_quantum' in x.attrib.get('name','')]
++        put('backend_replacement','PASS' if len(mock)>=2 and not bad else 'FAIL',str(xml.relative_to(root)))
++    else:
++        put('native_integration','NOT_RUN','results/pytest_final/junit.xml');put('backend_replacement','NOT_RUN','results/pytest_final/junit.xml')
++    independent=results/'independent_final/summary.json'
++    if independent.exists():
++        d=json.loads(independent.read_text());ok=d.get('pass',d.get('all_pass',False));put('independent_quantum_reference','PASS' if ok else 'FAIL',str(independent.relative_to(root)))
++    else:put('independent_quantum_reference','NOT_RUN','results/independent_final/summary.json')
++    statefiles=list(results.glob('*/states/*.json'));states=[]
++    for f in statefiles:
++        row=json.loads(f.read_text());npz=f.with_suffix('.npz')
++        if not npz.exists():continue
++        import numpy as np
++        with np.load(npz,allow_pickle=False) as z:config=json.loads(str(z['config_json']))
++        states.append((row,config,str(f.relative_to(root))))
++    target={'geometry_profile':'raised','backend':'negf','contact_model':'transverse_sp','ls':12.,'ld':12.,'lg':24.,'spacer':3.,'width':12.,'thickness':5.,'sd_width':20.,'sd_thickness':15.,'tox':2.,'donor_sd':1e19,'donor_channel':0.,'temperature':300.,'flatband':.5}
++    raised=[(r,c,f) for r,c,f in states if all(c.get(k)==v for k,v in target.items()) and r.get('numerical_status')=='SCF_CONVERGED' and r.get('source_sha256')==current_source]
++    nonzero=[f for r,c,f in raised if r['vd_v']>0]
++    attempted=list(results.glob('raised*/failures/*.json'))
++    put('raised_nonequilibrium_scf','PASS' if nonzero else 'FAIL' if attempted else 'NOT_RUN',nonzero or [str(f.relative_to(root)) for f in attempted], 'Numerical SCF alone is not a physical or training certificate.')
++    have={(round(r['vg_v'],6),round(r['vd_v'],6)) for r,c,f in raised}
++    required={(round(i*.05,6),vd) for vd in (.05,.1) for i in range(25)}|{(vg,round(i*.05,6)) for vg in (.4,.8,1.2) for i in range(25)}
++    missing=sorted(required-have)
++    put('gate_drain_iv','PASS' if not missing else 'NOT_RUN','results/assessment/requested_sweep_status.json',f'{len(required-have)} of {len(required)} unique requested bias points missing; no interpolation')
++    assessment=results/'assessment/gates.json';gates=json.loads(assessment.read_text()) if assessment.exists() else {}
++    for name in ('lead_device_matching_and_cut','bound_state_completeness','mode_convergence','grid_convergence','electrostatic_buffer_convergence','energy_convergence','clean_install_and_resume','extracted_archive_execution'):
++        item=gates.get(name,{'status':'NOT_RUN','evidence':None,'reason':'No completed evidence'})
++        put(name,item['status'],item.get('evidence'),item.get('reason',''))
++    ready=all_required_pass(items)
++    cert={'product':'DEVSIM-QT','version':'1.0' if ready else '1.0-rc1','classification':'RELEASE' if ready else 'RELEASE_CANDIDATE',
++        'RELEASE_READY':ready,'TEACHER_READY':ready,'source_sha256':current_source,'mandatory':items,
++        'scope':'six-valley spin-degenerate silicon EMA ballistic GAA, 300 K; no scattering or learned correction',
++        'status_values':sorted(ALLOWED),'numerically_converged_states':[{'path':f,'vg_v':r['vg_v'],'vd_v':r['vd_v'],'geometry':c.get('geometry_profile','raised'),'teacher_ready':False,'source_matches_current':r.get('source_sha256')==current_source} for r,c,f in states if r['numerical_status']=='SCF_CONVERGED'],
++        'missing_requested_raised_biases':missing,
++        'out_of_scope':{'AI_training':'OUT_OF_SCOPE','DFT_correction':'OUT_OF_SCOPE','phonon_scattering':'OUT_OF_SCOPE','drift_diffusion':'OUT_OF_SCOPE'},
++        'policy':'Every mandatory item must be PASS. A toy-kernel pass never substitutes for device convergence. All exported states are non-teacher data unless separately certified within validated scope.'}
++    (root/'RELEASE_CERTIFICATE.json').write_text(json.dumps(cert,indent=2,allow_nan=False));return cert
++
++if __name__=='__main__':
++    import sys
++    c=certify(Path(sys.argv[1]) if len(sys.argv)>1 else Path(__file__).resolve().parents[1]);print(c['classification'],c['RELEASE_READY'])
+--- STEP10/validation/release_cli.py
++++ STEP11/validation/release_cli.py
+@@ -0,0 +1,119 @@
++"""Release CLI: environment, existing device API, refinement, export and certificate."""
++import argparse,os,sys,json,subprocess,importlib.metadata,time
++from pathlib import Path
++ROOT=Path(__file__).resolve().parents[1]
++if str(ROOT) not in sys.path:sys.path.insert(0,str(ROOT))
++
++def bootstrap():
++    native=Path(os.environ.get('QT_NATIVE_LIB_DIR',str(ROOT.parent/'native_libs/root/usr/lib/x86_64-linux-gnu')))
++    if native.exists() and not os.environ.get('QT_NATIVE_BOOTSTRAPPED'):
++        env=os.environ.copy();env.update(QT_NATIVE_BOOTSTRAPPED='1',LD_LIBRARY_PATH=str(native)+':'+str(native/'openblas-pthread')+':'+env.get('LD_LIBRARY_PATH',''))
++        env.setdefault('DEVSIM_MATH_LIBS','libopenblas.so.0')
++        env.setdefault('OPENBLAS_NUM_THREADS','1');env.setdefault('OMP_NUM_THREADS','1');env['MPLBACKEND']='Agg'
++        os.execvpe(sys.executable,[sys.executable,*sys.argv],env)
++
++def doctor(out=None):
++    info={'python':sys.version,'cpu_affinity':len(os.sched_getaffinity(0)),'packages':{},'native':{}}
++    for name in ('numpy','scipy','pytest','gmsh','devsim','matplotlib'):
++        try:info['packages'][name]=importlib.metadata.version(name)
++        except Exception as exc:info['packages'][name]=repr(exc)
++    for name in ('gmsh','devsim'):
++        try:__import__(name);info['native'][name]='PASS'
++        except Exception as exc:info['native'][name]={'status':'FAIL','reason':repr(exc)}
++    for name in ('memory.max','cpu.max'):
++        p=Path('/sys/fs/cgroup')/name;info[name]=p.read_text().strip() if p.exists() else None
++    print(json.dumps(info,indent=2))
++    if out:Path(out).write_text(json.dumps(info,indent=2))
++    return 0 if all(v=='PASS' for v in info['native'].values()) else 2
++
++def compare(paths):
++    import numpy as np
++    from config import Config
++    from scipy.spatial import cKDTree
++    pairs=[]
++    for old,new in zip(paths[:-1],paths[1:]):
++        a=np.load(old);b=np.load(new);ca=Config(**json.loads(str(a['config_json'])));cb=Config(**json.loads(str(b['config_json'])))
++        # This comparison intentionally refuses physical S/D geometry changes.
++        shape=('ls','lg','ld','spacer','width','thickness','sd_width','sd_thickness','tox','geometry_profile')
++        if any(getattr(ca,k)!=getattr(cb,k) for k in shape):raise ValueError('Physical geometry changed: category C; not numerical buffer convergence')
++        xyz=b['xyz_nm'];dist,ind=cKDTree(a['xyz_nm']).query(xyz)
++        na=a['electron_density_cm3'][ind];nb=b['electron_density_cm3'];x=xyz[:,0]
++        regions={'channel':(x>=cb.gate_start)&(x<=cb.gate_end),'junction_extension':((x>=cb.ls)&(x<cb.gate_start))|((x>cb.gate_end)&(x<=cb.drain_start)), 'reservoir':(x<cb.ls)|(x>cb.drain_start)}
++        row={'old':str(old),'new':str(new),'density_transfer':'nearest cell value; spatial discretization diagnostic',
++             'max_sample_distance_nm':float(max(dist)),'mu_difference_ev':abs(float(a['mu_l_ev']-b['mu_l_ev'])),
++             'current_absolute_difference_a':abs(float(a['id_a']-b['id_a'])),
++             'current_relative_difference':abs(float(a['id_a']-b['id_a']))/max(abs(float(b['id_a'])),1e-15),
++             'barrier_phi_max_difference_v':float(max(abs(a['phi_v'][ind]-b['phi_v'])))}
++        for name,mask in regions.items():row[name+'_density_l2']=float(np.linalg.norm((na-nb)[mask])/max(np.linalg.norm(nb[mask]),1e-30))
++        row['density_target_pass']=all(row[k+'_density_l2']<.01 for k in regions)
++        row['lead_mu_target_pass']=row['mu_difference_ev']<1e-4
++        row['transport_target_pass']=row['current_relative_difference']<.01 and max(abs(float(a['vd_v'])),abs(float(b['vd_v'])))>0
++        row['status']='PASS' if all(row[k] for k in ('density_target_pass','lead_mu_target_pass','transport_target_pass')) else 'FAIL'
++        pairs.append(row)
++    return {'comparisons':pairs,'largest_basis_is_not_an_exact_reference':True,'status':'PASS' if pairs and all(p['status']=='PASS' for p in pairs) else 'INCONCLUSIVE' if not pairs else 'FAIL'}
++
++def refine(args):
++    from config import Config
++    out=Path(args.out);out.mkdir(parents=True,exist_ok=True);base=json.loads(Path(args.config).read_text());states=[];runs=[]
++    for pair in args.pairs.split(','):
++        m,sd=map(int,pair.split('/'));cfg=dict(base,modes=m,sd_modes=sd);config=out/f'modes_{m}_{sd}.json';config.write_text(json.dumps(cfg,indent=2));runout=out/f'modes_{m}_{sd}'
++        cmd=[sys.executable,str(ROOT/'run.py'),'point','--config',str(config.resolve()),'--out',str(runout.resolve()),'--vg',str(args.vg),'--vd',str(args.vd)]
++        tic=time.time()
++        with (out/f'modes_{m}_{sd}.log').open('w') as log:process=subprocess.run(cmd,cwd=ROOT,stdout=log,stderr=subprocess.STDOUT)
++        runs.append({'requested_modes':m,'requested_sd_modes':sd,'exit_code':process.returncode,'runtime_s':time.time()-tic})
++        candidates=list((runout/'states').glob('*.npz'))
++        if process.returncode==0:states.extend(candidates)
++        else:break
++    report=compare(states);report['runs']=runs
++    (out/'convergence.json').write_text(json.dumps(report,indent=2));print(json.dumps(report,indent=2));return 0 if report['status']=='PASS' else 2
++
++def export(args):
++    import numpy as np
++    from export_fields import export_state
++    state=np.load(args.state);out=Path(args.out);out.mkdir(parents=True,exist_ok=True)
++    table=np.column_stack([state['xyz_nm'],state['phi_v'],state['electron_density_cm3']])
++    np.savetxt(out/'density_potential.csv',table,delimiter=',',header='x_nm,y_nm,z_nm,phi_v,electron_density_cm3',comments='')
++    export_state(Path(args.state),out/'fields.vtu')
++    if args.transmission:
++        from config import Config
++        from modespace.hamiltonian import Grid,ModeBuilder
++        from modespace.junction_basis import JunctionCompatibleBuilder
++        from device.definition import DeviceDefinition
++        from transport.registry import create_transport_backend
++        from transport.ms_postprocess import transmission
++        c=Config(**json.loads(str(state['config_json'])));g=Grid.build(c);cls=JunctionCompatibleBuilder if c.junction_basis=='nested' else ModeBuilder
++        builders=[cls(c,g,v) for v in DeviceDefinition(transport_axis=c.transport_axis).frame.valleys()];backend=create_transport_backend(c.backend,c);backend.calibrate_contacts({'builders':builders,'grid':g,'config':c})
++        mu=float(state['mu_l_ev']);vd=float(state['vd_v']);energy=np.linspace(mu-vd-.15,mu+.4,201);data={}
++        for builder in builders:
++            builder.block_only=True;s=builder.build(state['phi_v']);data[s.valley.name]=transmission(s,c,energy,vd)
++        np.savez_compressed(out/'transmission.npz',energy_ev=energy,**data)
++        np.savetxt(out/'transmission.csv',np.column_stack([energy,*data.values()]),delimiter=',',header=','.join(['energy_ev',*data]),comments='')
++    return 0
++
++def main():
++    bootstrap();p=argparse.ArgumentParser(description=__doc__);sub=p.add_subparsers(dest='command',required=True)
++    d=sub.add_parser('doctor');d.add_argument('--out')
++    for command in ('run','sweep','resume'):
++        sub.add_parser(command,add_help=False).add_argument('args',nargs=argparse.REMAINDER)
++    c=sub.add_parser('compare');c.add_argument('states',nargs='+');c.add_argument('--out',required=True)
++    r=sub.add_parser('refine');r.add_argument('--config',required=True);r.add_argument('--out',required=True);r.add_argument('--pairs',default='8/32,12/48,16/64');r.add_argument('--vg',type=float,default=.4);r.add_argument('--vd',type=float,default=.01)
++    e=sub.add_parser('export');e.add_argument('--state',required=True);e.add_argument('--out',required=True);e.add_argument('--transmission',action='store_true')
++    m=sub.add_parser('select-modes');m.add_argument('--config',required=True);m.add_argument('--out',required=True)
++    s=sub.add_parser('certify');s.add_argument('--root',default=str(ROOT))
++    a=p.parse_args()
++    if a.command=='doctor':return doctor(a.out)
++    if a.command in ('run','sweep','resume'):
++        extra=a.args[1:] if a.args and a.args[0]=='--' else a.args
++        if a.command=='resume' and '--initial-state' not in extra and '--resume' not in extra:p.error('resume requires --initial-state or --resume')
++        return subprocess.call([sys.executable,str(ROOT/'run.py'),*extra],cwd=ROOT)
++    if a.command=='compare':report=compare(a.states);Path(a.out).write_text(json.dumps(report,indent=2));return 0 if report['status']=='PASS' else 2
++    if a.command=='refine':return refine(a)
++    if a.command=='export':return export(a)
++    if a.command=='select-modes':
++        from validation.mode_selection import select
++        print(json.dumps(select(a.config,a.out),indent=2));return 0
++    if a.command=='certify':
++        from validation.release_certificate import certify
++        result=certify(Path(a.root));print(json.dumps(result,indent=2));return 0 if result['RELEASE_READY'] else 2
++
++if __name__=='__main__':raise SystemExit(main())
+--- STEP10/validation/release_figures.py
++++ STEP11/validation/release_figures.py
+@@ -0,0 +1,29 @@
++import json
++from pathlib import Path
++import numpy as np
++import matplotlib
++matplotlib.use('Agg')
++import matplotlib.pyplot as plt
++ROOT=Path(__file__).resolve().parents[1]
++
++def run():
++    out=ROOT/'results/assessment';out.mkdir(exist_ok=True)
++    r=np.load(ROOT/'results/lead_reference/data.npz');phi=r['phi'].reshape(20,15);density=r['density'].reshape(20,15)
++    fig,axes=plt.subplots(1,2,figsize=(9,4))
++    for ax,arr,label in zip(axes,[phi.T,density.T/1e19],['Lead potential (V)','Lead density / 1e19 cm^-3']):
++        im=ax.imshow(arr,origin='lower',extent=[-10,10,-7.5,7.5],aspect='equal');ax.set(xlabel='y (nm)',ylabel='z (nm)',title=label);fig.colorbar(im,ax=ax)
++    fig.suptitle('Transverse SP electrode: 20 x 15 nm, mean potential = 0');fig.tight_layout();fig.savefig(out/'lead_reference.png',dpi=160);plt.close(fig)
++    f=ROOT/'results/raised_refined_eq/states/vg0.400000_vd0.000000.npz'
++    if f.exists():
++        s=np.load(f);mask=s['silicon_mask'];y=s['y_nm'];j=np.argmin(abs(y));phi=np.full(mask.shape,np.nan);n=phi.copy();phi[mask]=s['phi_v'];n[mask]=np.log10(np.maximum(s['electron_density_cm3'],1.))
++        fig,axes=plt.subplots(2,1,figsize=(9,5),sharex=True)
++        for ax,arr,title in zip(axes,[phi[:,j,:].T,n[:,j,:].T],['Electrostatic potential (V)','log10 electron density (cm^-3)']):
++            im=ax.imshow(arr,origin='lower',extent=[0,54,-7.5,7.5],aspect='auto');ax.set(ylabel='z (nm)',title=title);fig.colorbar(im,ax=ax)
++        axes[-1].set_xlabel('x (nm)');fig.suptitle('Raised S/D, VG=0.4 V, VD=0: numerical SCF, accuracy not certified');fig.tight_layout();fig.savefig(out/'raised_equilibrium_fields.png',dpi=160);plt.close(fig)
++    rows=json.loads((ROOT/'results/frozen_modes/summary.json').read_text())['rows'][1:]
++    fig,ax=plt.subplots(figsize=(7,4))
++    labels=[f"{r['requested_modes']}/{r['requested_sd_modes']}" for r in rows]
++    for region in ('channel','junction_extension','reservoir'):
++        ax.plot(labels,[100*r[region+'_density_relative_l2_change'] for r in rows],'o-',label=region.replace('_',' '))
++    ax.axhline(1,color='black',linestyle='--',label='1% target');ax.set(yscale='log',xlabel='Larger requested channel/contact basis',ylabel='Density change from previous basis (%)',title='Fixed potential and fixed full-reference lead μ');ax.legend();ax.grid(alpha=.2);fig.tight_layout();fig.savefig(out/'mode_projection_convergence.png',dpi=160);plt.close(fig)
++if __name__=='__main__':run()
+--- STEP10/validation/revalidate_equilibrium_seed.py
++++ STEP11/validation/revalidate_equilibrium_seed.py
+@@ -0,0 +1,39 @@
++"""Explicit equilibrium seed migration after a reviewed numerical/metadata source change.
++
++Refuses biased states and unlisted exact old/new production-file hash pairs.
++Recomputes the entire equilibrium quantum density using current source before
++creating a NON-certified starting density. Original state remains untouched.
++"""
++import sys,json,hashlib
++from pathlib import Path
++sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
++import numpy as np
++from config import Config
++from modespace.hamiltonian import Grid,ModeBuilder
++from modespace.junction_basis import JunctionCompatibleBuilder
++from device.definition import DeviceDefinition
++from transport.registry import create_transport_backend
++from solver import electronic
++from provenance import source_digest
++
++def migrate(state,manifest,out):
++    root=Path(__file__).resolve().parents[1];s=np.load(state,allow_pickle=False);old=json.loads(Path(manifest).read_text());changes=[]
++    if float(s['vd_v'])!=0:raise ValueError('Only zero-bias equilibrium seeds can be migrated')
++    for rel,sha in old.items():
++        p=Path(rel)
++        if not rel.endswith('.py') or any(x in ('validation','tests','results','__pycache__') for x in p.parts):continue
++        if hashlib.sha256((root/rel).read_bytes()).hexdigest()!=sha:changes.append(rel)
++    allow=json.loads((root/'validation/equilibrium_migration_pairs.json').read_text())
++    for rel in changes:
++        current=hashlib.sha256((root/rel).read_bytes()).hexdigest()
++        if [old[rel],current] not in allow.get(rel,[]):raise ValueError('Unreviewed source version pair: '+rel)
++    c=Config(**json.loads(str(s['config_json'])));g=Grid.build(c);cls=JunctionCompatibleBuilder if c.junction_basis=='nested' else ModeBuilder
++    builders=[cls(c,g,v) for v in DeviceDefinition(transport_axis=c.transport_axis).frame.valleys()];backend=create_transport_backend(c.backend,c);mu,cal=backend.calibrate_contacts({'builders':builders,'grid':g,'config':c})
++    q=electronic(backend,builders,g,s['phi_v'],mu,0);error=float(np.linalg.norm(q['n']-s['electron_density_cm3'])/np.linalg.norm(q['n']))
++    if error>1e-10:
++        Path(out).with_suffix('.rejected.json').write_text(json.dumps({'status':'FAIL','density_relative_error':error,'maximum_density_difference_cm3':float(max(abs(q['n']-s['electron_density_cm3']))),'input':str(state)},indent=2))
++        raise ValueError(f'Equilibrium density not reproduced: relative error {error:.12g}')
++    report={'input_state':str(state),'input_source_sha256':str(s['source_sha256']),'current_source_sha256':source_digest(),'changed_files':changes,'equilibrium_density_relative_error':error,'meaning':'revalidated initial guess only; next SCF must converge and reevaluate','TEACHER_READY':False}
++    np.savez_compressed(out,config_json=s['config_json'],source_sha256=source_digest(),node_xyz_nm=s['node_xyz_nm'],poisson_density_cm3=s['poisson_density_cm3'],numerically_converged=False,origin_json=json.dumps(report))
++    Path(out).with_suffix('.json').write_text(json.dumps(report,indent=2));print(json.dumps(report,indent=2))
++if __name__=='__main__':migrate(*sys.argv[1:])
+--- STEP10/validation/step11_assess.py
++++ STEP11/validation/step11_assess.py
+@@ -0,0 +1,78 @@
++"""Generate measured tables; no synthetic currents or interpolated successes."""
++import json,csv,sys,hashlib
++from pathlib import Path
++import numpy as np
++ROOT=Path(__file__).resolve().parents[1]
++if str(ROOT) not in sys.path:sys.path.insert(0,str(ROOT))
++from config import Config
++from validation.release_cli import compare
++
++def run():
++    import matplotlib;matplotlib.use('Agg')
++    import matplotlib.pyplot as plt
++    from scipy.interpolate import RegularGridInterpolator
++    out=ROOT/'results/assessment';out.mkdir(exist_ok=True);states=[]
++    for f in sorted((ROOT/'results').glob('*/states/*.npz')):
++        if f.parent.parent.name in ('raised_eq',):continue # superseded pre-memory-fix run
++        with np.load(f,allow_pickle=False) as s:
++            c=Config(**json.loads(str(s['config_json'])));states.append({'file':str(f.relative_to(ROOT)),'geometry':c.geometry_profile,'modes':c.modes,'sd_modes':c.sd_modes,'vg_v':float(s['vg_v']),'vd_v':float(s['vd_v']),'id_a':float(s['id_a']),'SCF_CONVERGED':bool(s['converged']),'runtime_s':float(s['runtime_s']),'teacher_ready':False})
++    if states:
++        with (out/'computed_bias_points.csv').open('w',newline='') as f:w=csv.DictWriter(f,fieldnames=list(states[0]));w.writeheader();w.writerows(states)
++    for geometry in ('raised','uniform'):
++        # Keep all real measurements in CSV, draw one series per configuration.
++        rows=[s for s in states if s['geometry']==geometry and s['SCF_CONVERGED']]
++        with (out/f'{geometry}_actual_iv.csv').open('w',newline='') as f:
++            w=csv.DictWriter(f,fieldnames=list(states[0]) if states else ['vg_v','vd_v','id_a']);w.writeheader();w.writerows(rows)
++        fig,ax=plt.subplots(figsize=(6,4))
++        for modes,sd in sorted({(r['modes'],r['sd_modes']) for r in rows}):
++            points=sorted({(r['vd_v'],r['id_a']) for r in rows if (r['modes'],r['sd_modes'])==(modes,sd) and r['vg_v']==.4})
++            if points:ax.plot([p[0] for p in points],[p[1]*1e9 for p in points],'o',label=f'{modes}/{sd} requested modes')
++        ax.set(xlabel='Drain bias (V)',ylabel='Drain current (nA)',title=f'{geometry} GAA: actual SCF points, not certified I–V');ax.grid(alpha=.25)
++        if rows:ax.legend()
++        fig.tight_layout();fig.savefig(out/f'{geometry}_actual_iv.png',dpi=150);plt.close(fig)
++    frozen=ROOT/'results/frozen_modes/summary.json'
++    if frozen.exists():
++        rows=json.loads(frozen.read_text())['rows'];flat=[]
++        for r in rows:
++            flat.append({k:v for k,v in r.items() if not isinstance(v,(list,dict))})
++        keys=list(dict.fromkeys(k for row in flat for k in row))
++        with (out/'mode_projection_convergence.csv').open('w',newline='') as f:w=csv.DictWriter(f,fieldnames=keys);w.writeheader();w.writerows(flat)
++    a=ROOT/'results/raised_eq_final/states/vg0.400000_vd0.000000.npz';b=ROOT/'results/raised_refined_eq/states/vg0.400000_vd0.000000.npz'
++    if a.exists() and b.exists():(out/'fully_scf_mode_comparison.json').write_text(json.dumps(compare([a,b]),indent=2))
++    b=ROOT/'results/raised_resume/states/vg0.400000_vd0.000000.npz'
++    if a.exists() and b.exists():
++        report=compare([a,b]);row=report['comparisons'][0];report['scope']='equilibrium checkpoint reproducibility, not transport-mode convergence'
++        report['status']='PASS' if row['barrier_phi_max_difference_v']<1e-6 and max(row[k] for k in ('channel_density_l2','junction_extension_density_l2','reservoir_density_l2'))<1e-4 else 'FAIL'
++        (out/'restart_comparison.json').write_text(json.dumps(report,indent=2))
++    matching=[]
++    for row in states:
++        if not row['SCF_CONVERGED']:continue
++        f=ROOT/row['file'];s=np.load(f);lead=f.parent.parent/'lead_reference.npz'
++        if not lead.exists():continue
++        r=np.load(lead);c=Config(**json.loads(str(s['config_json'])));xyz=s['xyz_nm'];x=s['x_nm'];rphi=r['phi_v'].reshape(len(r['y_nm']),len(r['z_nm']))
++        fphi=RegularGridInterpolator((r['y_nm'],r['z_nm']),rphi)
++        vals={}
++        for name,xx,bias in [('source',x[0],0.),('drain',x[-1],float(s['vd_v']))]:
++            mask=np.isclose(xyz[:,0],xx);actual=s['phi_v'][mask];target=fphi(xyz[mask,1:])+bias+c.potential_reference_v
++            vals[name+'_endpoint_phi_error_max_v']=float(max(abs(actual-target)))
++        matching.append({'state':row['file'],**vals})
++    (out/'device_lead_matching.json').write_text(json.dumps({'scope':'cell-averaged first/last quantum slice vs translational SP reference; not constant-flatness criterion','measurements':matching},indent=2))
++    have={(round(s['vg_v'],6),round(s['vd_v'],6)) for s in states if s['geometry']=='raised' and s['SCF_CONVERGED']}
++    req=[{'sweep':'IdVgs','vg_v':round(i*.05,6),'vd_v':vd} for vd in (.05,.1) for i in range(25)]+[{'sweep':'IdVds','vg_v':vg,'vd_v':round(i*.05,6)} for vg in (.4,.8,1.2) for i in range(25)]
++    for row in req:
++        row['status']='NUMERICALLY_COMPUTED' if (row['vg_v'],row['vd_v']) in have else 'NOT_RUN';row['teacher_ready']=False
++    (out/'requested_sweep_status.json').write_text(json.dumps(req,indent=2))
++    # Separate source changes in validation/report scripts from production.
++    inventory=[]
++    excluded={'tests','validation','results','__pycache__'}
++    for p in (ROOT/'results').glob('*/source_manifest.json'):
++        old=json.loads(p.read_text());changed=[];missing=[]
++        for rel,h in old.items():
++            if any(x in excluded for x in Path(rel).parts) or not rel.endswith('.py'):continue
++            current=ROOT/rel
++            if not current.exists():missing.append(rel)
++            elif hashlib.sha256(current.read_bytes()).hexdigest()!=h:changed.append(rel)
++        inventory.append({'run':p.parent.name,'production_files_changed_since_run_start':changed,'production_files_missing':missing,'snapshot':str(p.parent.relative_to(ROOT)/'source_snapshot.zip')})
++    (out/'production_provenance.json').write_text(json.dumps(inventory,indent=2))
++    return states
++if __name__=='__main__':print(json.dumps(run(),indent=2))
+--- STEP10/validation/step11_bound_localization.py
++++ STEP11/validation/step11_bound_localization.py
+@@ -0,0 +1,43 @@
++"""Energy-dependent pole residue and localization in a frozen projected model.
++
++Classification as a real device state requires grid and contact convergence;
++this script does not replace that requirement or invent biased occupations.
++"""
++import sys,json
++from pathlib import Path
++sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
++import numpy as np
++from scipy.sparse import bmat,csc_matrix,eye
++from scipy.sparse.linalg import eigsh
++from config import Config
++from modespace.hamiltonian import Grid
++from modespace.junction_basis import JunctionCompatibleBuilder
++from device.definition import DeviceDefinition
++from transport.contact_model import solve_reference
++from transport.negf_reference import device_blocks,lead_matrices
++from transport.bound_states import audit
++
++def run(state,out):
++    out=Path(out);out.mkdir(parents=True,exist_ok=True);data=np.load(state);c=Config(**json.loads(str(data['config_json'])));g=Grid.build(c);valleys=DeviceDefinition().frame.valleys();ref=solve_reference(c,g,valleys);rows=[]
++    for v in valleys:
++        b=JunctionCompatibleBuilder(c,g,v);b.block_only=True;b.contacts=ref;s=b.build(data['phi_v']);mu=ref.mu-c.potential_reference_v
++        aud=audit(s,c,mu,0);ons,hop,t,lead=device_blocks(s,c,(c.potential_reference_v,)*2);n=len(ons)
++        for root in aud['bound_poles_below_both_leads']:
++            energy=root['energy_ev'];sl,sr=lead_matrices(np.array([energy+0j]),t,lead)
++            blocks=[[None]*n for _ in range(n)]
++            for i,h in enumerate(ons):blocks[i][i]=csc_matrix(h+(sl[0].real if i==0 else 0)+(sr[0].real if i==n-1 else 0))
++            for i,h in enumerate(hop):blocks[i][i+1]=csc_matrix(h);blocks[i+1][i]=csc_matrix(h.T)
++            H=bmat(blocks,format='csc');e,U=eigsh(H,k=1,sigma=energy+1e-9,which='LM',tol=1e-11);u=U[:,0]
++            delta=1e-6;sp=lead_matrices(np.array([energy+delta+0j]),t,lead);sm=lead_matrices(np.array([energy-delta+0j]),t,lead)
++            derivative=[(p[0].real-m[0].real)/(2*delta) for p,m in zip(sp,sm)]
++            norm=1-u[s.sl(0)]@derivative[0]@u[s.sl(0)]-u[s.sl(n-1)]@derivative[1]@u[s.sl(n-1)]
++            weight=np.array([np.sum(abs(u[s.sl(i)])**2)/norm for i in range(n)])
++            gamma=[1j*(x[0]-x[0].conj().T) for x in (sl,sr)]
++            row={'valley':v.name,'energy_ev':energy,'eigen_residual_ev':float(np.linalg.norm(H@u-energy*u)),
++                'projected_device_spectral_weight':float(1/norm),'lead_tail_weight':float(1-1/norm),
++                'gamma_coupling_ev':float(abs(u[s.sl(0)].conj()@gamma[0]@u[s.sl(0)]+u[s.sl(n-1)].conj()@gamma[1]@u[s.sl(n-1)])),
++                'source_weight':float(weight[g.x<c.ls].sum()),'central_weight':float(weight[(g.x>=c.ls)&(g.x<=c.drain_start)].sum()),'drain_weight':float(weight[g.x>c.drain_start].sum()),
++                'classification':'projected isolated pole; physical vs contact/grid artifact INCONCLUSIVE'}
++            rows.append(row);np.savez_compressed(out/f'{v.name}_{len(rows)}.npz',x_nm=g.x,spectral_weight_per_slice=weight,energy_ev=energy)
++    (out/'summary.json').write_text(json.dumps(rows,indent=2));print(json.dumps(rows,indent=2))
++if __name__=='__main__':run(*sys.argv[1:])
+--- STEP10/validation/step11_frozen_modes.py
++++ STEP11/validation/step11_frozen_modes.py
+@@ -0,0 +1,30 @@
++import sys,json,time
++from pathlib import Path
++sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
++import numpy as np
++from dataclasses import replace
++from config import Config
++from modespace.hamiltonian import Grid
++from modespace.junction_basis import JunctionCompatibleBuilder
++from device.definition import DeviceDefinition
++from transport.contact_model import solve_reference
++from transport.negf_reference import solve_negf,blocks_density
++from transport.bound_states import audit
++
++def run(state,out):
++    out=Path(out);out.mkdir(parents=True,exist_ok=True);data=np.load(state);base=Config(**json.loads(str(data['config_json'])));grid=Grid.build(base);valleys=DeviceDefinition().frame.valleys()
++    ref=solve_reference(base,grid,valleys);mu=ref.mu-base.potential_reference_v;rows=[];old=None
++    for modes,sd_modes in [(4,16),(8,32),(12,48),(16,64),(24,100)]:
++        c=replace(base,modes=modes,sd_modes=sd_modes);density=np.zeros(len(grid.xyz));dims=[];audits=[];tic=time.time()
++        for v in valleys:
++            b=JunctionCompatibleBuilder(c,grid,v);b.contacts=ref;b.block_only=True;s=b.build(data['phi_v']);dims.append([len(h) for h in s.onsite])
++            blocks,flux,diag,parts=solve_negf(s,c,mu,mu,0);density+=blocks_density(s,blocks,2*v.multiplicity)
++            audits.append(audit(s,c,mu,0))
++        row={'requested_modes':modes,'requested_sd_modes':sd_modes,'actual_slice_dimensions':dims,'fixed_lead_mu_ev':mu,'seconds':time.time()-tic,'bound_audits':audits}
++        if old is not None:
++            x=grid.xyz[:,0]
++            for name,mask in [('all',x>=0),('channel',(x>=c.gate_start)&(x<=c.gate_end)),('junction_extension',((x>=c.ls)&(x<c.gate_start))|((x>c.gate_end)&(x<=c.drain_start))),('reservoir',(x<c.ls)|(x>c.drain_start))]:
++                row[name+'_density_relative_l2_change']=float(np.linalg.norm((old-density)[mask])/max(np.linalg.norm(density[mask]),1e-30))
++        old=density;rows.append(row);np.savez_compressed(out/f'modes_{modes}_{sd_modes}.npz',density_cm3=density,xyz_nm=grid.xyz,mu_ev=mu)
++        (out/'summary.json').write_text(json.dumps({'experiment':'A: fixed device phi and full-basis SP lead mu; not SCF observable convergence','rows':rows},indent=2));print(modes,sd_modes,row.get('all_density_relative_l2_change'),flush=True)
++if __name__=='__main__':run(*sys.argv[1:])
+--- STEP10/validation/step11_lead_convergence.py
++++ STEP11/validation/step11_lead_convergence.py
+@@ -0,0 +1,31 @@
++"""Separate lead DOS/neutral mu, fixed-phi mode projection and grid experiments."""
++import sys,json,time
++from pathlib import Path
++sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
++import numpy as np
++from dataclasses import replace
++from scipy.optimize import brentq
++from numpy.polynomial.legendre import leggauss
++from config import Config
++from modespace.hamiltonian import Grid
++from device.definition import DeviceDefinition
++from transport.contact_model import solve_reference
++from multispace.occupation import fermi
++
++def run(out):
++    out=Path(out);out.mkdir(parents=True,exist_ok=True);c=Config(backend='negf',contact_model='transverse_sp');rows=[];grids=[]
++    for spacing in (1.,.5):
++        cc=replace(c,dy=spacing,dz=spacing);g=Grid.build(cc);v=DeviceDefinition().frame.valleys();r=solve_reference(cc,g,v)
++        grids.append({'dy_nm':spacing,'dz_nm':spacing,**r.diagnostics});np.savez_compressed(out/f'lead_grid_{spacing:g}.npz',y_nm=r.y,z_nm=r.z,phi_v=r.phi,density_cm3=r.density,mu_ev=r.mu)
++        if spacing==1.:
++            x,w=leggauss(512);k=(x+1)*np.pi/2;w=w/2;target=c.donor_sd*c.sd_width*c.sd_thickness*c.dx*1e-21
++            for count in (4,8,16,24,32,48,64,100,150,300):
++                def pop(mu):return [2*vv.multiplicity*(fermi(r.spectra[vv.name][0][:count,None]+2*r.spectra[vv.name][2]*(1-np.cos(k)),mu,c.temperature)@w) for vv in v]
++                mu=brentq(lambda m:sum(np.sum(p) for p in pop(m))-target,-2,2)
++                n=sum((abs(r.spectra[vv.name][1][:,:count])**2@o for vv,o in zip(v,pop(r.mu))),np.zeros(len(r.phi)))/(c.dx*c.dy*c.dz)*1e21
++                rows.append({'modes':count,'fixed_full_mu_ev':r.mu,'neutral_truncated_mu_ev':mu,'neutral_mu_error_ev':abs(mu-r.mu),'fixed_mu_density_relative_l2':float(np.linalg.norm(n-r.density)/np.linalg.norm(r.density)), 'fixed_mu_missing_charge':float(1-n.mean()/c.donor_sd)})
++    report={'lead_basis_at_fixed_SP_profile':rows,'grid_fully_selfconsistent_lead':grids,
++        'grid_mu_change_ev':abs(grids[1]['zero_reference_mu_ev']-grids[0]['zero_reference_mu_ev']),
++        'scope':'2D lead reference; not fully SCF device refinement'}
++    (out/'summary.json').write_text(json.dumps(report,indent=2));print(json.dumps(report,indent=2))
++if __name__=='__main__':run(sys.argv[1])
+--- STEP10/validation/step11_state_poles.py
++++ STEP11/validation/step11_state_poles.py
+@@ -0,0 +1,16 @@
++import json,sys
++from pathlib import Path
++sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
++import numpy as np
++from config import Config
++from modespace.hamiltonian import Grid
++from modespace.junction_basis import JunctionCompatibleBuilder
++from device.definition import DeviceDefinition
++from transport.contact_model import solve_reference
++from transport.bound_states import audit
++ROOT=Path(__file__).resolve().parents[1];out=ROOT/'results/state_poles';out.mkdir(exist_ok=True);rows=[]
++for name in ('raised_diagnostic','raised_eq_final','raised_refined_eq','raised_fine_eq','buffer_eq'):
++ s=np.load(ROOT/f'results/{name}/states/vg0.400000_vd0.000000.npz');c=Config(**json.loads(str(s['config_json'])));g=Grid.build(c);valleys=DeviceDefinition().frame.valleys();r=solve_reference(c,g,valleys);audits=[]
++ for v in valleys:
++  b=JunctionCompatibleBuilder(c,g,v);b.block_only=True;b.contacts=r;system=b.build(s['phi_v']);audits.append(audit(system,c,r.mu-c.potential_reference_v,0.))
++ row={'state':name,'modes':c.modes,'sd_modes':c.sd_modes,'audits':audits};rows.append(row);(out/'summary.json').write_text(json.dumps(rows,indent=2));print(name,[(a['valley'],[p['energy_ev'] for p in a['bound_poles_below_both_leads']]) for a in audits],flush=True)
+--- STEP10/validation/streaming_global.py
++++ STEP11/validation/streaming_global.py
+@@ -0,0 +1,51 @@
++"""Prototype of global-error streaming adaptation, promoted after regression."""
++import numpy as np
++from numpy.polynomial.legendre import leggauss
++
++
++def integrate_vector(fun,breaks,order,rtol,atol,max_nodes=60000):
++    breaks=np.asarray(breaks);nodes=0;rules={}
++    if len(breaks)<2 or np.any(np.diff(breaks)<=0):raise ValueError('Strictly increasing energy breaks required')
++    for q in (order,2*order):
++        x,w=leggauss(q);a=np.pi*(x+1)/4;rules[q]=(np.sin(a)**2,w*np.pi/4*np.sin(2*a))
++    def panel(a,b,q):
++        nonlocal nodes
++        if nodes+q>max_nodes:raise RuntimeError(f'Energy integration exhausted {max_nodes} GF nodes; increase integration budget, not SCF tolerance')
++        x,w=rules[q];e=a+(b-a)*x;nodes+=q;value=None
++        for first in range(0,q,16):
++            last=min(first+16,q);part=np.einsum('e,ek->k',w[first:last]*(b-a),fun(e[first:last]),optimize=True)
++            value=part if value is None else value+part
++        return value
++    estimate=None
++    for a,b in zip(breaks[:-1],breaks[1:]):
++        value=panel(a,b,order);estimate=value if estimate is None else estimate+value
++    target=np.asarray(atol)+rtol*abs(estimate)
++    total=np.zeros_like(estimate);errors=np.zeros_like(abs(estimate));leaves=[]
++    def pair(a,b):
++        low=panel(a,b,order);high=panel(a,b,2*order);return high,abs(high-low)
++    for a,b in zip(breaks[:-1],breaks[1:]):
++        high,err=pair(a,b);total+=high;errors+=err;leaves.append((a,b,0,float(max(err/target))))
++    for iteration in range(90):
++        final_target=np.asarray(atol)+rtol*abs(total)
++        if np.all(errors<=final_target):
++            return total,{'gf_nodes':nodes,'adaptive_panels':len(leaves),'initial_panels':len(breaks)-1,
++                'maximum_normalized_error_estimate':float(max(errors/final_target)),
++                'algorithm':'constant-memory globally budgeted q/2q; recompute parent before replacement',
++                'energy_batch_limit':16,'stored_panel_density_vectors':0}
++        # A scalar conservative envelope identifies panels needing attention;
++        # acceptance always uses the actual componentwise GLOBAL error sum.
++        scale=float(max(target/final_target));target=final_target
++        leaves=[(a,b,d,score*scale) for a,b,d,score in leaves]
++        bad=[i for i,(a,b,d,score) in enumerate(leaves) if score>1/(2*len(leaves)) and d<44 and a<(a+b)/2<b]
++        if not bad:
++            candidates=[(x[3],i) for i,x in enumerate(leaves) if x[2]<44 and x[0]<(x[0]+x[1])/2<x[1]]
++            if not candidates:
++                raise RuntimeError(f'UNRESOLVED_RESONANCE: global estimated error ratio {max(errors/target):g}; energy resolution exhausted')
++            bad=[max(candidates)[1]]
++        marked=set(bad);updated=[x for i,x in enumerate(leaves) if i not in marked]
++        for i in bad:
++            a,b,depth,score=leaves[i];old,old_error=pair(a,b);total-=old;errors-=old_error;mid=(a+b)/2
++            for l,h in ((a,mid),(mid,b)):
++                value,error=pair(l,h);total+=value;errors+=error;updated.append((l,h,depth+1,float(max(error/target))))
++        leaves=updated
++    raise RuntimeError('Energy quadrature failed its global error budget')

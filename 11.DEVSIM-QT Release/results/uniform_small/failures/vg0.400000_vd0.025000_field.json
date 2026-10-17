@@ -1,0 +1,19 @@
+{
+  "field_state": "LAST_AVAILABLE_POISSON_FIELD_NOT_SCF_SOLUTION_OR_UNEVALUATED_NEWTON_TRIAL",
+  "fields": {
+    "Silicon": {
+      "maximum_v_nm": 0.040559743299623634,
+      "p99_v_nm": 0.031108371779742697
+    },
+    "GateOxide": {
+      "maximum_v_nm": 0.01872135940118819,
+      "p99_v_nm": 0.01807159569628718
+    },
+    "Spacer": {
+      "maximum_v_nm": 0.036661155850368464,
+      "p99_v_nm": 0.0326801335546816
+    }
+  },
+  "high_field_warning": false,
+  "threshold_v_nm": 0.5
+}

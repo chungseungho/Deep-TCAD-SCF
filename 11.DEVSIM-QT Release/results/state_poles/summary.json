@@ -1,0 +1,539 @@
+[
+  {
+    "state": "raised_diagnostic",
+    "modes": 2,
+    "sd_modes": 4,
+    "audits": [
+      {
+        "valley": "Delta_z",
+        "lowest_propagating_edge_ev": 0.018553666583024153,
+        "bound_poles_below_both_leads": [
+          {
+            "energy_ev": -0.0018407420043443654,
+            "enclosure_ev": [
+              -0.0018407420045966363,
+              -0.0018407420040920945
+            ],
+            "fermi_left": 0.5030057745586053,
+            "fermi_right": 0.5030057745586053,
+            "occupation_difference": 0.0,
+            "needs_preparation_model": false
+          },
+          {
+            "energy_ev": -0.001655679656269842,
+            "enclosure_ev": [
+              -0.001655679656522113,
+              -0.0016556796560175712
+            ],
+            "fermi_left": 0.5012161755593607,
+            "fermi_right": 0.5012161755593607,
+            "occupation_difference": 0.0,
+            "needs_preparation_model": false
+          },
+          {
+            "energy_ev": 0.00707296064006242,
+            "enclosure_ev": [
+              0.007072960639810149,
+              0.0070729606403146916
+            ],
+            "fermi_left": 0.41756577840418957,
+            "fermi_right": 0.41756577840418957,
+            "occupation_difference": 0.0,
+            "needs_preparation_model": false
+          },
+          {
+            "energy_ev": 0.007353207137079654,
+            "enclosure_ev": [
+              0.007353207136827383,
+              0.007353207137331925
+            ],
+            "fermi_left": 0.4149317184137167,
+            "fermi_right": 0.4149317184137167,
+            "occupation_difference": 0.0,
+            "needs_preparation_model": false
+          },
+          {
+            "energy_ev": 0.01718156432295611,
+            "enclosure_ev": [
+              0.01718156432270384,
+              0.01718156432320838
+            ],
+            "fermi_left": 0.32655841381776324,
+            "fermi_right": 0.32655841381776324,
+            "occupation_difference": 0.0,
+            "needs_preparation_model": false
+          },
+          {
+            "energy_ev": 0.017284251258489793,
+            "enclosure_ev": [
+              0.017284251258237522,
+              0.017284251258742066
+            ],
+            "fermi_left": 0.3256854782413498,
+            "fermi_right": 0.3256854782413498,
+            "occupation_difference": 0.0,
+            "needs_preparation_model": false
+          }
+        ],
+        "bias_dependent_bound_occupation_unresolved": false,
+        "embedded_dark_states_excluded": false,
+        "above_band_bound_states_excluded": false,
+        "near_threshold_exclusion_ev": 1.000000013351432e-10,
+        "classification_scope": "isolated poles of the retained open Hamiltonian; full-basis and contact convergence required to establish physical device states",
+        "method": "block LDL inertia and monotone bisection of H+Sigma(E)-E below lowest lead band; no eta"
+      },
+      {
+        "valley": "Delta_x",
+        "lowest_propagating_edge_ev": 0.029684035259432584,
+        "bound_poles_below_both_leads": [
+          {
+            "energy_ev": 0.008928572656426513,
+            "enclosure_ev": [
+              0.008928572656035225,
+              0.0089285726568178
+            ],
+            "fermi_left": 0.40021905855026085,
+            "fermi_right": 0.40021905855026085,
+            "occupation_difference": 0.0,
+            "needs_preparation_model": false
+          },
+          {
+            "energy_ev": 0.008929607127522336,
+            "enclosure_ev": [
+              0.008929607127131048,
+              0.008929607127913623
+            ],
+            "fermi_left": 0.40020945320654067,
+            "fermi_right": 0.40020945320654067,
+            "occupation_difference": 0.0,
+            "needs_preparation_model": false
+          },
+          {
+            "energy_ev": 0.015060794405068832,
+            "enclosure_ev": [
+              0.015060794404677544,
+              0.01506079440546012
+            ],
+            "fermi_left": 0.3448493903910905,
+            "fermi_right": 0.3448493903910905,
+            "occupation_difference": 0.0,
+            "needs_preparation_model": false
+          },
+          {
+            "energy_ev": 0.015094591311703622,
+            "enclosure_ev": [
+              0.015094591311312335,
+              0.015094591312094912
+            ],
+            "fermi_left": 0.3445540891456111,
+            "fermi_right": 0.3445540891456111,
+            "occupation_difference": 0.0,
+            "needs_preparation_model": false
+          },
+          {
+            "energy_ev": 0.01860133075004315,
+            "enclosure_ev": [
+              0.01860133074965186,
+              0.018601330750434436
+            ],
+            "fermi_left": 0.3145976675301708,
+            "fermi_right": 0.3145976675301708,
+            "occupation_difference": 0.0,
+            "needs_preparation_model": false
+          },
+          {
+            "energy_ev": 0.018847775764850607,
+            "enclosure_ev": [
+              0.01884777576445932,
+              0.018847775765241895
+            ],
+            "fermi_left": 0.3125457647422117,
+            "fermi_right": 0.3125457647422117,
+            "occupation_difference": 0.0,
+            "needs_preparation_model": false
+          },
+          {
+            "energy_ev": 0.023744183382416528,
+            "enclosure_ev": [
+              0.02374418338202524,
+              0.023744183382807815
+            ],
+            "fermi_left": 0.2733591465672629,
+            "fermi_right": 0.2733591465672629,
+            "occupation_difference": 0.0,
+            "needs_preparation_model": false
+          },
+          {
+            "energy_ev": 0.024087168112252182,
+            "enclosure_ev": [
+              0.024087168111860895,
+              0.02408716811264347
+            ],
+            "fermi_left": 0.2707317611136242,
+            "fermi_right": 0.2707317611136242,
+            "occupation_difference": 0.0,
+            "needs_preparation_model": false
+          },
+          {
+            "energy_ev": 0.025428851120898353,
+            "enclosure_ev": [
+              0.025428851120507065,
+              0.02542885112128964
+            ],
+            "fermi_left": 0.26060783596038756,
+            "fermi_right": 0.26060783596038756,
+            "occupation_difference": 0.0,
+            "needs_preparation_model": false
+          },
+          {
+            "energy_ev": 0.02553309195783066,
+            "enclosure_ev": [
+              0.02553309195743937,
+              0.025533091958221947
+            ],
+            "fermi_left": 0.2598316130484283,
+            "fermi_right": 0.2598316130484283,
+            "occupation_difference": 0.0,
+            "needs_preparation_model": false
+          },
+          {
+            "energy_ev": 0.029400738731376594,
+            "enclosure_ev": [
+              0.029400738730985306,
+              0.029400738731767885
+            ],
+            "fermi_left": 0.23210713193130078,
+            "fermi_right": 0.23210713193130078,
+            "occupation_difference": 0.0,
+            "needs_preparation_model": false
+          },
+          {
+            "energy_ev": 0.029487685051891574,
+            "enclosure_ev": [
+              0.029487685051500286,
+              0.029487685052282865
+            ],
+            "fermi_left": 0.23150823145688457,
+            "fermi_right": 0.23150823145688457,
+            "occupation_difference": 0.0,
+            "needs_preparation_model": false
+          }
+        ],
+        "bias_dependent_bound_occupation_unresolved": false,
+        "embedded_dark_states_excluded": false,
+        "above_band_bound_states_excluded": false,
+        "near_threshold_exclusion_ev": 1.000000013351432e-10,
+        "classification_scope": "isolated poles of the retained open Hamiltonian; full-basis and contact convergence required to establish physical device states",
+        "method": "block LDL inertia and monotone bisection of H+Sigma(E)-E below lowest lead band; no eta"
+      },
+      {
+        "valley": "Delta_y",
+        "lowest_propagating_edge_ev": 0.020273415102351366,
+        "bound_poles_below_both_leads": [
+          {
+            "energy_ev": -0.0009723357418945237,
+            "enclosure_ev": [
+              -0.0009723357423924094,
+              -0.000972335741396638
+            ],
+            "fermi_left": 0.49460815627645777,
+            "fermi_right": 0.49460815627645777,
+            "occupation_difference": 0.0,
+            "needs_preparation_model": false
+          },
+          {
+            "energy_ev": -0.000695232576620374,
+            "enclosure_ev": [
+              -0.0006952325771182597,
+              -0.0006952325761224883
+            ],
+            "fermi_left": 0.4919289411367288,
+            "fermi_right": 0.4919289411367288,
+            "occupation_difference": 0.0,
+            "needs_preparation_model": false
+          },
+          {
+            "energy_ev": 0.004460792037037934,
+            "enclosure_ev": [
+              0.004460792036540049,
+              0.00446079203753582
+            ],
+            "fermi_left": 0.44232511657100126,
+            "fermi_right": 0.44232511657100126,
+            "occupation_difference": 0.0,
+            "needs_preparation_model": false
+          },
+          {
+            "energy_ev": 0.0045488819627215295,
+            "enclosure_ev": [
+              0.004548881962223644,
+              0.004548881963219415
+            ],
+            "fermi_left": 0.4414847495049711,
+            "fermi_right": 0.4414847495049711,
+            "occupation_difference": 0.0,
+            "needs_preparation_model": false
+          }
+        ],
+        "bias_dependent_bound_occupation_unresolved": false,
+        "embedded_dark_states_excluded": false,
+        "above_band_bound_states_excluded": false,
+        "near_threshold_exclusion_ev": 1.000000013351432e-10,
+        "classification_scope": "isolated poles of the retained open Hamiltonian; full-basis and contact convergence required to establish physical device states",
+        "method": "block LDL inertia and monotone bisection of H+Sigma(E)-E below lowest lead band; no eta"
+      }
+    ]
+  },
+  {
+    "state": "raised_eq_final",
+    "modes": 8,
+    "sd_modes": 32,
+    "audits": [
+      {
+        "valley": "Delta_z",
+        "lowest_propagating_edge_ev": 0.018553666583024153,
+        "bound_poles_below_both_leads": [],
+        "bias_dependent_bound_occupation_unresolved": false,
+        "embedded_dark_states_excluded": false,
+        "above_band_bound_states_excluded": false,
+        "near_threshold_exclusion_ev": 1.000000013351432e-10,
+        "classification_scope": "isolated poles of the retained open Hamiltonian; full-basis and contact convergence required to establish physical device states",
+        "method": "block LDL inertia and monotone bisection of H+Sigma(E)-E below lowest lead band; no eta"
+      },
+      {
+        "valley": "Delta_x",
+        "lowest_propagating_edge_ev": 0.029684035259432584,
+        "bound_poles_below_both_leads": [
+          {
+            "energy_ev": 0.02743025733727382,
+            "enclosure_ev": [
+              0.027430257336827756,
+              0.02743025733771988
+            ],
+            "fermi_left": 0.2459687041612053,
+            "fermi_right": 0.2459687041612053,
+            "occupation_difference": 0.0,
+            "needs_preparation_model": false
+          },
+          {
+            "energy_ev": 0.027476344278907917,
+            "enclosure_ev": [
+              0.027476344278461858,
+              0.02747634427935398
+            ],
+            "fermi_left": 0.2456382157603085,
+            "fermi_right": 0.2456382157603085,
+            "occupation_difference": 0.0,
+            "needs_preparation_model": false
+          }
+        ],
+        "bias_dependent_bound_occupation_unresolved": false,
+        "embedded_dark_states_excluded": false,
+        "above_band_bound_states_excluded": false,
+        "near_threshold_exclusion_ev": 1.000000013351432e-10,
+        "classification_scope": "isolated poles of the retained open Hamiltonian; full-basis and contact convergence required to establish physical device states",
+        "method": "block LDL inertia and monotone bisection of H+Sigma(E)-E below lowest lead band; no eta"
+      },
+      {
+        "valley": "Delta_y",
+        "lowest_propagating_edge_ev": 0.020273415102351366,
+        "bound_poles_below_both_leads": [],
+        "bias_dependent_bound_occupation_unresolved": false,
+        "embedded_dark_states_excluded": false,
+        "above_band_bound_states_excluded": false,
+        "near_threshold_exclusion_ev": 1.000000013351432e-10,
+        "classification_scope": "isolated poles of the retained open Hamiltonian; full-basis and contact convergence required to establish physical device states",
+        "method": "block LDL inertia and monotone bisection of H+Sigma(E)-E below lowest lead band; no eta"
+      }
+    ]
+  },
+  {
+    "state": "raised_refined_eq",
+    "modes": 16,
+    "sd_modes": 64,
+    "audits": [
+      {
+        "valley": "Delta_z",
+        "lowest_propagating_edge_ev": 0.018553666583024153,
+        "bound_poles_below_both_leads": [],
+        "bias_dependent_bound_occupation_unresolved": false,
+        "embedded_dark_states_excluded": false,
+        "above_band_bound_states_excluded": false,
+        "near_threshold_exclusion_ev": 1.000000013351432e-10,
+        "classification_scope": "isolated poles of the retained open Hamiltonian; full-basis and contact convergence required to establish physical device states",
+        "method": "block LDL inertia and monotone bisection of H+Sigma(E)-E below lowest lead band; no eta"
+      },
+      {
+        "valley": "Delta_x",
+        "lowest_propagating_edge_ev": 0.029684035259432584,
+        "bound_poles_below_both_leads": [
+          {
+            "energy_ev": 0.027706731553248272,
+            "enclosure_ev": [
+              0.02770673155296431,
+              0.027706731553532232
+            ],
+            "fermi_left": 0.24399060834813918,
+            "fermi_right": 0.24399060834813918,
+            "occupation_difference": 0.0,
+            "needs_preparation_model": false
+          },
+          {
+            "energy_ev": 0.027746640355224728,
+            "enclosure_ev": [
+              0.027746640354940767,
+              0.027746640355508688
+            ],
+            "fermi_left": 0.24370596361202998,
+            "fermi_right": 0.24370596361202998,
+            "occupation_difference": 0.0,
+            "needs_preparation_model": false
+          }
+        ],
+        "bias_dependent_bound_occupation_unresolved": false,
+        "embedded_dark_states_excluded": false,
+        "above_band_bound_states_excluded": false,
+        "near_threshold_exclusion_ev": 1.000000013351432e-10,
+        "classification_scope": "isolated poles of the retained open Hamiltonian; full-basis and contact convergence required to establish physical device states",
+        "method": "block LDL inertia and monotone bisection of H+Sigma(E)-E below lowest lead band; no eta"
+      },
+      {
+        "valley": "Delta_y",
+        "lowest_propagating_edge_ev": 0.020273415102351366,
+        "bound_poles_below_both_leads": [],
+        "bias_dependent_bound_occupation_unresolved": false,
+        "embedded_dark_states_excluded": false,
+        "above_band_bound_states_excluded": false,
+        "near_threshold_exclusion_ev": 1.000000013351432e-10,
+        "classification_scope": "isolated poles of the retained open Hamiltonian; full-basis and contact convergence required to establish physical device states",
+        "method": "block LDL inertia and monotone bisection of H+Sigma(E)-E below lowest lead band; no eta"
+      }
+    ]
+  },
+  {
+    "state": "raised_fine_eq",
+    "modes": 8,
+    "sd_modes": 32,
+    "audits": [
+      {
+        "valley": "Delta_z",
+        "lowest_propagating_edge_ev": 0.018553666583024153,
+        "bound_poles_below_both_leads": [],
+        "bias_dependent_bound_occupation_unresolved": false,
+        "embedded_dark_states_excluded": false,
+        "above_band_bound_states_excluded": false,
+        "near_threshold_exclusion_ev": 1.000000013351432e-10,
+        "classification_scope": "isolated poles of the retained open Hamiltonian; full-basis and contact convergence required to establish physical device states",
+        "method": "block LDL inertia and monotone bisection of H+Sigma(E)-E below lowest lead band; no eta"
+      },
+      {
+        "valley": "Delta_x",
+        "lowest_propagating_edge_ev": 0.029684035259432584,
+        "bound_poles_below_both_leads": [
+          {
+            "energy_ev": 0.0273124025631117,
+            "enclosure_ev": [
+              0.02731240256266544,
+              0.027312402563557957
+            ],
+            "fermi_left": 0.24681519984713396,
+            "fermi_right": 0.24681519984713396,
+            "occupation_difference": 0.0,
+            "needs_preparation_model": false
+          },
+          {
+            "energy_ev": 0.027332811338943074,
+            "enclosure_ev": [
+              0.027332811338496816,
+              0.027332811339389328
+            ],
+            "fermi_left": 0.2466684730485971,
+            "fermi_right": 0.2466684730485971,
+            "occupation_difference": 0.0,
+            "needs_preparation_model": false
+          }
+        ],
+        "bias_dependent_bound_occupation_unresolved": false,
+        "embedded_dark_states_excluded": false,
+        "above_band_bound_states_excluded": false,
+        "near_threshold_exclusion_ev": 1.000000013351432e-10,
+        "classification_scope": "isolated poles of the retained open Hamiltonian; full-basis and contact convergence required to establish physical device states",
+        "method": "block LDL inertia and monotone bisection of H+Sigma(E)-E below lowest lead band; no eta"
+      },
+      {
+        "valley": "Delta_y",
+        "lowest_propagating_edge_ev": 0.020273415102351366,
+        "bound_poles_below_both_leads": [],
+        "bias_dependent_bound_occupation_unresolved": false,
+        "embedded_dark_states_excluded": false,
+        "above_band_bound_states_excluded": false,
+        "near_threshold_exclusion_ev": 1.000000013351432e-10,
+        "classification_scope": "isolated poles of the retained open Hamiltonian; full-basis and contact convergence required to establish physical device states",
+        "method": "block LDL inertia and monotone bisection of H+Sigma(E)-E below lowest lead band; no eta"
+      }
+    ]
+  },
+  {
+    "state": "buffer_eq",
+    "modes": 8,
+    "sd_modes": 32,
+    "audits": [
+      {
+        "valley": "Delta_z",
+        "lowest_propagating_edge_ev": 0.018553666583024153,
+        "bound_poles_below_both_leads": [],
+        "bias_dependent_bound_occupation_unresolved": false,
+        "embedded_dark_states_excluded": false,
+        "above_band_bound_states_excluded": false,
+        "near_threshold_exclusion_ev": 1.000000013351432e-10,
+        "classification_scope": "isolated poles of the retained open Hamiltonian; full-basis and contact convergence required to establish physical device states",
+        "method": "block LDL inertia and monotone bisection of H+Sigma(E)-E below lowest lead band; no eta"
+      },
+      {
+        "valley": "Delta_x",
+        "lowest_propagating_edge_ev": 0.029684035259432584,
+        "bound_poles_below_both_leads": [
+          {
+            "energy_ev": 0.027456638193903704,
+            "enclosure_ev": [
+              0.027456638193457738,
+              0.027456638194349667
+            ],
+            "fermi_left": 0.24577949098749396,
+            "fermi_right": 0.24577949098749396,
+            "occupation_difference": 0.0,
+            "needs_preparation_model": false
+          },
+          {
+            "energy_ev": 0.02756407173772151,
+            "enclosure_ev": [
+              0.027564071737275545,
+              0.027564071738167474
+            ],
+            "fermi_left": 0.24500995216264795,
+            "fermi_right": 0.24500995216264795,
+            "occupation_difference": 0.0,
+            "needs_preparation_model": false
+          }
+        ],
+        "bias_dependent_bound_occupation_unresolved": false,
+        "embedded_dark_states_excluded": false,
+        "above_band_bound_states_excluded": false,
+        "near_threshold_exclusion_ev": 1.000000013351432e-10,
+        "classification_scope": "isolated poles of the retained open Hamiltonian; full-basis and contact convergence required to establish physical device states",
+        "method": "block LDL inertia and monotone bisection of H+Sigma(E)-E below lowest lead band; no eta"
+      },
+      {
+        "valley": "Delta_y",
+        "lowest_propagating_edge_ev": 0.020273415102351366,
+        "bound_poles_below_both_leads": [],
+        "bias_dependent_bound_occupation_unresolved": false,
+        "embedded_dark_states_excluded": false,
+        "above_band_bound_states_excluded": false,
+        "near_threshold_exclusion_ev": 1.000000013351432e-10,
+        "classification_scope": "isolated poles of the retained open Hamiltonian; full-basis and contact convergence required to establish physical device states",
+        "method": "block LDL inertia and monotone bisection of H+Sigma(E)-E below lowest lead band; no eta"
+      }
+    ]
+  }
+]

@@ -1,0 +1,48 @@
+         1639868 function calls (1630040 primitive calls) in 1.068 seconds
+
+   Ordered by: cumulative time
+   List reduced from 1021 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    1.068    1.068 /workspace/scratch/3024dd41bc9d/10.DEVSIM-QT Physics Validation/solver.py:93(electronic)
+        1    0.001    0.001    1.067    1.067 /workspace/scratch/3024dd41bc9d/10.DEVSIM-QT Physics Validation/transport/backends/negf.py:10(solve)
+        1    0.000    0.000    0.687    0.687 /workspace/scratch/3024dd41bc9d/10.DEVSIM-QT Physics Validation/transport/backend_common.py:7(initialize)
+        3    0.024    0.008    0.686    0.229 /workspace/scratch/3024dd41bc9d/10.DEVSIM-QT Physics Validation/modespace/junction_basis.py:8(build)
+      336    0.267    0.001    0.462    0.001 /workspace/scratch/3024dd41bc9d/10.DEVSIM-QT Physics Validation/modespace/hamiltonian.py:41(transverse_matrix)
+1638/1314    0.007    0.000    0.188    0.000 /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/sparse/_compressed.py:30(__init__)
+    185/2    0.001    0.000    0.187    0.094 <frozen importlib._bootstrap>:1349(_find_and_load)
+    180/2    0.001    0.000    0.187    0.094 <frozen importlib._bootstrap>:1304(_find_and_load_unlocked)
+    174/2    0.000    0.000    0.187    0.094 <frozen importlib._bootstrap>:911(_load_unlocked)
+    140/2    0.000    0.000    0.187    0.094 <frozen importlib._bootstrap_external>:993(exec_module)
+    441/6    0.002    0.000    0.187    0.031 <frozen importlib._bootstrap>:480(_call_with_frames_removed)
+    168/2    0.003    0.000    0.186    0.093 {built-in method builtins.exec}
+        1    0.000    0.000    0.186    0.186 /workspace/scratch/3024dd41bc9d/10.DEVSIM-QT Physics Validation/transport/negf.py:1(<module>)
+        1    0.000    0.000    0.183    0.183 /workspace/scratch/3024dd41bc9d/10.DEVSIM-QT Physics Validation/transport/negf_reference.py:1(<module>)
+        1    0.000    0.000    0.181    0.181 /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/optimize/__init__.py:1(<module>)
+        3    0.009    0.003    0.180    0.060 /workspace/scratch/3024dd41bc9d/10.DEVSIM-QT Physics Validation/transport/negf_reference.py:104(solve_negf)
+        3    0.018    0.006    0.162    0.054 /workspace/scratch/3024dd41bc9d/10.DEVSIM-QT Physics Validation/modespace/hamiltonian.py:78(build)
+       18    0.032    0.002    0.141    0.008 /workspace/scratch/3024dd41bc9d/10.DEVSIM-QT Physics Validation/transport/negf_reference.py:60(rgf)
+      196    0.001    0.000    0.109    0.001 /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/_lib/_array_api.py:840(decorator)
+     5814    0.028    0.000    0.108    0.000 /workspace/scratch/3024dd41bc9d/10.DEVSIM-QT Physics Validation/transport/negf_reference.py:73(invblock)
+        1    0.000    0.000    0.105    0.105 /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/optimize/_linprog.py:1(<module>)
+    33/23    0.000    0.000    0.104    0.005 <frozen importlib._bootstrap_external>:1299(exec_module)
+    33/23    0.006    0.000    0.104    0.005 {built-in method _imp.exec_dynamic}
+        1    0.000    0.000    0.100    0.100 /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/optimize/_linprog_ip.py:1(<module>)
+      203    0.000    0.000    0.099    0.000 /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/_lib/_docscrape.py:579(__init__)
+        1    0.000    0.000    0.099    0.099 /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/optimize/_linprog_util.py:1(<module>)
+        1    0.000    0.000    0.099    0.099 /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/optimize/_remove_redundancy.py:1(<module>)
+        1    0.000    0.000    0.099    0.099 /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/linalg/interpolative.py:1(<module>)
+        1    0.000    0.000    0.098    0.098 /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/fft/__init__.py:1(<module>)
+      336    0.002    0.000    0.094    0.000 /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/sparse/_coo.py:32(__init__)
+      203    0.001    0.000    0.087    0.000 /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/_lib/_docscrape.py:140(__init__)
+     5814    0.043    0.000    0.068    0.000 /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy/linalg/_linalg.py:557(inv)
+        1    0.000    0.000    0.066    0.066 /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/fft/_fftlog.py:1(<module>)
+        1    0.000    0.000    0.064    0.064 /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/fft/_fftlog_backend.py:1(<module>)
+        1    0.000    0.000    0.064    0.064 /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/special/__init__.py:1(<module>)
+     3282    0.004    0.000    0.064    0.000 /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/sparse/_base.py:1525(_get_index_dtype)
+      203    0.002    0.000    0.063    0.000 /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/_lib/_docscrape.py:388(_parse)
+  148/113    0.000    0.000    0.057    0.001 <frozen importlib._bootstrap>:1390(_handle_fromlist)
+     3282    0.019    0.000    0.057    0.000 /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/sparse/_sputils.py:264(get_index_dtype)
+   647264    0.056    0.000    0.056    0.000 {method 'append' of 'list' objects}
+
+

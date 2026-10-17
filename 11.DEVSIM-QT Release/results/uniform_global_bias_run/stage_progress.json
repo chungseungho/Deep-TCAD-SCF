@@ -1,0 +1,10 @@
+{
+  "elapsed_s": 17.862854840000182,
+  "stages": {
+    "lead transverse SP": {
+      "calls": 1,
+      "inclusive_seconds": 0.23239699399982783,
+      "energy_nodes": 0
+    }
+  }
+}

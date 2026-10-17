@@ -1,0 +1,13 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.14, pytest-9.1.1, pluggy-1.7.0 -- /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python
+cachedir: .pytest_cache
+rootdir: /workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release
+configfile: pytest.ini
+collecting ... collected 4 items
+
+tests/test_step11_density_completeness.py::test_bound_pole_residue_spectral_sum_and_fermi_density PASSED
+tests/test_step11_density_completeness.py::test_dark_state_inside_other_channel_continuum_is_not_excluded_by_low_edge_audit PASSED
+tests/test_step11_density_completeness.py::test_singular_ldl_pivot_is_numerical_failure_not_bound_evidence PASSED
+tests/test_step11_density_completeness.py::test_degenerate_poles_and_threshold_are_counted_with_multiplicity PASSED
+
+============================== 4 passed in 0.48s ===============================

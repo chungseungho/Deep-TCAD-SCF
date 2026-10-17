@@ -1,0 +1,438 @@
+{
+  "lead_basis_at_fixed_SP_profile": [
+    {
+      "modes": 4,
+      "fixed_full_mu_ev": -0.0015299171270483811,
+      "neutral_truncated_mu_ev": 0.021711875449808335,
+      "neutral_mu_error_ev": 0.023241792576856716,
+      "fixed_mu_density_relative_l2": 0.49244400128468974,
+      "fixed_mu_missing_charge": 0.4979141347384576
+    },
+    {
+      "modes": 8,
+      "fixed_full_mu_ev": -0.0015299171270483811,
+      "neutral_truncated_mu_ev": 0.00817548190451296,
+      "neutral_mu_error_ev": 0.00970539903156134,
+      "fixed_mu_density_relative_l2": 0.26022342893576733,
+      "fixed_mu_missing_charge": 0.2679073821556339
+    },
+    {
+      "modes": 16,
+      "fixed_full_mu_ev": -0.0015299171270483811,
+      "neutral_truncated_mu_ev": 0.0013022166261491576,
+      "neutral_mu_error_ev": 0.0028321337531975388,
+      "fixed_mu_density_relative_l2": 0.08721154675538237,
+      "fixed_mu_missing_charge": 0.09047994418837857
+    },
+    {
+      "modes": 24,
+      "fixed_full_mu_ev": -0.0015299171270483811,
+      "neutral_truncated_mu_ev": -0.00049754116973294,
+      "neutral_mu_error_ev": 0.0010323759573154412,
+      "fixed_mu_density_relative_l2": 0.03239659180189576,
+      "fixed_mu_missing_charge": 0.034365468747229344
+    },
+    {
+      "modes": 32,
+      "fixed_full_mu_ev": -0.0015299171270483811,
+      "neutral_truncated_mu_ev": -0.0010687023275910796,
+      "neutral_mu_error_ev": 0.0004612147994573015,
+      "fixed_mu_density_relative_l2": 0.014626084930061855,
+      "fixed_mu_missing_charge": 0.015558750166689173
+    },
+    {
+      "modes": 48,
+      "fixed_full_mu_ev": -0.0015299171270483811,
+      "neutral_truncated_mu_ev": -0.0014216550107633327,
+      "neutral_mu_error_ev": 0.00010826211628504846,
+      "fixed_mu_density_relative_l2": 0.0035187047898292516,
+      "fixed_mu_missing_charge": 0.0036825637736687122
+    },
+    {
+      "modes": 64,
+      "fixed_full_mu_ev": -0.0015299171270483811,
+      "neutral_truncated_mu_ev": -0.0015074264024513618,
+      "neutral_mu_error_ev": 2.249072459701933e-05,
+      "fixed_mu_density_relative_l2": 0.0007355646138010788,
+      "fixed_mu_missing_charge": 0.0007665759431577657
+    },
+    {
+      "modes": 100,
+      "fixed_full_mu_ev": -0.0015299171270483811,
+      "neutral_truncated_mu_ev": -0.0015297378041652454,
+      "neutral_mu_error_ev": 1.7932288313570084e-07,
+      "fixed_mu_density_relative_l2": 5.8786476798310695e-06,
+      "fixed_mu_missing_charge": 6.115258959105141e-06
+    },
+    {
+      "modes": 150,
+      "fixed_full_mu_ev": -0.0015299171270483811,
+      "neutral_truncated_mu_ev": -0.00152991705276047,
+      "neutral_mu_error_ev": 7.428791110909716e-11,
+      "fixed_mu_density_relative_l2": 2.455622057764109e-09,
+      "fixed_mu_missing_charge": 2.533451115560581e-09
+    },
+    {
+      "modes": 300,
+      "fixed_full_mu_ev": -0.0015299171270483811,
+      "neutral_truncated_mu_ev": -0.0015299171270490093,
+      "neutral_mu_error_ev": 6.281867387381013e-16,
+      "fixed_mu_density_relative_l2": 2.1181652368833333e-14,
+      "fixed_mu_missing_charge": -2.1316282072803006e-14
+    }
+  ],
+  "grid_fully_selfconsistent_lead": [
+    {
+      "dy_nm": 1.0,
+      "dz_nm": 1.0,
+      "model": "transverse SP; full transverse EMA basis; Neumann exposed side walls; zero mean phi",
+      "converged": true,
+      "iterations": 25,
+      "runtime_s": 1.7322847089999414,
+      "mu_source_ev": -0.0015299171270483811,
+      "zero_reference_mu_ev": -0.0015299171270483811,
+      "neutrality_relative_error": 0.0,
+      "phi_range_v": 0.07449584593616781,
+      "flat_poisson_correction_range_v": 0.21372526778637774,
+      "flat_vs_sp_density_relative_l2": 0.33926427605088455,
+      "flat_mu_ev": -0.00962398213093531,
+      "flat_vs_sp_mu_change_ev": 0.008094065003886928,
+      "full_transverse_dimension": 300,
+      "k_nodes": 256,
+      "history": [
+        {
+          "iteration": 0,
+          "potential_correction_v": 0.03830569970987845,
+          "poisson_residual_v_nm2": 0.015342801589725416,
+          "mu_ev": -0.00962398213093531
+        },
+        {
+          "iteration": 1,
+          "potential_correction_v": 0.018992310287895806,
+          "poisson_residual_v_nm2": 0.007656155328342264,
+          "mu_ev": -0.0050950171726677
+        },
+        {
+          "iteration": 2,
+          "potential_correction_v": 0.009140444251177736,
+          "poisson_residual_v_nm2": 0.0036527406029198423,
+          "mu_ev": -0.0030884579540352225
+        },
+        {
+          "iteration": 3,
+          "potential_correction_v": 0.004295806150682962,
+          "poisson_residual_v_nm2": 0.0017634577208404827,
+          "mu_ev": -0.0022239529229009353
+        },
+        {
+          "iteration": 4,
+          "potential_correction_v": 0.0019953689447329095,
+          "poisson_residual_v_nm2": 0.0009286064021395098,
+          "mu_ev": -0.001845145958591129
+        },
+        {
+          "iteration": 5,
+          "potential_correction_v": 0.0009240227984866157,
+          "poisson_residual_v_nm2": 0.0004787814780445837,
+          "mu_ev": -0.0016750397801008514
+        },
+        {
+          "iteration": 6,
+          "potential_correction_v": 0.00042840827317338427,
+          "poisson_residual_v_nm2": 0.0002422430084674707,
+          "mu_ev": -0.0015972770675940363
+        },
+        {
+          "iteration": 7,
+          "potential_correction_v": 0.00019916261237001723,
+          "poisson_residual_v_nm2": 0.00012072453719533856,
+          "mu_ev": -0.0015613406448413876
+        },
+        {
+          "iteration": 8,
+          "potential_correction_v": 9.286566474691502e-05,
+          "poisson_residual_v_nm2": 5.9474046307999434e-05,
+          "mu_ev": -0.0015446251398428146
+        },
+        {
+          "iteration": 9,
+          "potential_correction_v": 4.342291156544786e-05,
+          "poisson_residual_v_nm2": 2.9048458766476465e-05,
+          "mu_ev": -0.0015368178707307343
+        },
+        {
+          "iteration": 10,
+          "potential_correction_v": 2.0354456926109574e-05,
+          "poisson_residual_v_nm2": 1.4098207263101362e-05,
+          "mu_ev": -0.0015331608672760693
+        },
+        {
+          "iteration": 11,
+          "potential_correction_v": 9.561686444089786e-06,
+          "poisson_residual_v_nm2": 6.810582980418603e-06,
+          "mu_ev": -0.0015314441795847608
+        },
+        {
+          "iteration": 12,
+          "potential_correction_v": 4.500044010952998e-06,
+          "poisson_residual_v_nm2": 3.27889299768817e-06,
+          "mu_ev": -0.001530636924314921
+        },
+        {
+          "iteration": 13,
+          "potential_correction_v": 2.1212799875427044e-06,
+          "poisson_residual_v_nm2": 1.5746798211909406e-06,
+          "mu_ev": -0.0015302567694539574
+        },
+        {
+          "iteration": 14,
+          "potential_correction_v": 1.001352925806792e-06,
+          "poisson_residual_v_nm2": 7.548712392061591e-07,
+          "mu_ev": -0.0015300775228465388
+        },
+        {
+          "iteration": 15,
+          "potential_correction_v": 4.732686891467308e-07,
+          "poisson_residual_v_nm2": 3.613971773452039e-07,
+          "mu_ev": -0.0015299929145073787
+        },
+        {
+          "iteration": 16,
+          "potential_correction_v": 2.2392113054738089e-07,
+          "poisson_residual_v_nm2": 1.758131441776875e-07,
+          "mu_ev": -0.0015299529392208517
+        },
+        {
+          "iteration": 17,
+          "potential_correction_v": 1.0604589981276685e-07,
+          "poisson_residual_v_nm2": 8.591499105290584e-08,
+          "mu_ev": -0.0015299340358224348
+        },
+        {
+          "iteration": 18,
+          "potential_correction_v": 5.026396068521242e-08,
+          "poisson_residual_v_nm2": 4.187706613076325e-08,
+          "mu_ev": -0.0015299250900308976
+        },
+        {
+          "iteration": 19,
+          "potential_correction_v": 2.384198463248383e-08,
+          "poisson_residual_v_nm2": 2.0366566788089513e-08,
+          "mu_ev": -0.001529920853655598
+        },
+        {
+          "iteration": 20,
+          "potential_correction_v": 1.1316576903558902e-08,
+          "poisson_residual_v_nm2": 9.885879409358977e-09,
+          "mu_ev": -0.0015299188462392231
+        },
+        {
+          "iteration": 21,
+          "potential_correction_v": 5.374564450079233e-09,
+          "poisson_residual_v_nm2": 4.790400239679249e-09,
+          "mu_ev": -0.0015299178944907456
+        },
+        {
+          "iteration": 22,
+          "potential_correction_v": 2.553872702396722e-09,
+          "poisson_residual_v_nm2": 2.317796445223952e-09,
+          "mu_ev": -0.0015299174430237878
+        },
+        {
+          "iteration": 23,
+          "potential_correction_v": 1.2141114002107322e-09,
+          "poisson_residual_v_nm2": 1.1199568885136846e-09,
+          "mu_ev": -0.0015299172287698915
+        },
+        {
+          "iteration": 24,
+          "potential_correction_v": 5.774303086625223e-10,
+          "poisson_residual_v_nm2": 5.405242095926632e-10,
+          "mu_ev": -0.0015299171270483811
+        }
+      ],
+      "gauge": "phi -> phi+V, H -> H-V eV, mu -> mu-V eV; electron charge -q",
+      "boundary_assumption": "zero normal electric field on exposed transverse S/D side faces"
+    },
+    {
+      "dy_nm": 0.5,
+      "dz_nm": 0.5,
+      "model": "transverse SP; full transverse EMA basis; Neumann exposed side walls; zero mean phi",
+      "converged": true,
+      "iterations": 26,
+      "runtime_s": 32.46545432399944,
+      "mu_source_ev": 0.00035567305961497114,
+      "zero_reference_mu_ev": 0.00035567305961497114,
+      "neutrality_relative_error": 3.552713678800501e-14,
+      "phi_range_v": 0.07759275362846667,
+      "flat_poisson_correction_range_v": 0.21683562071727136,
+      "flat_vs_sp_density_relative_l2": 0.34344031314556095,
+      "flat_mu_ev": -0.008230864422908124,
+      "flat_vs_sp_mu_change_ev": 0.008586537482523096,
+      "full_transverse_dimension": 1200,
+      "k_nodes": 256,
+      "history": [
+        {
+          "iteration": 0,
+          "potential_correction_v": 0.03906928298261656,
+          "poisson_residual_v_nm2": 0.015458955784039018,
+          "mu_ev": -0.008230864422908124
+        },
+        {
+          "iteration": 1,
+          "potential_correction_v": 0.019763642992343962,
+          "poisson_residual_v_nm2": 0.0077750727948086955,
+          "mu_ev": -0.0035769148742193376
+        },
+        {
+          "iteration": 2,
+          "potential_correction_v": 0.009763376764218774,
+          "poisson_residual_v_nm2": 0.003782454507238492,
+          "mu_ev": -0.0014325525309614273
+        },
+        {
+          "iteration": 3,
+          "potential_correction_v": 0.004714118540260281,
+          "poisson_residual_v_nm2": 0.0019719066288175786,
+          "mu_ev": -0.00046950795655643365
+        },
+        {
+          "iteration": 4,
+          "potential_correction_v": 0.0022485655928276686,
+          "poisson_residual_v_nm2": 0.0010334424352975496,
+          "mu_ev": -3.1474805384275564e-05
+        },
+        {
+          "iteration": 5,
+          "potential_correction_v": 0.0010690506332449326,
+          "poisson_residual_v_nm2": 0.0005322369998012901,
+          "mu_ev": 0.00017188202908764282
+        },
+        {
+          "iteration": 6,
+          "potential_correction_v": 0.0005089496566392197,
+          "poisson_residual_v_nm2": 0.00027372067897822984,
+          "mu_ev": 0.00026777834407962935
+        },
+        {
+          "iteration": 7,
+          "potential_correction_v": 0.00024302925757251304,
+          "poisson_residual_v_nm2": 0.0001387665229325291,
+          "mu_ev": 0.0003134470271483222
+        },
+        {
+          "iteration": 8,
+          "potential_correction_v": 0.00011642946870444335,
+          "poisson_residual_v_nm2": 6.960522113832459e-05,
+          "mu_ev": 0.00033532649881144657
+        },
+        {
+          "iteration": 9,
+          "potential_correction_v": 5.594577998331334e-05,
+          "poisson_residual_v_nm2": 3.4647923964633166e-05,
+          "mu_ev": 0.00034584861201348975
+        },
+        {
+          "iteration": 10,
+          "potential_correction_v": 2.6951811817468365e-05,
+          "poisson_residual_v_nm2": 1.7705132643972867e-05,
+          "mu_ev": 0.00035092186188152104
+        },
+        {
+          "iteration": 11,
+          "potential_correction_v": 1.3012007418867887e-05,
+          "poisson_residual_v_nm2": 9.06254397950012e-06,
+          "mu_ev": 0.0003533725163291035
+        },
+        {
+          "iteration": 12,
+          "potential_correction_v": 6.293324231230682e-06,
+          "poisson_residual_v_nm2": 4.610291489445806e-06,
+          "mu_ev": 0.0003545580251294607
+        },
+        {
+          "iteration": 13,
+          "potential_correction_v": 3.048360868983693e-06,
+          "poisson_residual_v_nm2": 2.333345351196621e-06,
+          "mu_ev": 0.00035513218505028166
+        },
+        {
+          "iteration": 14,
+          "potential_correction_v": 1.4784213963195445e-06,
+          "poisson_residual_v_nm2": 1.1758525955392687e-06,
+          "mu_ev": 0.0003554105286181737
+        },
+        {
+          "iteration": 15,
+          "potential_correction_v": 7.177785796067161e-07,
+          "poisson_residual_v_nm2": 5.90379433399596e-07,
+          "mu_ev": 0.0003555455760796008
+        },
+        {
+          "iteration": 16,
+          "potential_correction_v": 3.487976117613706e-07,
+          "poisson_residual_v_nm2": 2.95489989906271e-07,
+          "mu_ev": 0.0003556111451918602
+        },
+        {
+          "iteration": 17,
+          "potential_correction_v": 1.696249866194636e-07,
+          "poisson_residual_v_nm2": 1.474945081339149e-07,
+          "mu_ev": 0.0003556430003774583
+        },
+        {
+          "iteration": 18,
+          "potential_correction_v": 8.254516385593e-08,
+          "poisson_residual_v_nm2": 7.344920476860806e-08,
+          "mu_ev": 0.0003556584848407921
+        },
+        {
+          "iteration": 19,
+          "potential_correction_v": 4.019191719177603e-08,
+          "poisson_residual_v_nm2": 3.650126867860842e-08,
+          "mu_ev": 0.00035566601527169643
+        },
+        {
+          "iteration": 20,
+          "potential_correction_v": 1.9579295305025952e-08,
+          "poisson_residual_v_nm2": 1.8107131127820253e-08,
+          "mu_ev": 0.00035566967903708825
+        },
+        {
+          "iteration": 21,
+          "potential_correction_v": 9.541960952178548e-09,
+          "poisson_residual_v_nm2": 8.968230612999006e-09,
+          "mu_ev": 0.00035567146223438163
+        },
+        {
+          "iteration": 22,
+          "potential_correction_v": 4.651955518347156e-09,
+          "poisson_residual_v_nm2": 4.435683007529556e-09,
+          "mu_ev": 0.00035567233042996997
+        },
+        {
+          "iteration": 23,
+          "potential_correction_v": 2.2686602442412496e-09,
+          "poisson_residual_v_nm2": 2.191192225928229e-09,
+          "mu_ev": 0.000355672753260862
+        },
+        {
+          "iteration": 24,
+          "potential_correction_v": 1.1066770499224434e-09,
+          "poisson_residual_v_nm2": 1.0812523532771623e-09,
+          "mu_ev": 0.0003556729592446575
+        },
+        {
+          "iteration": 25,
+          "potential_correction_v": 5.399753212754484e-10,
+          "poisson_residual_v_nm2": 5.330314687898574e-10,
+          "mu_ev": 0.00035567305961497114
+        }
+      ],
+      "gauge": "phi -> phi+V, H -> H-V eV, mu -> mu-V eV; electron charge -q",
+      "boundary_assumption": "zero normal electric field on exposed transverse S/D side faces"
+    }
+  ],
+  "grid_mu_change_ev": 0.0018855901866633522,
+  "scope": "2D lead reference; not fully SCF device refinement"
+}

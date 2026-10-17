@@ -1,0 +1,26 @@
+[
+  {
+    "valley": "Delta_x",
+    "energy_ev": 0.02743025733727382,
+    "eigen_residual_ev": 9.931660936089453e-14,
+    "projected_device_spectral_weight": 0.9863348442018366,
+    "lead_tail_weight": 0.013665155798163409,
+    "gamma_coupling_ev": 1.504632769052528e-36,
+    "source_weight": 1.0337071723956658e-37,
+    "central_weight": 0.0011161706298873193,
+    "drain_weight": 0.9852186735719493,
+    "classification": "projected isolated pole; physical vs contact/grid artifact INCONCLUSIVE"
+  },
+  {
+    "valley": "Delta_x",
+    "energy_ev": 0.027476344278907917,
+    "eigen_residual_ev": 3.150026500052146e-13,
+    "projected_device_spectral_weight": 0.9852654767091952,
+    "lead_tail_weight": 0.014734523290804824,
+    "gamma_coupling_ev": 5.64237288394698e-37,
+    "source_weight": 0.9841260193550514,
+    "central_weight": 0.001139457354144055,
+    "drain_weight": 2.4611807180424666e-37,
+    "classification": "projected isolated pole; physical vs contact/grid artifact INCONCLUSIVE"
+  }
+]

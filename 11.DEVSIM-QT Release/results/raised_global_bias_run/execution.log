@@ -1,0 +1,108 @@
+{"requested_points": 1, "configuration": {"geometry_profile": "raised", "ls": 12.0, "lg": 24.0, "ld": 12.0, "spacer": 3.0, "width": 12.0, "thickness": 5.0, "sd_width": 20.0, "sd_thickness": 15.0, "tox": 2.0, "eps_si": 11.7, "eps_ox": 3.9, "eps_spacer": 7.5, "donor_sd": 1e+19, "donor_channel": 0.0, "transition": 1.0, "temperature": 300.0, "flatband": 0.5, "dx": 0.5, "dy": 1.0, "dz": 1.0, "modes": 8, "sd_modes": 32, "mesh_h": 3.5, "channel_h": 1.8, "junction_h": 1.3, "gamma": 0.01, "backend": "negf", "mapping": "integrated", "fermi_poles": 48, "contour_batch_size": 8, "transmission_batch_size": 16, "energy_step": 0.01, "energy_order": 8, "fermi_tail": 16.0, "energy_rtol": 2e-05, "energy_atol": 1e-07, "energy_max_nodes": 120000, "basis": "fixed", "preconditioner": "screened", "mix": 0.15, "history": 5, "max_iterations": 80, "charge_tol": 0.002, "phi_tol": 0.0001, "current_tol": 0.002, "ms_tie_tol": 1e-07, "junction_basis": "nested", "transport_axis": 0, "reservoir_left_nm": 6.0, "reservoir_right_nm": 6.0, "ms_contrast_min": 0.1, "ms_reach_min": 1e-05, "ms_occupation_uncertainty": 1e-07, "ms_degenerate_ev": 1e-07, "ms_boundary_shift_slices": 1, "ms_number_constraint": "finite_total", "mu_source_ev": null, "resonance_order": 32, "resonance_max_iterations": 12, "high_field_v_nm": 0.5, "dispersion_tolerance": 0.02, "newton_start": 8, "newton_trust_radius_v": 0.1, "newton_max_backtracks": 16, "potential_reference_v": 0.0, "density_reference": "lower", "contact_model": "transverse_sp", "lead_k_nodes": 256, "lead_max_iterations": 240, "lead_residual_tol": 1e-09}, "source_sha256": "3061a07c90c118618a353ea665e4f8840b9bde15cd86f88593077c9c92e05db6"}
+Searching DEVSIM_MATH_LIBS="libopenblas.so.0"
+Loading "libopenblas.so.0": ALL BLAS/LAPACK LOADED
+loading UMFPACK 5.1 as direct solver
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_ae900593 has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+Cell/tetra integration 5000/5020 tetra, 34.8s
+PROFILE START lead transverse SP
+PROFILE lead transverse SP {"calls": 1, "inclusive_seconds": 1.889725885000189, "energy_nodes": 0}
+number of equations 2296
+Iteration: 0
+  Device: "gaa_ae900593"	RelError: 1.00000e+00	AbsError: 1.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 1.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 1.00000e-01
+Iteration: 1
+  Device: "gaa_ae900593"	RelError: 1.37432e-12	AbsError: 9.97814e-17
+    Region: "electrostatic"	RelError: 1.37432e-12	AbsError: 9.97814e-17
+      Equation: "PotentialEquation"	RelError: 1.37432e-12	AbsError: 9.97814e-17
+PROFILE START banded resonance search
+PROFILE banded resonance search {"calls": 1, "inclusive_seconds": 6.586130411999875, "energy_nodes": 0}
+PROFILE START real-energy integration
+PROFILE contact self-energy {"calls": 296, "inclusive_seconds": 0.638699366988476, "energy_nodes": 2368}
+PROFILE contact self-energy {"calls": 595, "inclusive_seconds": 1.273998939991543, "energy_nodes": 4760}
+PROFILE contact self-energy {"calls": 893, "inclusive_seconds": 1.9161528249924231, "energy_nodes": 7144}
+PROFILE RGF contour/injectivity {"calls": 1189, "inclusive_seconds": 61.82826042701254, "energy_nodes": 9512}
+PROFILE RGF contour/injectivity {"calls": 1437, "inclusive_seconds": 76.67235916401569, "energy_nodes": 11496}
+PROFILE contact self-energy {"calls": 1724, "inclusive_seconds": 3.7679483669917317, "energy_nodes": 13792}
+PROFILE contact self-energy {"calls": 1973, "inclusive_seconds": 4.4042841639929975, "energy_nodes": 16168}
+PROFILE contact self-energy {"calls": 2151, "inclusive_seconds": 5.031275003996598, "energy_nodes": 18304}
+PROFILE RGF contour/injectivity {"calls": 2340, "inclusive_seconds": 136.96340172701366, "energy_nodes": 20576}
+PROFILE RGF contour/injectivity {"calls": 2527, "inclusive_seconds": 152.03260721901825, "energy_nodes": 22816}
+PROFILE contact self-energy {"calls": 2717, "inclusive_seconds": 6.926159178997295, "energy_nodes": 25096}
+PROFILE contact self-energy {"calls": 2909, "inclusive_seconds": 7.561250217991983, "energy_nodes": 27400}
+PROFILE contact self-energy {"calls": 3097, "inclusive_seconds": 8.196588061997318, "energy_nodes": 29656}
+PROFILE contact self-energy {"calls": 3293, "inclusive_seconds": 8.822630927993487, "energy_nodes": 32008}
+PROFILE contact self-energy {"calls": 3497, "inclusive_seconds": 9.467124673996295, "energy_nodes": 34456}
+PROFILE RGF contour/injectivity {"calls": 3693, "inclusive_seconds": 242.30707711000832, "energy_nodes": 36808}
+PROFILE RGF contour/injectivity {"calls": 3878, "inclusive_seconds": 257.22055361700313, "energy_nodes": 39032}
+PROFILE RGF contour/injectivity {"calls": 4067, "inclusive_seconds": 272.19800639499954, "energy_nodes": 41296}
+PROFILE RGF contour/injectivity {"calls": 4255, "inclusive_seconds": 287.4654902640059, "energy_nodes": 43552}
+PROFILE RGF contour/injectivity {"calls": 4429, "inclusive_seconds": 302.3279711580044, "energy_nodes": 45640}
+PROFILE RGF contour/injectivity {"calls": 4606, "inclusive_seconds": 317.3753461610013, "energy_nodes": 47768}
+PROFILE RGF contour/injectivity {"calls": 4786, "inclusive_seconds": 332.41244328899575, "energy_nodes": 49928}
+PROFILE RGF contour/injectivity {"calls": 4964, "inclusive_seconds": 347.4187141250004, "energy_nodes": 52064}
+PROFILE contact self-energy {"calls": 5155, "inclusive_seconds": 15.081922138987466, "energy_nodes": 54352}
+PROFILE contact self-energy {"calls": 5347, "inclusive_seconds": 15.710689426990939, "energy_nodes": 56656}
+PROFILE RGF contour/injectivity {"calls": 5538, "inclusive_seconds": 392.8699424539882, "energy_nodes": 58952}
+PROFILE real-energy integration {"calls": 1, "inclusive_seconds": 796.9818586869997, "energy_nodes": 0}
+PROFILE START banded resonance search
+PROFILE banded resonance search {"calls": 2, "inclusive_seconds": 12.590125583999907, "energy_nodes": 0}
+PROFILE START real-energy integration
+PROFILE RGF contour/injectivity {"calls": 5894, "inclusive_seconds": 416.2226069609933, "energy_nodes": 62112}
+PROFILE contact self-energy {"calls": 6172, "inclusive_seconds": 17.886864646990034, "energy_nodes": 64336}
+PROFILE contact self-energy {"calls": 6461, "inclusive_seconds": 18.514494551976895, "energy_nodes": 66648}
+PROFILE RGF contour/injectivity {"calls": 6748, "inclusive_seconds": 461.4257899459926, "energy_nodes": 68944}
+PROFILE contact self-energy {"calls": 7032, "inclusive_seconds": 19.750401952971515, "energy_nodes": 71216}
+PROFILE contact self-energy {"calls": 7297, "inclusive_seconds": 20.352053485972647, "energy_nodes": 73336}
+PROFILE contact self-energy {"calls": 7568, "inclusive_seconds": 20.96274353397621, "energy_nodes": 75504}
+PROFILE contact self-energy {"calls": 7835, "inclusive_seconds": 21.579610648981543, "energy_nodes": 77640}
+PROFILE contact self-energy {"calls": 8096, "inclusive_seconds": 22.180611950982893, "energy_nodes": 79728}
+PROFILE contact self-energy {"calls": 8339, "inclusive_seconds": 22.80098613298742, "energy_nodes": 81992}
+PROFILE contact self-energy {"calls": 8538, "inclusive_seconds": 23.436946681989866, "energy_nodes": 84376}
+PROFILE contact self-energy {"calls": 8728, "inclusive_seconds": 24.055686525986857, "energy_nodes": 86656}
+PROFILE RGF contour/injectivity {"calls": 8915, "inclusive_seconds": 596.5916029469818, "energy_nodes": 88904}
+PROFILE RGF contour/injectivity {"calls": 9071, "inclusive_seconds": 611.0078832289882, "energy_nodes": 90776}
+PROFILE RGF contour/injectivity {"calls": 9223, "inclusive_seconds": 625.3811849339909, "energy_nodes": 92600}
+PROFILE contact self-energy {"calls": 9364, "inclusive_seconds": 26.395322392008893, "energy_nodes": 94288}
+PROFILE contact self-energy {"calls": 9504, "inclusive_seconds": 26.95729127600498, "energy_nodes": 95968}
+PROFILE RGF contour/injectivity {"calls": 9680, "inclusive_seconds": 668.4830108199758, "energy_nodes": 98080}

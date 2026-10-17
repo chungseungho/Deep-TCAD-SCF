@@ -1,0 +1,6 @@
+file,geometry,modes,sd_modes,vg_v,vd_v,id_a,SCF_CONVERGED,runtime_s,teacher_ready
+results/distribution_resume_device/states/vg0.400000_vd0.000000.npz,uniform,8,32,0.4,0.0,0.0,True,6.110613484000169,False
+results/uniform_diagnostic/states/vg0.400000_vd0.000000.npz,uniform,8,32,0.4,0.0,0.0,True,7.010269913000229,False
+results/uniform_eq/states/vg0.400000_vd0.000000.npz,uniform,8,32,0.4,0.0,0.0,True,40.68101276499965,False
+results/uniform_global_sweep/states/vg0.400000_vd0.000000.npz,uniform,8,32,0.4,0.0,0.0,True,42.255458894000185,False
+results/uniform_small/states/vg0.400000_vd0.000000.npz,uniform,2,4,0.4,0.0,0.0,True,5.310546411999894,False

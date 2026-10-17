@@ -1,0 +1,26 @@
+{
+  "status": "NOT_CERTIFIED_FOR_DEVICE_OBSERVABLES",
+  "targets": {
+    "regional_density_charge_current_refinement_relative": 0.01,
+    "lead_chemical_potential_change_ev": 0.0001,
+    "relative_current_conservation": 0.000001,
+    "raw_scf_phi_residual_v": 0.0001,
+    "raw_scf_density_relative_residual": 0.002
+  },
+  "current_integrator_defaults": {
+    "density_matrix_entry_atol": 1e-7,
+    "component_relative_tolerance": 2e-5,
+    "bond_and_transmission_integral_absolute_tolerance_ev": 2e-15,
+    "approximate_total_six_valley_spin_absolute_current_tolerance_a": 5.84e-18,
+    "fermi_tail_kbt": 16,
+    "final_acceptance": "componentwise sum of q/2q estimated errors <= atol + rtol*abs(final integral)",
+    "not_a_rigorous_missing_resonance_bound": true
+  },
+  "limitations": [
+    "Current absolute tolerance remains conservative; a calibrated off-current/noise floor has not been established.",
+    "Device energy refinement and Newton differencing noise have not passed a representative biased-observable study.",
+    "No SS, Ioff, Vth or gm accuracy is certified.",
+    "Local Pauli bounds and algebraic current conservation do not establish density completeness or physical accuracy."
+  ],
+  "teacher_ready": false
+}

@@ -1,0 +1,3 @@
+{"kind": "line_search", "iteration": 0, "step_scale": 1.0, "valid": true, "accepted": true, "method": "newton", "gmres_info": 0, "residual_inf": 0.00035520921599921026, "residual_l2": 0.005355348031266913}
+{"kind": "line_search", "iteration": 1, "step_scale": 1.0, "valid": true, "accepted": true, "method": "newton", "gmres_info": 0, "residual_inf": 1.692148037818475e-05, "residual_l2": 0.00010225543558341338}
+{"kind": "line_search", "iteration": 2, "step_scale": 1.0, "valid": true, "accepted": true, "method": "newton", "gmres_info": 0, "residual_inf": 1.556259715679298e-07, "residual_l2": 2.4493703410424305e-06}

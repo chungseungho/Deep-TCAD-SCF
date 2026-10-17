@@ -1,0 +1,9 @@
+{
+  "category": "B: electrostatic computational buffer",
+  "reference_config": "release_raised.json",
+  "coordinate_origin_shift_nm": 6.0,
+  "target_domain": "original silicon, gate, channel, spacers and junction after shifting extended x by -6 nm",
+  "extension": "append 6 nm of identical translational S/D lead on both outer ends; same reference boundary data",
+  "not_category_C": "do not interpret as a fabricated S/D length comparison",
+  "limitation": "equilibrium only; one extension is not a convergence plateau"
+}

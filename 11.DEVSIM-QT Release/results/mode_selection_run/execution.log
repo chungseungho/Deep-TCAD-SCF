@@ -1,0 +1,32 @@
+{
+  "scope": "starting proposal only; run refine at off/threshold/on and low/high drain",
+  "contact_full_basis": 300,
+  "evanescent_guard_ev": 0.1,
+  "valleys": [
+    {
+      "valley": "Delta_z",
+      "channel_modes": 60,
+      "contact_modes": 123,
+      "contact_cutoff_ev": 0.4086940803101716,
+      "channel_cutoff_ev": 1.6086940803101717
+    },
+    {
+      "valley": "Delta_x",
+      "channel_modes": 60,
+      "contact_modes": 47,
+      "contact_cutoff_ev": 0.4086940803101716,
+      "channel_cutoff_ev": 1.6086940803101717
+    },
+    {
+      "valley": "Delta_y",
+      "channel_modes": 60,
+      "contact_modes": 121,
+      "contact_cutoff_ev": 0.4086940803101716,
+      "channel_cutoff_ev": 1.6086940803101717
+    }
+  ],
+  "numerical_convergence_verified": false,
+  "requested_modes": 60,
+  "requested_sd_modes": 123,
+  "warning": "A full gate window can require full channel basis; nested enrichment adds further contact states. Resource and fully SCF convergence checks remain mandatory."
+}

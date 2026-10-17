@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "validation/revalidate_equilibrium_seed.py",
+    "results/uniform_eq/states/vg0.400000_vd0.000000.npz",
+    "results/uniform_eq_run/source_manifest.json",
+    "results/current_uniform_seed.npz"
+  ],
+  "cwd": "/workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "exit_code": 1,
+  "runtime_s": 2.2757773399353027,
+  "peak_child_rss_kib": 85160,
+  "native_library_dir": "/workspace/scratch/3024dd41bc9d/native_libs/root/usr/lib/x86_64-linux-gnu",
+  "threads": 1,
+  "timeout_s": null,
+  "source_unchanged_during_run": true
+}

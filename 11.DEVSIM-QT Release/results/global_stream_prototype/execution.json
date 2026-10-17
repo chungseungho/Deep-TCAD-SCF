@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-c",
+    "import transport.quadrature as q; from validation.streaming_global import integrate_vector; q.integrate_vector=integrate_vector; import pytest; raise SystemExit(pytest.main(['tests/test_quadrature.py','tests/test_resonances.py','tests/test_step11_resonance.py','tests/test_step11_streaming_memory.py','tests/test_step11_contacts.py','-q']))"
+  ],
+  "cwd": "/workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "exit_code": 0,
+  "runtime_s": 2.297546863555908,
+  "peak_child_rss_kib": 75452,
+  "native_library_dir": "/workspace/scratch/3024dd41bc9d/native_libs/root/usr/lib/x86_64-linux-gnu",
+  "threads": 1,
+  "timeout_s": null,
+  "source_unchanged_during_run": true
+}

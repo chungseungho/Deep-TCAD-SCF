@@ -1,0 +1,877 @@
+[
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.0,
+    "vd_v": 0.05,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.05,
+    "vd_v": 0.05,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.1,
+    "vd_v": 0.05,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.15,
+    "vd_v": 0.05,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.2,
+    "vd_v": 0.05,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.25,
+    "vd_v": 0.05,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.3,
+    "vd_v": 0.05,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.35,
+    "vd_v": 0.05,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.4,
+    "vd_v": 0.05,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.45,
+    "vd_v": 0.05,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.5,
+    "vd_v": 0.05,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.55,
+    "vd_v": 0.05,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.6,
+    "vd_v": 0.05,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.65,
+    "vd_v": 0.05,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.7,
+    "vd_v": 0.05,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.75,
+    "vd_v": 0.05,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.8,
+    "vd_v": 0.05,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.85,
+    "vd_v": 0.05,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.9,
+    "vd_v": 0.05,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.95,
+    "vd_v": 0.05,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 1.0,
+    "vd_v": 0.05,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 1.05,
+    "vd_v": 0.05,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 1.1,
+    "vd_v": 0.05,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 1.15,
+    "vd_v": 0.05,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 1.2,
+    "vd_v": 0.05,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.0,
+    "vd_v": 0.1,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.05,
+    "vd_v": 0.1,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.1,
+    "vd_v": 0.1,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.15,
+    "vd_v": 0.1,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.2,
+    "vd_v": 0.1,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.25,
+    "vd_v": 0.1,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.3,
+    "vd_v": 0.1,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.35,
+    "vd_v": 0.1,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.4,
+    "vd_v": 0.1,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.45,
+    "vd_v": 0.1,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.5,
+    "vd_v": 0.1,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.55,
+    "vd_v": 0.1,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.6,
+    "vd_v": 0.1,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.65,
+    "vd_v": 0.1,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.7,
+    "vd_v": 0.1,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.75,
+    "vd_v": 0.1,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.8,
+    "vd_v": 0.1,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.85,
+    "vd_v": 0.1,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.9,
+    "vd_v": 0.1,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 0.95,
+    "vd_v": 0.1,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 1.0,
+    "vd_v": 0.1,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 1.05,
+    "vd_v": 0.1,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 1.1,
+    "vd_v": 0.1,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 1.15,
+    "vd_v": 0.1,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVgs",
+    "vg_v": 1.2,
+    "vd_v": 0.1,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.4,
+    "vd_v": 0.0,
+    "status": "NUMERICALLY_COMPUTED",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.4,
+    "vd_v": 0.05,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.4,
+    "vd_v": 0.1,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.4,
+    "vd_v": 0.15,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.4,
+    "vd_v": 0.2,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.4,
+    "vd_v": 0.25,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.4,
+    "vd_v": 0.3,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.4,
+    "vd_v": 0.35,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.4,
+    "vd_v": 0.4,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.4,
+    "vd_v": 0.45,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.4,
+    "vd_v": 0.5,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.4,
+    "vd_v": 0.55,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.4,
+    "vd_v": 0.6,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.4,
+    "vd_v": 0.65,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.4,
+    "vd_v": 0.7,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.4,
+    "vd_v": 0.75,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.4,
+    "vd_v": 0.8,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.4,
+    "vd_v": 0.85,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.4,
+    "vd_v": 0.9,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.4,
+    "vd_v": 0.95,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.4,
+    "vd_v": 1.0,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.4,
+    "vd_v": 1.05,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.4,
+    "vd_v": 1.1,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.4,
+    "vd_v": 1.15,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.4,
+    "vd_v": 1.2,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.8,
+    "vd_v": 0.0,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.8,
+    "vd_v": 0.05,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.8,
+    "vd_v": 0.1,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.8,
+    "vd_v": 0.15,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.8,
+    "vd_v": 0.2,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.8,
+    "vd_v": 0.25,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.8,
+    "vd_v": 0.3,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.8,
+    "vd_v": 0.35,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.8,
+    "vd_v": 0.4,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.8,
+    "vd_v": 0.45,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.8,
+    "vd_v": 0.5,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.8,
+    "vd_v": 0.55,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.8,
+    "vd_v": 0.6,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.8,
+    "vd_v": 0.65,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.8,
+    "vd_v": 0.7,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.8,
+    "vd_v": 0.75,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.8,
+    "vd_v": 0.8,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.8,
+    "vd_v": 0.85,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.8,
+    "vd_v": 0.9,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.8,
+    "vd_v": 0.95,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.8,
+    "vd_v": 1.0,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.8,
+    "vd_v": 1.05,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.8,
+    "vd_v": 1.1,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.8,
+    "vd_v": 1.15,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 0.8,
+    "vd_v": 1.2,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 1.2,
+    "vd_v": 0.0,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 1.2,
+    "vd_v": 0.05,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 1.2,
+    "vd_v": 0.1,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 1.2,
+    "vd_v": 0.15,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 1.2,
+    "vd_v": 0.2,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 1.2,
+    "vd_v": 0.25,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 1.2,
+    "vd_v": 0.3,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 1.2,
+    "vd_v": 0.35,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 1.2,
+    "vd_v": 0.4,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 1.2,
+    "vd_v": 0.45,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 1.2,
+    "vd_v": 0.5,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 1.2,
+    "vd_v": 0.55,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 1.2,
+    "vd_v": 0.6,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 1.2,
+    "vd_v": 0.65,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 1.2,
+    "vd_v": 0.7,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 1.2,
+    "vd_v": 0.75,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 1.2,
+    "vd_v": 0.8,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 1.2,
+    "vd_v": 0.85,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 1.2,
+    "vd_v": 0.9,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 1.2,
+    "vd_v": 0.95,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 1.2,
+    "vd_v": 1.0,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 1.2,
+    "vd_v": 1.05,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 1.2,
+    "vd_v": 1.1,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 1.2,
+    "vd_v": 1.15,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  },
+  {
+    "sweep": "IdVds",
+    "vg_v": 1.2,
+    "vd_v": 1.2,
+    "status": "NOT_RUN",
+    "teacher_ready": false
+  }
+]

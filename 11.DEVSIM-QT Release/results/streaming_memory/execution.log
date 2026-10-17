@@ -1,0 +1,10 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.14, pytest-9.1.1, pluggy-1.7.0 -- /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python
+cachedir: .pytest_cache
+rootdir: /workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release
+configfile: pytest.ini
+collecting ... collected 1 item
+
+tests/test_step11_streaming_memory.py::test_many_component_integral_does_not_store_all_energy_or_panel_values PASSED
+
+============================== 1 passed in 0.50s ===============================

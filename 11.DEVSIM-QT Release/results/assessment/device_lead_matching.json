@@ -1,0 +1,65 @@
+{
+  "scope": "cell-averaged first/last quantum slice vs translational SP reference; not constant-flatness criterion",
+  "measurements": [
+    {
+      "state": "results/buffer_eq/states/vg0.400000_vd0.000000.npz",
+      "source_endpoint_phi_error_max_v": 0.007003246430777592,
+      "drain_endpoint_phi_error_max_v": 0.006934562564887711
+    },
+    {
+      "state": "results/distribution_resume_device/states/vg0.400000_vd0.000000.npz",
+      "source_endpoint_phi_error_max_v": 0.007184248809246507,
+      "drain_endpoint_phi_error_max_v": 0.0075815872627670745
+    },
+    {
+      "state": "results/raised_current_eq/states/vg0.400000_vd0.000000.npz",
+      "source_endpoint_phi_error_max_v": 0.006908835986757074,
+      "drain_endpoint_phi_error_max_v": 0.007046896881563951
+    },
+    {
+      "state": "results/raised_diagnostic/states/vg0.400000_vd0.000000.npz",
+      "source_endpoint_phi_error_max_v": 0.009567232938658972,
+      "drain_endpoint_phi_error_max_v": 0.00852640313052474
+    },
+    {
+      "state": "results/raised_eq_final/states/vg0.400000_vd0.000000.npz",
+      "source_endpoint_phi_error_max_v": 0.006908837500002568,
+      "drain_endpoint_phi_error_max_v": 0.00704689745888705
+    },
+    {
+      "state": "results/raised_fine_eq/states/vg0.400000_vd0.000000.npz",
+      "source_endpoint_phi_error_max_v": 0.006219831085187179,
+      "drain_endpoint_phi_error_max_v": 0.0061465353183384475
+    },
+    {
+      "state": "results/raised_refined_eq/states/vg0.400000_vd0.000000.npz",
+      "source_endpoint_phi_error_max_v": 0.0072282418414544095,
+      "drain_endpoint_phi_error_max_v": 0.00738515065908827
+    },
+    {
+      "state": "results/raised_resume/states/vg0.400000_vd0.000000.npz",
+      "source_endpoint_phi_error_max_v": 0.006908835986757074,
+      "drain_endpoint_phi_error_max_v": 0.007046896881563951
+    },
+    {
+      "state": "results/uniform_diagnostic/states/vg0.400000_vd0.000000.npz",
+      "source_endpoint_phi_error_max_v": 0.007184248809246507,
+      "drain_endpoint_phi_error_max_v": 0.0075815872627670745
+    },
+    {
+      "state": "results/uniform_eq/states/vg0.400000_vd0.000000.npz",
+      "source_endpoint_phi_error_max_v": 0.007184242418749598,
+      "drain_endpoint_phi_error_max_v": 0.00758158087178851
+    },
+    {
+      "state": "results/uniform_global_sweep/states/vg0.400000_vd0.000000.npz",
+      "source_endpoint_phi_error_max_v": 0.007184242418749598,
+      "drain_endpoint_phi_error_max_v": 0.00758158087178851
+    },
+    {
+      "state": "results/uniform_small/states/vg0.400000_vd0.000000.npz",
+      "source_endpoint_phi_error_max_v": 0.006622152846012017,
+      "drain_endpoint_phi_error_max_v": 0.00707539117083859
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "input_state": "results/raised_eq_final/states/vg0.400000_vd0.000000.npz",
+  "input_source_sha256": "8b23b2f72cfe53d75020d6e3f5a78ac4ef7392114aa261c6205395438d72b6df",
+  "current_source_sha256": "3061a07c90c118618a353ea665e4f8840b9bde15cd86f88593077c9c92e05db6",
+  "changed_files": [
+    "solver.py",
+    "run.py",
+    "transport/resonances.py",
+    "transport/backend_hooks.py",
+    "transport/quadrature.py",
+    "transport/api.py",
+    "transport/negf_reference.py",
+    "transport/ms_postprocess.py",
+    "modespace/hamiltonian.py",
+    "transport/backends/mock_quantum.py",
+    "transport/backends/spectral.py",
+    "transport/backends/negf.py",
+    "transport/backends/ms.py"
+  ],
+  "equilibrium_density_relative_error": 2.5147999707147887e-14,
+  "meaning": "revalidated initial guess only; next SCF must converge and reevaluate",
+  "TEACHER_READY": false
+}

@@ -1,0 +1,24 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.14, pytest-9.1.1, pluggy-1.7.0 -- /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python
+cachedir: .pytest_cache
+rootdir: /workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release
+configfile: pytest.ini
+collecting ... collected 15 items
+
+tests/test_quadrature.py::test_integrable_band_edge_singularity_is_resolved PASSED
+tests/test_quadrature.py::test_narrow_resonance_is_adaptively_resolved PASSED
+tests/test_resonances.py::test_ten_picovolt_width_resonance_resolved_without_eta PASSED
+tests/test_step11_resonance.py::test_banded_guidance_finds_narrow_resonance_against_dense_reference PASSED
+tests/test_negf_reference.py::test_continued_fraction_fermi_over_populated_energy_range PASSED
+tests/test_negf_reference.py::test_retarded_lead_branch_and_asymptote PASSED
+tests/test_negf_reference.py::test_rgf_diagonals_and_injectivities_match_dense_unequal_blocks PASSED
+tests/test_negf_reference.py::test_uniform_infinite_chain_contour_density_matches_k_integration PASSED
+tests/test_negf_reference.py::test_uniform_chain_transmission_one_without_eta PASSED
+tests/test_negf_reference.py::test_quadrature_splits_band_edges_and_integrates_polynomial PASSED
+tests/test_negf_reference.py::test_uniform_barrier_matches_analytical_single_site_transmission PASSED
+tests/test_negf_reference.py::test_complete_negf_solver_density_and_current_match_dense_open_gf PASSED
+tests/test_step11_contacts.py::test_reference_neutrality_gauge_and_actual_rotated_coupling PASSED
+tests/test_step11_contacts.py::test_cut_invariance_rotated_multichannel_density_and_transmission PASSED
+tests/test_step11_contacts.py::test_left_right_contour_same_density_without_isolated_states PASSED
+
+============================== 15 passed in 1.27s ==============================

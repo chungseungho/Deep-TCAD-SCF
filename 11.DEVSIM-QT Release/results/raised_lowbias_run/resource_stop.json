@@ -1,0 +1,7 @@
+{
+  "status": "NUMERICAL_FAILURE",
+  "reason": "operator interrupted near 8 GiB cgroup memory limit; integration stored all energy-node density components",
+  "observed_cgroup_memory_bytes": 8066686976,
+  "timeout_used": false,
+  "next_action": "stream weighted node contributions into per-panel integrals and preflight all valleys before real-energy integration"
+}

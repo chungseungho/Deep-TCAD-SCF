@@ -1,0 +1,717 @@
+{
+  "product": "DEVSIM-QT",
+  "version": "1.0-rc1",
+  "classification": "RELEASE_CANDIDATE",
+  "RELEASE_READY": false,
+  "TEACHER_READY": false,
+  "source_sha256": "3061a07c90c118618a353ea665e4f8840b9bde15cd86f88593077c9c92e05db6",
+  "mandatory": {
+    "native_integration": {
+      "status": "PASS",
+      "required": true,
+      "evidence": "results/pytest_final/junit.xml",
+      "reason": "92 tests; 0 failures/errors; 0 skipped"
+    },
+    "backend_replacement": {
+      "status": "PASS",
+      "required": true,
+      "evidence": "results/pytest_final/junit.xml",
+      "reason": ""
+    },
+    "independent_quantum_reference": {
+      "status": "PASS",
+      "required": true,
+      "evidence": "results/independent_final/summary.json",
+      "reason": ""
+    },
+    "raised_nonequilibrium_scf": {
+      "status": "FAIL",
+      "required": true,
+      "evidence": [
+        "results/raised_diagnostic/failures/vg0.400000_vd0.050000_field.json",
+        "results/raised_diagnostic/failures/vg0.400000_vd0.010000_bound_poles.json",
+        "results/raised_diagnostic/failures/vg0.400000_vd0.010000.json",
+        "results/raised_diagnostic/failures/vg0.400000_vd0.100000.json",
+        "results/raised_diagnostic/failures/vg0.400000_vd0.050000_bound_poles.json",
+        "results/raised_diagnostic/failures/vg0.400000_vd0.100000_bound_poles.json",
+        "results/raised_diagnostic/failures/vg0.400000_vd0.100000_field.json",
+        "results/raised_diagnostic/failures/vg0.400000_vd0.050000.json",
+        "results/raised_diagnostic/failures/vg0.400000_vd0.010000_field.json"
+      ],
+      "reason": "Numerical SCF alone is not a physical or training certificate."
+    },
+    "gate_drain_iv": {
+      "status": "NOT_RUN",
+      "required": true,
+      "evidence": "results/assessment/requested_sweep_status.json",
+      "reason": "118 of 119 unique requested bias points missing; no interpolation"
+    },
+    "lead_device_matching_and_cut": {
+      "status": "FAIL",
+      "required": true,
+      "evidence": [
+        "tests/test_step11_contacts.py",
+        "tests/test_step11_restart_boundary.py",
+        "results/assessment/device_lead_matching.json",
+        "results/assessment/buffer_comparison.json"
+      ],
+      "reason": "Kernel rotated/rectangular cut invariance and native nodal boundary checks pass; finite-device electrostatic matching/refinement remains outside accuracy target."
+    },
+    "bound_state_completeness": {
+      "status": "INCONCLUSIVE",
+      "required": true,
+      "evidence": [
+        "tests/test_step11_density_completeness.py",
+        "results/state_poles/summary.json",
+        "results/bound_localization/summary.json",
+        "results/embedded_candidates/summary.json"
+      ],
+      "reason": "Correct residue/equilibrium sum rule tested on small references. Physical-vs-artificial classification of device poles and global embedded-dark/above-band coverage remain incomplete; no biased preparation invented."
+    },
+    "mode_convergence": {
+      "status": "FAIL",
+      "required": true,
+      "evidence": [
+        "results/assessment/fully_scf_mode_comparison.json",
+        "results/frozen_modes/summary.json",
+        "results/lead_convergence/summary.json"
+      ],
+      "reason": "Fixed-phi/fixed-mu, lead-DOS and fully-SCF experiments separated; no representative biased convergence plateau established."
+    },
+    "grid_convergence": {
+      "status": "FAIL",
+      "required": true,
+      "evidence": [
+        "results/lead_convergence/summary.json",
+        "results/assessment/poisson_mesh_comparison.json"
+      ],
+      "reason": "Lead transverse grid 1 -> 0.5 nm and independent Poisson mesh refinement exceed required accuracy; coupled refined biased checks not certified."
+    },
+    "electrostatic_buffer_convergence": {
+      "status": "FAIL",
+      "required": true,
+      "evidence": "results/assessment/buffer_comparison.json",
+      "reason": "Category B extends identical outer lead by 6 nm on both ends, with original target coordinates restored. One equilibrium comparison is not a biased plateau. Physical category C is not used as convergence evidence."
+    },
+    "energy_convergence": {
+      "status": "NOT_RUN",
+      "required": true,
+      "evidence": [
+        "tests/test_step11_resonance.py",
+        "tests/test_step11_streaming_memory.py"
+      ],
+      "reason": "Kernel narrow-resonance and memory regression pass. Device-level tight/loose observable convergence and Newton-noise budget have not been certified."
+    },
+    "clean_install_and_resume": {
+      "status": "PASS",
+      "required": true,
+      "evidence": [
+        "results/clean_install.log",
+        "results/distribution_check/result.json",
+        "results/assessment/restart_comparison.json"
+      ],
+      "reason": "Fresh venv installation and actual extracted-source checkpoint continuation required."
+    },
+    "extracted_archive_execution": {
+      "status": "PASS",
+      "required": true,
+      "evidence": "results/distribution_check/result.json",
+      "reason": "All source tests run from a new extracted path with isolated installed dependencies."
+    }
+  },
+  "scope": "six-valley spin-degenerate silicon EMA ballistic GAA, 300 K; no scattering or learned correction",
+  "status_values": [
+    "FAIL",
+    "INCONCLUSIVE",
+    "NOT_RUN",
+    "OUT_OF_SCOPE",
+    "PASS"
+  ],
+  "numerically_converged_states": [
+    {
+      "path": "results/raised_current_eq/states/vg0.400000_vd0.000000.json",
+      "vg_v": 0.4,
+      "vd_v": 0.0,
+      "geometry": "raised",
+      "teacher_ready": false,
+      "source_matches_current": true
+    },
+    {
+      "path": "results/raised_eq/states/vg0.400000_vd0.000000.json",
+      "vg_v": 0.4,
+      "vd_v": 0.0,
+      "geometry": "raised",
+      "teacher_ready": false,
+      "source_matches_current": false
+    },
+    {
+      "path": "results/uniform_small/states/vg0.400000_vd0.000000.json",
+      "vg_v": 0.4,
+      "vd_v": 0.0,
+      "geometry": "uniform",
+      "teacher_ready": false,
+      "source_matches_current": false
+    },
+    {
+      "path": "results/uniform_diagnostic/states/vg0.400000_vd0.000000.json",
+      "vg_v": 0.4,
+      "vd_v": 0.0,
+      "geometry": "uniform",
+      "teacher_ready": false,
+      "source_matches_current": false
+    },
+    {
+      "path": "results/raised_eq_final/states/vg0.400000_vd0.000000.json",
+      "vg_v": 0.4,
+      "vd_v": 0.0,
+      "geometry": "raised",
+      "teacher_ready": false,
+      "source_matches_current": false
+    },
+    {
+      "path": "results/uniform_eq/states/vg0.400000_vd0.000000.json",
+      "vg_v": 0.4,
+      "vd_v": 0.0,
+      "geometry": "uniform",
+      "teacher_ready": false,
+      "source_matches_current": false
+    },
+    {
+      "path": "results/raised_refined_eq/states/vg0.400000_vd0.000000.json",
+      "vg_v": 0.4,
+      "vd_v": 0.0,
+      "geometry": "raised",
+      "teacher_ready": false,
+      "source_matches_current": false
+    },
+    {
+      "path": "results/distribution_resume_device/states/vg0.400000_vd0.000000.json",
+      "vg_v": 0.4,
+      "vd_v": 0.0,
+      "geometry": "uniform",
+      "teacher_ready": false,
+      "source_matches_current": true
+    },
+    {
+      "path": "results/raised_resume/states/vg0.400000_vd0.000000.json",
+      "vg_v": 0.4,
+      "vd_v": 0.0,
+      "geometry": "raised",
+      "teacher_ready": false,
+      "source_matches_current": false
+    },
+    {
+      "path": "results/raised_fine_eq/states/vg0.400000_vd0.000000.json",
+      "vg_v": 0.4,
+      "vd_v": 0.0,
+      "geometry": "raised",
+      "teacher_ready": false,
+      "source_matches_current": false
+    },
+    {
+      "path": "results/uniform_global_sweep/states/vg0.400000_vd0.000000.json",
+      "vg_v": 0.4,
+      "vd_v": 0.0,
+      "geometry": "uniform",
+      "teacher_ready": false,
+      "source_matches_current": true
+    },
+    {
+      "path": "results/buffer_eq/states/vg0.400000_vd0.000000.json",
+      "vg_v": 0.4,
+      "vd_v": 0.0,
+      "geometry": "raised",
+      "teacher_ready": false,
+      "source_matches_current": false
+    },
+    {
+      "path": "results/raised_diagnostic/states/vg0.400000_vd0.000000.json",
+      "vg_v": 0.4,
+      "vd_v": 0.0,
+      "geometry": "raised",
+      "teacher_ready": false,
+      "source_matches_current": false
+    }
+  ],
+  "missing_requested_raised_biases": [
+    [
+      0.0,
+      0.05
+    ],
+    [
+      0.0,
+      0.1
+    ],
+    [
+      0.05,
+      0.05
+    ],
+    [
+      0.05,
+      0.1
+    ],
+    [
+      0.1,
+      0.05
+    ],
+    [
+      0.1,
+      0.1
+    ],
+    [
+      0.15,
+      0.05
+    ],
+    [
+      0.15,
+      0.1
+    ],
+    [
+      0.2,
+      0.05
+    ],
+    [
+      0.2,
+      0.1
+    ],
+    [
+      0.25,
+      0.05
+    ],
+    [
+      0.25,
+      0.1
+    ],
+    [
+      0.3,
+      0.05
+    ],
+    [
+      0.3,
+      0.1
+    ],
+    [
+      0.35,
+      0.05
+    ],
+    [
+      0.35,
+      0.1
+    ],
+    [
+      0.4,
+      0.05
+    ],
+    [
+      0.4,
+      0.1
+    ],
+    [
+      0.4,
+      0.15
+    ],
+    [
+      0.4,
+      0.2
+    ],
+    [
+      0.4,
+      0.25
+    ],
+    [
+      0.4,
+      0.3
+    ],
+    [
+      0.4,
+      0.35
+    ],
+    [
+      0.4,
+      0.4
+    ],
+    [
+      0.4,
+      0.45
+    ],
+    [
+      0.4,
+      0.5
+    ],
+    [
+      0.4,
+      0.55
+    ],
+    [
+      0.4,
+      0.6
+    ],
+    [
+      0.4,
+      0.65
+    ],
+    [
+      0.4,
+      0.7
+    ],
+    [
+      0.4,
+      0.75
+    ],
+    [
+      0.4,
+      0.8
+    ],
+    [
+      0.4,
+      0.85
+    ],
+    [
+      0.4,
+      0.9
+    ],
+    [
+      0.4,
+      0.95
+    ],
+    [
+      0.4,
+      1.0
+    ],
+    [
+      0.4,
+      1.05
+    ],
+    [
+      0.4,
+      1.1
+    ],
+    [
+      0.4,
+      1.15
+    ],
+    [
+      0.4,
+      1.2
+    ],
+    [
+      0.45,
+      0.05
+    ],
+    [
+      0.45,
+      0.1
+    ],
+    [
+      0.5,
+      0.05
+    ],
+    [
+      0.5,
+      0.1
+    ],
+    [
+      0.55,
+      0.05
+    ],
+    [
+      0.55,
+      0.1
+    ],
+    [
+      0.6,
+      0.05
+    ],
+    [
+      0.6,
+      0.1
+    ],
+    [
+      0.65,
+      0.05
+    ],
+    [
+      0.65,
+      0.1
+    ],
+    [
+      0.7,
+      0.05
+    ],
+    [
+      0.7,
+      0.1
+    ],
+    [
+      0.75,
+      0.05
+    ],
+    [
+      0.75,
+      0.1
+    ],
+    [
+      0.8,
+      0.0
+    ],
+    [
+      0.8,
+      0.05
+    ],
+    [
+      0.8,
+      0.1
+    ],
+    [
+      0.8,
+      0.15
+    ],
+    [
+      0.8,
+      0.2
+    ],
+    [
+      0.8,
+      0.25
+    ],
+    [
+      0.8,
+      0.3
+    ],
+    [
+      0.8,
+      0.35
+    ],
+    [
+      0.8,
+      0.4
+    ],
+    [
+      0.8,
+      0.45
+    ],
+    [
+      0.8,
+      0.5
+    ],
+    [
+      0.8,
+      0.55
+    ],
+    [
+      0.8,
+      0.6
+    ],
+    [
+      0.8,
+      0.65
+    ],
+    [
+      0.8,
+      0.7
+    ],
+    [
+      0.8,
+      0.75
+    ],
+    [
+      0.8,
+      0.8
+    ],
+    [
+      0.8,
+      0.85
+    ],
+    [
+      0.8,
+      0.9
+    ],
+    [
+      0.8,
+      0.95
+    ],
+    [
+      0.8,
+      1.0
+    ],
+    [
+      0.8,
+      1.05
+    ],
+    [
+      0.8,
+      1.1
+    ],
+    [
+      0.8,
+      1.15
+    ],
+    [
+      0.8,
+      1.2
+    ],
+    [
+      0.85,
+      0.05
+    ],
+    [
+      0.85,
+      0.1
+    ],
+    [
+      0.9,
+      0.05
+    ],
+    [
+      0.9,
+      0.1
+    ],
+    [
+      0.95,
+      0.05
+    ],
+    [
+      0.95,
+      0.1
+    ],
+    [
+      1.0,
+      0.05
+    ],
+    [
+      1.0,
+      0.1
+    ],
+    [
+      1.05,
+      0.05
+    ],
+    [
+      1.05,
+      0.1
+    ],
+    [
+      1.1,
+      0.05
+    ],
+    [
+      1.1,
+      0.1
+    ],
+    [
+      1.15,
+      0.05
+    ],
+    [
+      1.15,
+      0.1
+    ],
+    [
+      1.2,
+      0.0
+    ],
+    [
+      1.2,
+      0.05
+    ],
+    [
+      1.2,
+      0.1
+    ],
+    [
+      1.2,
+      0.15
+    ],
+    [
+      1.2,
+      0.2
+    ],
+    [
+      1.2,
+      0.25
+    ],
+    [
+      1.2,
+      0.3
+    ],
+    [
+      1.2,
+      0.35
+    ],
+    [
+      1.2,
+      0.4
+    ],
+    [
+      1.2,
+      0.45
+    ],
+    [
+      1.2,
+      0.5
+    ],
+    [
+      1.2,
+      0.55
+    ],
+    [
+      1.2,
+      0.6
+    ],
+    [
+      1.2,
+      0.65
+    ],
+    [
+      1.2,
+      0.7
+    ],
+    [
+      1.2,
+      0.75
+    ],
+    [
+      1.2,
+      0.8
+    ],
+    [
+      1.2,
+      0.85
+    ],
+    [
+      1.2,
+      0.9
+    ],
+    [
+      1.2,
+      0.95
+    ],
+    [
+      1.2,
+      1.0
+    ],
+    [
+      1.2,
+      1.05
+    ],
+    [
+      1.2,
+      1.1
+    ],
+    [
+      1.2,
+      1.15
+    ],
+    [
+      1.2,
+      1.2
+    ]
+  ],
+  "out_of_scope": {
+    "AI_training": "OUT_OF_SCOPE",
+    "DFT_correction": "OUT_OF_SCOPE",
+    "phonon_scattering": "OUT_OF_SCOPE",
+    "drift_diffusion": "OUT_OF_SCOPE"
+  },
+  "policy": "Every mandatory item must be PASS. A toy-kernel pass never substitutes for device convergence. All exported states are non-teacher data unless separately certified within validated scope."
+}

@@ -1,0 +1,66 @@
+{
+  "lead_device_matching_and_cut": {
+    "status": "FAIL",
+    "evidence": [
+      "tests/test_step11_contacts.py",
+      "tests/test_step11_restart_boundary.py",
+      "results/assessment/device_lead_matching.json",
+      "results/assessment/buffer_comparison.json"
+    ],
+    "reason": "Kernel rotated/rectangular cut invariance and native nodal boundary checks pass; finite-device electrostatic matching/refinement remains outside accuracy target."
+  },
+  "bound_state_completeness": {
+    "status": "INCONCLUSIVE",
+    "evidence": [
+      "tests/test_step11_density_completeness.py",
+      "results/state_poles/summary.json",
+      "results/bound_localization/summary.json",
+      "results/embedded_candidates/summary.json"
+    ],
+    "reason": "Correct residue/equilibrium sum rule tested on small references. Physical-vs-artificial classification of device poles and global embedded-dark/above-band coverage remain incomplete; no biased preparation invented."
+  },
+  "mode_convergence": {
+    "status": "FAIL",
+    "evidence": [
+      "results/assessment/fully_scf_mode_comparison.json",
+      "results/frozen_modes/summary.json",
+      "results/lead_convergence/summary.json"
+    ],
+    "reason": "Fixed-phi/fixed-mu, lead-DOS and fully-SCF experiments separated; no representative biased convergence plateau established."
+  },
+  "grid_convergence": {
+    "status": "FAIL",
+    "evidence": [
+      "results/lead_convergence/summary.json",
+      "results/assessment/poisson_mesh_comparison.json"
+    ],
+    "reason": "Lead transverse grid 1 -> 0.5 nm and independent Poisson mesh refinement exceed required accuracy; coupled refined biased checks not certified."
+  },
+  "electrostatic_buffer_convergence": {
+    "status": "FAIL",
+    "evidence": "results/assessment/buffer_comparison.json",
+    "reason": "Category B extends identical outer lead by 6 nm on both ends, with original target coordinates restored. One equilibrium comparison is not a biased plateau. Physical category C is not used as convergence evidence."
+  },
+  "energy_convergence": {
+    "status": "NOT_RUN",
+    "evidence": [
+      "tests/test_step11_resonance.py",
+      "tests/test_step11_streaming_memory.py"
+    ],
+    "reason": "Kernel narrow-resonance and memory regression pass. Device-level tight/loose observable convergence and Newton-noise budget have not been certified."
+  },
+  "clean_install_and_resume": {
+    "status": "PASS",
+    "evidence": [
+      "results/clean_install.log",
+      "results/distribution_check/result.json",
+      "results/assessment/restart_comparison.json"
+    ],
+    "reason": "Fresh venv installation and actual extracted-source checkpoint continuation required."
+  },
+  "extracted_archive_execution": {
+    "status": "PASS",
+    "evidence": "results/distribution_check/result.json",
+    "reason": "All source tests run from a new extracted path with isolated installed dependencies."
+  }
+}

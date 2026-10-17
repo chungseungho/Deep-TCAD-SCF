@@ -1,0 +1,18 @@
+{
+  "name": "DEVSIM-QT",
+  "version": "1.0-rc1",
+  "baseline_commit": "28e5a26c16ceedeb88602a0216a478e979fea247",
+  "transport": "coupled mode-space silicon EMA ballistic NEGF/RGF",
+  "contact": "transverse Schrodinger-Poisson reference, semi-infinite uniform FD lead, actual basis overlap embedding",
+  "poisson": "DEVSIM conformal P1 stiffness with conservative integrated mapping",
+  "temperature_k": 300,
+  "units": {"position": "nm", "potential": "V", "Hamiltonian": "eV", "chemical_potential": "eV", "density": "cm^-3", "current": "A"},
+  "gauge": "phi+V, H-V eV, mu-V eV",
+  "source_drain_density_decomposition": null,
+  "source_drain_density_status": "UNSUPPORTED for NEGF; Spectral can export an actually computed finite-bath split",
+  "bound_occupation_policy": "equilibrium Fermi contour; reject detected biased isolated states with materially ambiguous population; no preparation invented",
+  "global_dark_state_coverage": "INCONCLUSIVE",
+  "RELEASE_READY": false,
+  "TEACHER_READY": false,
+  "scope_authority": "RELEASE_CERTIFICATE.json and MODEL_SCOPE.md"
+}

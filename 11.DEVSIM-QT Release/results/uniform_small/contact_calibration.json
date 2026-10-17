@@ -1,0 +1,188 @@
+{
+  "model": "transverse SP; full transverse EMA basis; Neumann exposed side walls; zero mean phi",
+  "converged": true,
+  "iterations": 28,
+  "runtime_s": 0.23213654599931033,
+  "mu_source_ev": 0.03563149810177616,
+  "zero_reference_mu_ev": 0.03563149810177616,
+  "neutrality_relative_error": 2.220446049250313e-16,
+  "phi_range_v": 0.055466245340926326,
+  "flat_poisson_correction_range_v": 0.09297034275763696,
+  "flat_vs_sp_density_relative_l2": 0.25786683724776793,
+  "flat_mu_ev": 0.02573352933767816,
+  "flat_vs_sp_mu_change_ev": 0.009897968764098,
+  "full_transverse_dimension": 60,
+  "k_nodes": 256,
+  "history": [
+    {
+      "iteration": 0,
+      "potential_correction_v": 0.01955335321141716,
+      "poisson_residual_v_nm2": 0.024245876558797532,
+      "mu_ev": 0.02573352933767816
+    },
+    {
+      "iteration": 1,
+      "potential_correction_v": 0.010787023037842446,
+      "poisson_residual_v_nm2": 0.015242552824144573,
+      "mu_ev": 0.030542063395503048
+    },
+    {
+      "iteration": 2,
+      "potential_correction_v": 0.005860433937883862,
+      "poisson_residual_v_nm2": 0.008722670887457436,
+      "mu_ev": 0.03303711729235275
+    },
+    {
+      "iteration": 3,
+      "potential_correction_v": 0.0031188643436647727,
+      "poisson_residual_v_nm2": 0.004705495258615508,
+      "mu_ev": 0.03430908889596743
+    },
+    {
+      "iteration": 4,
+      "potential_correction_v": 0.0016414804269746196,
+      "poisson_residual_v_nm2": 0.002511399057832724,
+      "mu_ev": 0.03495564508238008
+    },
+    {
+      "iteration": 5,
+      "potential_correction_v": 0.0008521420936653497,
+      "poisson_residual_v_nm2": 0.0013183958187976616,
+      "mu_ev": 0.035285151434129296
+    },
+    {
+      "iteration": 6,
+      "potential_correction_v": 0.0004397839479787326,
+      "poisson_residual_v_nm2": 0.0006860342202828391,
+      "mu_ev": 0.03545364435271555
+    },
+    {
+      "iteration": 7,
+      "potential_correction_v": 0.0002270488655639963,
+      "poisson_residual_v_nm2": 0.0003553426181086856,
+      "mu_ev": 0.03554003599576887
+    },
+    {
+      "iteration": 8,
+      "potential_correction_v": 0.00011710238942988358,
+      "poisson_residual_v_nm2": 0.00018362452612155113,
+      "mu_ev": 0.035584416483128156
+    },
+    {
+      "iteration": 9,
+      "potential_correction_v": 6.037228671683195e-05,
+      "poisson_residual_v_nm2": 9.477943057875984e-05,
+      "mu_ev": 0.03560724525888579
+    },
+    {
+      "iteration": 10,
+      "potential_correction_v": 3.112125052248649e-05,
+      "poisson_residual_v_nm2": 4.889545285281967e-05,
+      "mu_ev": 0.03561899875176309
+    },
+    {
+      "iteration": 11,
+      "potential_correction_v": 1.604274440037422e-05,
+      "poisson_residual_v_nm2": 2.5314238289449176e-05,
+      "mu_ev": 0.03562505395014579
+    },
+    {
+      "iteration": 12,
+      "potential_correction_v": 8.270371215381658e-06,
+      "poisson_residual_v_nm2": 1.3258820553630618e-05,
+      "mu_ev": 0.03562817491648274
+    },
+    {
+      "iteration": 13,
+      "potential_correction_v": 4.263867829381246e-06,
+      "poisson_residual_v_nm2": 6.934984613692768e-06,
+      "mu_ev": 0.03562978406439815
+    },
+    {
+      "iteration": 14,
+      "potential_correction_v": 2.198447044108044e-06,
+      "poisson_residual_v_nm2": 3.622943488226782e-06,
+      "mu_ev": 0.03563061393771581
+    },
+    {
+      "iteration": 15,
+      "potential_correction_v": 1.1336012709014158e-06,
+      "poisson_residual_v_nm2": 1.8906604823953899e-06,
+      "mu_ev": 0.035631042002816436
+    },
+    {
+      "iteration": 16,
+      "potential_correction_v": 5.845669577375282e-07,
+      "poisson_residual_v_nm2": 9.857157936450645e-07,
+      "mu_ev": 0.03563126283906241
+    },
+    {
+      "iteration": 17,
+      "potential_correction_v": 3.014638529295783e-07,
+      "poisson_residual_v_nm2": 5.134742875785581e-07,
+      "mu_ev": 0.035631376779709636
+    },
+    {
+      "iteration": 18,
+      "potential_correction_v": 1.5547508836783918e-07,
+      "poisson_residual_v_nm2": 2.672706317895235e-07,
+      "mu_ev": 0.0356314355724404
+    },
+    {
+      "iteration": 19,
+      "potential_correction_v": 8.018787883010676e-08,
+      "poisson_residual_v_nm2": 1.3902130114110123e-07,
+      "mu_ev": 0.03563146591111775
+    },
+    {
+      "iteration": 20,
+      "potential_correction_v": 4.1359663032050214e-08,
+      "poisson_residual_v_nm2": 7.226652605496486e-08,
+      "mu_ev": 0.03563148156748835
+    },
+    {
+      "iteration": 21,
+      "potential_correction_v": 2.133358270620989e-08,
+      "poisson_residual_v_nm2": 3.7544266820455086e-08,
+      "mu_ev": 0.03563148964731115
+    },
+    {
+      "iteration": 22,
+      "potential_correction_v": 1.1004429997569686e-08,
+      "poisson_residual_v_nm2": 1.9494983440060398e-08,
+      "mu_ev": 0.03563149381720365
+    },
+    {
+      "iteration": 23,
+      "potential_correction_v": 5.676581837518927e-09,
+      "poisson_residual_v_nm2": 1.0118001613629302e-08,
+      "mu_ev": 0.03563149596927661
+    },
+    {
+      "iteration": 24,
+      "potential_correction_v": 2.928332945510461e-09,
+      "poisson_residual_v_nm2": 5.249004880053532e-09,
+      "mu_ev": 0.03563149707997411
+    },
+    {
+      "iteration": 25,
+      "potential_correction_v": 1.5106605811559571e-09,
+      "poisson_residual_v_nm2": 2.7219836801206654e-09,
+      "mu_ev": 0.03563149765321786
+    },
+    {
+      "iteration": 26,
+      "potential_correction_v": 7.793374769863975e-10,
+      "poisson_residual_v_nm2": 1.4110256157939816e-09,
+      "mu_ev": 0.0356314979490777
+    },
+    {
+      "iteration": 27,
+      "potential_correction_v": 4.020643216101367e-10,
+      "poisson_residual_v_nm2": 7.312035837925279e-10,
+      "mu_ev": 0.03563149810177616
+    }
+  ],
+  "gauge": "phi -> phi+V, H -> H-V eV, mu -> mu-V eV; electron charge -q",
+  "boundary_assumption": "zero normal electric field on exposed transverse S/D side faces"
+}

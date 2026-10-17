@@ -1,0 +1,57 @@
+Searching DEVSIM_MATH_LIBS="libopenblas.so.0"
+Loading "libopenblas.so.0": ALL BLAS/LAPACK LOADED
+loading UMFPACK 5.1 as direct solver
+Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 70 Triangles.
+Physical group name Drain has 116 Lines.
+Physical group name Drain has 47 Points.
+Physical group name Electrostatic has 10021 Tetrahedra.
+Physical group name Electrostatic has 21231 Triangles.
+Physical group name Electrostatic has 13505 Lines.
+Physical group name Electrostatic has 2296 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 1060 Triangles.
+Physical group name Gate has 1630 Lines.
+Physical group name Gate has 570 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 296 Triangles.
+Physical group name OxSpacer has 512 Lines.
+Physical group name OxSpacer has 216 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 636 Triangles.
+Physical group name SiExterior has 1016 Lines.
+Physical group name SiExterior has 380 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 782 Triangles.
+Physical group name SiOx has 1201 Lines.
+Physical group name SiOx has 419 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 682 Triangles.
+Physical group name SiSpacer has 1091 Lines.
+Physical group name SiSpacer has 409 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 70 Triangles.
+Physical group name Source has 116 Lines.
+Physical group name Source has 47 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 542 Triangles.
+Physical group name SpacerExterior has 893 Lines.
+Physical group name SpacerExterior has 351 Points.
+Device gaa_c5e32f78 has 2296 coordinates with max index 2296
+Region electrostatic has 2296 nodes.
+Contact drain in region electrostatic with 47 nodes
+Contact gate in region electrostatic with 570 nodes
+Contact source in region electrostatic with 47 nodes
+Cell/tetra integration 5000/5020 tetra, 34.4s
+number of equations 2296
+Iteration: 0
+  Device: "gaa_c5e32f78"	RelError: 1.00000e+00	AbsError: 1.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 1.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 1.00000e-01
+Iteration: 1
+  Device: "gaa_c5e32f78"	RelError: 1.37432e-12	AbsError: 9.97814e-17
+    Region: "electrostatic"	RelError: 1.37432e-12	AbsError: 9.97814e-17
+      Equation: "PotentialEquation"	RelError: 1.37432e-12	AbsError: 9.97814e-17
+Delta_z 9 candidates 2.8106555938720703
+Delta_x 8 candidates 2.220435619354248
+Delta_y 7 candidates 2.4830329418182373

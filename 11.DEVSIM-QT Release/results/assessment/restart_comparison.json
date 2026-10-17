@@ -1,0 +1,24 @@
+{
+  "comparisons": [
+    {
+      "old": "/workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/results/raised_eq_final/states/vg0.400000_vd0.000000.npz",
+      "new": "/workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/results/raised_resume/states/vg0.400000_vd0.000000.npz",
+      "density_transfer": "nearest cell value; spatial discretization diagnostic",
+      "max_sample_distance_nm": 0.0,
+      "mu_difference_ev": 0.0,
+      "current_absolute_difference_a": 0.0,
+      "current_relative_difference": 0.0,
+      "barrier_phi_max_difference_v": 8.946315660507409e-08,
+      "channel_density_l2": 1.1879072350180191e-06,
+      "junction_extension_density_l2": 2.3607193510129224e-06,
+      "reservoir_density_l2": 1.6341487181754733e-06,
+      "density_target_pass": true,
+      "lead_mu_target_pass": true,
+      "transport_target_pass": false,
+      "status": "FAIL"
+    }
+  ],
+  "largest_basis_is_not_an_exact_reference": true,
+  "status": "PASS",
+  "scope": "equilibrium checkpoint reproducibility, not transport-mode convergence"
+}

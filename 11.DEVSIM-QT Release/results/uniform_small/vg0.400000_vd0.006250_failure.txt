@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/run.py", line 116, in attempt
+    row,n,q=scf(c,p,mapping,builders,grid,mu,g,d,out,key,seed,backend=backend)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/solver.py", line 110, in scf
+    step=evaluate_transport_step(p,mapping,backend,builders,grid,n,fixed_mu,vg,vd)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/coupling/scf_controller.py", line 24, in evaluate_transport_step
+    result=backend.solve(phi_q,drain_bias,context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/transport/backends/negf.py", line 28, in solve
+    if check['bias_dependent_bound_occupation_unresolved']:raise BoundOccupationError(check)
+                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+transport.bound_states.BoundOccupationError: BOUND_PREPARATION_REQUIRED: isolated poles have different reservoir Fermi occupations; no unique biased density

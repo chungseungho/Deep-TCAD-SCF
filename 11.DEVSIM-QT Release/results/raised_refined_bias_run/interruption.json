@@ -1,0 +1,9 @@
+{
+  "status": "NUMERICAL_FAILURE",
+  "execution_status": "INTERRUPTED_FOR_INTEGRATOR_FIX",
+  "reason": "superseded conservative per-panel budget with validated global-error streaming adaptation; no completed SCF iteration",
+  "observed_cpu_seconds_at_last_sample": 964.13,
+  "observed_resident_mib": 280.54,
+  "walltime_timeout": null,
+  "profile_recovery": "direct signal could not address process from executor PID namespace; tool interruption did not flush cProfile; no fine-grained timing claimed for this interrupted run"
+}

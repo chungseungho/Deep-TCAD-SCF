@@ -1,0 +1,13 @@
+file,geometry,modes,sd_modes,vg_v,vd_v,id_a,SCF_CONVERGED,runtime_s,teacher_ready
+results/buffer_eq/states/vg0.400000_vd0.000000.npz,raised,8,32,0.4,0.0,0.0,True,82.74933205999969,False
+results/distribution_resume_device/states/vg0.400000_vd0.000000.npz,uniform,8,32,0.4,0.0,0.0,True,6.110613484000169,False
+results/raised_current_eq/states/vg0.400000_vd0.000000.npz,raised,8,32,0.4,0.0,0.0,True,10.482524685000499,False
+results/raised_diagnostic/states/vg0.400000_vd0.000000.npz,raised,2,4,0.4,0.0,0.0,True,8.006017395000526,False
+results/raised_eq_final/states/vg0.400000_vd0.000000.npz,raised,8,32,0.4,0.0,0.0,True,69.75790760600012,False
+results/raised_fine_eq/states/vg0.400000_vd0.000000.npz,raised,8,32,0.4,0.0,0.0,True,60.88202881500001,False
+results/raised_refined_eq/states/vg0.400000_vd0.000000.npz,raised,16,64,0.4,0.0,0.0,True,353.50230400999953,False
+results/raised_resume/states/vg0.400000_vd0.000000.npz,raised,8,32,0.4,0.0,0.0,True,12.063438322000366,False
+results/uniform_diagnostic/states/vg0.400000_vd0.000000.npz,uniform,8,32,0.4,0.0,0.0,True,7.010269913000229,False
+results/uniform_eq/states/vg0.400000_vd0.000000.npz,uniform,8,32,0.4,0.0,0.0,True,40.68101276499965,False
+results/uniform_global_sweep/states/vg0.400000_vd0.000000.npz,uniform,8,32,0.4,0.0,0.0,True,42.255458894000185,False
+results/uniform_small/states/vg0.400000_vd0.000000.npz,uniform,2,4,0.4,0.0,0.0,True,5.310546411999894,False

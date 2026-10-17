@@ -1,0 +1,869 @@
+[
+  {
+    "run": "raised_global_bias_run",
+    "production_files_changed_since_run_start": [],
+    "production_files_missing": [],
+    "snapshot": "results/raised_global_bias_run/source_snapshot.zip"
+  },
+  {
+    "run": "raised_eq_final_run",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "run.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "modespace/hamiltonian.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/raised_eq_final_run/source_snapshot.zip"
+  },
+  {
+    "run": "mode_selection_run",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "run.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "modespace/hamiltonian.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/mode_selection_run/source_snapshot.zip"
+  },
+  {
+    "run": "raised_lowbias_run",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "run.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "modespace/hamiltonian.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/raised_lowbias_run/source_snapshot.zip"
+  },
+  {
+    "run": "uniform_global_sweep_run",
+    "production_files_changed_since_run_start": [],
+    "production_files_missing": [],
+    "snapshot": "results/uniform_global_sweep_run/source_snapshot.zip"
+  },
+  {
+    "run": "regression_streamed",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "run.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "modespace/hamiltonian.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/regression_streamed/source_snapshot.zip"
+  },
+  {
+    "run": "raised_refined_eq_run",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "run.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "modespace/hamiltonian.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/raised_refined_eq_run/source_snapshot.zip"
+  },
+  {
+    "run": "uniform_diagnostic_run",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "run.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "modespace/hamiltonian.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/uniform_diagnostic_run/source_snapshot.zip"
+  },
+  {
+    "run": "streaming_tests",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "run.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "modespace/hamiltonian.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/streaming_tests/source_snapshot.zip"
+  },
+  {
+    "run": "streaming_memory",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "run.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "modespace/hamiltonian.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/streaming_memory/source_snapshot.zip"
+  },
+  {
+    "run": "independent_final_run",
+    "production_files_changed_since_run_start": [],
+    "production_files_missing": [],
+    "snapshot": "results/independent_final_run/source_snapshot.zip"
+  },
+  {
+    "run": "frozen_modes_run",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "run.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "modespace/hamiltonian.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/frozen_modes_run/source_snapshot.zip"
+  },
+  {
+    "run": "buffer_eq_run",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "run.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "modespace/hamiltonian.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/buffer_eq_run/source_snapshot.zip"
+  },
+  {
+    "run": "export_raised",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "run.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "modespace/hamiltonian.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/export_raised/source_snapshot.zip"
+  },
+  {
+    "run": "lead_convergence_run",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "run.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "modespace/hamiltonian.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/lead_convergence_run/source_snapshot.zip"
+  },
+  {
+    "run": "regression_banded_guidance",
+    "production_files_changed_since_run_start": [
+      "transport/quadrature.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/regression_banded_guidance/source_snapshot.zip"
+  },
+  {
+    "run": "assessment_current",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "run.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "modespace/hamiltonian.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/assessment_current/source_snapshot.zip"
+  },
+  {
+    "run": "full_contact_reference",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "run.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "modespace/hamiltonian.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/full_contact_reference/source_snapshot.zip"
+  },
+  {
+    "run": "state_poles_run",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "run.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "modespace/hamiltonian.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/state_poles_run/source_snapshot.zip"
+  },
+  {
+    "run": "raised_current_eq_run",
+    "production_files_changed_since_run_start": [],
+    "production_files_missing": [],
+    "snapshot": "results/raised_current_eq_run/source_snapshot.zip"
+  },
+  {
+    "run": "uniform_migration_diagnostic",
+    "production_files_changed_since_run_start": [],
+    "production_files_missing": [],
+    "snapshot": "results/uniform_migration_diagnostic/source_snapshot.zip"
+  },
+  {
+    "run": "export_uniform",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "run.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "modespace/hamiltonian.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/export_uniform/source_snapshot.zip"
+  },
+  {
+    "run": "uniform_small_run",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "run.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "modespace/hamiltonian.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/uniform_small_run/source_snapshot.zip"
+  },
+  {
+    "run": "distribution_check",
+    "production_files_changed_since_run_start": [],
+    "production_files_missing": [],
+    "snapshot": "results/distribution_check/source_snapshot.zip"
+  },
+  {
+    "run": "raised_diagnostic_run",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "run.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "modespace/hamiltonian.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/raised_diagnostic_run/source_snapshot.zip"
+  },
+  {
+    "run": "assessment_run",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "run.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "modespace/hamiltonian.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/assessment_run/source_snapshot.zip"
+  },
+  {
+    "run": "raised_lowbias_final_run",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "run.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "modespace/hamiltonian.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/raised_lowbias_final_run/source_snapshot.zip"
+  },
+  {
+    "run": "baseline_profile_run",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "run.py",
+      "config.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "modespace/junction_basis.py",
+      "modespace/hamiltonian.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/baseline_profile_run/source_snapshot.zip"
+  },
+  {
+    "run": "current_uniform_seed_run",
+    "production_files_changed_since_run_start": [],
+    "production_files_missing": [],
+    "snapshot": "results/current_uniform_seed_run/source_snapshot.zip"
+  },
+  {
+    "run": "bound_localization_run",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "run.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "modespace/hamiltonian.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/bound_localization_run/source_snapshot.zip"
+  },
+  {
+    "run": "regression_after_changes",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "run.py",
+      "config.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "modespace/junction_basis.py",
+      "modespace/hamiltonian.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/regression_after_changes/source_snapshot.zip"
+  },
+  {
+    "run": "native_boundary_restart",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "run.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "modespace/hamiltonian.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/native_boundary_restart/source_snapshot.zip"
+  },
+  {
+    "run": "raised_eq_run",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "run.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "modespace/hamiltonian.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/raised_eq_run/source_snapshot.zip"
+  },
+  {
+    "run": "uniform_eq_run",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "run.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "modespace/hamiltonian.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/uniform_eq_run/source_snapshot.zip"
+  },
+  {
+    "run": "lead_reference",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "provenance.py",
+      "run.py",
+      "config.py",
+      "multispace/occupation.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "transport/bound_states.py",
+      "modespace/junction_basis.py",
+      "modespace/hamiltonian.py",
+      "coupling/domain_newton.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/lead_reference/source_snapshot.zip"
+  },
+  {
+    "run": "doctor",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "run.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "modespace/hamiltonian.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/doctor/source_snapshot.zip"
+  },
+  {
+    "run": "global_stream_prototype",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "run.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "modespace/hamiltonian.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/global_stream_prototype/source_snapshot.zip"
+  },
+  {
+    "run": "raised_resume_run",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "run.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "modespace/hamiltonian.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/raised_resume_run/source_snapshot.zip"
+  },
+  {
+    "run": "uniform_global_bias_run",
+    "production_files_changed_since_run_start": [],
+    "production_files_missing": [],
+    "snapshot": "results/uniform_global_bias_run/source_snapshot.zip"
+  },
+  {
+    "run": "current_seed8_run",
+    "production_files_changed_since_run_start": [],
+    "production_files_missing": [],
+    "snapshot": "results/current_seed8_run/source_snapshot.zip"
+  },
+  {
+    "run": "distribution_resume",
+    "production_files_changed_since_run_start": [],
+    "production_files_missing": [],
+    "snapshot": "results/distribution_resume/source_snapshot.zip"
+  },
+  {
+    "run": "raised_fine_eq_run",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "run.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "modespace/hamiltonian.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/raised_fine_eq_run/source_snapshot.zip"
+  },
+  {
+    "run": "raised_refined_bias_run",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "run.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "modespace/hamiltonian.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/raised_refined_bias_run/source_snapshot.zip"
+  },
+  {
+    "run": "embedded_candidates_run",
+    "production_files_changed_since_run_start": [],
+    "production_files_missing": [],
+    "snapshot": "results/embedded_candidates_run/source_snapshot.zip"
+  },
+  {
+    "run": "raised_revalidate_seed_run",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "run.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "modespace/hamiltonian.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/raised_revalidate_seed_run/source_snapshot.zip"
+  },
+  {
+    "run": "regression_global_stream",
+    "production_files_changed_since_run_start": [
+      "transport/resonances.py",
+      "transport/quadrature.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/regression_global_stream/source_snapshot.zip"
+  },
+  {
+    "run": "resonance_regression",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "run.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "modespace/hamiltonian.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/resonance_regression/source_snapshot.zip"
+  },
+  {
+    "run": "density_completeness",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "run.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "modespace/hamiltonian.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/density_completeness/source_snapshot.zip"
+  },
+  {
+    "run": "pytest_final",
+    "production_files_changed_since_run_start": [],
+    "production_files_missing": [],
+    "snapshot": "results/pytest_final/source_snapshot.zip"
+  },
+  {
+    "run": "figures",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "run.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "modespace/hamiltonian.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/figures/source_snapshot.zip"
+  },
+  {
+    "run": "test_contacts",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "run.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "modespace/hamiltonian.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/test_contacts/source_snapshot.zip"
+  },
+  {
+    "run": "regression_initial",
+    "production_files_changed_since_run_start": [
+      "solver.py",
+      "provenance.py",
+      "run.py",
+      "config.py",
+      "multispace/occupation.py",
+      "transport/resonances.py",
+      "transport/backend_hooks.py",
+      "transport/quadrature.py",
+      "transport/api.py",
+      "transport/negf_reference.py",
+      "transport/ms_postprocess.py",
+      "transport/bound_states.py",
+      "modespace/junction_basis.py",
+      "modespace/hamiltonian.py",
+      "coupling/domain_newton.py",
+      "transport/backends/mock_quantum.py",
+      "transport/backends/spectral.py",
+      "transport/backends/negf.py",
+      "transport/backends/ms.py"
+    ],
+    "production_files_missing": [],
+    "snapshot": "results/regression_initial/source_snapshot.zip"
+  }
+]

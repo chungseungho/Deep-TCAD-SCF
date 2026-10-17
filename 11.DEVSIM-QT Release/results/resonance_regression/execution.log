@@ -1,0 +1,10 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.14, pytest-9.1.1, pluggy-1.7.0 -- /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python
+cachedir: .pytest_cache
+rootdir: /workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release
+configfile: pytest.ini
+collecting ... collected 1 item
+
+tests/test_step11_resonance.py::test_banded_guidance_finds_narrow_resonance_against_dense_reference PASSED
+
+============================== 1 passed in 0.46s ===============================

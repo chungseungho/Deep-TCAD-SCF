@@ -1,0 +1,4 @@
+run,status,observed_elapsed_s_lower_bound,is_timeout,record
+raised_global_bias_run,INCONCLUSIVE,1390.7856702849995,False,results/raised_global_bias_run/interruption.json
+raised_refined_bias_run,NUMERICAL_FAILURE,,False,results/raised_refined_bias_run/interruption.json
+uniform_global_sweep_run,INCONCLUSIVE,1243.2330254090002,False,results/uniform_global_sweep_run/interruption.json

@@ -1,0 +1,26 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/run.py", line 116, in attempt
+    row,n,q=scf(c,p,mapping,builders,grid,mu,g,d,out,key,seed,backend=backend)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/solver.py", line 110, in scf
+    step=evaluate_transport_step(p,mapping,backend,builders,grid,n,fixed_mu,vg,vd)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/coupling/scf_controller.py", line 24, in evaluate_transport_step
+    result=backend.solve(phi_q,drain_bias,context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/transport/backends/negf.py", line 30, in solve
+    blocks,flux,diag,components=self.density_solver.solve(s,c,d['mu'],d['mu']-bias,bias,detail)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/transport/contracts.py", line 17, in solve
+    return solve_negf(system,config,mu_left,mu_right,bias,detail)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/transport/negf_reference.py", line 170, in solve_negf
+    integral,integration=integrate_vector(integrand,breaks,c.energy_order,c.energy_rtol,absolute,c.energy_max_nodes)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/transport/quadrature.py", line 37, in integrate_vector
+    a,b,level,budget=stack.pop();lo=panel(a,b,order);hi=panel(a,b,2*order);error=abs(hi-lo)
+                                    ^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3024dd41bc9d/11.DEVSIM-QT Release/transport/quadrature.py", line 22, in panel
+    if nodes+q>max_nodes:raise RuntimeError(f'Energy integration exhausted {max_nodes} GF nodes; increase integration budget, not SCF tolerance')
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Energy integration exhausted 240000 GF nodes; increase integration budget, not SCF tolerance

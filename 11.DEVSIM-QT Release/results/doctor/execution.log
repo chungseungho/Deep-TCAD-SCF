@@ -1,0 +1,21 @@
+Searching DEVSIM_MATH_LIBS="libopenblas.so.0"
+Loading "libopenblas.so.0": ALL BLAS/LAPACK LOADED
+loading UMFPACK 5.1 as direct solver
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "cpu_affinity": 9,
+  "packages": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "pytest": "9.1.1",
+    "gmsh": "4.15.2",
+    "devsim": "2.11.0",
+    "matplotlib": "3.10.8"
+  },
+  "native": {
+    "gmsh": "PASS",
+    "devsim": "PASS"
+  },
+  "memory.max": "8589934592",
+  "cpu.max": "800000 100000"
+}
