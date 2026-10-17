@@ -1,0 +1,257 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.14, pytest-9.1.1, pluggy-1.7.0 -- /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python
+cachedir: .pytest_cache
+rootdir: /workspace/scratch/3024dd41bc9d/10.DEVSIM-QT Physics Validation
+configfile: pytest.ini
+testpaths: tests
+collecting ... Searching DEVSIM_MATH_LIBS="libopenblas.so.0"
+Loading "libopenblas.so.0": ALL BLAS/LAPACK LOADED
+loading UMFPACK 5.1 as direct solver
+collected 74 items
+
+tests/test_adjoint_mapping.py::test_affine_adjoint_is_positive_charge_and_work_conservative PASSED
+tests/test_adjoint_mapping.py::test_balanced_adjoint_preserves_both_constants_and_work PASSED
+tests/test_adjoint_mapping.py::test_exact_tetra_cell_integral_has_both_marginals_and_linear_precision PASSED
+tests/test_backend_step08_regression.py::test_all_builtin_backends_match_step08_quantum_outputs PASSED
+tests/test_bound_guard.py::test_bias_window_bound_pole_requires_preparation_model PASSED
+tests/test_devsim_integration.py::test_3d_dielectric_interface_potential_and_displacement Physical group name A has 402 Tetrahedra.
+Physical group name A has 947 Triangles.
+Physical group name A has 698 Lines.
+Physical group name A has 154 Points.
+Physical group name B has 412 Tetrahedra.
+Physical group name B has 967 Triangles.
+Physical group name B has 709 Lines.
+Physical group name B has 155 Points.
+Physical group name Interface has 0 Tetrahedra.
+Physical group name Interface has 66 Triangles.
+Physical group name Interface has 109 Lines.
+Physical group name Interface has 44 Points.
+Physical group name Left has 0 Tetrahedra.
+Physical group name Left has 68 Triangles.
+Physical group name Left has 112 Lines.
+Physical group name Left has 45 Points.
+Physical group name Right has 0 Tetrahedra.
+Physical group name Right has 68 Triangles.
+Physical group name Right has 112 Lines.
+Physical group name Right has 45 Points.
+Device slab_279ed241b90148038be1282e52149a4d_device has 265 coordinates with max index 265
+Region A has 154 nodes.
+Region B has 155 nodes.
+Contact left in region A with 45 nodes
+Contact right in region B with 45 nodes
+Adding interface AB with 44, 44 nodes
+number of equations 309
+Iteration: 0
+  Device: "slab_279ed241b90148038be1282e52149a4d_device"	RelError: 2.00000e+00	AbsError: 1.00000e+00
+    Region: "A"	RelError: 1.00000e+00	AbsError: 6.66667e-01
+      Equation: "Poisson"	RelError: 1.00000e+00	AbsError: 6.66667e-01
+    Region: "B"	RelError: 1.00000e+00	AbsError: 1.00000e+00
+      Equation: "Poisson"	RelError: 1.00000e+00	AbsError: 1.00000e+00
+Iteration: 1
+  Device: "slab_279ed241b90148038be1282e52149a4d_device"	RelError: 1.91707e-15	AbsError: 6.08577e-16
+    Region: "A"	RelError: 1.00421e-15	AbsError: 6.08577e-16
+      Equation: "Poisson"	RelError: 1.00421e-15	AbsError: 6.08577e-16
+    Region: "B"	RelError: 9.12865e-16	AbsError: 6.08577e-16
+      Equation: "Poisson"	RelError: 9.12865e-16	AbsError: 6.08577e-16
+PASSED
+tests/test_finite_spectral.py::test_digamma_density_matches_independent_gf_quadrature PASSED
+tests/test_finite_spectral.py::test_bond_current_matches_independent_landauer_integral PASSED
+tests/test_finite_spectral.py::test_zero_bias_reversal_and_energy_gauge PASSED
+tests/test_finite_spectral.py::test_nearly_bound_barrier_states_do_not_break_pauli PASSED
+tests/test_finite_spectral.py::test_scalar_lorentzian_filling PASSED
+tests/test_gauge_and_channel.py::test_c_dominant_supported_left_state_uses_left_fermi PASSED
+tests/test_gauge_and_channel.py::test_weak_nonzero_reservoir_reach_is_not_an_origin PASSED
+tests/test_gauge_and_channel.py::test_open_density_and_transmission_common_potential_gauge PASSED
+tests/test_modular_architecture.py::test_builtin_registry_and_backend_protocol PASSED
+tests/test_modular_architecture.py::test_poisson_has_no_transport_backend_dependency PASSED
+tests/test_modular_architecture.py::test_registry_accepts_future_backend_without_scf_edit PASSED
+tests/test_modular_architecture.py::test_mock_quantum_runs_through_common_scf_controller PASSED
+tests/test_modular_architecture.py::test_mock_quantum_completes_solver_scf_without_poisson_runtime mock 001: phiR=0.000e+00 nR=0.000e+00 mu=0.200000 stable=True
+PASSED
+tests/test_modular_architecture.py::test_common_scf_controller_has_no_backend_name_switches PASSED
+tests/test_multispace.py::test_projectors_positive_partition_and_number PASSED
+tests/test_multispace.py::test_electrode_origins_no_mean_chemical_potential_and_gauge PASSED
+tests/test_multispace.py::test_bound_bias_window_is_rejected PASSED
+tests/test_multispace.py::test_symmetric_delocalized_standing_state_is_rejected PASSED
+tests/test_multispace.py::test_degenerate_subspace_rotation_never_manufactures_origin PASSED
+tests/test_multispace.py::test_near_degenerate_opposite_origins_are_flagged PASSED
+tests/test_multispace.py::test_degenerate_all_left_subspace_is_safe_and_basis_invariant PASSED
+tests/test_multispace.py::test_boundary_origin_flip_is_rejected PASSED
+tests/test_multispace.py::test_finite_number_constraint_and_bias_split PASSED
+tests/test_multispace.py::test_five_physical_regions_and_axis_permutations PASSED
+tests/test_negf_reference.py::test_continued_fraction_fermi_over_populated_energy_range PASSED
+tests/test_negf_reference.py::test_retarded_lead_branch_and_asymptote PASSED
+tests/test_negf_reference.py::test_rgf_diagonals_and_injectivities_match_dense_unequal_blocks PASSED
+tests/test_negf_reference.py::test_uniform_infinite_chain_contour_density_matches_k_integration PASSED
+tests/test_negf_reference.py::test_uniform_chain_transmission_one_without_eta PASSED
+tests/test_negf_reference.py::test_quadrature_splits_band_edges_and_integrates_polynomial PASSED
+tests/test_negf_reference.py::test_uniform_barrier_matches_analytical_single_site_transmission PASSED
+tests/test_negf_reference.py::test_complete_negf_solver_density_and_current_match_dense_open_gf PASSED
+tests/test_nested_subspace.py::test_enriched_raised_basis_contains_narrow_trace_without_hopping_fit PASSED
+tests/test_nested_subspace.py::test_full_basis_enrichment_does_not_change_real_space_operator PASSED
+tests/test_physics.py::test_unchanged_masses PASSED
+tests/test_physics.py::test_sparse_start_captures_odd_and_even_transverse_modes PASSED
+tests/test_physics.py::test_transverse_cellcentred_box_analytic PASSED
+tests/test_physics.py::test_full_basis_galerkin_variable_cross_section PASSED
+tests/test_physics.py::test_lyapunov_pauli_continuity_and_polarity PASSED
+tests/test_physics.py::test_equilibrium_zero_current_and_bias_reversal PASSED
+tests/test_physics.py::test_gauge_invariance PASSED
+tests/test_physics.py::test_injection_decomposition_positive_and_additive PASSED
+tests/test_physics.py::test_ms_standing_wave_is_rejected_and_equilibrium_is_fermi PASSED
+tests/test_physics.py::test_original_tetra_affine_map PASSED
+tests/test_physics.py::test_balanced_charge_constant_positive_and_conservative PASSED
+tests/test_physics.py::test_anderson_fixedpoint_and_positivity PASSED
+tests/test_physics.py::test_quantum_cell_volume_matches_actual_raised_geometry PASSED
+tests/test_physics.py::test_insufficient_alignment_fails PASSED
+tests/test_poisson_operator.py::test_tetra_stiffness_energy_affine_volume PASSED
+tests/test_poisson_operator.py::test_internal_shared_face_flux_cancels PASSED
+tests/test_quadrature.py::test_integrable_band_edge_singularity_is_resolved PASSED
+tests/test_quadrature.py::test_narrow_resonance_is_adaptively_resolved PASSED
+tests/test_resonances.py::test_ten_picovolt_width_resonance_resolved_without_eta PASSED
+tests/test_screened_newton.py::test_screened_inverse_matches_analytical_local_response_with_oxide_dofs PASSED
+tests/test_shared_poisson_capacitor.py::test_shared_dof_layered_dielectric_exact_capacitor Physical group name Electrostatic has 477 Tetrahedra.
+Physical group name Electrostatic has 1085 Triangles.
+Physical group name Electrostatic has 765 Lines.
+Physical group name Electrostatic has 158 Points.
+Physical group name Left has 0 Tetrahedra.
+Physical group name Left has 44 Triangles.
+Physical group name Left has 74 Lines.
+Physical group name Left has 31 Points.
+Physical group name Right has 0 Tetrahedra.
+Physical group name Right has 42 Triangles.
+Physical group name Right has 71 Lines.
+Physical group name Right has 30 Points.
+Device slab_cd3469588d0e4ed2944d0ad0c9897330_device has 158 coordinates with max index 158
+Region all has 158 nodes.
+Contact left in region all with 31 nodes
+Contact right in region all with 30 nodes
+number of equations 158
+Iteration: 0
+  Device: "slab_cd3469588d0e4ed2944d0ad0c9897330_device"	RelError: 1.00000e+00	AbsError: 1.00000e+00
+    Region: "all"	RelError: 1.00000e+00	AbsError: 1.00000e+00
+      Equation: "Poisson"	RelError: 1.00000e+00	AbsError: 1.00000e+00
+Iteration: 1
+  Device: "slab_cd3469588d0e4ed2944d0ad0c9897330_device"	RelError: 7.20490e-16	AbsError: 3.11984e-16
+    Region: "all"	RelError: 7.20490e-16	AbsError: 3.11984e-16
+      Equation: "Poisson"	RelError: 7.20490e-16	AbsError: 3.11984e-16
+PASSED
+tests/test_shared_poisson_capacitor.py::test_charged_dielectric_gauss_and_mesh_refinement Physical group name Electrostatic has 247 Tetrahedra.
+Physical group name Electrostatic has 576 Triangles.
+Physical group name Electrostatic has 420 Lines.
+Physical group name Electrostatic has 92 Points.
+Physical group name Left has 0 Tetrahedra.
+Physical group name Left has 26 Triangles.
+Physical group name Left has 45 Lines.
+Physical group name Left has 20 Points.
+Physical group name Right has 0 Tetrahedra.
+Physical group name Right has 26 Triangles.
+Physical group name Right has 45 Lines.
+Physical group name Right has 20 Points.
+Device slab_22fe6820ed964ea8af0b89f4bebee83f_device has 92 coordinates with max index 92
+Region all has 92 nodes.
+Contact left in region all with 20 nodes
+Contact right in region all with 20 nodes
+number of equations 92
+Iteration: 0
+  Device: "slab_22fe6820ed964ea8af0b89f4bebee83f_device"	RelError: 1.00000e+00	AbsError: 8.34384e-04
+    Region: "all"	RelError: 1.00000e+00	AbsError: 8.34384e-04
+      Equation: "Poisson"	RelError: 1.00000e+00	AbsError: 8.34384e-04
+Iteration: 1
+  Device: "slab_22fe6820ed964ea8af0b89f4bebee83f_device"	RelError: 7.93175e-16	AbsError: 6.38194e-19
+    Region: "all"	RelError: 7.93175e-16	AbsError: 6.38194e-19
+      Equation: "Poisson"	RelError: 7.93175e-16	AbsError: 6.38194e-19
+Physical group name Electrostatic has 1956 Tetrahedra.
+Physical group name Electrostatic has 4302 Triangles.
+Physical group name Electrostatic has 2883 Lines.
+Physical group name Electrostatic has 538 Points.
+Physical group name Left has 0 Tetrahedra.
+Physical group name Left has 118 Triangles.
+Physical group name Left has 191 Lines.
+Physical group name Left has 74 Points.
+Physical group name Right has 0 Tetrahedra.
+Physical group name Right has 118 Triangles.
+Physical group name Right has 191 Lines.
+Physical group name Right has 74 Points.
+Device slab_0997b7cb2f924a8bb191c86addd9adae_device has 538 coordinates with max index 538
+Region all has 538 nodes.
+Contact left in region all with 74 nodes
+Contact right in region all with 74 nodes
+number of equations 538
+Iteration: 0
+  Device: "slab_0997b7cb2f924a8bb191c86addd9adae_device"	RelError: 1.00000e+00	AbsError: 7.90956e-04
+    Region: "all"	RelError: 1.00000e+00	AbsError: 7.90956e-04
+      Equation: "Poisson"	RelError: 1.00000e+00	AbsError: 7.90956e-04
+Iteration: 1
+  Device: "slab_0997b7cb2f924a8bb191c86addd9adae_device"	RelError: 1.50267e-15	AbsError: 1.04729e-18
+    Region: "all"	RelError: 1.50267e-15	AbsError: 1.04729e-18
+      Equation: "Poisson"	RelError: 1.50267e-15	AbsError: 1.04729e-18
+PASSED
+tests/test_step08.py::test_number_interval_no_prior_assignment PASSED
+tests/test_step08.py::test_number_zero_bias_and_reservoir_swap PASSED
+tests/test_step08.py::test_tracking_crossing_and_complex_phase PASSED
+tests/test_step08.py::test_tracking_degenerate_rotation_invariant PASSED
+tests/test_step08.py::test_newton_invalid_trial_recovers_physical_root PASSED
+tests/test_step08.py::test_newton_no_fake_root_on_domain_boundary PASSED
+tests/test_step08.py::test_programming_errors_not_backtracked PASSED
+tests/test_step08.py::test_contour_and_transmission_batching_preserve_values PASSED
+tests/test_step10_bound_inertia.py::test_block_sturm_inertia_matches_independent_dense_eigenvalues PASSED
+tests/test_step10_bound_inertia.py::test_impurity_bound_pole_matches_analytic_infinite_chain_and_dense_audit PASSED
+tests/test_step10_bound_inertia.py::test_positive_barrier_has_no_below_band_poles PASSED
+tests/test_triple_junction.py::test_actual_three_material_gaa_shared_potential_and_gauss Physical group name Drain has 0 Tetrahedra.
+Physical group name Drain has 40 Triangles.
+Physical group name Drain has 68 Lines.
+Physical group name Drain has 29 Points.
+Physical group name Electrostatic has 3375 Tetrahedra.
+Physical group name Electrostatic has 7216 Triangles.
+Physical group name Electrostatic has 4647 Lines.
+Physical group name Electrostatic has 807 Points.
+Physical group name Gate has 0 Tetrahedra.
+Physical group name Gate has 332 Triangles.
+Physical group name Gate has 522 Lines.
+Physical group name Gate has 190 Points.
+Physical group name OxSpacer has 0 Tetrahedra.
+Physical group name OxSpacer has 154 Triangles.
+Physical group name OxSpacer has 267 Lines.
+Physical group name OxSpacer has 113 Points.
+Physical group name SiExterior has 0 Tetrahedra.
+Physical group name SiExterior has 312 Triangles.
+Physical group name SiExterior has 508 Lines.
+Physical group name SiExterior has 196 Points.
+Physical group name SiOx has 0 Tetrahedra.
+Physical group name SiOx has 192 Triangles.
+Physical group name SiOx has 300 Lines.
+Physical group name SiOx has 108 Points.
+Physical group name SiSpacer has 0 Tetrahedra.
+Physical group name SiSpacer has 264 Triangles.
+Physical group name SiSpacer has 432 Lines.
+Physical group name SiSpacer has 168 Points.
+Physical group name Source has 0 Tetrahedra.
+Physical group name Source has 40 Triangles.
+Physical group name Source has 68 Lines.
+Physical group name Source has 29 Points.
+Physical group name SpacerExterior has 0 Tetrahedra.
+Physical group name SpacerExterior has 208 Triangles.
+Physical group name SpacerExterior has 360 Lines.
+Physical group name SpacerExterior has 152 Points.
+Device gaa_36de4bff has 807 coordinates with max index 807
+Region electrostatic has 807 nodes.
+Contact drain in region electrostatic with 29 nodes
+Contact gate in region electrostatic with 190 nodes
+Contact source in region electrostatic with 29 nodes
+number of equations 807
+Iteration: 0
+  Device: "gaa_36de4bff"	RelError: 0.00000e+00	AbsError: 0.00000e+00
+    Region: "electrostatic"	RelError: 0.00000e+00	AbsError: 0.00000e+00
+      Equation: "PotentialEquation"	RelError: 0.00000e+00	AbsError: 0.00000e+00
+number of equations 807
+Iteration: 0
+  Device: "gaa_36de4bff"	RelError: 1.00000e+00	AbsError: 4.00000e-01
+    Region: "electrostatic"	RelError: 1.00000e+00	AbsError: 4.00000e-01
+      Equation: "PotentialEquation"	RelError: 1.00000e+00	AbsError: 4.00000e-01
+Iteration: 1
+  Device: "gaa_36de4bff"	RelError: 1.27908e-15	AbsError: 3.46942e-16
+    Region: "electrostatic"	RelError: 1.27908e-15	AbsError: 3.46942e-16
+      Equation: "PotentialEquation"	RelError: 1.27908e-15	AbsError: 3.46942e-16
+PASSED
+
+============================== 74 passed in 1.58s ==============================

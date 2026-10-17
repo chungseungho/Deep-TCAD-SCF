@@ -1,0 +1,55 @@
+{'step_ev': 0.01, 'order': 8, 'rtol': 2e-05, 'atol': 1e-07, 'fermi_poles': 48, 'id_a': 3.61530487557583e-08, 'gf_nodes': [19656, 35520, 18816]}
+{'step_ev': 0.005, 'order': 12, 'rtol': 5e-06, 'atol': 2.5e-08, 'fermi_poles': 96, 'id_a': 3.615304871941033e-08, 'gf_nodes': [26676, 43092, 27000]}
+{'step_ev': 0.0025, 'order': 16, 'rtol': 1e-06, 'atol': 1e-08, 'fermi_poles': 192, 'id_a': 3.615304871924787e-08, 'gf_nodes': [38448, 45984, 37536]}
+{
+  "scope": "frozen final uniform biased field; not a re-solved SCF or mode/grid/contact certificate",
+  "cases": [
+    {
+      "step_ev": 0.01,
+      "order": 8,
+      "rtol": 2e-05,
+      "atol": 1e-07,
+      "fermi_poles": 48,
+      "id_a": 3.61530487557583e-08,
+      "gf_nodes": [
+        19656,
+        35520,
+        18816
+      ],
+      "density_relative_l2_to_finest": 5.937250894478898e-09,
+      "current_relative_to_finest": 1.0098852865070285e-09
+    },
+    {
+      "step_ev": 0.005,
+      "order": 12,
+      "rtol": 5e-06,
+      "atol": 2.5e-08,
+      "fermi_poles": 96,
+      "id_a": 3.615304871941033e-08,
+      "gf_nodes": [
+        26676,
+        43092,
+        27000
+      ],
+      "density_relative_l2_to_finest": 8.004252848486997e-12,
+      "current_relative_to_finest": 4.4935166698678586e-12
+    },
+    {
+      "step_ev": 0.0025,
+      "order": 16,
+      "rtol": 1e-06,
+      "atol": 1e-08,
+      "fermi_poles": 192,
+      "id_a": 3.615304871924787e-08,
+      "gf_nodes": [
+        38448,
+        45984,
+        37536
+      ],
+      "density_relative_l2_to_finest": 0.0,
+      "current_relative_to_finest": 0.0
+    }
+  ],
+  "threshold": 0.01,
+  "pass": true
+}

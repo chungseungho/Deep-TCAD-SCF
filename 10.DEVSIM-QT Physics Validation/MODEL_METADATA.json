@@ -1,0 +1,49 @@
+{
+  "model": "anisotropic silicon parabolic EMA / projected finite-difference blocks / semi-infinite coherent leads / DEVSIM P1 FEM Poisson",
+  "spin_degeneracy": 2,
+  "valleys": [
+    {
+      "name": "Delta_z",
+      "mx_m0": 0.19,
+      "my_m0": 0.19,
+      "mz_m0": 0.916,
+      "multiplicity": 2
+    },
+    {
+      "name": "Delta_x",
+      "mx_m0": 0.916,
+      "my_m0": 0.19,
+      "mz_m0": 0.19,
+      "multiplicity": 2
+    },
+    {
+      "name": "Delta_y",
+      "mx_m0": 0.19,
+      "my_m0": 0.916,
+      "mz_m0": 0.19,
+      "multiplicity": 2
+    }
+  ],
+  "kinetic_constant_ev_nm2": 0.0380998212,
+  "q_c": 1.602176634e-19,
+  "hbar_ev_s": 6.582119569e-16,
+  "electron_potential_energy": "-phi eV for phi in V",
+  "contacts": {
+    "phi_left": "reference",
+    "phi_right": "reference+Vd",
+    "mu_right": "mu_left-Vd",
+    "lead_model": "hard-wall nanowire uniform flat reservoir potential at the computational cut; endpoint/contact-length convergence required"
+  },
+  "density_normalization": "cell population * spin * valley multiplicity / cell volume in nm^3 * 1e21 cm^-3",
+  "current_normalization": "q/(2*pi*hbar) per channel, spin and valley weights once",
+  "units": {
+    "quantum_coordinates": "nm",
+    "poisson_internal_coordinates": "cm",
+    "potential": "V",
+    "hamiltonian": "eV",
+    "density": "cm^-3",
+    "current": "A"
+  },
+  "training_ready": false,
+  "validation_flags": "See STATUS.json and per-state assessment. A numerical SCF state alone is not validated teacher data."
+}

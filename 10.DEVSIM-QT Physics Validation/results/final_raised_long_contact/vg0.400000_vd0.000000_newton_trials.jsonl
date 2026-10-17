@@ -1,0 +1,6 @@
+{"kind": "line_search", "iteration": 0, "step_scale": 1.0, "valid": true, "accepted": true, "method": "newton", "gmres_info": 0, "residual_inf": 0.730143160450095, "residual_l2": 17.104662842580723}
+{"kind": "line_search", "iteration": 1, "step_scale": 1.0, "valid": true, "accepted": true, "method": "newton", "gmres_info": 1, "residual_inf": 0.11651507941137863, "residual_l2": 1.882003282655798}
+{"kind": "line_search", "iteration": 2, "step_scale": 1.0, "valid": true, "accepted": true, "method": "newton", "gmres_info": 0, "residual_inf": 0.00947359841953608, "residual_l2": 0.13026666018663816}
+{"kind": "line_search", "iteration": 3, "step_scale": 1.0, "valid": true, "accepted": true, "method": "newton", "gmres_info": 0, "residual_inf": 0.0007446586905258193, "residual_l2": 0.009624787018542465}
+{"kind": "line_search", "iteration": 4, "step_scale": 1.0, "valid": true, "accepted": true, "method": "newton", "gmres_info": 0, "residual_inf": 2.7271565113451413e-05, "residual_l2": 0.00011168073448209728}
+{"kind": "line_search", "iteration": 5, "step_scale": 1.0, "valid": true, "accepted": true, "method": "newton", "gmres_info": 0, "residual_inf": 7.353010833023588e-07, "residual_l2": 7.867344875140366e-06}

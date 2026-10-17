@@ -1,0 +1,211 @@
+{
+  "key": "vg0.400000_vd0.000000",
+  "backend": "negf",
+  "vg_v": 0.4,
+  "vd_v": 0.0,
+  "id_a": 0.0,
+  "numerical_status": "SCF_CONVERGED",
+  "transport_status": "CALCULATED",
+  "physical_status": "PROVISIONAL_EMA",
+  "iterations": 12,
+  "phi_residual_v": 7.046303015165178e-07,
+  "density_relative_residual": 1.253741673216879e-06,
+  "mu_l_ev": 0.027501973858044773,
+  "mu_r_ev": 0.027501973858044773,
+  "current_conservation_abs_a": 0.0,
+  "current_conservation_relative": 0.0,
+  "gauss_relative_error": 8.50689488009893e-17,
+  "reservoir_screening_pass": false,
+  "quantitative_validation_pass": false,
+  "gf_inside_scf": true,
+  "source_sha256": "69d07ea5200430b39b92d68bff48c82a1e57c8da45f164b58683c16d9633b90f",
+  "configuration_fingerprint": "d007d5359949ada4b0cd8ceb5d73ab5a4384b44922dd02709c007f1ab54fd46e",
+  "runtime_s": 11.073465068000132,
+  "regions": {
+    "left_reservoir": {
+      "electrons": 3.5219354217223393,
+      "donor_electrons": 3.5999999999999996,
+      "net_electrons": -0.07806457827766033,
+      "neutrality_relative": -0.021684605077127873,
+      "potential_spread_v": 0.051872712118931436,
+      "max_mean_gradient_v_nm": 0.002379125932907342
+    },
+    "left_extension": {
+      "electrons": 3.0682897757254826,
+      "donor_electrons": 3.8999999999999995,
+      "net_electrons": -0.8317102242745169,
+      "neutrality_relative": -0.21325903186526077,
+      "potential_spread_v": 0.10688079377831147,
+      "max_mean_gradient_v_nm": 0.01999293602935906
+    },
+    "channel": {
+      "electrons": 0.4396517811446512,
+      "donor_electrons": 0.0,
+      "net_electrons": 0.4396517811446512,
+      "neutrality_relative": null,
+      "potential_spread_v": 0.03068148475351383,
+      "max_mean_gradient_v_nm": 0.008481170598718335
+    },
+    "right_extension": {
+      "electrons": 3.0723993584340143,
+      "donor_electrons": 3.8999999999999995,
+      "net_electrons": -0.8276006415659851,
+      "neutrality_relative": -0.21220529270922697,
+      "potential_spread_v": 0.10631369073134525,
+      "max_mean_gradient_v_nm": 0.01990536930356969
+    },
+    "right_reservoir": {
+      "electrons": 3.5160545859140457,
+      "donor_electrons": 3.5999999999999996,
+      "net_electrons": -0.0839454140859539,
+      "neutrality_relative": -0.023318170579431644,
+      "potential_spread_v": 0.050109189420061026,
+      "max_mean_gradient_v_nm": 0.0026777641220880827
+    },
+    "reservoir_screening_diagnostic_pass": false,
+    "screening_thresholds": {
+      "relative_neutrality": 0.05,
+      "mean_gradient_v_nm": 0.001,
+      "meaning": "diagnostic screening targets, not universal semiconductor validity bounds"
+    }
+  },
+  "constraint": {},
+  "valleys": [
+    {
+      "density_algorithm": "semi-infinite GF contour + real-axis injectivity",
+      "gf_inside_scf": true,
+      "contour_batch_size": 8,
+      "fermi_poles": 48,
+      "requested_fermi_poles": 48,
+      "fermi_range_max_error": 3.552713678800501e-15,
+      "bound_state_audit": null,
+      "real_energy_nodes": 0,
+      "energy_panel_ev": 0.01,
+      "gauss_order": 8,
+      "integration_error_estimator": null,
+      "pole_guidance": null,
+      "local_pauli_min": 5.7581948369338176e-05,
+      "local_pauli_max": 0.02843491681266769,
+      "full_density_matrix_psd_checked": false,
+      "independent_transmission_current_per_degeneracy_a": 0.0,
+      "bond_vs_transmission_relative": 0.0,
+      "bound_state_occupation": "equilibrium base; below-lead poles with material reservoir occupation difference rejected; embedded dark states not globally excluded",
+      "contact_model": "analytic semi-infinite uniform hard-wall nanowire leads; no phenomenological gamma",
+      "valley": "Delta_z"
+    },
+    {
+      "density_algorithm": "semi-infinite GF contour + real-axis injectivity",
+      "gf_inside_scf": true,
+      "contour_batch_size": 8,
+      "fermi_poles": 48,
+      "requested_fermi_poles": 48,
+      "fermi_range_max_error": 1.7763568394002505e-15,
+      "bound_state_audit": null,
+      "real_energy_nodes": 0,
+      "energy_panel_ev": 0.01,
+      "gauss_order": 8,
+      "integration_error_estimator": null,
+      "pole_guidance": null,
+      "local_pauli_min": 6.890046145357275e-07,
+      "local_pauli_max": 0.009084527121340395,
+      "full_density_matrix_psd_checked": false,
+      "independent_transmission_current_per_degeneracy_a": 0.0,
+      "bond_vs_transmission_relative": 0.0,
+      "bound_state_occupation": "equilibrium base; below-lead poles with material reservoir occupation difference rejected; embedded dark states not globally excluded",
+      "contact_model": "analytic semi-infinite uniform hard-wall nanowire leads; no phenomenological gamma",
+      "valley": "Delta_x"
+    },
+    {
+      "density_algorithm": "semi-infinite GF contour + real-axis injectivity",
+      "gf_inside_scf": true,
+      "contour_batch_size": 8,
+      "fermi_poles": 48,
+      "requested_fermi_poles": 48,
+      "fermi_range_max_error": 3.552713678800501e-15,
+      "bound_state_audit": null,
+      "real_energy_nodes": 0,
+      "energy_panel_ev": 0.01,
+      "gauss_order": 8,
+      "integration_error_estimator": null,
+      "pole_guidance": null,
+      "local_pauli_min": 4.3413032954772137e-05,
+      "local_pauli_max": 0.0064130588228718454,
+      "full_density_matrix_psd_checked": false,
+      "independent_transmission_current_per_degeneracy_a": 0.0,
+      "bond_vs_transmission_relative": 0.0,
+      "bound_state_occupation": "equilibrium base; below-lead poles with material reservoir occupation difference rejected; embedded dark states not globally excluded",
+      "contact_model": "analytic semi-infinite uniform hard-wall nanowire leads; no phenomenological gamma",
+      "valley": "Delta_y"
+    }
+  ],
+  "validity": {
+    "physical_status": "PROVISIONAL_EMA",
+    "flags": [
+      "FD_DISPERSION_WARNING"
+    ],
+    "dispersion": [
+      {
+        "valley": "Delta_z",
+        "kinetic_window_ev": 0.41108728747951867,
+        "fd_bandwidth_ev": 3.208405995789474,
+        "fraction": 0.12812820073862405,
+        "velocity_error_estimate": 0.0662592440825045
+      },
+      {
+        "valley": "Delta_x",
+        "kinetic_window_ev": 0.350384210467274,
+        "fd_bandwidth_ev": 0.6654990602620088,
+        "fraction": 0.5264984301094683,
+        "velocity_error_estimate": 0.3118854965265362
+      },
+      {
+        "valley": "Delta_y",
+        "kinetic_window_ev": 0.3638788359533913,
+        "fd_bandwidth_ev": 3.208405995789474,
+        "fraction": 0.11341421142801902,
+        "velocity_error_estimate": 0.05841315399375879
+      }
+    ],
+    "element_fields": {
+      "Silicon": {
+        "maximum_v_nm": 0.03971951228437932,
+        "p99_v_nm": 0.030594852853665606
+      },
+      "GateOxide": {
+        "maximum_v_nm": 0.01921844101878749,
+        "p99_v_nm": 0.01878849590780504
+      },
+      "Spacer": {
+        "maximum_v_nm": 0.036293043668035534,
+        "p99_v_nm": 0.033329946599772384
+      }
+    },
+    "dispersion_tolerance_pass": false,
+    "quantitative_physics_validated": false,
+    "missing_physics": [
+      "oxide_tunneling",
+      "dielectric_breakdown",
+      "impact_ionization",
+      "high_field_scattering",
+      "self_heating",
+      "nonparabolic_bands"
+    ],
+    "field_threshold_v_nm": 0.5,
+    "field_threshold_is": "screening diagnostic, not a breakdown prediction"
+  },
+  "gauss": {
+    "contact_displacement_charge_c": {
+      "source": -1.3964893798506834e-20,
+      "drain": -1.5158641353394678e-20,
+      "gate": -2.3088815542435476e-19
+    },
+    "interior_free_charge_c": 2.6001169057625645e-19,
+    "integrated_boundary_reaction_c": -2.6001169057625635e-19,
+    "gauss_relative_error": 8.50689488009893e-17,
+    "maximum_interior_equation_residual_c": 7.18932344962911e-35,
+    "contact_sum_relative_error": 1.701378976019786e-16,
+    "contact_node_charge_treatment": "Dirichlet rows replaced; only interior volume sources enter balance"
+  },
+  "postprocess": [],
+  "postprocess_error": null
+}

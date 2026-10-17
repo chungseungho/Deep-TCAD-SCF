@@ -1,0 +1,6 @@
+{
+  "original_raised_idvgs_0_to_1p2": "NOT RUN: biased contact/bound-state and mode-convergence gates unresolved",
+  "original_raised_idvds_0_to_1p2": "NOT RUN: same unresolved gates",
+  "uniform_points": "Only completed solver states are exported; no missing point filled",
+  "training_ready": false
+}

@@ -1,0 +1,80 @@
+{
+  "scope": "independent frozen-H open quantum transport; not a GAA SCF certification",
+  "cases": [
+    {
+      "case": "barrier_0",
+      "maximum_transmission_error": 1.3322676295501878e-14,
+      "pass": true
+    },
+    {
+      "case": "barrier_0.08",
+      "maximum_transmission_error": 1.1657341758564144e-14,
+      "pass": true
+    },
+    {
+      "case": "barrier_0.25",
+      "maximum_transmission_error": 6.8833827526759706e-15,
+      "pass": true
+    },
+    {
+      "case": "step",
+      "maximum_transmission_error": 9.492406860545088e-15,
+      "pass": true
+    },
+    {
+      "case": "dense_lesser_vd0",
+      "density_max_abs_error": 3.823330541052883e-13,
+      "current_max_abs_error_a": 3.024939672150089e-22,
+      "dense_integrator_error": 3.3429507046929584e-10,
+      "pass": true
+    },
+    {
+      "case": "dense_lesser_vd0.01",
+      "density_max_abs_error": 4.6244738594047874e-10,
+      "current_max_abs_error_a": 3.5908925506974656e-14,
+      "dense_integrator_error": 3.255833369829532e-10,
+      "pass": true
+    },
+    {
+      "case": "dense_lesser_vd0.05",
+      "density_max_abs_error": 1.269645055756996e-09,
+      "current_max_abs_error_a": 9.56861437245791e-14,
+      "dense_integrator_error": 3.618543913624858e-10,
+      "pass": true
+    },
+    {
+      "case": "dense_lesser_vd0.1",
+      "density_max_abs_error": 1.5081943471884074e-09,
+      "current_max_abs_error_a": 1.0918405123159364e-13,
+      "dense_integrator_error": 3.007916443867285e-10,
+      "pass": true
+    },
+    {
+      "case": "surface_retarded",
+      "quadratic_residual_ev2": 2.3320271836738002e-17,
+      "max_imaginary_sigma_ev": -4.554472497144954e-06,
+      "pass": true
+    },
+    {
+      "case": "outside_lead_bands",
+      "transmission_max": 0.0,
+      "pass": true
+    },
+    {
+      "case": "full_3d_projection",
+      "max_operator_error_ev": 8.881784197001252e-16,
+      "pass": true
+    },
+    {
+      "case": "full_3d_open_dense_lesser",
+      "max_density_spectral_error_per_ev": 1.609823385706477e-14,
+      "pass": true
+    },
+    {
+      "case": "uniform_multimode",
+      "max_transmission_channel_count_error": 8.881784197001252e-15,
+      "pass": true
+    }
+  ],
+  "pass": true
+}

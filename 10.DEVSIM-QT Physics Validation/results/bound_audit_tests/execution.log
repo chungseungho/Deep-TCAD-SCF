@@ -1,0 +1,14 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.14, pytest-9.1.1, pluggy-1.7.0 -- /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python
+cachedir: .pytest_cache
+rootdir: /workspace/scratch/3024dd41bc9d/10.DEVSIM-QT Physics Validation
+configfile: pytest.ini
+collecting ... collected 5 items
+
+tests/test_step10_bound_inertia.py::test_block_sturm_inertia_matches_independent_dense_eigenvalues PASSED
+tests/test_step10_bound_inertia.py::test_impurity_bound_pole_matches_analytic_infinite_chain_and_dense_audit PASSED
+tests/test_step10_bound_inertia.py::test_positive_barrier_has_no_below_band_poles PASSED
+tests/test_bound_guard.py::test_bias_window_bound_pole_requires_preparation_model PASSED
+tests/test_backend_step08_regression.py::test_all_builtin_backends_match_step08_quantum_outputs PASSED
+
+============================== 5 passed in 0.56s ===============================

@@ -1,0 +1,9 @@
+run,geometry,vg_v,vd_v,id_a,phi_residual_v,density_relative_residual,gauss_relative_error,current_conservation_relative,SCF_CONVERGED,TRANSPORT_CONSERVED,NUMERICAL_CONVERGENCE_VERIFIED,PHYSICAL_MODEL_VALID,QUANTITATIVE_VALIDATED,TRAINING_READY
+final_raised_equilibrium,raised,0.4,0.0,0.0,1.7436762024165137e-05,2.1729483176616127e-05,3.354374931513061e-17,0.0,True,True,False,False,False,False
+final_raised_fine_poisson,raised,0.4,0.0,0.0,3.827402535426516e-06,4.448443072790413e-06,0.0,0.0,True,True,False,False,False,False
+final_raised_long_contact,raised,0.4,0.0,0.0,2.193352408819821e-05,7.954075957304464e-06,0.0,0.0,True,True,False,False,False,False
+final_raised_restart,raised,0.4,0.0,0.0,8.059267943283377e-06,1.021650232885826e-05,6.708770854312516e-17,0.0,True,True,False,False,False,False
+final_uniform_equilibrium,uniform,0.4,0.0,0.0,7.046303015165178e-07,1.253741673216879e-06,8.50689488009893e-17,0.0,True,True,False,False,False,False
+final_uniform_vd001,uniform,0.4,0.01,3.6153048755755e-08,8.4978633292725e-05,0.00029837848659909703,8.569846092672767e-17,5.491192412399932e-16,True,True,False,False,False,False
+final_uniform_vd005_resume,uniform,0.4,0.05,1.0298235621947698e-07,3.700224264693505e-05,0.0002614387100531581,0.0,3.8554827118080653e-16,True,True,False,False,False,False
+final_uniform_vd01_resume,uniform,0.4,0.1,1.2160243827870132e-07,2.3307919299747626e-06,1.1947840220035592e-05,1.3076230745978632e-16,2.1767474383227948e-16,True,True,False,False,False,False

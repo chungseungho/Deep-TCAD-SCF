@@ -1,0 +1,146 @@
+{
+  "physical_groups": {
+    "Silicon": {
+      "dimension": 3,
+      "tag": 1,
+      "entities": [
+        1,
+        2,
+        3
+      ]
+    },
+    "GateOxide": {
+      "dimension": 3,
+      "tag": 2,
+      "entities": [
+        4
+      ]
+    },
+    "Spacer": {
+      "dimension": 3,
+      "tag": 3,
+      "entities": [
+        5,
+        6
+      ]
+    },
+    "Source": {
+      "dimension": 2,
+      "tag": 4,
+      "entities": [
+        1
+      ]
+    },
+    "Drain": {
+      "dimension": 2,
+      "tag": 5,
+      "entities": [
+        20
+      ]
+    },
+    "Gate": {
+      "dimension": 2,
+      "tag": 6,
+      "entities": [
+        26,
+        27,
+        28,
+        29
+      ]
+    },
+    "SiOx": {
+      "dimension": 2,
+      "tag": 7,
+      "entities": [
+        9,
+        12,
+        15,
+        18
+      ]
+    },
+    "SiSpacer": {
+      "dimension": 2,
+      "tag": 8,
+      "entities": [
+        8,
+        10,
+        11,
+        13,
+        14,
+        16,
+        17,
+        19
+      ]
+    },
+    "OxSpacer": {
+      "dimension": 2,
+      "tag": 9,
+      "entities": [
+        25,
+        30
+      ]
+    },
+    "SiExterior": {
+      "dimension": 2,
+      "tag": 10,
+      "entities": [
+        3,
+        4,
+        5,
+        6,
+        21,
+        22,
+        23,
+        24
+      ]
+    },
+    "SpacerExterior": {
+      "dimension": 2,
+      "tag": 11,
+      "entities": [
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40
+      ]
+    }
+  },
+  "cad_volume_nm3": {
+    "Silicon": 3240.0,
+    "GateOxide": 2016.0,
+    "Spacer": 504.0
+  },
+  "expected_volume_nm3": {
+    "Silicon": 3240.0,
+    "GateOxide": 2016.0,
+    "Spacer": 504.0
+  },
+  "gate_sides": [
+    [
+      1,
+      -1
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      2,
+      -1
+    ],
+    [
+      2,
+      1
+    ]
+  ],
+  "tetrahedra": 8523,
+  "minimum_minSICN": 0.2977555695649938,
+  "external_surface_count": 24,
+  "gate_model": "continuous outer oxide surface; no metal volume"
+}

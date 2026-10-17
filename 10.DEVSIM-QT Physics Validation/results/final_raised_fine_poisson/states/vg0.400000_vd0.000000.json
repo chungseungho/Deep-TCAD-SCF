@@ -1,0 +1,211 @@
+{
+  "key": "vg0.400000_vd0.000000",
+  "backend": "negf",
+  "vg_v": 0.4,
+  "vd_v": 0.0,
+  "id_a": 0.0,
+  "numerical_status": "SCF_CONVERGED",
+  "transport_status": "CALCULATED",
+  "physical_status": "PROVISIONAL_EMA",
+  "iterations": 8,
+  "phi_residual_v": 3.827402535426516e-06,
+  "density_relative_residual": 4.448443072790413e-06,
+  "mu_l_ev": 0.009559118670267335,
+  "mu_r_ev": 0.009559118670267335,
+  "current_conservation_abs_a": 0.0,
+  "current_conservation_relative": 0.0,
+  "gauss_relative_error": 0.0,
+  "reservoir_screening_pass": false,
+  "quantitative_validation_pass": false,
+  "gf_inside_scf": true,
+  "source_sha256": "821183f781c303ebef45bbb5b57d43eb02e780a7ae9e43cc4525b02eb4186dba",
+  "configuration_fingerprint": "f39443495db7fe2153c8274308db131ad2448f8c5d754287d3b5d3241a654773",
+  "runtime_s": 27.08148133600025,
+  "regions": {
+    "left_reservoir": {
+      "electrons": 17.018587415657976,
+      "donor_electrons": 18.0,
+      "net_electrons": -0.9814125843420243,
+      "neutrality_relative": -0.054522921352334684,
+      "potential_spread_v": 0.15563497370293572,
+      "max_mean_gradient_v_nm": 0.007374419493961649
+    },
+    "left_extension": {
+      "electrons": 16.38484114698422,
+      "donor_electrons": 18.3,
+      "net_electrons": -1.9151588530157824,
+      "neutrality_relative": -0.1046534892358351,
+      "potential_spread_v": 0.19990562541321955,
+      "max_mean_gradient_v_nm": 0.12323620031083025
+    },
+    "channel": {
+      "electrons": 0.30363463856107814,
+      "donor_electrons": 0.0,
+      "net_electrons": 0.30363463856107814,
+      "neutrality_relative": null,
+      "potential_spread_v": 0.04273854438179945,
+      "max_mean_gradient_v_nm": 0.011441870057166709
+    },
+    "right_extension": {
+      "electrons": 16.395864371264828,
+      "donor_electrons": 18.3,
+      "net_electrons": -1.9041356287351725,
+      "neutrality_relative": -0.1040511272532881,
+      "potential_spread_v": 0.19860543932468458,
+      "max_mean_gradient_v_nm": 0.12378611257812755
+    },
+    "right_reservoir": {
+      "electrons": 17.048014296026196,
+      "donor_electrons": 18.0,
+      "net_electrons": -0.9519857039738042,
+      "neutrality_relative": -0.05288809466521135,
+      "potential_spread_v": 0.15682102438701837,
+      "max_mean_gradient_v_nm": 0.0077009886461712855
+    },
+    "reservoir_screening_diagnostic_pass": false,
+    "screening_thresholds": {
+      "relative_neutrality": 0.05,
+      "mean_gradient_v_nm": 0.001,
+      "meaning": "diagnostic screening targets, not universal semiconductor validity bounds"
+    }
+  },
+  "constraint": {},
+  "valleys": [
+    {
+      "density_algorithm": "semi-infinite GF contour + real-axis injectivity",
+      "gf_inside_scf": true,
+      "contour_batch_size": 8,
+      "fermi_poles": 48,
+      "requested_fermi_poles": 48,
+      "fermi_range_max_error": 3.6637359812630166e-15,
+      "bound_state_audit": null,
+      "real_energy_nodes": 0,
+      "energy_panel_ev": 0.01,
+      "gauss_order": 8,
+      "integration_error_estimator": null,
+      "pole_guidance": null,
+      "local_pauli_min": 0.00010857780693804395,
+      "local_pauli_max": 0.04654427439713853,
+      "full_density_matrix_psd_checked": false,
+      "independent_transmission_current_per_degeneracy_a": 0.0,
+      "bond_vs_transmission_relative": 0.0,
+      "bound_state_occupation": "equilibrium base; below-lead poles with material reservoir occupation difference rejected; embedded dark states not globally excluded",
+      "contact_model": "analytic semi-infinite uniform hard-wall nanowire leads; no phenomenological gamma",
+      "valley": "Delta_z"
+    },
+    {
+      "density_algorithm": "semi-infinite GF contour + real-axis injectivity",
+      "gf_inside_scf": true,
+      "contour_batch_size": 8,
+      "fermi_poles": 48,
+      "requested_fermi_poles": 48,
+      "fermi_range_max_error": 1.6036375860162045e-15,
+      "bound_state_audit": null,
+      "real_energy_nodes": 0,
+      "energy_panel_ev": 0.01,
+      "gauss_order": 8,
+      "integration_error_estimator": null,
+      "pole_guidance": null,
+      "local_pauli_min": 2.275041236547309e-05,
+      "local_pauli_max": 0.07080546818388536,
+      "full_density_matrix_psd_checked": false,
+      "independent_transmission_current_per_degeneracy_a": 0.0,
+      "bond_vs_transmission_relative": 0.0,
+      "bound_state_occupation": "equilibrium base; below-lead poles with material reservoir occupation difference rejected; embedded dark states not globally excluded",
+      "contact_model": "analytic semi-infinite uniform hard-wall nanowire leads; no phenomenological gamma",
+      "valley": "Delta_x"
+    },
+    {
+      "density_algorithm": "semi-infinite GF contour + real-axis injectivity",
+      "gf_inside_scf": true,
+      "contour_batch_size": 8,
+      "fermi_poles": 48,
+      "requested_fermi_poles": 48,
+      "fermi_range_max_error": 3.6637359812630166e-15,
+      "bound_state_audit": null,
+      "real_energy_nodes": 0,
+      "energy_panel_ev": 0.01,
+      "gauss_order": 8,
+      "integration_error_estimator": null,
+      "pole_guidance": null,
+      "local_pauli_min": 4.479522890523246e-05,
+      "local_pauli_max": 0.044478209723915786,
+      "full_density_matrix_psd_checked": false,
+      "independent_transmission_current_per_degeneracy_a": 0.0,
+      "bond_vs_transmission_relative": 0.0,
+      "bound_state_occupation": "equilibrium base; below-lead poles with material reservoir occupation difference rejected; embedded dark states not globally excluded",
+      "contact_model": "analytic semi-infinite uniform hard-wall nanowire leads; no phenomenological gamma",
+      "valley": "Delta_y"
+    }
+  ],
+  "validity": {
+    "physical_status": "PROVISIONAL_EMA",
+    "flags": [
+      "FD_DISPERSION_WARNING"
+    ],
+    "dispersion": [
+      {
+        "valley": "Delta_z",
+        "kinetic_window_ev": 0.44601188167147066,
+        "fd_bandwidth_ev": 3.208405995789474,
+        "fraction": 0.13901354200708727,
+        "velocity_error_estimate": 0.0721064403753452
+      },
+      {
+        "valley": "Delta_x",
+        "kinetic_window_ev": 0.41942864564912946,
+        "fd_bandwidth_ev": 0.6654990602620088,
+        "fraction": 0.6302467887542911,
+        "velocity_error_estimate": 0.3919266399144681
+      },
+      {
+        "valley": "Delta_y",
+        "kinetic_window_ev": 0.44211147333809164,
+        "fd_bandwidth_ev": 3.208405995789474,
+        "fraction": 0.13779785785162263,
+        "velocity_error_estimate": 0.07145159407364365
+      }
+    ],
+    "element_fields": {
+      "Silicon": {
+        "maximum_v_nm": 0.04214935166724275,
+        "p99_v_nm": 0.03224906723922353
+      },
+      "GateOxide": {
+        "maximum_v_nm": 0.04872736654989837,
+        "p99_v_nm": 0.042924711715371405
+      },
+      "Spacer": {
+        "maximum_v_nm": 0.09551074516989787,
+        "p99_v_nm": 0.07748629514212624
+      }
+    },
+    "dispersion_tolerance_pass": false,
+    "quantitative_physics_validated": false,
+    "missing_physics": [
+      "oxide_tunneling",
+      "dielectric_breakdown",
+      "impact_ionization",
+      "high_field_scattering",
+      "self_heating",
+      "nonparabolic_bands"
+    ],
+    "field_threshold_v_nm": 0.5,
+    "field_threshold_is": "screening diagnostic, not a breakdown prediction"
+  },
+  "gauss": {
+    "contact_displacement_charge_c": {
+      "source": -2.4471592798740397e-19,
+      "drain": -2.4491541047427805e-19,
+      "gate": -4.527255794990301e-19
+    },
+    "interior_free_charge_c": 9.423569179607137e-19,
+    "integrated_boundary_reaction_c": -9.423569179607137e-19,
+    "gauss_relative_error": 0.0,
+    "maximum_interior_equation_residual_c": 6.69561582228375e-35,
+    "contact_sum_relative_error": 2.526402002322339e-16,
+    "contact_node_charge_treatment": "Dirichlet rows replaced; only interior volume sources enter balance"
+  },
+  "postprocess": [],
+  "postprocess_error": null
+}

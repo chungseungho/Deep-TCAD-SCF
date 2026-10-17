@@ -1,0 +1,7 @@
+{
+  "SCF_CONVERGED": false,
+  "QUANTITATIVE_VALIDATED": false,
+  "status": "EXPLORATORY_INTERRUPTED",
+  "reason": "Exploratory run interrupted while replacing the slow dense bound-pole audit. Trial logs retained. Final reproducible run uses the tested block-inertia audit.",
+  "training_ready": false
+}

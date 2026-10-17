@@ -1,0 +1,9 @@
+{
+  "source_directory": "9.DEVSIM-QT Modulization",
+  "step09_sources_modified": false,
+  "source_snapshot": "baseline/step09_source_snapshot.zip",
+  "native_baseline_log": "results/step09_native_baseline.log",
+  "source_snapshot_files": 106,
+  "github_push_performed": false,
+  "siesta_archive_used": false
+}

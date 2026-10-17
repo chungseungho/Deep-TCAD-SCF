@@ -1,0 +1,15 @@
+{
+  "frozen_mode_plateau": false,
+  "poisson_mesh_refinement": {
+    "density_relative_l2": 0.022679129541354745,
+    "potential_max_abs_v": 0.017773268102231288
+  },
+  "restart_recalculation": {
+    "density_relative_l2": 9.785006212466258e-06,
+    "potential_max_abs_v": 9.886623072372092e-07
+  },
+  "contact_length_12_to_24_nm": {
+    "density_relative_l2_in_matched_central_domain": 0.11929260386360027,
+    "potential_max_abs_v_in_matched_central_domain": 0.12413213533994215
+  }
+}

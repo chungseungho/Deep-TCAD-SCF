@@ -1,0 +1,7 @@
+{
+  "legacy_checkpoint": "../final_uniform_vd005/checkpoints/vg0.400000_vd0.050000.npz",
+  "iteration": 8,
+  "identical_reference_mesh_sha256": "d5f4313aa0e4ec400c5813ee48b0a446d024a613e0e6d528fee95d68665d87e1",
+  "SCF_CONVERGED": false,
+  "operation": "Coordinate metadata copied from an identical mesh; actual saved density reused without alteration."
+}

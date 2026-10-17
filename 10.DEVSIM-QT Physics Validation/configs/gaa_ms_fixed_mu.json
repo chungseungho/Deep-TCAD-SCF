@@ -1,0 +1,14 @@
+{
+  "backend": "ms",
+  "dx": 0.5,
+  "modes": 2,
+  "sd_modes": 4,
+  "junction_basis": "nested",
+  "basis": "fixed",
+  "mesh_h": 3.5,
+  "channel_h": 1.8,
+  "junction_h": 1.3,
+  "max_iterations": 80,
+  "ms_number_constraint": "fixed_contact_mu",
+  "newton_start": 1
+}

@@ -1,0 +1,54 @@
+{
+  "regions": [
+    "electrostatic"
+  ],
+  "physical_materials": [
+    "Silicon",
+    "GateOxide",
+    "Spacer"
+  ],
+  "material_interface_treatment": "one shared conformal P1 potential DOF; element permittivity assembled before shared edge flux",
+  "interfaces": [],
+  "contacts": [
+    "drain",
+    "gate",
+    "source"
+  ],
+  "silicon_node_count": 1024,
+  "nodevolume_min_nm3": 0.08529058085091146,
+  "nodevolume_sum_nm3": 3240.0,
+  "discretization": {
+    "silicon": {
+      "physical_volume_nm3": 3239.9999999999995,
+      "relative_permittivity": 11.7
+    },
+    "oxide": {
+      "physical_volume_nm3": 2015.999999999999,
+      "relative_permittivity": 3.9
+    },
+    "spacer": {
+      "physical_volume_nm3": 503.9999999999998,
+      "relative_permittivity": 7.5
+    }
+  },
+  "silicon_oxide_potential_jump_v": 0.0,
+  "triple_junction_potential_jump_v": 0.0,
+  "method": "integrated",
+  "balancing_error": 2.916111796480436e-12,
+  "node_marginal_error": 2.916111796480436e-12,
+  "cell_marginal_error": 2.9096725029376103e-12,
+  "intersections": 52955,
+  "integration_runtime_s": 15.00312021100035,
+  "limitation": "exact P1 potential cell average / piecewise-constant quantum charge exchange; not a nonequilibrium variational theorem",
+  "linear_potential_error_v": 6.976641486744484e-12,
+  "constant_density_relative_error": 2.916111796480436e-12,
+  "charge_relative_error": 3.360805863961443e-13,
+  "minimum_mapped_density_cm3": 1.6812267437750523e+18,
+  "nodevolume_nm3": 3240.0,
+  "quantum_volume_nm3": 3240.0,
+  "electrostatic_work_relative_defect": 0.0,
+  "charge_measure": "DEVSIM configured node_volume_model=PhysicalControlVolume",
+  "potential_measure": "original silicon tetrahedra",
+  "work_adjoint_pass": true,
+  "constant_density_exact": true
+}

@@ -1,0 +1,10 @@
+{
+  "archive": "10.DEVSIM-QT_Physics_Validation.zip",
+  "native_tests_from_extracted_source": {
+    "passed": 74,
+    "failed": 0,
+    "skipped": 0
+  },
+  "source_includes_all_results_and_logs": true,
+  "quantitative_device_validation_pass": false
+}

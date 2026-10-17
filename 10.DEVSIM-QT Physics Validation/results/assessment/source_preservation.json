@@ -1,0 +1,52 @@
+[
+  {
+    "path": "poisson/device.py",
+    "same_as_step09": true,
+    "sha256": "510336f84666a9f977b989c4ecb0e530918ec4e23ec7dad99b8bd199eac366d1"
+  },
+  {
+    "path": "poisson/discretization.py",
+    "same_as_step09": true,
+    "sha256": "4247d8407ae0b73bfefafd4a401c8d433464847c6926e5ea7f08deb250b7e746"
+  },
+  {
+    "path": "coupling/mapping.py",
+    "same_as_step09": true,
+    "sha256": "6822581da85b716db221d3537f19ac350458fcbd20584090dd59fa92a4275a62"
+  },
+  {
+    "path": "coupling/cell_integrals.py",
+    "same_as_step09": true,
+    "sha256": "6977e5a0f712385edf18d033d9eb50f2459add1ac182edb7e9a42998fb37871e"
+  },
+  {
+    "path": "coupling/scf_controller.py",
+    "same_as_step09": true,
+    "sha256": "d52011aba64103fa17ee5845e6b1d0f88056ae66f4afd7169f0464cb9e11cb92"
+  },
+  {
+    "path": "solver.py",
+    "same_as_step09": false,
+    "sha256": "4fd4b2787c5651d05a8f3b8ecf55e21e0af3f789aa8600c27e7af07369e7451e"
+  },
+  {
+    "path": "modespace/hamiltonian.py",
+    "same_as_step09": true,
+    "sha256": "c37d10d16fb6a679696091184b59fedfc558677c7366b3338accc96a489dad80"
+  },
+  {
+    "path": "modespace/junction_basis.py",
+    "same_as_step09": true,
+    "sha256": "f5eb23221f3abd9ed42ac46e9edb346925eba8664f51c98c891005973e594c83"
+  },
+  {
+    "path": "transport/negf_reference.py",
+    "same_as_step09": true,
+    "sha256": "39e6987b4f3a06b24d90013370a417df25c517cee920923b0909670926f60b8f"
+  },
+  {
+    "path": "transport/backends/negf.py",
+    "same_as_step09": true,
+    "sha256": "58f7de86f353938499e8ac34b61efff4c52e1ef47cc1333b913e2a11fcb6fec5"
+  }
+]

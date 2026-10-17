@@ -1,0 +1,5 @@
+vg_v,vd_v,id_a,SCF_CONVERGED,QUANTITATIVE_VALIDATED,run
+0.4,0.0,0.0,True,False,final_uniform_equilibrium
+0.4,0.01,3.6153048755755e-08,True,False,final_uniform_vd001
+0.4,0.05,1.0298235621947698e-07,True,False,final_uniform_vd005_resume
+0.4,0.1,1.2160243827870132e-07,True,False,final_uniform_vd01_resume

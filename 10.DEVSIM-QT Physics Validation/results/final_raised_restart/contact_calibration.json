@@ -1,0 +1,11 @@
+{
+  "mu_source_ev": 0.009559118670267335,
+  "zero_reference_mu_ev": 0.009559118670267335,
+  "potential_reference_v": 0.0,
+  "donor_electrons_per_nm": 2.9999999999999996,
+  "lead_electrons_per_nm": 2.9999999999999996,
+  "neutrality_relative_error": 0.0,
+  "calibration": "infinite nanowire FD dispersion integral at prescribed donor line density; no current fit",
+  "k_quadrature_nodes": 256,
+  "connected_contact_neutrality": "separate finite-device diagnostic"
+}

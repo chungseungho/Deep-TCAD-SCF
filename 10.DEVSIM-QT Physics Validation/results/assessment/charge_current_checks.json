@@ -1,0 +1,101 @@
+{
+  "states": [
+    {
+      "run": "final_raised_equilibrium",
+      "quantum_electrons": 67.46324531355586,
+      "saved_poisson_electrons": 67.46449023978823,
+      "saved_charge_difference_relative": 1.84533997228859e-05,
+      "charge_difference_scope": "finite SCF residual between saved input charge and reevaluated quantum output; not a mapping-operator defect",
+      "map_operator_random_field_charge_error": 2.561241295842318e-13,
+      "map_cell_marginal_error": 2.3989699116100383e-12,
+      "source_plus_drain_bond_current_a": 0.0,
+      "all_bond_current_relative_defect": 0.0,
+      "gauss_relative_error": 3.354374931513061e-17
+    },
+    {
+      "run": "final_raised_fine_poisson",
+      "quantum_electrons": 67.15094186849429,
+      "saved_poisson_electrons": 67.15117804167188,
+      "saved_charge_difference_relative": 3.5170493670845686e-06,
+      "charge_difference_scope": "finite SCF residual between saved input charge and reevaluated quantum output; not a mapping-operator defect",
+      "map_operator_random_field_charge_error": 3.6224876892879636e-13,
+      "map_cell_marginal_error": 6.134648344868765e-12,
+      "source_plus_drain_bond_current_a": 0.0,
+      "all_bond_current_relative_defect": 0.0,
+      "gauss_relative_error": 0.0
+    },
+    {
+      "run": "final_raised_long_contact",
+      "quantum_electrons": 139.3308559680933,
+      "saved_poisson_electrons": 139.33184434797005,
+      "saved_charge_difference_relative": 7.09376160715804e-06,
+      "charge_difference_scope": "finite SCF residual between saved input charge and reevaluated quantum output; not a mapping-operator defect",
+      "map_operator_random_field_charge_error": 2.2080933544040733e-13,
+      "map_cell_marginal_error": 5.74429392941056e-12,
+      "source_plus_drain_bond_current_a": 0.0,
+      "all_bond_current_relative_defect": 0.0,
+      "gauss_relative_error": 0.0
+    },
+    {
+      "run": "final_raised_restart",
+      "quantum_electrons": 67.46383688160721,
+      "saved_poisson_electrons": 67.46431841893276,
+      "saved_charge_difference_relative": 7.137710332135278e-06,
+      "charge_difference_scope": "finite SCF residual between saved input charge and reevaluated quantum output; not a mapping-operator defect",
+      "map_operator_random_field_charge_error": 2.561241295842318e-13,
+      "map_cell_marginal_error": 2.3989699116100383e-12,
+      "source_plus_drain_bond_current_a": 0.0,
+      "all_bond_current_relative_defect": 0.0,
+      "gauss_relative_error": 6.708770854312516e-17
+    },
+    {
+      "run": "final_uniform_equilibrium",
+      "quantum_electrons": 13.618330922940531,
+      "saved_poisson_electrons": 13.61834215915179,
+      "saved_charge_difference_relative": 8.250799105105168e-07,
+      "charge_difference_scope": "finite SCF residual between saved input charge and reevaluated quantum output; not a mapping-operator defect",
+      "map_operator_random_field_charge_error": 3.360805863961443e-13,
+      "map_cell_marginal_error": 2.9096725029376103e-12,
+      "source_plus_drain_bond_current_a": 0.0,
+      "all_bond_current_relative_defect": 0.0,
+      "gauss_relative_error": 8.50689488009893e-17
+    },
+    {
+      "run": "final_uniform_vd001",
+      "quantum_electrons": 13.484662839863276,
+      "saved_poisson_electrons": 13.48402116359477,
+      "saved_charge_difference_relative": 4.758563681763372e-05,
+      "charge_difference_scope": "finite SCF residual between saved input charge and reevaluated quantum output; not a mapping-operator defect",
+      "map_operator_random_field_charge_error": 3.360805863961443e-13,
+      "map_cell_marginal_error": 2.9096725029376103e-12,
+      "source_plus_drain_bond_current_a": -1.9852334701272664e-23,
+      "all_bond_current_relative_defect": 4.5759936769999436e-15,
+      "gauss_relative_error": 8.569846092672767e-17
+    },
+    {
+      "run": "final_uniform_vd005_resume",
+      "quantum_electrons": 13.043044513316119,
+      "saved_poisson_electrons": 13.04290983238694,
+      "saved_charge_difference_relative": 1.0325881280355822e-05,
+      "charge_difference_scope": "finite SCF residual between saved input charge and reevaluated quantum output; not a mapping-operator defect",
+      "map_operator_random_field_charge_error": 3.360805863961443e-13,
+      "map_cell_marginal_error": 2.9096725029376103e-12,
+      "source_plus_drain_bond_current_a": 1.5881867761018131e-22,
+      "all_bond_current_relative_defect": 4.241030982988872e-15,
+      "gauss_relative_error": 0.0
+    },
+    {
+      "run": "final_uniform_vd01_resume",
+      "quantum_electrons": 12.620624261860954,
+      "saved_poisson_electrons": 12.620636291786488,
+      "saved_charge_difference_relative": 9.531957599201924e-07,
+      "charge_difference_scope": "finite SCF residual between saved input charge and reevaluated quantum output; not a mapping-operator defect",
+      "map_operator_random_field_charge_error": 3.360805863961443e-13,
+      "map_cell_marginal_error": 2.9096725029376103e-12,
+      "source_plus_drain_bond_current_a": -3.705769144237564e-22,
+      "all_bond_current_relative_defect": 5.224193851974708e-15,
+      "gauss_relative_error": 1.3076230745978632e-16
+    }
+  ],
+  "training_ready": false
+}

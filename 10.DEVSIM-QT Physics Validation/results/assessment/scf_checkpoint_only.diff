@@ -1,0 +1,18 @@
+--- STEP09/solver.py
++++ STEP10/solver.py
+@@ -68,6 +68,7 @@
+         accepted=backend.converged(start+outer,metrics,pr,nr,row['mu_change_ev'])
+         last=(n,new,phi,qnew,accepted,start+outer)
+         atomic_npz(Path(out)/'checkpoints'/f'{key}.npz',n=n,phi_node_v=new,vg_v=vg,vd_v=vd,
++                   node_xyz_nm=p.xyz['silicon'],poisson_density_cm3=n,
+                    iteration=start+outer,source_sha256=source_digest(),config_json=json.dumps(c.to_dict()))
+         print(f'{key} Domain-Newton {outer:02d}: phiR={pr:.3e} nR={nr:.3e} currentR={ir:.3e}',flush=True)
+     preconditioner=None
+@@ -128,6 +129,7 @@
+         print(f'{key} {iteration:03d}: phiR={pr:.3e} nR={nr:.3e} mu={q["mu"]:.6f} stable={classification_stable}',flush=True)
+         accepted=backend.converged(iteration,metrics,pr,nr,mr)
+         atomic_npz(out/'checkpoints'/f'{key}.npz',n=n,phi_node_v=phi_node,vg_v=vg,vd_v=vd,
++                   node_xyz_nm=p.xyz['silicon'],poisson_density_cm3=n,
+                    iteration=iteration,source_sha256=source_digest(),config_json=json.dumps(c.to_dict()))
+         if accepted:break
+         if iteration>=c.newton_start and pr>10*c.phi_tol and iteration<c.max_iterations-4:
